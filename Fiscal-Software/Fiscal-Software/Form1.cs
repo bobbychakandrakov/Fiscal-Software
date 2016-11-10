@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using Fiscal_Software.Forms;
 
 namespace Fiscal_Software
 {
@@ -20,6 +21,11 @@ namespace Fiscal_Software
         private void exitApp_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void addCompanyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

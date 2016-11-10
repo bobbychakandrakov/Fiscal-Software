@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.номенклатуриToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addCompanyMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.справкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.експортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,9 +56,18 @@
             // 
             // номенклатуриToolStripMenuItem
             // 
+            this.номенклатуриToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addCompanyMenu});
             this.номенклатуриToolStripMenuItem.Name = "номенклатуриToolStripMenuItem";
             this.номенклатуриToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.номенклатуриToolStripMenuItem.Text = "Номенклатури";
+            // 
+            // addCompanyMenu
+            // 
+            this.addCompanyMenu.Name = "addCompanyMenu";
+            this.addCompanyMenu.Size = new System.Drawing.Size(169, 22);
+            this.addCompanyMenu.Text = "Сервизни фирми";
+            this.addCompanyMenu.Click += new System.EventHandler(this.addCompanyToolStripMenuItem_Click);
             // 
             // справкиToolStripMenuItem
             // 
@@ -115,6 +125,7 @@
         private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitApp;
+        private System.Windows.Forms.ToolStripMenuItem addCompanyMenu;
     }
 }
 
