@@ -16,5 +16,10 @@ namespace Fiscal_Software
         {
             InitializeComponent();
         }
+
+        private void exitApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
