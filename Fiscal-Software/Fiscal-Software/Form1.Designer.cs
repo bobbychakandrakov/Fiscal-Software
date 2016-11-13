@@ -32,12 +32,13 @@
             this.номенклатуриToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCompanyMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.techniciansToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fiscalDevicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.експортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitApp = new System.Windows.Forms.ToolStripMenuItem();
-            this.fiscalDevicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +62,8 @@
             this.номенклатуриToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addCompanyMenu,
             this.techniciansToolStripMenuItem,
-            this.fiscalDevicesToolStripMenuItem});
+            this.fiscalDevicesToolStripMenuItem,
+            this.clientsToolStripMenuItem});
             this.номенклатуриToolStripMenuItem.Name = "номенклатуриToolStripMenuItem";
             this.номенклатуриToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.номенклатуриToolStripMenuItem.Text = "Номенклатури";
@@ -79,6 +81,13 @@
             this.techniciansToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.techniciansToolStripMenuItem.Text = "Техници";
             this.techniciansToolStripMenuItem.Click += new System.EventHandler(this.techniciansToolStripMenuItem_Click);
+            // 
+            // fiscalDevicesToolStripMenuItem
+            // 
+            this.fiscalDevicesToolStripMenuItem.Name = "fiscalDevicesToolStripMenuItem";
+            this.fiscalDevicesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.fiscalDevicesToolStripMenuItem.Text = "Фискални Устройства";
+            this.fiscalDevicesToolStripMenuItem.Click += new System.EventHandler(this.fiscalDevicesToolStripMenuItem_Click);
             // 
             // справкиToolStripMenuItem
             // 
@@ -111,12 +120,12 @@
             this.exitApp.Text = "Изход";
             this.exitApp.Click += new System.EventHandler(this.exitApp_Click);
             // 
-            // fiscalDevicesToolStripMenuItem
+            // clientsToolStripMenuItem
             // 
-            this.fiscalDevicesToolStripMenuItem.Name = "fiscalDevicesToolStripMenuItem";
-            this.fiscalDevicesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.fiscalDevicesToolStripMenuItem.Text = "Фискални Устройства";
-            this.fiscalDevicesToolStripMenuItem.Click += new System.EventHandler(this.fiscalDevicesToolStripMenuItem_Click);
+            this.clientsToolStripMenuItem.Name = "clientsToolStripMenuItem";
+            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.clientsToolStripMenuItem.Text = "Картон Клиенти";
+            this.clientsToolStripMenuItem.Click += new System.EventHandler(this.clientsToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -148,6 +157,7 @@
         private System.Windows.Forms.ToolStripMenuItem addCompanyMenu;
         private System.Windows.Forms.ToolStripMenuItem techniciansToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fiscalDevicesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientsToolStripMenuItem;
     }
 }
 

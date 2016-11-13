@@ -43,5 +43,11 @@ namespace Fiscal_Software
             FiscalDevicesForm fiscalDeviceForm = new FiscalDevicesForm();
             fiscalDeviceForm.Show();
         }
+
+        private void clientsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClientsForm clientsForm = new ClientsForm();
+            clientsForm.Show();
+        }
     }
 }
