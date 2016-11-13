@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fiscal_Software.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace Fiscal_Software
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void exitApp_Click(object sender, EventArgs e)
@@ -26,6 +28,8 @@ namespace Fiscal_Software
         private void addCompanyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
+            ServizniFirmi sf = new ServizniFirmi();
+            sf.Show();
         }
     }
 }
