@@ -15,57 +15,38 @@ namespace Fiscal_Software.Forms
         public ServizniFirmi()
         {
             InitializeComponent();
-            this.DisableControls();
+            
         }
 
         private void ServizniFirmi_Load(object sender, EventArgs e)
         {
-            
+            this.ToggleControls(false);
         }
         
-        private void DisableControls()
+        private void ToggleControls(bool isEnabled)
         {
-            companyNameBox.Enabled = false;
-            companyDanNumberBox.Enabled = false;
-            companyBulstatBox.Enabled = false;
-            companyFDTownBox.Enabled = false;
-            companyFDDateBox.Enabled = false;
-            companyFDNumberBox.Enabled = false;
-            companyCertificateNBox.Enabled = false;
-            companyTownBox.Enabled = false;
-            companyAddressBox.Enabled = false;
-            companyTelephoneBox.Enabled = false;
-            companyFaxBox.Enabled = false;
-            companyEmailBox.Enabled = false;
-            companyWebBox.Enabled = false;
-            companyMolBox.Enabled = false;
-            saveCompanyBtn.Enabled = false;
-            cancelSaveBtn.Enabled = false;
+            companyNameBox.Enabled = isEnabled;
+            companyDanNumberBox.Enabled = isEnabled;
+            companyBulstatBox.Enabled = isEnabled;
+            companyFDTownBox.Enabled = isEnabled;
+            companyFDDateBox.Enabled = isEnabled;
+            companyFDNumberBox.Enabled = isEnabled;
+            companyCertificateNBox.Enabled = isEnabled;
+            companyTownBox.Enabled = isEnabled;
+            companyAddressBox.Enabled = isEnabled;
+            companyTelephoneBox.Enabled = isEnabled;
+            companyFaxBox.Enabled = isEnabled;
+            companyEmailBox.Enabled = isEnabled;
+            companyWebBox.Enabled = isEnabled;
+            companyMolBox.Enabled = isEnabled;
+            saveCompanyBtn.Enabled = isEnabled;
+            cancelSaveBtn.Enabled = isEnabled;
         }
 
-        private void EnableControls()
-        {
-            companyNameBox.Enabled = true;
-            companyDanNumberBox.Enabled = true;
-            companyBulstatBox.Enabled = true;
-            companyFDTownBox.Enabled = true;
-            companyFDDateBox.Enabled = true;
-            companyFDNumberBox.Enabled = true;
-            companyCertificateNBox.Enabled = true;
-            companyTownBox.Enabled = true;
-            companyAddressBox.Enabled = true;
-            companyTelephoneBox.Enabled = true;
-            companyFaxBox.Enabled = true;
-            companyEmailBox.Enabled = true;
-            companyWebBox.Enabled = true;
-            companyMolBox.Enabled = true;
-            saveCompanyBtn.Enabled = true;
-            cancelSaveBtn.Enabled = true;
-        }
 
         private void addCompanyBtn_Click(object sender, EventArgs e)
         {
-            this.EnableControls();
+            this.ToggleControls(true);
             addCompanyBtn.Enabled = false;
             editCompanyBtn.Enabled = false;
             deleteCompanyBtn.Enabled = false;
@@ -73,7 +54,7 @@ namespace Fiscal_Software.Forms
 
         private void cancelSaveBtn_Click(object sender, EventArgs e)
         {
-            this.DisableControls();
+            this.ToggleControls(false);
             addCompanyBtn.Enabled = true;
             editCompanyBtn.Enabled = true;
             deleteCompanyBtn.Enabled = true;

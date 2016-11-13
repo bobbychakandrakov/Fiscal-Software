@@ -31,5 +31,17 @@ namespace Fiscal_Software
             ServizniFirmi sf = new ServizniFirmi();
             sf.Show();
         }
+
+        private void techniciansToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TechniciansForm techForm = new TechniciansForm();
+            techForm.Show();
+        }
+
+        private void fiscalDevicesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FiscalDevicesForm fiscalDeviceForm = new FiscalDevicesForm();
+            fiscalDeviceForm.Show();
+        }
     }
 }
