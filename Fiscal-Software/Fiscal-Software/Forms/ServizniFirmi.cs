@@ -21,7 +21,7 @@ namespace Fiscal_Software.Forms
         public ServizniFirmi()
         {
             InitializeComponent();
-            
+
         }
 
         private void ServizniFirmi_Load(object sender, EventArgs e)
@@ -29,15 +29,15 @@ namespace Fiscal_Software.Forms
             this.ToggleControls(false);
             this.LoadListData();
         }
-        
+
         private void LoadListData()
         {
-            
+
             companyListView.Columns.Add("Фирма");
-            
+
             companyListView.View = View.Details;
             var companies = CompanyCtrl.GetAllCompanies();
-            
+
             for (int i = 0; i < companies.Length; i++)
             {
                 lvi = new ListViewItem(companies[i].Name);
@@ -73,6 +73,8 @@ namespace Fiscal_Software.Forms
 
         private void addCompanyBtn_Click(object sender, EventArgs e)
         {
+            ResetControlsValue();
+            companyListView.Enabled = false;
             this.ToggleControls(true);
             addCompanyBtn.Enabled = false;
             editCompanyBtn.Enabled = false;
@@ -82,6 +84,7 @@ namespace Fiscal_Software.Forms
 
         private void cancelSaveBtn_Click(object sender, EventArgs e)
         {
+            companyListView.Enabled = true;
             this.ToggleControls(false);
             addCompanyBtn.Enabled = true;
             editCompanyBtn.Enabled = true;
@@ -108,7 +111,7 @@ namespace Fiscal_Software.Forms
 
         private void saveCompanyBtn_Click(object sender, EventArgs e)
         {
-            if (companyNameBox.Text != "" && companyTownBox.Text != "" 
+            if (companyNameBox.Text != "" && companyTownBox.Text != ""
                 && companyAddressBox.Text != "" && companyMolBox.Text != ""
                 && companyBulstatBox.Text != "")
             {
@@ -157,7 +160,8 @@ namespace Fiscal_Software.Forms
                             addCompanyBtn.Enabled = true;
                             editCompanyBtn.Enabled = true;
                             deleteCompanyBtn.Enabled = true;
-                        }                        
+                            companyListView.Enabled = true;
+                        }
                         ResetControlsValue();
                     }
                 }
@@ -165,7 +169,7 @@ namespace Fiscal_Software.Forms
                 {
                     MessageBox.Show("Невалиден булстат", "Грешка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+
             }
             else
             {
@@ -175,24 +179,41 @@ namespace Fiscal_Software.Forms
 
         private void companyListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            
+            if (e.IsSelected)
+            {
+                selectedCompanyID = int.Parse(companyListView.SelectedItems[0].Tag.ToString());
+                var company = CompanyCtrl.GetCompanyById(selectedCompanyID);
+                if (company != null)
+                {
+                    LoadPanelWithData(company,false);
+                }
+            }
         }
 
         private void deleteCompanyBtn_Click(object sender, EventArgs e)
         {
-            
+
             if (companyListView.SelectedItems.Count > 0)
             {
-                int id = int.Parse(companyListView.SelectedItems[0].Tag.ToString());
-                CompanyCtrl.DeleteCompanyById(id);
-                companyListView.SelectedItems[0].Remove();
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да изтриете " + companyListView.SelectedItems[0].Text + " ?",
+                                    "Изтриване на фирма",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    int id = int.Parse(companyListView.SelectedItems[0].Tag.ToString());
+                    CompanyCtrl.DeleteCompanyById(id);
+                    companyListView.SelectedItems[0].Remove();
+                }
+                
             }
         }
 
         private void editCompanyBtn_Click(object sender, EventArgs e)
         {
+
             if (companyListView.SelectedItems.Count > 0)
             {
+                companyListView.Enabled = false;
                 addCompanyBtn.Enabled = false;
                 editCompanyBtn.Enabled = false;
                 deleteCompanyBtn.Enabled = false;
@@ -201,14 +222,15 @@ namespace Fiscal_Software.Forms
                 var company = CompanyCtrl.GetCompanyById(selectedCompanyID);
                 if (company != null)
                 {
-                    LoadPanelWithData(company);
+                    LoadPanelWithData(company,true);
                 }
             }
         }
 
-        private void LoadPanelWithData(Company company)
+        private void LoadPanelWithData(Company company, bool toggle)
         {
-            ToggleControls(true);
+            //ToggleControls(true);
+            ToggleControls(toggle);
             companyNameBox.Text = company.Name;
             companyDanNumberBox.Text = company.DanNumber;
             companyBulstatBox.Text = company.Bulstat;

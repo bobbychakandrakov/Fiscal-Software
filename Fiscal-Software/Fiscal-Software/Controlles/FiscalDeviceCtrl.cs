@@ -8,8 +8,9 @@ namespace Fiscal_Software.Controllers
 {
     class FiscalDeviceCtrl
     {
-        public static void AddFiscalDevice(string Model, int CertificateN, string Type, string Manufacturer, DateTime StartDate, Decimal Price, int Waranty, string BulstatManufacturer)
+        public static void AddFiscalDevice(FiscalDevice fiscalDevice)
         {
+            /*
             FiscalDevice fiscalDevice = new FiscalDevice();
             fiscalDevice.Model = Model;
             fiscalDevice.CertificateN = CertificateN;
@@ -19,11 +20,20 @@ namespace Fiscal_Software.Controllers
             fiscalDevice.Price = Price;
             fiscalDevice.Warranty = Waranty;
             fiscalDevice.BulstatManufacturer = BulstatManufacturer;
+            */
             using (var ctx = new FiscalSoftware())
             {
                 ctx.FiscalDevices.Add(fiscalDevice);
                 ctx.SaveChanges();
-                Console.WriteLine("FiscalDevice added");
+            }
+        }
+
+        public static FiscalDevice[] GetAllFiscalDevices()
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var fiscalDivices = ctx.Set<FiscalDevice>().ToArray();
+                return fiscalDivices;
             }
         }
         public static FiscalDevice GetFiscalDevice(int id)
@@ -53,7 +63,7 @@ namespace Fiscal_Software.Controllers
             }
         }
 
-        public static void UpdateFiscalDevice(int id, string Model, int CertificateN, string Type, string Manufacturer, DateTime StartDate, Decimal Price, int Waranty, string BulstatManufacturer)
+        public static void UpdateFiscalDevice(int id, FiscalDevice fiscalDevice)
         {
             using (var ctx = new FiscalSoftware())
             {
@@ -62,21 +72,15 @@ namespace Fiscal_Software.Controllers
 
                 if (original != null)
                 {
-
-                    original.Model = Model;
-                    original.CertificateN = CertificateN;
-                    original.Type = Type;
-                    original.Manufacturer = Manufacturer;
-                    original.StartDate = StartDate;
-                    original.Price = Price;
-                    original.Warranty = Waranty;
-                    original.BulstatManufacturer = BulstatManufacturer;
+                    original.Model = fiscalDevice.Model;
+                    original.CertificateN = fiscalDevice.CertificateN;
+                    original.Type = fiscalDevice.Type;
+                    original.Manufacturer = fiscalDevice.Manufacturer;
+                    original.StartDate = fiscalDevice.StartDate;
+                    original.Price = fiscalDevice.Price;
+                    original.Warranty = fiscalDevice.Warranty;
+                    original.BulstatManufacturer = fiscalDevice.BulstatManufacturer;
                     ctx.SaveChanges();
-                    Console.WriteLine("FiscalDevice updated!");
-                }
-                else
-                {
-                    Console.WriteLine("cannot find FiscalDevice");
                 }
             }
         }
