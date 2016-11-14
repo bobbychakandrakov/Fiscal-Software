@@ -10,28 +10,7 @@ namespace Fiscal_Software.Controllers
     {
         public static void AddClient(Client client)
         {
-            //string Name, string TDD, string Mol, string MolTown, string MolAddress, string Dn, string Bulstat, string FDTown, DateTime FDDate, string FDNumber, string Town, string Address, string Telephone, string Fax, string Email, string Web, string MolTelephone, string MolEgn
-            /*
-            Client client = new Client();
-            client.Name = Name;
-            client.TDD = TDD;
-            client.Mol = Mol;
-            client.MolTown = MolTown;
-            client.MolAddress = MolAddress;
-            client.DN = Dn;
-            client.Bulstat = Bulstat;
-            client.FDDate = FDDate;
-            client.FDNumber = FDNumber;
-            client.FDTown = FDTown;
-            client.Town = Town;
-            client.Address = Address;
-            client.Telephone = Telephone;
-            client.Fax = Fax;
-            client.Email = Email;
-            client.Web = Web;
-            client.MolEGN = MolEgn;
-            client.MolTown = MolTown;
-            */
+          
 
             using (var ctx = new FiscalSoftware())
             {
@@ -39,7 +18,7 @@ namespace Fiscal_Software.Controllers
                 ctx.SaveChanges();
             }
         }
-        public static void UpdateClient(int id, string Name, string TDD, string Mol, string MolTown, string MolAddress, string Dn, string Bulstat, string FDTown, DateTime FDDate, string FDNumber, string Town, string Address, string Telephone, string Fax, string Email, string Web, string MolTelephone, string MolEgn)
+        public static void UpdateClient(int id,Client client)
         {
             using (var ctx = new FiscalSoftware())
             {
@@ -49,24 +28,24 @@ namespace Fiscal_Software.Controllers
                 if (original != null)
                 {
 
-                    original.Name = Name;
-                    original.TDD = TDD;
-                    original.Mol = Mol;
-                    original.MolTown = MolTown;
-                    original.MolAddress = MolAddress;
-                    original.DN = Dn;
-                    original.Bulstat = Bulstat;
-                    original.FDDate = FDDate;
-                    original.FDNumber = FDNumber;
-                    original.FDTown = FDTown;
-                    original.Town = Town;
-                    original.Address = Address;
-                    original.Telephone = Telephone;
-                    original.Fax = Fax;
-                    original.Email = Email;
-                    original.Web = Web;
-                    original.MolEGN = MolEgn;
-                    original.MolTown = MolTown;
+                    original.Name = client.Name;
+                    original.TDD = client.TDD;
+                    original.Mol = client.Mol;
+                    original.MolTown = client.MolTown;
+                    original.MolAddress = client.MolAddress;
+                    original.DN = client.DN;
+                    original.Bulstat =client. Bulstat;
+                    original.FDDate = client.FDDate;
+                    original.FDNumber = client.FDNumber;
+                    original.FDTown = client.FDTown;
+                    original.Town = client.Town;
+                    original.Address = client.Address;
+                    original.Telephone = client.Telephone;
+                    original.Fax =client. Fax;
+                    original.Email = client.Email;
+                    original.Web = client.Web;
+                    original.MolEGN = client.MolEGN;
+                    original.MolTown = client.MolTown;
                     ctx.SaveChanges();
                     Console.WriteLine("Client updated!");
                 }
@@ -102,6 +81,14 @@ namespace Fiscal_Software.Controllers
                     ctx.SaveChanges();
                     Console.WriteLine("Client was deleted!");
                 }
+            }
+        }
+        public static Client[] GetAllClients()
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var client = ctx.Set<Client>().ToArray();
+                return client;
             }
         }
     }

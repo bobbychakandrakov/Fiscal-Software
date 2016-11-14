@@ -84,5 +84,13 @@ namespace Fiscal_Software.Controllers
                 }
             }
         }
+        public static FiscalDevice[] GetAllFiscalDevice()
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var fiscalDevice = ctx.Set<FiscalDevice>().ToArray();
+                return fiscalDevice;
+            }
+        }
     }
 }

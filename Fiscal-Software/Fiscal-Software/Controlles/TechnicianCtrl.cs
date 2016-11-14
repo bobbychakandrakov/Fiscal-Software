@@ -8,13 +8,13 @@ namespace Fiscal_Software.Controllers
 {
     class TechnicianCtrl
     {
-        public static void AddTechnician(int CompanyId, string Name, string EGN, string Telephone)
+        public static void AddTechnician(Technician technician)
         {
-            Technician technician = new Technician();
-            technician.CompanyID = CompanyId;
-            technician.Name = Name;
-            technician.EGN = EGN;
-            technician.Telephone = Telephone;
+           
+            technician.CompanyID =technician. CompanyID;
+            technician.Name =technician. Name;
+            technician.EGN = technician.EGN;
+            technician.Telephone = technician.Telephone;
             using (var ctx = new FiscalSoftware())
             {
                 ctx.Technicians.Add(technician);
@@ -22,7 +22,7 @@ namespace Fiscal_Software.Controllers
                 Console.WriteLine("technician added");
             }
         }
-        public static void UpdateTechnician(int id, int CompanyId, string Name, string EGN, string Telephone)
+        public static void UpdateTechnician(int id, Technician technician)
         {
             using (var ctx = new FiscalSoftware())
             {
@@ -31,10 +31,10 @@ namespace Fiscal_Software.Controllers
 
                 if (original != null)
                 {
-                    original.CompanyID = CompanyId;
-                    original.Name = Name;
-                    original.EGN = EGN;
-                    original.Telephone = Telephone;
+                    original.CompanyID = technician.CompanyID;
+                    original.Name = technician.Name;
+                    original.EGN = technician.EGN;
+                    original.Telephone = technician.Telephone;
                     ctx.SaveChanges();
                     Console.WriteLine("technician updated!");
                 }
@@ -79,6 +79,14 @@ namespace Fiscal_Software.Controllers
                     ctx.SaveChanges();
                     Console.WriteLine("technician was deleted!");
                 }
+            }
+        }
+        public static Technician[] GetAllTechnicians()
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var technician = ctx.Set<Technician>().ToArray();
+                return technician;
             }
         }
     }

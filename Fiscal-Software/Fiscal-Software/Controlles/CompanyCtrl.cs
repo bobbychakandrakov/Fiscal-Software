@@ -11,24 +11,7 @@ namespace Fiscal_Software.Controllers
     {
         public static void AddCompany(Company company)
         {
-            //string Name, string Bulstat, string Town, string Address, string Mol, string Telephone, string Fax, string Email, string Web, string FDTown, DateTime FDDate, string FDNumber, int CertificateN, string DanNumber
-            /*
-            Company company = new Company();
-            company.Name = Name;
-            company.Bulstat = Bulstat;
-            company.Town = Town;
-            company.Address = Address;
-            company.Mol = Mol;
-            company.CertificateN = CertificateN;
-            company.DanNumber = DanNumber;
-            company.Email = Email;
-            company.Fax = Fax;
-            company.FDDate = FDDate;
-            company.FDNumber = FDNumber;
-            company.FDTown = FDTown;
-            company.Telephone = Telephone;
-            company.Web = Web;
-            */
+           
             using (var ctx = new FiscalSoftware())
             {
                 ctx.Companies.Add(company);
