@@ -1,14 +1,18 @@
-﻿using System;
+﻿using Fiscal_Software;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+namespace Fiscal_Software
 {
     class CompanyCtrl
     {
-        public static void AddCompany(string Name, string Bulstat, string Town, string Address, string Mol, string Telephone, string Fax, string Email, string Web, string FDTown, DateTime FDDate, string FDNumber, int CertificateN, string DanNumber)
+        public static void AddCompany(Company company)
         {
+            //string Name, string Bulstat, string Town, string Address, string Mol, string Telephone, string Fax, string Email, string Web, string FDTown, DateTime FDDate, string FDNumber, int CertificateN, string DanNumber
+            /*
             Company company = new Company();
             company.Name = Name;
             company.Bulstat = Bulstat;
@@ -24,6 +28,7 @@ using System.Threading.Tasks;
             company.FDTown = FDTown;
             company.Telephone = Telephone;
             company.Web = Web;
+            */
             using (var ctx = new FiscalSoftware())
             {
                 ctx.Companies.Add(company);
@@ -32,7 +37,7 @@ using System.Threading.Tasks;
             }
 
         }
-        public static void UpdateCompany(int id, string Name, string Bulstat, string Town, string Address, string Mol, string Telephone, string Fax, string Email, string Web, string FDTown, DateTime FDDate, string FDNumber, int CertificateN, string DanNumber)
+        public static void UpdateCompany(int id, Company company)
         {
             using (var ctx = new FiscalSoftware())
             {
@@ -41,26 +46,21 @@ using System.Threading.Tasks;
 
                 if (original != null)
                 {
-                    original.Name = Name;
-                    original.Bulstat = Bulstat;
-                    original.Town = Town;
-                    original.Address = Address;
-                    original.Mol = Mol;
-                    original.CertificateN = CertificateN;
-                    original.DanNumber = DanNumber;
-                    original.Email = Email;
-                    original.Fax = Fax;
-                    original.FDDate = FDDate;
-                    original.FDNumber = FDNumber;
-                    original.FDTown = FDTown;
-                    original.Telephone = Telephone;
-                    original.Web = Web;
+                    original.Name = company.Name;
+                    original.Bulstat = company.Bulstat;
+                    original.Town = company.Town;
+                    original.Address = company.Address;
+                    original.Mol = company.Mol;
+                    original.CertificateN = company.CertificateN;
+                    original.DanNumber = company.DanNumber;
+                    original.Email = company.Email;
+                    original.Fax = company.Fax;
+                    original.FDDate = company.FDDate;
+                    original.FDNumber = company.FDNumber;
+                    original.FDTown = company.FDTown;
+                    original.Telephone = company.Telephone;
+                    original.Web = company.Web;
                     ctx.SaveChanges();
-                    Console.WriteLine("company updated!");
-                }
-                else
-                {
-                    Console.WriteLine("cannot find company");
                 }
             }
         }
@@ -70,6 +70,15 @@ using System.Threading.Tasks;
             {
                 var company = ctx.Companies.Where(b => b.ID == id)
                     .FirstOrDefault();
+                return company;
+            }
+        }
+
+        public static Company[] GetAllCompanies()
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var company = ctx.Set<Company>().ToArray();
                 return company;
             }
         }

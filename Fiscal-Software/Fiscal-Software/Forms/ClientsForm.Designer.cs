@@ -31,6 +31,31 @@
             this.saveClientBtn = new System.Windows.Forms.Button();
             this.cancelClientBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.clientMolEGNBox = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.clientMolTelephoneBox = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.clientMolAddressBox = new System.Windows.Forms.RichTextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.clientMolTownBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.clientMolBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.clientWebBox = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.clientEmailBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.clientFaxBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.clientTelephoneBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.clientAddressBox = new System.Windows.Forms.RichTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.clientTownBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.clientTDDBox = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.clientFDNumberBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.clientFDDateBox = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,31 +67,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.clientNameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.clientFDNumberBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.clientTDDBox = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.clientTownBox = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.clientAddressBox = new System.Windows.Forms.RichTextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.clientTelephoneBox = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.clientFaxBox = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.clientEmailBox = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.clientWebBox = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.clientMolBox = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.clientMolTownBox = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.clientMolAddressBox = new System.Windows.Forms.RichTextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.clientMolTelephoneBox = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.clientMolEGNBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +78,7 @@
             this.saveClientBtn.TabIndex = 0;
             this.saveClientBtn.Text = "Запис";
             this.saveClientBtn.UseVisualStyleBackColor = true;
+            this.saveClientBtn.Click += new System.EventHandler(this.saveClientBtn_Click);
             // 
             // cancelClientBtn
             // 
@@ -133,6 +134,212 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Данни за клиента";
+            // 
+            // clientMolEGNBox
+            // 
+            this.clientMolEGNBox.Location = new System.Drawing.Point(321, 518);
+            this.clientMolEGNBox.Name = "clientMolEGNBox";
+            this.clientMolEGNBox.Size = new System.Drawing.Size(196, 20);
+            this.clientMolEGNBox.TabIndex = 35;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(279, 521);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(28, 13);
+            this.label18.TabIndex = 34;
+            this.label18.Text = "ЕГН";
+            // 
+            // clientMolTelephoneBox
+            // 
+            this.clientMolTelephoneBox.Location = new System.Drawing.Point(81, 518);
+            this.clientMolTelephoneBox.Name = "clientMolTelephoneBox";
+            this.clientMolTelephoneBox.Size = new System.Drawing.Size(159, 20);
+            this.clientMolTelephoneBox.TabIndex = 33;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(24, 521);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(52, 13);
+            this.label17.TabIndex = 32;
+            this.label17.Text = "Телефон";
+            // 
+            // clientMolAddressBox
+            // 
+            this.clientMolAddressBox.Location = new System.Drawing.Point(33, 474);
+            this.clientMolAddressBox.Name = "clientMolAddressBox";
+            this.clientMolAddressBox.Size = new System.Drawing.Size(484, 31);
+            this.clientMolAddressBox.TabIndex = 31;
+            this.clientMolAddressBox.Text = "";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(30, 447);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(42, 13);
+            this.label16.TabIndex = 30;
+            this.label16.Text = "Адрес*";
+            // 
+            // clientMolTownBox
+            // 
+            this.clientMolTownBox.Location = new System.Drawing.Point(81, 410);
+            this.clientMolTownBox.Name = "clientMolTownBox";
+            this.clientMolTownBox.Size = new System.Drawing.Size(436, 20);
+            this.clientMolTownBox.TabIndex = 29;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(30, 413);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(35, 13);
+            this.label15.TabIndex = 28;
+            this.label15.Text = "Град*";
+            // 
+            // clientMolBox
+            // 
+            this.clientMolBox.Location = new System.Drawing.Point(81, 382);
+            this.clientMolBox.Name = "clientMolBox";
+            this.clientMolBox.Size = new System.Drawing.Size(436, 20);
+            this.clientMolBox.TabIndex = 27;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(30, 385);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(32, 13);
+            this.label14.TabIndex = 26;
+            this.label14.Text = "Мол*";
+            // 
+            // clientWebBox
+            // 
+            this.clientWebBox.Location = new System.Drawing.Point(321, 344);
+            this.clientWebBox.Name = "clientWebBox";
+            this.clientWebBox.Size = new System.Drawing.Size(196, 20);
+            this.clientWebBox.TabIndex = 25;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(276, 347);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(30, 13);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "Web";
+            // 
+            // clientEmailBox
+            // 
+            this.clientEmailBox.Location = new System.Drawing.Point(81, 344);
+            this.clientEmailBox.Name = "clientEmailBox";
+            this.clientEmailBox.Size = new System.Drawing.Size(159, 20);
+            this.clientEmailBox.TabIndex = 23;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(27, 347);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 13);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "E-mail";
+            // 
+            // clientFaxBox
+            // 
+            this.clientFaxBox.Location = new System.Drawing.Point(321, 309);
+            this.clientFaxBox.Name = "clientFaxBox";
+            this.clientFaxBox.Size = new System.Drawing.Size(196, 20);
+            this.clientFaxBox.TabIndex = 21;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(273, 312);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(36, 13);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Факс";
+            // 
+            // clientTelephoneBox
+            // 
+            this.clientTelephoneBox.Location = new System.Drawing.Point(82, 309);
+            this.clientTelephoneBox.Name = "clientTelephoneBox";
+            this.clientTelephoneBox.Size = new System.Drawing.Size(158, 20);
+            this.clientTelephoneBox.TabIndex = 19;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(24, 312);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 13);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Телефон";
+            // 
+            // clientAddressBox
+            // 
+            this.clientAddressBox.Location = new System.Drawing.Point(33, 262);
+            this.clientAddressBox.Name = "clientAddressBox";
+            this.clientAddressBox.Size = new System.Drawing.Size(484, 30);
+            this.clientAddressBox.TabIndex = 17;
+            this.clientAddressBox.Text = "";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(24, 233);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(38, 13);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Адрес";
+            // 
+            // clientTownBox
+            // 
+            this.clientTownBox.Location = new System.Drawing.Point(81, 190);
+            this.clientTownBox.Name = "clientTownBox";
+            this.clientTownBox.Size = new System.Drawing.Size(436, 20);
+            this.clientTownBox.TabIndex = 15;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(21, 193);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(31, 13);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Град";
+            // 
+            // clientTDDBox
+            // 
+            this.clientTDDBox.FormattingEnabled = true;
+            this.clientTDDBox.Location = new System.Drawing.Point(321, 156);
+            this.clientTDDBox.Name = "clientTDDBox";
+            this.clientTDDBox.Size = new System.Drawing.Size(196, 21);
+            this.clientTDDBox.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(270, 159);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(36, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "ТДД*";
+            // 
+            // clientFDNumberBox
+            // 
+            this.clientFDNumberBox.Location = new System.Drawing.Point(94, 156);
+            this.clientFDNumberBox.Name = "clientFDNumberBox";
+            this.clientFDNumberBox.Size = new System.Drawing.Size(146, 20);
+            this.clientFDNumberBox.TabIndex = 11;
             // 
             // label6
             // 
@@ -223,212 +430,6 @@
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Име*";
-            // 
-            // clientFDNumberBox
-            // 
-            this.clientFDNumberBox.Location = new System.Drawing.Point(94, 156);
-            this.clientFDNumberBox.Name = "clientFDNumberBox";
-            this.clientFDNumberBox.Size = new System.Drawing.Size(146, 20);
-            this.clientFDNumberBox.TabIndex = 11;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(270, 159);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(36, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "ТДД*";
-            // 
-            // clientTDDBox
-            // 
-            this.clientTDDBox.FormattingEnabled = true;
-            this.clientTDDBox.Location = new System.Drawing.Point(321, 156);
-            this.clientTDDBox.Name = "clientTDDBox";
-            this.clientTDDBox.Size = new System.Drawing.Size(196, 21);
-            this.clientTDDBox.TabIndex = 13;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 193);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Град";
-            // 
-            // clientTownBox
-            // 
-            this.clientTownBox.Location = new System.Drawing.Point(81, 190);
-            this.clientTownBox.Name = "clientTownBox";
-            this.clientTownBox.Size = new System.Drawing.Size(436, 20);
-            this.clientTownBox.TabIndex = 15;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(24, 233);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 13);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Адрес";
-            // 
-            // clientAddressBox
-            // 
-            this.clientAddressBox.Location = new System.Drawing.Point(33, 262);
-            this.clientAddressBox.Name = "clientAddressBox";
-            this.clientAddressBox.Size = new System.Drawing.Size(484, 30);
-            this.clientAddressBox.TabIndex = 17;
-            this.clientAddressBox.Text = "";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(24, 312);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 13);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Телефон";
-            // 
-            // clientTelephoneBox
-            // 
-            this.clientTelephoneBox.Location = new System.Drawing.Point(82, 309);
-            this.clientTelephoneBox.Name = "clientTelephoneBox";
-            this.clientTelephoneBox.Size = new System.Drawing.Size(158, 20);
-            this.clientTelephoneBox.TabIndex = 19;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(273, 312);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(36, 13);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Факс";
-            // 
-            // clientFaxBox
-            // 
-            this.clientFaxBox.Location = new System.Drawing.Point(321, 309);
-            this.clientFaxBox.Name = "clientFaxBox";
-            this.clientFaxBox.Size = new System.Drawing.Size(196, 20);
-            this.clientFaxBox.TabIndex = 21;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(27, 347);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 13);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "E-mail";
-            // 
-            // clientEmailBox
-            // 
-            this.clientEmailBox.Location = new System.Drawing.Point(81, 344);
-            this.clientEmailBox.Name = "clientEmailBox";
-            this.clientEmailBox.Size = new System.Drawing.Size(159, 20);
-            this.clientEmailBox.TabIndex = 23;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(276, 347);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(30, 13);
-            this.label13.TabIndex = 24;
-            this.label13.Text = "Web";
-            // 
-            // clientWebBox
-            // 
-            this.clientWebBox.Location = new System.Drawing.Point(321, 344);
-            this.clientWebBox.Name = "clientWebBox";
-            this.clientWebBox.Size = new System.Drawing.Size(196, 20);
-            this.clientWebBox.TabIndex = 25;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(30, 385);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(32, 13);
-            this.label14.TabIndex = 26;
-            this.label14.Text = "Мол*";
-            // 
-            // clientMolBox
-            // 
-            this.clientMolBox.Location = new System.Drawing.Point(81, 382);
-            this.clientMolBox.Name = "clientMolBox";
-            this.clientMolBox.Size = new System.Drawing.Size(436, 20);
-            this.clientMolBox.TabIndex = 27;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(30, 413);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(35, 13);
-            this.label15.TabIndex = 28;
-            this.label15.Text = "Град*";
-            // 
-            // clientMolTownBox
-            // 
-            this.clientMolTownBox.Location = new System.Drawing.Point(81, 410);
-            this.clientMolTownBox.Name = "clientMolTownBox";
-            this.clientMolTownBox.Size = new System.Drawing.Size(436, 20);
-            this.clientMolTownBox.TabIndex = 29;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(30, 447);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(42, 13);
-            this.label16.TabIndex = 30;
-            this.label16.Text = "Адрес*";
-            // 
-            // clientMolAddressBox
-            // 
-            this.clientMolAddressBox.Location = new System.Drawing.Point(33, 474);
-            this.clientMolAddressBox.Name = "clientMolAddressBox";
-            this.clientMolAddressBox.Size = new System.Drawing.Size(484, 31);
-            this.clientMolAddressBox.TabIndex = 31;
-            this.clientMolAddressBox.Text = "";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(24, 521);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(52, 13);
-            this.label17.TabIndex = 32;
-            this.label17.Text = "Телефон";
-            // 
-            // clientMolTelephoneBox
-            // 
-            this.clientMolTelephoneBox.Location = new System.Drawing.Point(81, 518);
-            this.clientMolTelephoneBox.Name = "clientMolTelephoneBox";
-            this.clientMolTelephoneBox.Size = new System.Drawing.Size(159, 20);
-            this.clientMolTelephoneBox.TabIndex = 33;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(279, 521);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(28, 13);
-            this.label18.TabIndex = 34;
-            this.label18.Text = "ЕГН";
-            // 
-            // clientMolEGNBox
-            // 
-            this.clientMolEGNBox.Location = new System.Drawing.Point(321, 518);
-            this.clientMolEGNBox.Name = "clientMolEGNBox";
-            this.clientMolEGNBox.Size = new System.Drawing.Size(196, 20);
-            this.clientMolEGNBox.TabIndex = 35;
             // 
             // ClientsForm
             // 

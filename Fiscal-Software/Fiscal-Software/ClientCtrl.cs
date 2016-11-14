@@ -8,8 +8,10 @@ namespace Fiscal_Software
 {
     class ClientCtrl
     {
-        public static void AddClient(string Name, string TDD, string Mol, string MolTown, string MolAddress, string Dn, string Bulstat, string FDTown, DateTime FDDate, string FDNumber, string Town, string Address, string Telephone, string Fax, string Email, string Web, string MolTelephone, string MolEgn)
+        public static void AddClient(Client client)
         {
+            //string Name, string TDD, string Mol, string MolTown, string MolAddress, string Dn, string Bulstat, string FDTown, DateTime FDDate, string FDNumber, string Town, string Address, string Telephone, string Fax, string Email, string Web, string MolTelephone, string MolEgn
+            /*
             Client client = new Client();
             client.Name = Name;
             client.TDD = TDD;
@@ -29,13 +31,12 @@ namespace Fiscal_Software
             client.Web = Web;
             client.MolEGN = MolEgn;
             client.MolTown = MolTown;
-
+            */
 
             using (var ctx = new FiscalSoftware())
             {
                 ctx.Clients.Add(client);
                 ctx.SaveChanges();
-                Console.WriteLine("client added");
             }
         }
         public static void UpdateClient(int id, string Name, string TDD, string Mol, string MolTown, string MolAddress, string Dn, string Bulstat, string FDTown, DateTime FDDate, string FDNumber, string Town, string Address, string Telephone, string Fax, string Email, string Web, string MolTelephone, string MolEgn)
