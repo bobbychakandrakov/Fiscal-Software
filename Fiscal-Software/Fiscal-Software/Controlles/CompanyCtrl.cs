@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fiscal_Software
+namespace Fiscal_Software.Controllers
 {
     class CompanyCtrl
     {
