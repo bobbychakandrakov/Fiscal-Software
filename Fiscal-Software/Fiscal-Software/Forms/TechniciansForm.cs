@@ -60,6 +60,7 @@ namespace Fiscal_Software.Forms
 
         private void addTechnicianBtn_Click(object sender, EventArgs e)
         {
+            ResetControls();
             this.ToggleControls(true, false);
             addTechnicianBtn.Enabled = false;
             editTechnicianBtn.Enabled = false;

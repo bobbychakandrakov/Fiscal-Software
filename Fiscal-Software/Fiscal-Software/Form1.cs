@@ -13,6 +13,7 @@ using Fiscal_Software.Controllers;
 
 namespace Fiscal_Software
 {
+    
     public partial class Form1 : Form
     {
 
@@ -23,11 +24,18 @@ namespace Fiscal_Software
             
         }
 
-
+        public void AddClient(Client client)
+        {
+            this.lvi = new ListViewItem(client.Name);
+            this.lvi.SubItems.Add(client.Bulstat);
+            this.lvi.SubItems.Add(client.Telephone);
+            this.lvi.SubItems.Add(client.Mol);
+            this.lvi.Tag = client.ID;
+            this.clientsListView.Items.Add(lvi);
+        }
         private void RefreshClients()
         {
-
-            //clientsListView.Clear();
+            clientsListView.Clear();
             clientsListView.Columns.Add("Фирма");
             clientsListView.Columns.Add("Булстат");
             clientsListView.Columns.Add("Телефон");
@@ -82,7 +90,7 @@ namespace Fiscal_Software
 
         private void clientsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClientsForm clientsForm = new ClientsForm();
+            ClientsForm clientsForm = new ClientsForm(this);
             clientsForm.Show();
         }
 

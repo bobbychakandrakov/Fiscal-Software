@@ -14,9 +14,11 @@ namespace Fiscal_Software.Forms
 {
     public partial class ClientsForm : Form
     {
-        public ClientsForm()
+        Form1 f1;
+        public ClientsForm(Form1 f1)
         {
             InitializeComponent();
+            this.f1 = f1;
         }
 
         private void cancelClientBtn_Click(object sender, EventArgs e)
@@ -49,6 +51,7 @@ namespace Fiscal_Software.Forms
                 client.MolTown = clientMolTownBox.Text;
                 client.MolTelephone = clientMolTelephoneBox.Text;
                 ClientCtrl.AddClient(client);
+                f1.AddClient(client);
                 this.Close();
             }
             else
