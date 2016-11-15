@@ -141,6 +141,7 @@
             this.clientMolEGNBox.Name = "clientMolEGNBox";
             this.clientMolEGNBox.Size = new System.Drawing.Size(196, 20);
             this.clientMolEGNBox.TabIndex = 35;
+            this.clientMolEGNBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clientMolEGNBox_KeyPress);
             // 
             // label18
             // 
@@ -340,6 +341,7 @@
             this.clientFDNumberBox.Name = "clientFDNumberBox";
             this.clientFDNumberBox.Size = new System.Drawing.Size(146, 20);
             this.clientFDNumberBox.TabIndex = 11;
+            this.clientFDNumberBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clientFDNumberBox_KeyPress);
             // 
             // label6
             // 
@@ -388,6 +390,7 @@
             this.clientBulstatBox.Name = "clientBulstatBox";
             this.clientBulstatBox.Size = new System.Drawing.Size(196, 20);
             this.clientBulstatBox.TabIndex = 5;
+            this.clientBulstatBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clientBulstatBox_KeyPress);
             // 
             // label3
             // 
@@ -404,6 +407,7 @@
             this.clientDNBox.Name = "clientDNBox";
             this.clientDNBox.Size = new System.Drawing.Size(129, 20);
             this.clientDNBox.TabIndex = 3;
+            this.clientDNBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clientDNBox_KeyPress);
             // 
             // label2
             // 

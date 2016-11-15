@@ -24,6 +24,8 @@ namespace Fiscal_Software.Forms
 
         private void TechniciansForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the '_Fiscal_SoftwareDataSet.Company' table. You can move, or remove it, as needed.
+            this.companyTableAdapter.Fill(this._Fiscal_SoftwareDataSet.Company);
             this.ToggleControls(false,true);
             techniciansList.Columns.Add("Фирма");
             techniciansList.Columns.Add("Име");
@@ -164,6 +166,16 @@ namespace Fiscal_Software.Forms
                     LoadPanelWithData(tech, false);
                 }
             }
+        }
+
+        private void technicianEGNBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void technicianTelephoneBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

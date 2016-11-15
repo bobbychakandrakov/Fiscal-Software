@@ -100,6 +100,11 @@
     <Compile Include="sysdiagram.cs" />
     <Compile Include="Technician.cs" />
     <Compile Include="Controlles\TechnicianCtrl.cs" />
+    <Compile Include="_Fiscal_SoftwareDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Fiscal_SoftwareDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +139,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="_Fiscal_SoftwareDataSet.xsc">
+      <DependentUpon>_Fiscal_SoftwareDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_Fiscal_SoftwareDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_Fiscal_SoftwareDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_Fiscal_SoftwareDataSet.xss">
+      <DependentUpon>_Fiscal_SoftwareDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -191,6 +191,7 @@
             this.companyTelephoneBox.Name = "companyTelephoneBox";
             this.companyTelephoneBox.Size = new System.Drawing.Size(144, 20);
             this.companyTelephoneBox.TabIndex = 20;
+            this.companyTelephoneBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.companyTelephoneBox_KeyPress);
             // 
             // label11
             // 
@@ -251,6 +252,7 @@
             this.companyCertificateNBox.Name = "companyCertificateNBox";
             this.companyCertificateNBox.Size = new System.Drawing.Size(140, 20);
             this.companyCertificateNBox.TabIndex = 13;
+            this.companyCertificateNBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.companyCertificateNBox_KeyPress);
             // 
             // label7
             // 
@@ -267,6 +269,7 @@
             this.companyFDNumberBox.Name = "companyFDNumberBox";
             this.companyFDNumberBox.Size = new System.Drawing.Size(124, 20);
             this.companyFDNumberBox.TabIndex = 11;
+            this.companyFDNumberBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.companyFDNumberBox_KeyPress);
             // 
             // label6
             // 
@@ -315,6 +318,7 @@
             this.companyBulstatBox.Name = "companyBulstatBox";
             this.companyBulstatBox.Size = new System.Drawing.Size(166, 20);
             this.companyBulstatBox.TabIndex = 5;
+            this.companyBulstatBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.companyBulstatBox_KeyPress);
             // 
             // label3
             // 
@@ -332,6 +336,7 @@
             this.companyDanNumberBox.Name = "companyDanNumberBox";
             this.companyDanNumberBox.Size = new System.Drawing.Size(124, 20);
             this.companyDanNumberBox.TabIndex = 3;
+            this.companyDanNumberBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.companyDanNumberBox_KeyPress);
             // 
             // label2
             // 

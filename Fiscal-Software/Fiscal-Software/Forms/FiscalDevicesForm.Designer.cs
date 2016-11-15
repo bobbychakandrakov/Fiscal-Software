@@ -208,6 +208,7 @@
             this.fiscalDeviceManufacturerBulstatBox.Name = "fiscalDeviceManufacturerBulstatBox";
             this.fiscalDeviceManufacturerBulstatBox.Size = new System.Drawing.Size(199, 20);
             this.fiscalDeviceManufacturerBulstatBox.TabIndex = 15;
+            this.fiscalDeviceManufacturerBulstatBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fiscalDeviceManufacturerBulstatBox_KeyPress);
             // 
             // label8
             // 
@@ -225,6 +226,7 @@
             this.fiscalDeviceWarrantyBox.Size = new System.Drawing.Size(84, 20);
             this.fiscalDeviceWarrantyBox.TabIndex = 13;
             this.fiscalDeviceWarrantyBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.fiscalDeviceWarrantyBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fiscalDeviceWarrantyBox_KeyPress);
             // 
             // label7
             // 
@@ -275,6 +277,7 @@
             this.fiscalDeviceCerificateN.Name = "fiscalDeviceCerificateN";
             this.fiscalDeviceCerificateN.Size = new System.Drawing.Size(107, 20);
             this.fiscalDeviceCerificateN.TabIndex = 7;
+            this.fiscalDeviceCerificateN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fiscalDeviceCerificateN_KeyPress);
             // 
             // label4
             // 
