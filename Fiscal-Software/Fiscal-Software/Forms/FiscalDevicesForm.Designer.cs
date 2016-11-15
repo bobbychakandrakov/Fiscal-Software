@@ -138,6 +138,7 @@
             this.fiscalDevicesList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fiscalDevicesList.FullRowSelect = true;
             this.fiscalDevicesList.Location = new System.Drawing.Point(0, 0);
+            this.fiscalDevicesList.MultiSelect = false;
             this.fiscalDevicesList.Name = "fiscalDevicesList";
             this.fiscalDevicesList.Size = new System.Drawing.Size(236, 295);
             this.fiscalDevicesList.TabIndex = 0;

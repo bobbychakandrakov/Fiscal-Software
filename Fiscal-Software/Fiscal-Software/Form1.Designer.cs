@@ -33,13 +33,16 @@
             this.addCompanyMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.techniciansToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fiscalDevicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.експортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitApp = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.clientsListView = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -89,6 +92,13 @@
             this.fiscalDevicesToolStripMenuItem.Text = "Фискални Устройства";
             this.fiscalDevicesToolStripMenuItem.Click += new System.EventHandler(this.fiscalDevicesToolStripMenuItem_Click);
             // 
+            // clientsToolStripMenuItem
+            // 
+            this.clientsToolStripMenuItem.Name = "clientsToolStripMenuItem";
+            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.clientsToolStripMenuItem.Text = "Картон Клиенти";
+            this.clientsToolStripMenuItem.Click += new System.EventHandler(this.clientsToolStripMenuItem_Click);
+            // 
             // справкиToolStripMenuItem
             // 
             this.справкиToolStripMenuItem.Name = "справкиToolStripMenuItem";
@@ -120,26 +130,49 @@
             this.exitApp.Text = "Изход";
             this.exitApp.Click += new System.EventHandler(this.exitApp_Click);
             // 
-            // clientsToolStripMenuItem
+            // tableLayoutPanel1
             // 
-            this.clientsToolStripMenuItem.Name = "clientsToolStripMenuItem";
-            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.clientsToolStripMenuItem.Text = "Картон Клиенти";
-            this.clientsToolStripMenuItem.Click += new System.EventHandler(this.clientsToolStripMenuItem_Click);
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.clientsListView, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.695652F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.30434F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(853, 368);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // clientsListView
+            // 
+            this.clientsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.clientsListView.FullRowSelect = true;
+            this.clientsListView.Location = new System.Drawing.Point(3, 35);
+            this.clientsListView.MultiSelect = false;
+            this.clientsListView.Name = "clientsListView";
+            this.clientsListView.Size = new System.Drawing.Size(420, 330);
+            this.clientsListView.TabIndex = 0;
+            this.clientsListView.UseCompatibleStateImageBehavior = false;
+            this.clientsListView.View = System.Windows.Forms.View.Details;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(853, 392);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fiscal-Software";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,6 +191,8 @@
         private System.Windows.Forms.ToolStripMenuItem techniciansToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fiscalDevicesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientsToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ListView clientsListView;
     }
 }
 

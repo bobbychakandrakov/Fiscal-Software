@@ -44,7 +44,7 @@ namespace Fiscal_Software.Controllers
                 }
             }
         }
-        public static void GetTechnicianById(int id)
+        public static Technician GetTechnicianById(int id)
         {
             using (var ctx = new FiscalSoftware())
             {
@@ -52,18 +52,7 @@ namespace Fiscal_Software.Controllers
                     .FirstOrDefault();
                 var company = ctx.Companies.Where(c => c.ID == technician.CompanyID)
                     .FirstOrDefault();
-
-                Console.WriteLine(
-                    technician.Name + " " +
-                    technician.Telephone + " " +
-                    technician.EGN + " " +
-                    company.ID + " " +
-                    company.Name + " " +
-                    company.Town + " " +
-                    company.Bulstat + " " +
-                    company.Address + " " +
-                    company.Mol
-                   );
+                return technician;
             }
         }
         public static void DeleteTechnicianById(int id)

@@ -49,6 +49,7 @@ namespace Fiscal_Software.Forms
                 client.MolTown = clientMolTownBox.Text;
                 client.MolTelephone = clientMolTelephoneBox.Text;
                 ClientCtrl.AddClient(client);
+                this.Close();
             }
             else
             {

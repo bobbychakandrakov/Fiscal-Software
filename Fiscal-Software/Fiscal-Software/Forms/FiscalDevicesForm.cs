@@ -206,7 +206,7 @@ namespace Fiscal_Software.Forms
                 var fiscalDevice = FiscalDeviceCtrl.GetFiscalDevice(selectedFiscalDeviceID);
                 if (fiscalDevice != null)
                 {
-                    LoadPanelWithData(fiscalDevice, false);
+                    LoadPanelWithData(fiscalDevice, true);
                 }
             }
         }

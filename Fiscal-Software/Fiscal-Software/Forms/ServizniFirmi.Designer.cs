@@ -373,6 +373,7 @@
             this.companyListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.companyListView.FullRowSelect = true;
             this.companyListView.Location = new System.Drawing.Point(0, 0);
+            this.companyListView.MultiSelect = false;
             this.companyListView.Name = "companyListView";
             this.companyListView.Size = new System.Drawing.Size(287, 471);
             this.companyListView.TabIndex = 0;
