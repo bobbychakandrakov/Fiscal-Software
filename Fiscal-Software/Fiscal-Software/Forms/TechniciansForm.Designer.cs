@@ -41,6 +41,9 @@
             this.saveTechnicianBtn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.technicianCompanyBox = new System.Windows.Forms.ComboBox();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fiscalSoftwareDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._Fiscal_SoftwareDataSet = new Fiscal_Software._Fiscal_SoftwareDataSet();
             this.technicianTelephoneBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.technicianEGNBox = new System.Windows.Forms.TextBox();
@@ -48,18 +51,15 @@
             this.technicianNameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this._Fiscal_SoftwareDataSet = new Fiscal_Software._Fiscal_SoftwareDataSet();
-            this.fiscalSoftwareDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.companyTableAdapter = new Fiscal_Software._Fiscal_SoftwareDataSetTableAdapters.CompanyTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._Fiscal_SoftwareDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fiscalSoftwareDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fiscalSoftwareDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._Fiscal_SoftwareDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -196,6 +196,8 @@
             // 
             // technicianCompanyBox
             // 
+            this.technicianCompanyBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.technicianCompanyBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.technicianCompanyBox.DataSource = this.companyBindingSource;
             this.technicianCompanyBox.DisplayMember = "Name";
             this.technicianCompanyBox.FormattingEnabled = true;
@@ -204,6 +206,21 @@
             this.technicianCompanyBox.Size = new System.Drawing.Size(244, 21);
             this.technicianCompanyBox.TabIndex = 7;
             this.technicianCompanyBox.ValueMember = "ID";
+            // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataMember = "Company";
+            this.companyBindingSource.DataSource = this.fiscalSoftwareDataSetBindingSource;
+            // 
+            // fiscalSoftwareDataSetBindingSource
+            // 
+            this.fiscalSoftwareDataSetBindingSource.DataSource = this._Fiscal_SoftwareDataSet;
+            this.fiscalSoftwareDataSetBindingSource.Position = 0;
+            // 
+            // _Fiscal_SoftwareDataSet
+            // 
+            this._Fiscal_SoftwareDataSet.DataSetName = "_Fiscal_SoftwareDataSet";
+            this._Fiscal_SoftwareDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // technicianTelephoneBox
             // 
@@ -266,21 +283,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Фирма*";
             // 
-            // _Fiscal_SoftwareDataSet
-            // 
-            this._Fiscal_SoftwareDataSet.DataSetName = "_Fiscal_SoftwareDataSet";
-            this._Fiscal_SoftwareDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // fiscalSoftwareDataSetBindingSource
-            // 
-            this.fiscalSoftwareDataSetBindingSource.DataSource = this._Fiscal_SoftwareDataSet;
-            this.fiscalSoftwareDataSetBindingSource.Position = 0;
-            // 
-            // companyBindingSource
-            // 
-            this.companyBindingSource.DataMember = "Company";
-            this.companyBindingSource.DataSource = this.fiscalSoftwareDataSetBindingSource;
-            // 
             // companyTableAdapter
             // 
             this.companyTableAdapter.ClearBeforeFill = true;
@@ -304,9 +306,9 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._Fiscal_SoftwareDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fiscalSoftwareDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fiscalSoftwareDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._Fiscal_SoftwareDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

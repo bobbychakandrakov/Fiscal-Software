@@ -16,6 +16,7 @@ namespace Fiscal_Software.Forms
         ListViewItem lvi;
         // Add -> true Edit -> false
         bool addFiscalDiviceFlag = true;
+        HashSet<string> hash = new HashSet<string>();
         int selectedFiscalDeviceID;
 
         public FiscalDevicesForm()
@@ -36,17 +37,28 @@ namespace Fiscal_Software.Forms
             var fiscalDevices = FiscalDeviceCtrl.GetAllFiscalDevices();
             for (int i = 0; i < fiscalDevices.Length; i++)
             {
+                hash.Add(fiscalDevices[i].Type);
                 lvi = new ListViewItem(fiscalDevices[i].Type);
                 lvi.Tag = fiscalDevices[i].ID;
                 lvi.SubItems.Add(fiscalDevices[i].Model);
                 fiscalDevicesList.Items.Add(lvi);
             }
+            FiscalTypeLoad();
             fiscalDevicesList.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.None);
             fiscalDevicesList.Columns[0].Width = 150;
             fiscalDevicesList.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
             fiscalDevicesList.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.None);
             fiscalDevicesList.Columns[1].Width = 150;
             fiscalDevicesList.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
+        private void FiscalTypeLoad()
+        {
+            fiscalDeviceTypeBox.Items.Clear();
+            foreach (var type in hash)
+            {
+                fiscalDeviceTypeBox.Items.Add(type);
+            }
         }
 
         private void ToggleControls(bool isEnabled)
@@ -117,6 +129,8 @@ namespace Fiscal_Software.Forms
                     lvi.Tag = fiscalDevice.ID;
                     lvi.SubItems.Add(fiscalDevice.Model);
                     fiscalDevicesList.Items.Add(lvi);
+                    hash.Add(fiscalDevice.Type);
+                    FiscalTypeLoad();
                 }
                 else
                 {
@@ -128,6 +142,8 @@ namespace Fiscal_Software.Forms
                     editFiscalDeviceBtn.Enabled = true;
                     deleteFiscalDeviceBtn.Enabled = true;
                     fiscalDevicesList.Enabled = true;
+                    hash.Add(fiscalDevice.Type);
+                    FiscalTypeLoad();
                 }
                 ResetControlsValue();
 

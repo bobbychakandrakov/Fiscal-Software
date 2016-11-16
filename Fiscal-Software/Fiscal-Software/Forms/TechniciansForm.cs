@@ -24,6 +24,7 @@ namespace Fiscal_Software.Forms
 
         private void TechniciansForm_Load(object sender, EventArgs e)
         {
+            technicianCompanyBox.DropDownStyle = ComboBoxStyle.DropDownList;
             // TODO: This line of code loads data into the '_Fiscal_SoftwareDataSet.Company' table. You can move, or remove it, as needed.
             this.companyTableAdapter.Fill(this._Fiscal_SoftwareDataSet.Company);
             this.ToggleControls(false,true);
@@ -81,7 +82,7 @@ namespace Fiscal_Software.Forms
             {
                 Technician tech = new Technician();
                 // Impliment tag
-                tech.CompanyID = 12;
+                tech.CompanyID = int.Parse(technicianCompanyBox.SelectedValue.ToString());
                 tech.Name = technicianNameBox.Text;
                 tech.Telephone = technicianTelephoneBox.Text;
                 tech.EGN = technicianEGNBox.Text;
