@@ -30,6 +30,7 @@ namespace Fiscal_Software.Forms
             this.ToggleControls(false,true);
             techniciansList.Columns.Add("Фирма");
             techniciansList.Columns.Add("Име");
+            /*
             var technicians = TechnicianCtrl.GetAllTechnicians();
            
             for (int i = 0; i < technicians.Length; i++)
@@ -46,6 +47,14 @@ namespace Fiscal_Software.Forms
             techniciansList.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.None);
             techniciansList.Columns[1].Width = 150;
             techniciansList.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+            */
+            techniciansList.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.None);
+            techniciansList.Columns[0].Width = 150;
+            techniciansList.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+            techniciansList.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.None);
+            techniciansList.Columns[1].Width = 150;
+            techniciansList.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+            LoadTechnicians();
         }
 
         private void ToggleControls(bool areEnabled, bool list)
@@ -103,7 +112,7 @@ namespace Fiscal_Software.Forms
                     editTechnicianBtn.Enabled = true;
                     deleteTechnicianBtn.Enabled = true;
                 }
-                
+                LoadTechnicians();
                 ResetControls();
             }
             else
@@ -170,6 +179,18 @@ namespace Fiscal_Software.Forms
             }
         }
 
+        private void LoadTechnicians()
+        {
+            techniciansList.Items.Clear();
+            var technicians = TechnicianCtrl.GetAllTechnicians();
+            for (int i = 0; i < technicians.Length; i++)
+            {
+                lvi = new ListViewItem(CompanyCtrl.GetCompanyById(technicians[i].CompanyID).Name);
+                lvi.Tag = technicians[i].ID;
+                lvi.SubItems.Add(technicians[i].Name);
+                techniciansList.Items.Add(lvi);
+            }
+        }
         private void technicianEGNBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
