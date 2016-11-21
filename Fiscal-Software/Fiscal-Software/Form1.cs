@@ -9,6 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Fiscal_Software.Controllers;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Reflection;
+using Fiscal_Software.Helpers;
+using System.IO;
 //using Fiscal_Software.Forms;
 
 namespace Fiscal_Software
@@ -16,12 +21,12 @@ namespace Fiscal_Software
     
     public partial class Form1 : Form
     {
-
         ListViewItem lvi;
+
         public Form1()
         {
             InitializeComponent();
-            
+            DatabaseSettings.SetupDatabase();
         }
 
         public void AddClient(Client client)
@@ -96,7 +101,17 @@ namespace Fiscal_Software
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
-            RefreshClients();
+            if (DatabaseSettings.IsSet)
+            {
+                RefreshClients();
+            }
+            
+        }
+
+        private void настройкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.Show();
         }
     }
 }

@@ -449,6 +449,7 @@
             this.Name = "ClientsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Картон Клиенти";
+            this.Load += new System.EventHandler(this.ClientsForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

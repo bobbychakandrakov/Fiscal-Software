@@ -79,5 +79,10 @@ namespace Fiscal_Software.Forms
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+        private void ClientsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

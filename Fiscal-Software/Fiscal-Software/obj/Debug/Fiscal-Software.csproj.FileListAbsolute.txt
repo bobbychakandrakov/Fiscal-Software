@@ -24,3 +24,4 @@ C:\Users\pc\Documents\Fiscal-Software2\Fiscal-Software\Fiscal-Software\obj\Debug
 C:\Users\pc\Documents\Fiscal-Software2\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.TechniciansForm.resources
 C:\Users\pc\Documents\Fiscal-Software2\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Properties.Resources.resources
 C:\Users\pc\Documents\Fiscal-Software2\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal-Software.csproj.GenerateResource.Cache
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.SettingsForm.resources

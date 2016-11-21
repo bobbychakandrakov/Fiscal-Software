@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -88,6 +89,12 @@
     <Compile Include="Forms\ServizniFirmi.Designer.cs">
       <DependentUpon>ServizniFirmi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TechniciansForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +102,7 @@
       <DependentUpon>TechniciansForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\BulstatChecker.cs" />
+    <Compile Include="Helpers\DatabaseSettings.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysdiagram.cs" />
@@ -116,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ServizniFirmi.resx">
       <DependentUpon>ServizniFirmi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TechniciansForm.resx">
       <DependentUpon>TechniciansForm.cs</DependentUpon>

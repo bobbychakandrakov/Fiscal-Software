@@ -1,4 +1,5 @@
 ﻿using Fiscal_Software.Controllers;
+using Fiscal_Software.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,7 @@ namespace Fiscal_Software.Forms
         {
             this.ToggleControls(false);
             this.LoadListData();
+            
         }
 
         private void LoadListData()

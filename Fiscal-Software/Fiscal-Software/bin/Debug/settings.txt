@@ -1,0 +1,1 @@
+data source=.;initial catalog=Fiscal-Software;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework
