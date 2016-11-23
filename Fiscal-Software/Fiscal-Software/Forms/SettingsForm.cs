@@ -49,7 +49,14 @@ namespace Fiscal_Software.Forms
 
         private void testConnectionBtn_Click(object sender, EventArgs e)
         {
-
+            if (DatabaseSettings.TestConnection(serverNameBox.Text, catalogNameBox.Text, usernameBox.Text, passwordBox.Text))
+            {
+                MessageBox.Show("Connection is ok");
+            }
+            else
+            {
+                MessageBox.Show("Connection is not ok.Try again");
+            }
         }
 
         private void saveConnectionBtn_Click(object sender, EventArgs e)

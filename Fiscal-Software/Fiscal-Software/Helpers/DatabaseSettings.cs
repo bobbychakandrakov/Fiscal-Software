@@ -95,8 +95,25 @@ namespace Fiscal_Software.Helpers
                 isSet = value;
             }
         }
+        public static bool TestConnection(string server, string catalog, string user, string password)
+        {
 
-        private static bool IsServerConnected(string connectionString)
+            string conn = "data source=" + server + ";";
+            conn += "initial catalog=" + catalog + ";";
+            conn += "integrated Security=true;";
+            conn += "User ID=" + user + ";";
+            conn += "Password=" + password + ";";
+            IsSet = IsServerConnected(conn + lastConnectionString2);
+            if (IsSet)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool IsServerConnected(string connectionString)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
