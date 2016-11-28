@@ -54,11 +54,11 @@ namespace Fiscal_Software.Forms
            
             if (DatabaseSettings.TestConnection(serverNameBox.Text, catalogNameBox.Text, usernameBox.Text, passwordBox.Text))
             {
-                MessageBox.Show("Connection is ok");
+                MessageBox.Show("Връзката е успешна!");
             }
             else
             {
-                MessageBox.Show("Connection is not ok.Try again");
+                MessageBox.Show("Връзката не е успешна.Опитай отново!");
             }
         }
 
