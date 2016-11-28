@@ -12,9 +12,11 @@ namespace Fiscal_Software.Helpers
     public static class DatabaseSettings
     {
         private static bool isSet = false;
-        private static string lastConnectionString = "integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
-        private static string lastConnectionString2 = "MultipleActiveResultSets=True;App=EntityFramework";
+        private static string lastConnectionString = "integrated security=True;MultipleActiveResultSets=True;App=EntityFramework;Connection Timeout=10";
+        private static string lastConnectionString2 = "MultipleActiveResultSets=True;App=EntityFramework;Connection Timeout=10";
         private static string connection;
+        public static string ServerName = string.Empty;
+        public static string DatabaseName=string.Empty;
 
         private static string GetConnectionFromSetting()
         {
@@ -29,21 +31,21 @@ namespace Fiscal_Software.Helpers
             File.WriteAllText("settings.txt", conn + lastConnectionString);
         }
 
-        public static void SetConnectionString(string server,string catalog)
+        public static void SetConnectionString(string server, string catalog)
         {
-           
+
             string conn = "data source=" + server + ";";
             conn += "initial catalog=" + catalog + ";";
             IsSet = IsServerConnected(conn + lastConnectionString);
             if (IsSet)
             {
-                
+
                 SetupDatabase(conn + lastConnectionString);
             }
             File.WriteAllText("settings.txt", conn + lastConnectionString);
         }
 
-        public static void SetConnectionString(string server, string catalog, string user , string password)
+        public static void SetConnectionString(string server, string catalog, string user, string password)
         {
 
             string conn = "data source=" + server + ";";
@@ -85,7 +87,8 @@ namespace Fiscal_Software.Helpers
             }
         }
 
-        public static bool IsSet {
+        public static bool IsSet
+        {
             get
             {
                 return isSet;
@@ -100,9 +103,10 @@ namespace Fiscal_Software.Helpers
 
             string conn = "data source=" + server + ";";
             conn += "initial catalog=" + catalog + ";";
-            conn += "integrated Security=true;";
+            conn += "integrated Security=SSPI;";
             conn += "User ID=" + user + ";";
             conn += "Password=" + password + ";";
+            
             IsSet = IsServerConnected(conn + lastConnectionString2);
             if (IsSet)
             {
@@ -115,18 +119,24 @@ namespace Fiscal_Software.Helpers
         }
         public static bool IsServerConnected(string connectionString)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
+            
+             using (SqlConnection connection = new SqlConnection(connectionString))
+             {
+                 try
+                 {
+
+                     connection.Open();
+                    ServerName = connection.DataSource;
+                    DatabaseName = connection.Database;
                     return true;
-                }
-                catch (SqlException)
-                {
-                    return false;
-                }
-            }
+                 }
+                 catch (SqlException)
+                 {
+                     return false;
+                 }
+             }
+         }
+           
         }
     }
-}
+

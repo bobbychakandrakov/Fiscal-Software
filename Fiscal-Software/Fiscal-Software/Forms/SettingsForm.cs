@@ -40,6 +40,8 @@ namespace Fiscal_Software.Forms
         private void SettingsForm_Load(object sender, EventArgs e)
         {
             CheckAuthentiocation();
+            serverNameBox.Text = DatabaseSettings.ServerName;
+            catalogNameBox.Text = DatabaseSettings.DatabaseName;
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
@@ -49,6 +51,7 @@ namespace Fiscal_Software.Forms
 
         private void testConnectionBtn_Click(object sender, EventArgs e)
         {
+           
             if (DatabaseSettings.TestConnection(serverNameBox.Text, catalogNameBox.Text, usernameBox.Text, passwordBox.Text))
             {
                 MessageBox.Show("Connection is ok");

@@ -1,1 +1,1 @@
-data source=PC-PC\SQLEXPRESS;initial catalog=Fiscal-Software;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework
+data source=PC-PC\SQLEXPRESS;initial catalog=Fiscal-Software;integrated Security=true;User ID=Dincho;Password=123456;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework;Connection Timeout=10
