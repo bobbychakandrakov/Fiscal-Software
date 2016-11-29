@@ -145,6 +145,7 @@
             this.techniciansList.UseCompatibleStateImageBehavior = false;
             this.techniciansList.View = System.Windows.Forms.View.Details;
             this.techniciansList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.techniciansList_ItemSelectionChanged);
+            this.techniciansList.SelectedIndexChanged += new System.EventHandler(this.techniciansList_SelectedIndexChanged);
             // 
             // panel3
             // 
@@ -206,6 +207,7 @@
             this.technicianCompanyBox.Size = new System.Drawing.Size(244, 21);
             this.technicianCompanyBox.TabIndex = 7;
             this.technicianCompanyBox.ValueMember = "ID";
+            this.technicianCompanyBox.SelectedIndexChanged += new System.EventHandler(this.technicianCompanyBox_SelectedIndexChanged);
             // 
             // companyBindingSource
             // 

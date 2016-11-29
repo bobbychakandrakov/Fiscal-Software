@@ -294,8 +294,9 @@
             this.fiscalDeviceManufacturerBox.FormattingEnabled = true;
             this.fiscalDeviceManufacturerBox.Location = new System.Drawing.Point(121, 115);
             this.fiscalDeviceManufacturerBox.Name = "fiscalDeviceManufacturerBox";
-            this.fiscalDeviceManufacturerBox.Size = new System.Drawing.Size(121, 21);
+            this.fiscalDeviceManufacturerBox.Size = new System.Drawing.Size(273, 21);
             this.fiscalDeviceManufacturerBox.TabIndex = 5;
+            this.fiscalDeviceManufacturerBox.SelectedIndexChanged += new System.EventHandler(this.fiscalDeviceManufacturerBox_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -330,6 +331,7 @@
             this.fiscalDeviceTypeBox.Name = "fiscalDeviceTypeBox";
             this.fiscalDeviceTypeBox.Size = new System.Drawing.Size(121, 21);
             this.fiscalDeviceTypeBox.TabIndex = 1;
+            this.fiscalDeviceTypeBox.SelectedIndexChanged += new System.EventHandler(this.fiscalDeviceTypeBox_SelectedIndexChanged);
             // 
             // label1
             // 

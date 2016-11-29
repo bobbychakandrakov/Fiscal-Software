@@ -336,6 +336,7 @@
             this.companyDanNumberBox.Name = "companyDanNumberBox";
             this.companyDanNumberBox.Size = new System.Drawing.Size(124, 20);
             this.companyDanNumberBox.TabIndex = 3;
+            this.companyDanNumberBox.TextChanged += new System.EventHandler(this.companyDanNumberBox_TextChanged);
             this.companyDanNumberBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.companyDanNumberBox_KeyPress);
             // 
             // label2
@@ -384,6 +385,7 @@
             this.companyListView.TabIndex = 0;
             this.companyListView.UseCompatibleStateImageBehavior = false;
             this.companyListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.companyListView_ItemSelectionChanged);
+            this.companyListView.SelectedIndexChanged += new System.EventHandler(this.companyListView_SelectedIndexChanged);
             // 
             // panel3
             // 

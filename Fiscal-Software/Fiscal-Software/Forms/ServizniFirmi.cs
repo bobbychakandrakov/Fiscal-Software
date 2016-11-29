@@ -249,7 +249,7 @@ namespace Fiscal_Software.Forms
 
         private void companyDanNumberBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            //e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
         private void companyBulstatBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -270,6 +270,16 @@ namespace Fiscal_Software.Forms
         private void companyTelephoneBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void companyDanNumberBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void companyListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

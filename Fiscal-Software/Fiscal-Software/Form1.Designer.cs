@@ -41,6 +41,8 @@
             this.exitApp = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.clientsListView = new System.Windows.Forms.ListView();
+            this.справкаЕИКToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаДДСNoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +55,9 @@
             this.експортToolStripMenuItem,
             this.настройкиToolStripMenuItem,
             this.helpToolStripMenuItem,
-            this.exitApp});
+            this.exitApp,
+            this.справкаЕИКToolStripMenuItem,
+            this.справкаДДСNoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(853, 24);
@@ -158,6 +162,20 @@
             this.clientsListView.UseCompatibleStateImageBehavior = false;
             this.clientsListView.View = System.Windows.Forms.View.Details;
             // 
+            // справкаЕИКToolStripMenuItem
+            // 
+            this.справкаЕИКToolStripMenuItem.Name = "справкаЕИКToolStripMenuItem";
+            this.справкаЕИКToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.справкаЕИКToolStripMenuItem.Text = "Справка ЕИК";
+            this.справкаЕИКToolStripMenuItem.Click += new System.EventHandler(this.справкаЕИКToolStripMenuItem_Click);
+            // 
+            // справкаДДСNoToolStripMenuItem
+            // 
+            this.справкаДДСNoToolStripMenuItem.Name = "справкаДДСNoToolStripMenuItem";
+            this.справкаДДСNoToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
+            this.справкаДДСNoToolStripMenuItem.Text = "справка ДДС No";
+            this.справкаДДСNoToolStripMenuItem.Click += new System.EventHandler(this.справкаДДСNoToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,6 +212,8 @@
         private System.Windows.Forms.ToolStripMenuItem clientsToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ListView clientsListView;
+        private System.Windows.Forms.ToolStripMenuItem справкаЕИКToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem справкаДДСNoToolStripMenuItem;
     }
 }
 

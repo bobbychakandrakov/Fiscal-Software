@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Fiscal_Software.Helpers;
+
+
 
 namespace Fiscal_Software.Forms
 {
@@ -199,6 +202,17 @@ namespace Fiscal_Software.Forms
         private void technicianTelephoneBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void technicianCompanyBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+           
+        }
+
+        private void techniciansList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

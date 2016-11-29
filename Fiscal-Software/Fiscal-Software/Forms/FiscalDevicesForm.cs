@@ -40,6 +40,7 @@ namespace Fiscal_Software.Forms
             for (int i = 0; i < fiscalDevices.Length; i++)
             {
                 hash.Add(fiscalDevices[i].Type);
+              
                 lvi = new ListViewItem(fiscalDevices[i].Type);
                 lvi.Tag = fiscalDevices[i].ID;
                 lvi.SubItems.Add(fiscalDevices[i].Model);
@@ -242,6 +243,16 @@ namespace Fiscal_Software.Forms
         private void fiscalDeviceManufacturerBulstatBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void fiscalDeviceManufacturerBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void fiscalDeviceTypeBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

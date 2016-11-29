@@ -85,6 +85,7 @@ namespace Fiscal_Software
         {
             TechniciansForm techForm = new TechniciansForm();
             techForm.Show();
+           
         }
 
         private void fiscalDevicesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -112,6 +113,16 @@ namespace Fiscal_Software
         {
             SettingsForm settingsForm = new SettingsForm();
             settingsForm.Show();
+        }
+
+        private void справкаЕИКToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://public.brra.bg/CheckUps/Verifications/VerificationPersonOrg.ra");
+        }
+
+        private void справкаДДСNoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://inetdec.nra.bg/pls/pub/home.html#/selectService:6,8,rep.Vatquery.home");
         }
     }
 }
