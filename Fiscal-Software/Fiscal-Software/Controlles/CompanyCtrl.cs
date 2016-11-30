@@ -84,9 +84,23 @@ namespace Fiscal_Software.Controllers
 
                 if (company != null)
                 {
+                    var tech = ctx.Technicians.Where(t => t.CompanyID == id).ToArray();
+
+
+                    if (tech != null)
+                    {
+                        for (int i = 0; i < tech.Length; i++)
+                        {
+
+                            ctx.Technicians.Remove(tech[i]);
+
+                        }
+                    }
+
                     ctx.Companies.Remove(company);
                     ctx.SaveChanges();
-                    Console.WriteLine("company was deleted!");
+
+
                 }
             }
 

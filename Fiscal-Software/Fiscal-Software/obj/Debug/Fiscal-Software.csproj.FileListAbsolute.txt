@@ -35,3 +35,4 @@ C:\Users\pc\Documents\Fiscal-Software2\Fiscal-Software\Fiscal-Software\bin\Debug
 C:\Users\pc\Documents\Fiscal-Software2\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal-Software.exe
 C:\Users\pc\Documents\Fiscal-Software2\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal-Software.pdb
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.ContractSettings.resources
+C:\Users\pc\Documents\Fiscal-Software2\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.ContractSettings.resources
