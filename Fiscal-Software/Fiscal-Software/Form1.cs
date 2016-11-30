@@ -111,8 +111,7 @@ namespace Fiscal_Software
 
         private void настройкиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SettingsForm settingsForm = new SettingsForm();
-            settingsForm.Show();
+            
         }
 
         private void справкаЕИКToolStripMenuItem_Click(object sender, EventArgs e)
@@ -123,6 +122,12 @@ namespace Fiscal_Software
         private void справкаДДСNoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://inetdec.nra.bg/pls/pub/home.html#/selectService:6,8,rep.Vatquery.home");
+        }
+
+        private void databaseSettings_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.Show();
         }
     }
 }

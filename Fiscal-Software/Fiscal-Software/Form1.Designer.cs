@@ -39,10 +39,14 @@
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitApp = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.clientsListView = new System.Windows.Forms.ListView();
             this.справкаЕИКToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаДДСNoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.clientsListView = new System.Windows.Forms.ListView();
+            this.numberDocument = new System.Windows.Forms.ToolStripMenuItem();
+            this.contractType = new System.Windows.Forms.ToolStripMenuItem();
+            this.otherSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -117,6 +121,11 @@
             // 
             // настройкиToolStripMenuItem
             // 
+            this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.numberDocument,
+            this.contractType,
+            this.otherSettings,
+            this.databaseSettings});
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
             this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.настройкиToolStripMenuItem.Text = "Настройки";
@@ -134,6 +143,20 @@
             this.exitApp.Size = new System.Drawing.Size(51, 20);
             this.exitApp.Text = "Изход";
             this.exitApp.Click += new System.EventHandler(this.exitApp_Click);
+            // 
+            // справкаЕИКToolStripMenuItem
+            // 
+            this.справкаЕИКToolStripMenuItem.Name = "справкаЕИКToolStripMenuItem";
+            this.справкаЕИКToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.справкаЕИКToolStripMenuItem.Text = "Справка ЕИК";
+            this.справкаЕИКToolStripMenuItem.Click += new System.EventHandler(this.справкаЕИКToolStripMenuItem_Click);
+            // 
+            // справкаДДСNoToolStripMenuItem
+            // 
+            this.справкаДДСNoToolStripMenuItem.Name = "справкаДДСNoToolStripMenuItem";
+            this.справкаДДСNoToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
+            this.справкаДДСNoToolStripMenuItem.Text = "справка ДДС No";
+            this.справкаДДСNoToolStripMenuItem.Click += new System.EventHandler(this.справкаДДСNoToolStripMenuItem_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -162,19 +185,30 @@
             this.clientsListView.UseCompatibleStateImageBehavior = false;
             this.clientsListView.View = System.Windows.Forms.View.Details;
             // 
-            // справкаЕИКToolStripMenuItem
+            // numberDocument
             // 
-            this.справкаЕИКToolStripMenuItem.Name = "справкаЕИКToolStripMenuItem";
-            this.справкаЕИКToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
-            this.справкаЕИКToolStripMenuItem.Text = "Справка ЕИК";
-            this.справкаЕИКToolStripMenuItem.Click += new System.EventHandler(this.справкаЕИКToolStripMenuItem_Click);
+            this.numberDocument.Name = "numberDocument";
+            this.numberDocument.Size = new System.Drawing.Size(180, 22);
+            this.numberDocument.Text = "Номера документи";
             // 
-            // справкаДДСNoToolStripMenuItem
+            // contractType
             // 
-            this.справкаДДСNoToolStripMenuItem.Name = "справкаДДСNoToolStripMenuItem";
-            this.справкаДДСNoToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
-            this.справкаДДСNoToolStripMenuItem.Text = "справка ДДС No";
-            this.справкаДДСNoToolStripMenuItem.Click += new System.EventHandler(this.справкаДДСNoToolStripMenuItem_Click);
+            this.contractType.Name = "contractType";
+            this.contractType.Size = new System.Drawing.Size(180, 22);
+            this.contractType.Text = "Видове договори";
+            // 
+            // otherSettings
+            // 
+            this.otherSettings.Name = "otherSettings";
+            this.otherSettings.Size = new System.Drawing.Size(180, 22);
+            this.otherSettings.Text = "Други";
+            // 
+            // databaseSettings
+            // 
+            this.databaseSettings.Name = "databaseSettings";
+            this.databaseSettings.Size = new System.Drawing.Size(180, 22);
+            this.databaseSettings.Text = "База данни";
+            this.databaseSettings.Click += new System.EventHandler(this.databaseSettings_Click);
             // 
             // Form1
             // 
@@ -214,6 +248,10 @@
         private System.Windows.Forms.ListView clientsListView;
         private System.Windows.Forms.ToolStripMenuItem справкаЕИКToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаДДСNoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem numberDocument;
+        private System.Windows.Forms.ToolStripMenuItem contractType;
+        private System.Windows.Forms.ToolStripMenuItem otherSettings;
+        private System.Windows.Forms.ToolStripMenuItem databaseSettings;
     }
 }
 
