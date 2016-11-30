@@ -65,6 +65,15 @@ namespace Fiscal_Software.Controllers
                 return company;
             }
         }
+        public static int GetCompanyByName(string name)
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var company = ctx.Companies.Where(b => b.Name == name)
+                    .FirstOrDefault();
+                return company.ID;
+            }
+        }
 
         public static void DeleteCompanyById(int id)
         {

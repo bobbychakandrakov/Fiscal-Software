@@ -416,7 +416,7 @@
             this.editCompanyBtn.Name = "editCompanyBtn";
             this.editCompanyBtn.Size = new System.Drawing.Size(108, 40);
             this.editCompanyBtn.TabIndex = 1;
-            this.editCompanyBtn.Text = "Rедактиране";
+            this.editCompanyBtn.Text = "Редактиране";
             this.editCompanyBtn.UseVisualStyleBackColor = true;
             this.editCompanyBtn.Click += new System.EventHandler(this.editCompanyBtn_Click);
             // 

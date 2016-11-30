@@ -29,7 +29,7 @@ namespace Fiscal_Software.Forms
         {
             technicianCompanyBox.DropDownStyle = ComboBoxStyle.DropDownList;
             // TODO: This line of code loads data into the '_Fiscal_SoftwareDataSet.Company' table. You can move, or remove it, as needed.
-            this.companyTableAdapter.Fill(this._Fiscal_SoftwareDataSet.Company);
+            //this.companyTableAdapter.Fill(this._Fiscal_SoftwareDataSet.Company);
             this.ToggleControls(false,true);
             techniciansList.Columns.Add("Фирма");
             techniciansList.Columns.Add("Име");
@@ -94,7 +94,8 @@ namespace Fiscal_Software.Forms
             {
                 Technician tech = new Technician();
                 // Impliment tag
-                tech.CompanyID = int.Parse(technicianCompanyBox.SelectedValue.ToString());
+                
+                tech.CompanyID = CompanyCtrl.GetCompanyByName(technicianCompanyBox.SelectedValue.ToString());
                 tech.Name = technicianNameBox.Text;
                 tech.Telephone = technicianTelephoneBox.Text;
                 tech.EGN = technicianEGNBox.Text;
@@ -186,13 +187,21 @@ namespace Fiscal_Software.Forms
         {
             techniciansList.Items.Clear();
             var technicians = TechnicianCtrl.GetAllTechnicians();
+            var companies = CompanyCtrl.GetAllCompanies();
+            var companyHash = new HashSet<string>();
             for (int i = 0; i < technicians.Length; i++)
             {
                 lvi = new ListViewItem(CompanyCtrl.GetCompanyById(technicians[i].CompanyID).Name);
                 lvi.Tag = technicians[i].ID;
                 lvi.SubItems.Add(technicians[i].Name);
                 techniciansList.Items.Add(lvi);
+                
             }
+            for (int j = 0; j < companies.Length; j++)
+            {
+                companyHash.Add(companies[j].Name);
+            }
+            technicianCompanyBox.DataSource = companyHash.ToList();
         }
         private void technicianEGNBox_KeyPress(object sender, KeyPressEventArgs e)
         {
