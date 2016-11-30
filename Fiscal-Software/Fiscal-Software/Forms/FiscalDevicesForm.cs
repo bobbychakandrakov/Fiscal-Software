@@ -18,6 +18,7 @@ namespace Fiscal_Software.Forms
         // Add -> true Edit -> false
         bool addFiscalDiviceFlag = true;
         HashSet<string> hash = new HashSet<string>();
+        HashSet<string> man = new HashSet<string>();
         int selectedFiscalDeviceID;
 
         public FiscalDevicesForm()
@@ -40,13 +41,18 @@ namespace Fiscal_Software.Forms
             for (int i = 0; i < fiscalDevices.Length; i++)
             {
                 hash.Add(fiscalDevices[i].Type);
-              
+                if (fiscalDevices[i].Manufacturer != "")
+                {
+                    man.Add(fiscalDevices[i].Manufacturer);
+                }
+                
                 lvi = new ListViewItem(fiscalDevices[i].Type);
                 lvi.Tag = fiscalDevices[i].ID;
                 lvi.SubItems.Add(fiscalDevices[i].Model);
                 fiscalDevicesList.Items.Add(lvi);
             }
             FiscalTypeLoad();
+            FiscalManufactureLoad();
             fiscalDevicesList.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.None);
             fiscalDevicesList.Columns[0].Width = 150;
             fiscalDevicesList.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
@@ -62,6 +68,11 @@ namespace Fiscal_Software.Forms
             {
                 fiscalDeviceTypeBox.Items.Add(type);
             }
+        }
+
+        private void FiscalManufactureLoad()
+        {
+            fiscalDeviceManufacturerBox.DataSource = man.ToList();
         }
 
         private void ToggleControls(bool isEnabled)
@@ -134,6 +145,8 @@ namespace Fiscal_Software.Forms
                     fiscalDevicesList.Items.Add(lvi);
                     hash.Add(fiscalDevice.Type);
                     FiscalTypeLoad();
+                    man.Add(fiscalDevice.Manufacturer);
+                    FiscalManufactureLoad();
                 }
                 else
                 {
