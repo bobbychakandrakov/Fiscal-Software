@@ -129,5 +129,11 @@ namespace Fiscal_Software
             SettingsForm settingsForm = new SettingsForm();
             settingsForm.Show();
         }
+
+        private void numberDocument_Click(object sender, EventArgs e)
+        {
+            ContractSettings cs = new ContractSettings();
+            cs.Show();
+        }
     }
 }
