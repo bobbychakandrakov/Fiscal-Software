@@ -106,6 +106,13 @@ namespace Fiscal_Software
             {
                 RefreshClients();
             }
+            using (var ctx=new FiscalSoftware())
+            {
+                var contract = new Contract();
+                contract.Name = "bachka";
+                ctx.Contracts.Add(contract);
+                ctx.SaveChanges();
+            }
             
         }
 

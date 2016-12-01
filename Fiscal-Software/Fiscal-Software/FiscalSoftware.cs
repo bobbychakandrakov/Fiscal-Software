@@ -17,6 +17,8 @@ namespace Fiscal_Software
         public virtual DbSet<FiscalDevice> FiscalDevices { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Technician> Technicians { get; set; }
+        public virtual DbSet<Contract> Contracts { get; set; }
+        public virtual DbSet<Objects> Objects { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -172,6 +174,86 @@ namespace Fiscal_Software
             modelBuilder.Entity<Technician>()
                 .Property(e => e.Telephone)
                 .IsUnicode(false);
+            modelBuilder.Entity<Objects>()
+                .Property(e => e.Type)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Objects>()
+                .Property(e => e.Activity)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Objects>()
+                .Property(e => e.Ekatte)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Objects>()
+                .Property(e => e.Town)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Objects>()
+                .Property(e => e.Address)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Objects>()
+                .Property(e => e.Telephone)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Objects>()
+                .Property(e => e.TDD)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Objects>()
+                .Property(e => e.Mol)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Objects>()
+                .Property(e => e.MolTown)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Objects>()
+                .Property(e => e.MolAddress)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Objects>()
+                .Property(e => e.MolTelephone)
+                .IsUnicode(false);
+            modelBuilder.Entity<Contract>()
+               .Property(e => e.Name)
+               .IsUnicode(false);
+
+            modelBuilder.Entity<Contract>()
+                .Property(e => e.Price)
+                .HasPrecision(19, 4);
+
+            modelBuilder.Entity<Contract>()
+                .Property(e => e.PaymentTo)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Contract>()
+                .Property(e => e.MP3);
+
+            modelBuilder.Entity<Contract>()
+                .Property(e => e.Programming);
+
+            modelBuilder.Entity<Contract>()
+                .Property(e => e.ProgrammingArticul);
+
+            modelBuilder.Entity<Contract>()
+                .Property(e => e.Rabota);
+
+            modelBuilder.Entity<Contract>()
+                .Property(e => e.SpareParts);
+
+            modelBuilder.Entity<Contract>()
+                .Property(e => e.SpareModuls);
+
+            modelBuilder.Entity<Contract>()
+                .Property(e => e.Protect);
+               
+            modelBuilder.Entity<Contract>()
+                .Property(e => e.Duration);
+                
+
         }
     }
 }
