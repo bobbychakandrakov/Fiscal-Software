@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.номенклатуриToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCompanyMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,16 +38,16 @@
             this.справкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.експортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.numberDocument = new System.Windows.Forms.ToolStripMenuItem();
+            this.contractType = new System.Windows.Forms.ToolStripMenuItem();
+            this.otherSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitApp = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаЕИКToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаДДСNoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.clientsListView = new System.Windows.Forms.ListView();
-            this.numberDocument = new System.Windows.Forms.ToolStripMenuItem();
-            this.contractType = new System.Windows.Forms.ToolStripMenuItem();
-            this.otherSettings = new System.Windows.Forms.ToolStripMenuItem();
-            this.databaseSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -131,6 +132,33 @@
             this.настройкиToolStripMenuItem.Text = "Настройки";
             this.настройкиToolStripMenuItem.Click += new System.EventHandler(this.настройкиToolStripMenuItem_Click);
             // 
+            // numberDocument
+            // 
+            this.numberDocument.Name = "numberDocument";
+            this.numberDocument.Size = new System.Drawing.Size(180, 22);
+            this.numberDocument.Text = "Номера документи";
+            this.numberDocument.Click += new System.EventHandler(this.numberDocument_Click);
+            // 
+            // contractType
+            // 
+            this.contractType.Name = "contractType";
+            this.contractType.Size = new System.Drawing.Size(180, 22);
+            this.contractType.Text = "Видове договори";
+            this.contractType.Click += new System.EventHandler(this.contractType_Click);
+            // 
+            // otherSettings
+            // 
+            this.otherSettings.Name = "otherSettings";
+            this.otherSettings.Size = new System.Drawing.Size(180, 22);
+            this.otherSettings.Text = "Други";
+            // 
+            // databaseSettings
+            // 
+            this.databaseSettings.Name = "databaseSettings";
+            this.databaseSettings.Size = new System.Drawing.Size(180, 22);
+            this.databaseSettings.Text = "База данни";
+            this.databaseSettings.Click += new System.EventHandler(this.databaseSettings_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
@@ -185,32 +213,6 @@
             this.clientsListView.UseCompatibleStateImageBehavior = false;
             this.clientsListView.View = System.Windows.Forms.View.Details;
             // 
-            // numberDocument
-            // 
-            this.numberDocument.Name = "numberDocument";
-            this.numberDocument.Size = new System.Drawing.Size(180, 22);
-            this.numberDocument.Text = "Номера документи";
-            this.numberDocument.Click += new System.EventHandler(this.numberDocument_Click);
-            // 
-            // contractType
-            // 
-            this.contractType.Name = "contractType";
-            this.contractType.Size = new System.Drawing.Size(180, 22);
-            this.contractType.Text = "Видове договори";
-            // 
-            // otherSettings
-            // 
-            this.otherSettings.Name = "otherSettings";
-            this.otherSettings.Size = new System.Drawing.Size(180, 22);
-            this.otherSettings.Text = "Други";
-            // 
-            // databaseSettings
-            // 
-            this.databaseSettings.Name = "databaseSettings";
-            this.databaseSettings.Size = new System.Drawing.Size(180, 22);
-            this.databaseSettings.Text = "База данни";
-            this.databaseSettings.Click += new System.EventHandler(this.databaseSettings_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,6 +221,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

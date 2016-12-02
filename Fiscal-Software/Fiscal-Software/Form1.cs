@@ -106,6 +106,7 @@ namespace Fiscal_Software
             {
                 RefreshClients();
             }
+            /*
             using (var ctx=new FiscalSoftware())
             {
                 var contract = new Contract();
@@ -113,6 +114,8 @@ namespace Fiscal_Software
                 ctx.Contracts.Add(contract);
                 ctx.SaveChanges();
             }
+            */
+            
             
         }
 
@@ -141,6 +144,12 @@ namespace Fiscal_Software
         {
             ContractSettings cs = new ContractSettings();
             cs.Show();
+        }
+
+        private void contractType_Click(object sender, EventArgs e)
+        {
+            Contracts contracts = new Contracts();
+            contracts.Show();
         }
     }
 }
