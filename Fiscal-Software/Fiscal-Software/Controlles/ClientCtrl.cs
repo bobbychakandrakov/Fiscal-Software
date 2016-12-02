@@ -75,12 +75,23 @@ namespace Fiscal_Software.Controllers
                 var client = ctx.Clients.Where(b => b.ID == id)
                     .FirstOrDefault();
 
+                var objects = ctx.Objects.Where(t => t.ClientId == id).ToArray();
+
                 if (client != null)
                 {
-                    ctx.Clients.Remove(client);
-                    ctx.SaveChanges();
-                    Console.WriteLine("Client was deleted!");
+                    if (objects != null)
+                    {
+                        for (int i = 0; i < objects.Length; i++)
+                        {
+
+                            ctx.Objects.Remove(objects[i]);
+
+                        }
+                    }
                 }
+
+                ctx.Clients.Remove(client);
+                ctx.SaveChanges();
             }
         }
         public static Client[] GetAllClients()
