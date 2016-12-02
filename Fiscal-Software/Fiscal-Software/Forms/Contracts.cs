@@ -104,8 +104,8 @@ namespace Fiscal_Software.Forms
                     var contract = new Contract();
                     contract.Name = contractNameBox.Text;
                     contract.Duration = int.Parse(contractDurationBox.Value.ToString());
-                    contract.MP3 = double.Parse(contractMP3Box.Text);
-                    contract.Price = decimal.Parse(contractSumBox.Text);
+                    contract.MP3 = contractMP3Box.Text != "" ? double.Parse(contractMP3Box.Text) : 0;
+                    contract.Price = contractSumBox.Text != "" ? decimal.Parse(contractSumBox.Text) : 0;
                     contract.PaymentTo = contractPayToBox.Text;
                     contract.Programming = contractProgrammingBox.Checked;
                     contract.ProgrammingArticul = contractProgrammingArticulBox.Checked;
