@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fiscal_Software.Controlles;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,9 @@ namespace Fiscal_Software.Forms
     {
 
         ListViewItem lvi;
+        // Add -> true Edit -> false
+        bool addContractFlag = true;
+        int selectedContract;
         public Contracts()
         {
             InitializeComponent();
@@ -26,11 +30,17 @@ namespace Fiscal_Software.Forms
 
         private void Contracts_Load(object sender, EventArgs e)
         {
+            this.ToggleControls(false);
             contractsListView.Columns.Add("Име");
             contractsListView.Columns.Add("Срок");
-            lvi = new ListViewItem("Namedwadawdawda");
-            lvi.SubItems.Add("12");
-            contractsListView.Items.Add(lvi);
+            var contracts = ContractCtrl.GetAllContracts();
+            for (int i = 0; i < contracts.Length; i++)
+            {
+                lvi = new ListViewItem(contracts[i].Name);
+                lvi.Tag = contracts[i].ID;
+                lvi.SubItems.Add(contracts[i].Duration.ToString());
+                contractsListView.Items.Add(lvi);
+            }
 
             // ListView Design
             contractsListView.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.None);
@@ -44,7 +54,117 @@ namespace Fiscal_Software.Forms
 
         private void ToggleControls(bool isEnabled)
         {
+            contractNameBox.Enabled = isEnabled;
+            contractDurationBox.Enabled = isEnabled;
+            contractSumBox.Enabled = isEnabled;
+            contractSumForMonth.Enabled = isEnabled;
+            contractPayToBox.Enabled = isEnabled;
+            contractMP3Box.Enabled = isEnabled;
+            contractProgrammingBox.Enabled = isEnabled;
+            contractProgrammingArticulBox.Enabled = isEnabled;
+            contractWorkBox.Enabled = isEnabled;
+            contractSparePartsBox.Enabled = isEnabled;
+            contractProtectBox.Enabled = isEnabled;
+            contractSpareModulesBox.Enabled = isEnabled;
+            cancelBtn.Enabled = isEnabled;
+            saveContractBtn.Enabled = isEnabled;
+        }
 
+        private void addContractBtn_Click(object sender, EventArgs e)
+        {
+            addContractFlag = true;
+            ToggleControls(true);
+            contractMP3Box.Enabled = false;
+            addContractBtn.Enabled = false;
+            editContractBtn.Enabled = false;
+            deleteContractBtn.Enabled = false;
+            contractsListView.Enabled = false;
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            ToggleControls(false);
+            addContractBtn.Enabled = true;
+            editContractBtn.Enabled = true;
+            deleteContractBtn.Enabled = true;
+            contractsListView.Enabled = true;
+        }
+
+        private void editContractBtn_Click(object sender, EventArgs e)
+        {
+            addContractFlag = false;
+        }
+
+        private void saveContractBtn_Click(object sender, EventArgs e)
+        {
+            if (contractNameBox.Text != "")
+            {
+                if (addContractFlag)
+                {
+                    var contract = new Contract();
+                    contract.Name = contractNameBox.Text;
+                    contract.Duration = int.Parse(contractDurationBox.Value.ToString());
+                    contract.MP3 = double.Parse(contractMP3Box.Text);
+                    contract.Price = decimal.Parse(contractSumBox.Text);
+                    contract.PaymentTo = contractPayToBox.Text;
+                    contract.Programming = contractProgrammingBox.Checked;
+                    contract.ProgrammingArticul = contractProgrammingArticulBox.Checked;
+                    contract.Rabota = contractWorkBox.Checked;
+                    contract.SpareParts = contractSparePartsBox.Checked;
+                    contract.Protect = contractProtectBox.Checked;
+                    contract.SpareModuls = contractSpareModulesBox.Checked;
+                    ContractCtrl.AddContract(contract);
+                }
+                else
+                {
+                    var contract = new Contract();
+                    contract.Name = contractNameBox.Text;
+                    contract.Duration = int.Parse(contractDurationBox.Value.ToString());
+                    contract.MP3 = double.Parse(contractMP3Box.Text);
+                    contract.Price = decimal.Parse(contractSumBox.Text);
+                    contract.PaymentTo = contractPayToBox.Text;
+                    contract.Programming = contractProgrammingBox.Checked;
+                    contract.ProgrammingArticul = contractProgrammingArticulBox.Checked;
+                    contract.Rabota = contractWorkBox.Checked;
+                    contract.SpareParts = contractSparePartsBox.Checked;
+                    contract.Protect = contractProtectBox.Checked;
+                    contract.SpareModuls = contractSpareModulesBox.Checked;
+                    ContractCtrl.UpdateContract(selectedContract,contract);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Моля, въведете име на договора!");
+            }
+            
+            
+        }
+
+        private void contractSumForMonth_CheckedChanged(object sender, EventArgs e)
+        {
+            if (contractSumForMonth.Checked)
+            {
+                contractMP3Box.Enabled = true;
+                contractSumBox.Enabled = false;
+            }
+            else
+            {
+                contractMP3Box.Enabled = false;
+                contractSumBox.Enabled = true;
+            }
+        }
+
+        private void contractSumBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void contractsListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (e.IsSelected)
+            {
+                selectedContract = int.Parse(contractsListView.SelectedItems[0].Tag.ToString());
+            }
         }
     }
 }
