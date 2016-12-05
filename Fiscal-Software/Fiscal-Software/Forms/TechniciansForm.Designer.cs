@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TechniciansForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.deleteTechnicianBtn = new System.Windows.Forms.Button();
@@ -41,8 +42,6 @@
             this.saveTechnicianBtn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.technicianCompanyBox = new System.Windows.Forms.ComboBox();
-            this.fiscalSoftwareDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._Fiscal_SoftwareDataSet = new Fiscal_Software._Fiscal_SoftwareDataSet();
             this.technicianTelephoneBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.technicianEGNBox = new System.Windows.Forms.TextBox();
@@ -50,6 +49,8 @@
             this.technicianNameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.fiscalSoftwareDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._Fiscal_SoftwareDataSet = new Fiscal_Software._Fiscal_SoftwareDataSet();
             this.companyTableAdapter = new Fiscal_Software._Fiscal_SoftwareDataSetTableAdapters.CompanyTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -204,16 +205,6 @@
             this.technicianCompanyBox.TabIndex = 7;
             this.technicianCompanyBox.SelectedIndexChanged += new System.EventHandler(this.technicianCompanyBox_SelectedIndexChanged);
             // 
-            // fiscalSoftwareDataSetBindingSource
-            // 
-            this.fiscalSoftwareDataSetBindingSource.DataSource = this._Fiscal_SoftwareDataSet;
-            this.fiscalSoftwareDataSetBindingSource.Position = 0;
-            // 
-            // _Fiscal_SoftwareDataSet
-            // 
-            this._Fiscal_SoftwareDataSet.DataSetName = "_Fiscal_SoftwareDataSet";
-            this._Fiscal_SoftwareDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // technicianTelephoneBox
             // 
             this.technicianTelephoneBox.Location = new System.Drawing.Point(255, 144);
@@ -275,6 +266,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Фирма*";
             // 
+            // fiscalSoftwareDataSetBindingSource
+            // 
+            this.fiscalSoftwareDataSetBindingSource.DataSource = this._Fiscal_SoftwareDataSet;
+            this.fiscalSoftwareDataSetBindingSource.Position = 0;
+            // 
+            // _Fiscal_SoftwareDataSet
+            // 
+            this._Fiscal_SoftwareDataSet.DataSetName = "_Fiscal_SoftwareDataSet";
+            this._Fiscal_SoftwareDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // companyTableAdapter
             // 
             this.companyTableAdapter.ClearBeforeFill = true;
@@ -286,6 +287,7 @@
             this.ClientSize = new System.Drawing.Size(663, 446);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TechniciansForm";

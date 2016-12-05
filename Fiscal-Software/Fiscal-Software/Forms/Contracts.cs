@@ -93,6 +93,10 @@ namespace Fiscal_Software.Forms
         private void editContractBtn_Click(object sender, EventArgs e)
         {
             addContractFlag = false;
+            ToggleControls(true);
+            addContractBtn.Enabled = false;
+            editContractBtn.Enabled = false;
+            deleteContractBtn.Enabled = false;
         }
 
         private void saveContractBtn_Click(object sender, EventArgs e)
@@ -114,6 +118,10 @@ namespace Fiscal_Software.Forms
                     contract.Protect = contractProtectBox.Checked;
                     contract.SpareModuls = contractSpareModulesBox.Checked;
                     ContractCtrl.AddContract(contract);
+                    lvi = new ListViewItem(contract.Name);
+                    lvi.Tag = contract.ID;
+                    lvi.SubItems.Add(contract.Duration.ToString());
+                    contractsListView.Items.Add(lvi);
                 }
                 else
                 {
@@ -130,6 +138,13 @@ namespace Fiscal_Software.Forms
                     contract.Protect = contractProtectBox.Checked;
                     contract.SpareModuls = contractSpareModulesBox.Checked;
                     ContractCtrl.UpdateContract(selectedContract,contract);
+                    contractsListView.SelectedItems[0].SubItems[0].Text = contract.Name;
+                    contractsListView.SelectedItems[0].SubItems[1].Text =contract.Duration.ToString();
+                    ToggleControls(false);
+                    addContractBtn.Enabled = true;
+                    editContractBtn.Enabled = true;
+                    deleteContractBtn.Enabled = true;
+                    contractsListView.Enabled = true;
                 }
             }
             else
@@ -164,7 +179,51 @@ namespace Fiscal_Software.Forms
             if (e.IsSelected)
             {
                 selectedContract = int.Parse(contractsListView.SelectedItems[0].Tag.ToString());
+                var contract = ContractCtrl.GetContractById(selectedContract);
+                if (contract != null)
+                {
+                    this.ResetControls();
+                    LoadPanelWithData(contract);
+
+                }
             }
+        }
+
+        private void deleteContractBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadPanelWithData(Contract contract)
+        {
+            contractNameBox.Text = contract.Name;
+            contractDurationBox.Value = decimal.Parse(contract.Duration.ToString());
+            contractSumBox.Text = contract.Price.ToString();
+            //contractSumForMonth.Text = contract.Duration.ToString();
+            contractPayToBox.Text = contract.PaymentTo;
+            contractMP3Box.Text = contract.MP3.ToString();
+            contractProgrammingBox.Checked = contract.Programming != null ? bool.Parse(contract.Programming.ToString()) : false;
+            contractProgrammingArticulBox.Checked = contract.ProgrammingArticul != null ? bool.Parse(contract.ProgrammingArticul.ToString()) : false; ;
+            contractWorkBox.Checked = contract.Rabota != null ? bool.Parse(contract.Rabota.ToString()) : false; ;
+            contractSparePartsBox.Checked = contract.SpareParts != null ? bool.Parse(contract.SpareParts.ToString()) : false; ;
+            contractProtectBox.Checked = contract.Protect != null ? bool.Parse(contract.Protect.ToString()) : false; ;
+            contractSpareModulesBox.Checked = contract.SpareModuls != null ? bool.Parse(contract.SpareModuls.ToString()) : false; ;
+        }
+
+        private void ResetControls()
+        {
+            contractNameBox.Text = string.Empty;
+            contractDurationBox.Value =0;
+            contractSumBox.Text = string.Empty;
+           // contractSumForMonth.Text = string.Empty;
+            contractPayToBox.Text = string.Empty;
+            contractMP3Box.Text = string.Empty;
+            contractProgrammingBox.Checked = false;
+            contractProgrammingArticulBox.Checked = false;
+            contractWorkBox.Checked = false;
+            contractSparePartsBox.Checked = false;
+            contractProtectBox.Checked = false;
+            contractSpareModulesBox.Checked = false;
         }
     }
 }
