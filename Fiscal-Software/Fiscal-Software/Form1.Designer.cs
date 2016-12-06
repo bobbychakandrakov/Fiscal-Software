@@ -48,8 +48,13 @@
             this.справкаДДСNoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.clientsListView = new System.Windows.Forms.ListView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.addClientButton = new System.Windows.Forms.Button();
+            this.editClientButton = new System.Windows.Forms.Button();
+            this.deleteClientButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -79,6 +84,7 @@
             this.номенклатуриToolStripMenuItem.Name = "номенклатуриToolStripMenuItem";
             this.номенклатуриToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.номенклатуриToolStripMenuItem.Text = "Номенклатури";
+            this.номенклатуриToolStripMenuItem.Click += new System.EventHandler(this.номенклатуриToolStripMenuItem_Click);
             // 
             // addCompanyMenu
             // 
@@ -192,6 +198,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.clientsListView, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -200,6 +207,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.30434F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(853, 368);
             this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // clientsListView
             // 
@@ -212,6 +220,52 @@
             this.clientsListView.TabIndex = 0;
             this.clientsListView.UseCompatibleStateImageBehavior = false;
             this.clientsListView.View = System.Windows.Forms.View.Details;
+            this.clientsListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.clientsListView_ItemSelectionChanged);
+            this.clientsListView.SelectedIndexChanged += new System.EventHandler(this.clientsListView_SelectedIndexChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.deleteClientButton);
+            this.panel1.Controls.Add(this.editClientButton);
+            this.panel1.Controls.Add(this.addClientButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(420, 26);
+            this.panel1.TabIndex = 1;
+            // 
+            // addClientButton
+            // 
+            this.addClientButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.addClientButton.Location = new System.Drawing.Point(0, 0);
+            this.addClientButton.Name = "addClientButton";
+            this.addClientButton.Size = new System.Drawing.Size(144, 26);
+            this.addClientButton.TabIndex = 0;
+            this.addClientButton.Text = "Добавяне на клиент";
+            this.addClientButton.UseVisualStyleBackColor = true;
+            this.addClientButton.Click += new System.EventHandler(this.addClientButton_Click);
+            // 
+            // editClientButton
+            // 
+            this.editClientButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.editClientButton.Location = new System.Drawing.Point(144, 0);
+            this.editClientButton.Name = "editClientButton";
+            this.editClientButton.Size = new System.Drawing.Size(139, 26);
+            this.editClientButton.TabIndex = 1;
+            this.editClientButton.Text = "Редактиране на клиент";
+            this.editClientButton.UseVisualStyleBackColor = true;
+            this.editClientButton.Click += new System.EventHandler(this.editClientButton_Click);
+            // 
+            // deleteClientButton
+            // 
+            this.deleteClientButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.deleteClientButton.Location = new System.Drawing.Point(283, 0);
+            this.deleteClientButton.Name = "deleteClientButton";
+            this.deleteClientButton.Size = new System.Drawing.Size(137, 26);
+            this.deleteClientButton.TabIndex = 2;
+            this.deleteClientButton.Text = "Изтриване на клиент";
+            this.deleteClientButton.UseVisualStyleBackColor = true;
+            this.deleteClientButton.Click += new System.EventHandler(this.deleteClientButton_Click);
             // 
             // Form1
             // 
@@ -230,6 +284,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,6 +311,10 @@
         private System.Windows.Forms.ToolStripMenuItem contractType;
         private System.Windows.Forms.ToolStripMenuItem otherSettings;
         private System.Windows.Forms.ToolStripMenuItem databaseSettings;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button deleteClientButton;
+        private System.Windows.Forms.Button editClientButton;
+        private System.Windows.Forms.Button addClientButton;
     }
 }
 

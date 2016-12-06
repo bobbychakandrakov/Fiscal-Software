@@ -22,6 +22,8 @@ namespace Fiscal_Software
     public partial class Form1 : Form
     {
         ListViewItem lvi;
+        int selectedClientId;
+        Client client;
 
         public Form1()
         {
@@ -119,6 +121,14 @@ namespace Fiscal_Software
             
         }
 
+        public void LoadDataAfter()
+        {
+            if (DatabaseSettings.IsSet)
+            {
+                RefreshClients();
+            }
+        }
+
         private void настройкиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -150,6 +160,84 @@ namespace Fiscal_Software
         {
             Contracts contracts = new Contracts();
             contracts.Show();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void номенклатуриToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+          
+
+        }
+
+        private void clientsListView_SelectedIndexChanged(object sender, MouseEventArgs e)
+        {
+          
+        }
+
+        private void clientsListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addClientButton_Click(object sender, EventArgs e)
+        {
+            ClientsForm cl = new ClientsForm(this);
+            cl.Show();
+        }
+
+        private void editClientButton_Click(object sender, EventArgs e)
+        {
+            if (client != null)
+            {
+                ClientsForm cf = new ClientsForm(this, client);
+                cf.Show();
+            }
+        }
+
+        private void clientsListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (e.IsSelected)
+            {
+                selectedClientId = int.Parse(clientsListView.SelectedItems[0].Tag.ToString());
+                client = ClientCtrl.GetClient(selectedClientId);
+               
+            }
+        }
+
+        private void deleteClientButton_Click(object sender, EventArgs e)
+        {
+            if (clientsListView.SelectedItems.Count > 0)
+            {
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да изтриете този клиент ?",
+                                    "Изтриване на клиент",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    int id = int.Parse(clientsListView.SelectedItems[0].Tag.ToString());
+                    ClientCtrl.DeleteClient(id);
+                   clientsListView.SelectedItems[0].Remove();
+                }
+
+            }
         }
     }
 }
