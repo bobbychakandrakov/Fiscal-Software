@@ -239,5 +239,37 @@ namespace Fiscal_Software
 
             }
         }
+
+        private void dduhaiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClientsForm cl = new ClientsForm(this);
+            cl.Show();
+        }
+
+        private void изтриванеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (clientsListView.SelectedItems.Count > 0)
+            {
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да изтриете този клиент ?",
+                                    "Изтриване на клиент",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    int id = int.Parse(clientsListView.SelectedItems[0].Tag.ToString());
+                    ClientCtrl.DeleteClient(id);
+                    clientsListView.SelectedItems[0].Remove();
+                }
+
+            }
+        }
+
+        private void редактиранеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (client != null)
+            {
+                ClientsForm cf = new ClientsForm(this, client);
+                cf.Show();
+            }
+        }
     }
 }
