@@ -49,18 +49,22 @@
             this.справкаДДСNoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.clientsListView = new System.Windows.Forms.ListView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.deleteClientButton = new System.Windows.Forms.Button();
-            this.editClientButton = new System.Windows.Forms.Button();
-            this.addClientButton = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dduhaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактиранеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изтриванеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.deleteClientButton = new System.Windows.Forms.Button();
+            this.editClientButton = new System.Windows.Forms.Button();
+            this.addClientButton = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -205,6 +209,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.clientsListView, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -229,6 +234,36 @@
             this.clientsListView.View = System.Windows.Forms.View.Details;
             this.clientsListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.clientsListView_ItemSelectionChanged);
             this.clientsListView.SelectedIndexChanged += new System.EventHandler(this.clientsListView_SelectedIndexChanged);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dduhaiToolStripMenuItem,
+            this.редактиранеToolStripMenuItem,
+            this.изтриванеToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(144, 70);
+            // 
+            // dduhaiToolStripMenuItem
+            // 
+            this.dduhaiToolStripMenuItem.Name = "dduhaiToolStripMenuItem";
+            this.dduhaiToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.dduhaiToolStripMenuItem.Text = "добавяне";
+            this.dduhaiToolStripMenuItem.Click += new System.EventHandler(this.dduhaiToolStripMenuItem_Click);
+            // 
+            // редактиранеToolStripMenuItem
+            // 
+            this.редактиранеToolStripMenuItem.Name = "редактиранеToolStripMenuItem";
+            this.редактиранеToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.редактиранеToolStripMenuItem.Text = "редактиране";
+            this.редактиранеToolStripMenuItem.Click += new System.EventHandler(this.редактиранеToolStripMenuItem_Click);
+            // 
+            // изтриванеToolStripMenuItem
+            // 
+            this.изтриванеToolStripMenuItem.Name = "изтриванеToolStripMenuItem";
+            this.изтриванеToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.изтриванеToolStripMenuItem.Text = "изтриване";
+            this.изтриванеToolStripMenuItem.Click += new System.EventHandler(this.изтриванеToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -274,35 +309,33 @@
             this.addClientButton.UseVisualStyleBackColor = true;
             this.addClientButton.Click += new System.EventHandler(this.addClientButton_Click);
             // 
-            // contextMenuStrip1
+            // panel2
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dduhaiToolStripMenuItem,
-            this.редактиранеToolStripMenuItem,
-            this.изтриванеToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(429, 35);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(421, 100);
+            this.panel2.TabIndex = 2;
             // 
-            // dduhaiToolStripMenuItem
+            // label1
             // 
-            this.dduhaiToolStripMenuItem.Name = "dduhaiToolStripMenuItem";
-            this.dduhaiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.dduhaiToolStripMenuItem.Text = "добавяне";
-            this.dduhaiToolStripMenuItem.Click += new System.EventHandler(this.dduhaiToolStripMenuItem_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(163, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // редактиранеToolStripMenuItem
+            // label2
             // 
-            this.редактиранеToolStripMenuItem.Name = "редактиранеToolStripMenuItem";
-            this.редактиранеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.редактиранеToolStripMenuItem.Text = "редактиране";
-            this.редактиранеToolStripMenuItem.Click += new System.EventHandler(this.редактиранеToolStripMenuItem_Click);
-            // 
-            // изтриванеToolStripMenuItem
-            // 
-            this.изтриванеToolStripMenuItem.Name = "изтриванеToolStripMenuItem";
-            this.изтриванеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.изтриванеToolStripMenuItem.Text = "изтриване";
-            this.изтриванеToolStripMenuItem.Click += new System.EventHandler(this.изтриванеToolStripMenuItem_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(194, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Данни за клиента";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Form1
             // 
@@ -321,8 +354,10 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,6 +392,9 @@
         private System.Windows.Forms.ToolStripMenuItem dduhaiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактиранеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem изтриванеToolStripMenuItem;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

@@ -126,6 +126,7 @@ namespace Fiscal_Software
             if (DatabaseSettings.IsSet)
             {
                 RefreshClients();
+
             }
         }
 
@@ -271,5 +272,41 @@ namespace Fiscal_Software
                 cf.Show();
             }
         }
+    
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
+
+            
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            if (client != null)
+            {
+                panel2.Text = client.Mol;
+            }
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            if (client != null)
+            {
+            label1.Text = "МОЛ: "+client.Mol;
+            }
+            
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            if (client != null)
+            {
+                label1.Text = "МОЛ: " + client.Mol;
+            }
+        }
     }
+
 }
