@@ -14,6 +14,7 @@ using System.Configuration;
 using System.Reflection;
 using Fiscal_Software.Helpers;
 using System.IO;
+using Fiscal_Software.Controlles;
 //using Fiscal_Software.Forms;
 
 namespace Fiscal_Software
@@ -22,6 +23,7 @@ namespace Fiscal_Software
     public partial class Form1 : Form
     {
         ListViewItem lvi;
+        ListViewItem lvi1;
         int selectedClientId;
         Client client;
 
@@ -44,16 +46,16 @@ namespace Fiscal_Software
         {
             clientsListView.Clear();
             clientsListView.Columns.Add("Фирма");
+            clientsListView.Columns.Add("Дан. N");
             clientsListView.Columns.Add("Булстат");
-            clientsListView.Columns.Add("Телефон");
-            clientsListView.Columns.Add("МОЛ");
+            //clientsListView.Columns.Add("Телефон");
+           // clientsListView.Columns.Add("МОЛ");
             var clients = ClientCtrl.GetAllClients();
             for (int i = 0; i < clients.Length; i++)
             {
                 lvi = new ListViewItem(clients[i].Name);
+                lvi.SubItems.Add(clients[i].FDNumber);
                 lvi.SubItems.Add(clients[i].Bulstat);
-                lvi.SubItems.Add(clients[i].Telephone);
-                lvi.SubItems.Add(clients[i].Mol);
                 lvi.Tag = clients[i].ID;
                 clientsListView.Items.Add(lvi);
             }
@@ -66,9 +68,6 @@ namespace Fiscal_Software
             clientsListView.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.None);
             clientsListView.Columns[2].Width = 150;
             clientsListView.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
-            clientsListView.Columns[3].AutoResize(ColumnHeaderAutoResizeStyle.None);
-            clientsListView.Columns[3].Width = 150;
-            clientsListView.Columns[3].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void exitApp_Click(object sender, EventArgs e)
@@ -127,6 +126,39 @@ namespace Fiscal_Software
             {
                 RefreshClients();
             }
+        }
+
+        public void LoadObjects(Objects[] objects)
+        {
+            objectsListView.Clear();
+            objectsListView.Columns.Add("ТДД");
+            objectsListView.Columns.Add("Тип на обекта");
+            objectsListView.Columns.Add("Град");
+            objectsListView.Columns.Add("Телефон");
+            objectsListView.Columns.Add("МОЛ (име)");
+            objectsListView.Columns.Add("МОЛ (град)");
+            objectsListView.Columns.Add("МОЛ (телефон)");
+            for (int i = 0; i < objects.Length; i++)
+            {
+                lvi1 = new ListViewItem(objects[i].TDD);
+                lvi1.SubItems.Add(objects[i].Type);
+                lvi1.SubItems.Add(objects[i].Town);
+                lvi1.SubItems.Add(objects[i].Telephone);
+                lvi1.SubItems.Add(objects[i].Mol);
+                lvi1.SubItems.Add(objects[i].MolTown);
+                lvi1.SubItems.Add(objects[i].MolTelephone);
+                lvi1.Tag = objects[i].ID;
+                objectsListView.Items.Add(lvi1);
+            }
+            objectsListView.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.None);
+            objectsListView.Columns[0].Width = 150;
+            objectsListView.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+            objectsListView.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.None);
+            objectsListView.Columns[1].Width = 150;
+            objectsListView.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+            objectsListView.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.None);
+            objectsListView.Columns[2].Width = 150;
+            objectsListView.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void настройкиToolStripMenuItem_Click(object sender, EventArgs e)
@@ -219,7 +251,12 @@ namespace Fiscal_Software
             {
                 selectedClientId = int.Parse(clientsListView.SelectedItems[0].Tag.ToString());
                 client = ClientCtrl.GetClient(selectedClientId);
-               
+                if (client != null)
+                {
+                    molLabel.Text = "МОЛ: " + client.Mol;
+                }
+                var objects = ObjectCtrl.GetObjectsForClient(client.ID);
+                LoadObjects(objects);
             }
         }
 
@@ -270,6 +307,15 @@ namespace Fiscal_Software
                 ClientsForm cf = new ClientsForm(this, client);
                 cf.Show();
             }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+                ObjectsForm of = new ObjectsForm(selectedClientId);
+                of.Show();
+            
+            
         }
     }
 }

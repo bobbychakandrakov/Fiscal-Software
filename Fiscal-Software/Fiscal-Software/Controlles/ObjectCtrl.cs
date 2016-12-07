@@ -75,5 +75,23 @@ namespace Fiscal_Software.Controlles
 
             }
         }
+
+        public static Objects[] GetAllObjects()
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var objects = ctx.Set<Objects>().ToArray();
+                return objects;
+            }
+        }
+
+        public static Objects[] GetObjectsForClient(int id)
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var objects = ctx.Objects.Where(i => i.ClientId == id).ToArray();
+                return objects;
+            }
+        }
     }
 }

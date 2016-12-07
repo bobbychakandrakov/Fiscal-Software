@@ -49,18 +49,38 @@
             this.справкаДДСNoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.clientsListView = new System.Windows.Forms.ListView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.deleteClientButton = new System.Windows.Forms.Button();
-            this.editClientButton = new System.Windows.Forms.Button();
-            this.addClientButton = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dduhaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактиранеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изтриванеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.deleteClientButton = new System.Windows.Forms.Button();
+            this.editClientButton = new System.Windows.Forms.Button();
+            this.addClientButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.molLabel = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.objectsListView = new System.Windows.Forms.ListView();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -76,7 +96,7 @@
             this.справкаДДСNoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(853, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1119, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -194,24 +214,25 @@
             // справкаДДСNoToolStripMenuItem
             // 
             this.справкаДДСNoToolStripMenuItem.Name = "справкаДДСNoToolStripMenuItem";
-            this.справкаДДСNoToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
-            this.справкаДДСNoToolStripMenuItem.Text = "справка ДДС No";
+            this.справкаДДСNoToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+            this.справкаДДСNoToolStripMenuItem.Text = "Справка ДДС No";
             this.справкаДДСNoToolStripMenuItem.Click += new System.EventHandler(this.справкаДДСNoToolStripMenuItem_Click);
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.06971F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.93029F));
             this.tableLayoutPanel1.Controls.Add(this.clientsListView, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.695652F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.30434F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(853, 368);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.445545F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94.55446F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1119, 606);
             this.tableLayoutPanel1.TabIndex = 1;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -220,15 +241,45 @@
             this.clientsListView.ContextMenuStrip = this.contextMenuStrip1;
             this.clientsListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.clientsListView.FullRowSelect = true;
-            this.clientsListView.Location = new System.Drawing.Point(3, 35);
+            this.clientsListView.Location = new System.Drawing.Point(3, 36);
             this.clientsListView.MultiSelect = false;
             this.clientsListView.Name = "clientsListView";
-            this.clientsListView.Size = new System.Drawing.Size(420, 330);
+            this.clientsListView.Size = new System.Drawing.Size(420, 567);
             this.clientsListView.TabIndex = 0;
             this.clientsListView.UseCompatibleStateImageBehavior = false;
             this.clientsListView.View = System.Windows.Forms.View.Details;
             this.clientsListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.clientsListView_ItemSelectionChanged);
             this.clientsListView.SelectedIndexChanged += new System.EventHandler(this.clientsListView_SelectedIndexChanged);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dduhaiToolStripMenuItem,
+            this.редактиранеToolStripMenuItem,
+            this.изтриванеToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(144, 70);
+            // 
+            // dduhaiToolStripMenuItem
+            // 
+            this.dduhaiToolStripMenuItem.Name = "dduhaiToolStripMenuItem";
+            this.dduhaiToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.dduhaiToolStripMenuItem.Text = "Добавяне";
+            this.dduhaiToolStripMenuItem.Click += new System.EventHandler(this.dduhaiToolStripMenuItem_Click);
+            // 
+            // редактиранеToolStripMenuItem
+            // 
+            this.редактиранеToolStripMenuItem.Name = "редактиранеToolStripMenuItem";
+            this.редактиранеToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.редактиранеToolStripMenuItem.Text = "Редактиране";
+            this.редактиранеToolStripMenuItem.Click += new System.EventHandler(this.редактиранеToolStripMenuItem_Click);
+            // 
+            // изтриванеToolStripMenuItem
+            // 
+            this.изтриванеToolStripMenuItem.Name = "изтриванеToolStripMenuItem";
+            this.изтриванеToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.изтриванеToolStripMenuItem.Text = "Изтриване";
+            this.изтриванеToolStripMenuItem.Click += new System.EventHandler(this.изтриванеToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -238,7 +289,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(420, 26);
+            this.panel1.Size = new System.Drawing.Size(420, 27);
             this.panel1.TabIndex = 1;
             // 
             // deleteClientButton
@@ -246,7 +297,7 @@
             this.deleteClientButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.deleteClientButton.Location = new System.Drawing.Point(283, 0);
             this.deleteClientButton.Name = "deleteClientButton";
-            this.deleteClientButton.Size = new System.Drawing.Size(137, 26);
+            this.deleteClientButton.Size = new System.Drawing.Size(137, 27);
             this.deleteClientButton.TabIndex = 2;
             this.deleteClientButton.Text = "Изтриване на клиент";
             this.deleteClientButton.UseVisualStyleBackColor = true;
@@ -257,7 +308,7 @@
             this.editClientButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.editClientButton.Location = new System.Drawing.Point(144, 0);
             this.editClientButton.Name = "editClientButton";
-            this.editClientButton.Size = new System.Drawing.Size(139, 26);
+            this.editClientButton.Size = new System.Drawing.Size(139, 27);
             this.editClientButton.TabIndex = 1;
             this.editClientButton.Text = "Редактиране на клиент";
             this.editClientButton.UseVisualStyleBackColor = true;
@@ -268,47 +319,142 @@
             this.addClientButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.addClientButton.Location = new System.Drawing.Point(0, 0);
             this.addClientButton.Name = "addClientButton";
-            this.addClientButton.Size = new System.Drawing.Size(144, 26);
+            this.addClientButton.Size = new System.Drawing.Size(144, 27);
             this.addClientButton.TabIndex = 0;
             this.addClientButton.Text = "Добавяне на клиент";
             this.addClientButton.UseVisualStyleBackColor = true;
             this.addClientButton.Click += new System.EventHandler(this.addClientButton_Click);
             // 
-            // contextMenuStrip1
+            // tableLayoutPanel2
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dduhaiToolStripMenuItem,
-            this.редактиранеToolStripMenuItem,
-            this.изтриванеToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel3, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(429, 36);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.46032F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.53968F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(687, 567);
+            this.tableLayoutPanel2.TabIndex = 2;
             // 
-            // dduhaiToolStripMenuItem
+            // panel2
             // 
-            this.dduhaiToolStripMenuItem.Name = "dduhaiToolStripMenuItem";
-            this.dduhaiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.dduhaiToolStripMenuItem.Text = "добавяне";
-            this.dduhaiToolStripMenuItem.Click += new System.EventHandler(this.dduhaiToolStripMenuItem_Click);
+            this.panel2.Controls.Add(this.groupBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(681, 93);
+            this.panel2.TabIndex = 0;
             // 
-            // редактиранеToolStripMenuItem
+            // groupBox1
             // 
-            this.редактиранеToolStripMenuItem.Name = "редактиранеToolStripMenuItem";
-            this.редактиранеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.редактиранеToolStripMenuItem.Text = "редактиране";
-            this.редактиранеToolStripMenuItem.Click += new System.EventHandler(this.редактиранеToolStripMenuItem_Click);
+            this.groupBox1.Controls.Add(this.molLabel);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(681, 93);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Данни за клиента";
             // 
-            // изтриванеToolStripMenuItem
+            // molLabel
             // 
-            this.изтриванеToolStripMenuItem.Name = "изтриванеToolStripMenuItem";
-            this.изтриванеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.изтриванеToolStripMenuItem.Text = "изтриване";
-            this.изтриванеToolStripMenuItem.Click += new System.EventHandler(this.изтриванеToolStripMenuItem_Click);
+            this.molLabel.AutoSize = true;
+            this.molLabel.Location = new System.Drawing.Point(147, 46);
+            this.molLabel.Name = "molLabel";
+            this.molLabel.Size = new System.Drawing.Size(35, 13);
+            this.molLabel.TabIndex = 0;
+            this.molLabel.Text = "МОЛ:";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.tabControl1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 102);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(681, 462);
+            this.panel3.TabIndex = 1;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(681, 462);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.objectsListView);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(673, 436);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Обекти";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // objectsListView
+            // 
+            this.objectsListView.ContextMenuStrip = this.contextMenuStrip2;
+            this.objectsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.objectsListView.FullRowSelect = true;
+            this.objectsListView.Location = new System.Drawing.Point(3, 3);
+            this.objectsListView.Name = "objectsListView";
+            this.objectsListView.Size = new System.Drawing.Size(667, 430);
+            this.objectsListView.TabIndex = 0;
+            this.objectsListView.UseCompatibleStateImageBehavior = false;
+            this.objectsListView.View = System.Windows.Forms.View.Details;
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(194, 70);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(193, 22);
+            this.toolStripMenuItem1.Text = "Добавяне на обект";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(193, 22);
+            this.toolStripMenuItem2.Text = "Редактиране на обект";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(193, 22);
+            this.toolStripMenuItem3.Text = "Изптриване на обект";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(673, 436);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Фискални у-ва";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(853, 392);
+            this.ClientSize = new System.Drawing.Size(1119, 630);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -321,8 +467,16 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,6 +511,19 @@
         private System.Windows.Forms.ToolStripMenuItem dduhaiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактиранеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem изтриванеToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label molLabel;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ListView objectsListView;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     }
 }
 

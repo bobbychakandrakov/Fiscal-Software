@@ -79,3 +79,4 @@ C:\Users\pc\Documents\Fiscal-Software4\Fiscal-Software\Fiscal-Software\bin\Debug
 C:\Users\pc\Documents\Fiscal-Software4\Fiscal-Software\Fiscal-Software\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\pc\Documents\Fiscal-Software4\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal-Software.exe
 C:\Users\pc\Documents\Fiscal-Software4\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal-Software.pdb
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.ObjectsForm.resources
