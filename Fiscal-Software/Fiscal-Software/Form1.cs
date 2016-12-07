@@ -253,7 +253,7 @@ namespace Fiscal_Software
                 client = ClientCtrl.GetClient(selectedClientId);
                 if (client != null)
                 {
-                    molLabel.Text = "МОЛ: " + client.Mol;
+                    molLabel1.Text = "МОЛ: " + client.Mol;
                 }
                 var objects = ObjectCtrl.GetObjectsForClient(client.ID);
                 LoadObjects(objects);
@@ -317,5 +317,41 @@ namespace Fiscal_Software
             
             
         }
+    
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
+
+            
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            if (client != null)
+            {
+                panel1.Text = client.Mol;
+            }
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            if (client != null)
+            {
+             molLabel1.Text = "МОЛ: "+client.Mol;
+            }
+            
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            if (client != null)
+            {
+                molLabel1.Text = "МОЛ: " + client.Mol;
+            }
+        }
     }
+
 }
