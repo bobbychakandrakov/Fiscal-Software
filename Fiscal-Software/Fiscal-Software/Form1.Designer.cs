@@ -268,7 +268,7 @@
             // 
             this.dduhaiToolStripMenuItem.Name = "dduhaiToolStripMenuItem";
             this.dduhaiToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.dduhaiToolStripMenuItem.Text = "добавяне";
+            this.dduhaiToolStripMenuItem.Text = "Добавяне";
             this.dduhaiToolStripMenuItem.Click += new System.EventHandler(this.dduhaiToolStripMenuItem_Click);
             // 
             // редактиранеToolStripMenuItem
@@ -386,6 +386,7 @@
             this.objectsListView.TabIndex = 0;
             this.objectsListView.UseCompatibleStateImageBehavior = false;
             this.objectsListView.View = System.Windows.Forms.View.Details;
+            this.objectsListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.objectsListView_ItemSelectionChanged);
             // 
             // contextMenuStrip2
             // 
@@ -408,12 +409,14 @@
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(193, 22);
             this.toolStripMenuItem2.Text = "Редактиране на обект";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(193, 22);
             this.toolStripMenuItem3.Text = "Изптриване на обект";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // tabPage2
             // 

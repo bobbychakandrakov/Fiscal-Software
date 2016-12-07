@@ -13,7 +13,8 @@ namespace Fiscal_Software.Forms
 {
     public partial class ObjectsForm : Form
     {
-        int id;
+        int id, id1;
+        bool isSaving = true;
         public ObjectsForm()
         {
             InitializeComponent();
@@ -22,6 +23,30 @@ namespace Fiscal_Software.Forms
         {
             InitializeComponent();
             this.id = id;
+        }
+
+        public ObjectsForm(Objects objects)
+        {
+            InitializeComponent();
+            this.isSaving = false;
+            this.id1 = objects.ID;
+            this.id = int.Parse(objects.ClientId.ToString());
+            LoadPanelData(objects);
+        }
+
+        private void LoadPanelData(Objects objects)
+        {
+            objectTpeBox.Text = objects.Type;
+            objectActivityBox.Text = objects.Activity;
+            objectEKATTEBox.Text = objects.Ekatte;
+            objectTown.Text = objects.Town;
+            objectAddressBox.Text = objects.Address;
+            objectTelefoneBox.Text = objects.Telephone;
+            objectTDDBox.Text = objects.TDD;
+            objectMOLBox.Text = objects.Mol;
+            objectMolTownBox.Text = objects.MolTown;
+            objectMolAddressBox.Text = objects.MolAddress;
+            objects.MolTelephone = objectTelephoneBox.Text;
         }
 
         private void saveObjectBtn_Click(object sender, EventArgs e)
@@ -41,7 +66,15 @@ namespace Fiscal_Software.Forms
                 objectToAdd.MolAddress = objectMolAddressBox.Text;
                 objectToAdd.MolTelephone = objectTelephoneBox.Text;
                 objectToAdd.ClientId = this.id;
-                ObjectCtrl.AddObject(objectToAdd);
+                if (isSaving)
+                {
+                    ObjectCtrl.AddObject(objectToAdd);
+                }
+                else
+                {
+                    ObjectCtrl.UpdateObject(id1, objectToAdd);
+                }
+                
                 this.Close();
             }
             else
@@ -54,6 +87,11 @@ namespace Fiscal_Software.Forms
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ObjectsForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

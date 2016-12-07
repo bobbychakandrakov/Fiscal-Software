@@ -24,7 +24,7 @@ namespace Fiscal_Software
     {
         ListViewItem lvi;
         ListViewItem lvi1;
-        int selectedClientId;
+        int selectedClientId = -1, selectedObjectID = -1;
         Client client;
 
         public Form1()
@@ -311,10 +311,11 @@ namespace Fiscal_Software
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            if (selectedClientId > 0)
+            {
                 ObjectsForm of = new ObjectsForm(selectedClientId);
                 of.Show();
-            
+            }
             
         }
     
@@ -350,6 +351,42 @@ namespace Fiscal_Software
             if (client != null)
             {
                 molLabel1.Text = "МОЛ: " + client.Mol;
+            }
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            if (objectsListView.SelectedItems.Count > 0)
+            {
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да изтриете този обект ?",
+                                    "Изтриване на обект",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    int id = int.Parse(objectsListView.SelectedItems[0].Tag.ToString());
+                    ObjectCtrl.DeleteObjectById(id);
+                    objectsListView.SelectedItems[0].Remove();
+                }
+
+            }
+        }
+
+        private void objectsListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (e.IsSelected)
+            {
+                selectedObjectID = int.Parse(objectsListView.SelectedItems[0].Tag.ToString());
+            }
+           
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (selectedClientId > 0)
+            {
+                var objects = ObjectCtrl.GetObjectById(selectedObjectID);
+                ObjectsForm of = new ObjectsForm(objects);
+                of.Show();
             }
         }
     }
