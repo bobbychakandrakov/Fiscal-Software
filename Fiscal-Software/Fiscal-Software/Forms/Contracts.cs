@@ -16,7 +16,7 @@ namespace Fiscal_Software.Forms
 
         ListViewItem lvi;
         // Add -> true Edit -> false
-        bool addContractFlag = true;
+        bool addContractFlag = true, isHover = false;
         int selectedContract;
         public Contracts()
         {
@@ -72,8 +72,10 @@ namespace Fiscal_Software.Forms
 
         private void addContractBtn_Click(object sender, EventArgs e)
         {
+            isHover = true;
             addContractFlag = true;
             ToggleControls(true);
+            ResetControls();
             contractMP3Box.Enabled = false;
             addContractBtn.Enabled = false;
             editContractBtn.Enabled = false;
@@ -92,6 +94,7 @@ namespace Fiscal_Software.Forms
 
         private void editContractBtn_Click(object sender, EventArgs e)
         {
+            isHover = true;
             addContractFlag = false;
             ToggleControls(true);
             addContractBtn.Enabled = false;
@@ -157,16 +160,20 @@ namespace Fiscal_Software.Forms
 
         private void contractSumForMonth_CheckedChanged(object sender, EventArgs e)
         {
-            if (contractSumForMonth.Checked)
+            if (isHover)
             {
-                contractMP3Box.Enabled = true;
-                contractSumBox.Enabled = false;
+                if (contractSumForMonth.Checked)
+                {
+                    contractMP3Box.Enabled = true;
+                    contractSumBox.Enabled = false;
+                }
+                else
+                {
+                    contractMP3Box.Enabled = false;
+                    contractSumBox.Enabled = true;
+                }
             }
-            else
-            {
-                contractMP3Box.Enabled = false;
-                contractSumBox.Enabled = true;
-            }
+            
         }
 
         private void contractSumBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -196,12 +203,29 @@ namespace Fiscal_Software.Forms
 
         private void LoadPanelWithData(Contract contract)
         {
+            isHover = false;
             contractNameBox.Text = contract.Name;
             contractDurationBox.Value = decimal.Parse(contract.Duration.ToString());
-            contractSumBox.Text = contract.Price.ToString();
-            //contractSumForMonth.Text = contract.Duration.ToString();
             contractPayToBox.Text = contract.PaymentTo;
-            contractMP3Box.Text = contract.MP3.ToString();
+           // contractSumBox.Text = contract.Price.ToString();
+           // contractMP3Box.Text = contract.MP3.ToString();
+            //contractSumForMonth.Checked
+            if (contract.Price == 0 && contract.MP3 == 0)
+            {
+                contractSumForMonth.Checked = false;
+                contractSumBox.Text = string.Empty;
+                contractMP3Box.Text = string.Empty;
+            }
+            else if(contract.Price > 0)
+            {
+                contractSumForMonth.Checked = false;
+                contractSumBox.Text = contract.Price.ToString();
+            }
+            else
+            {
+                contractSumForMonth.Checked = true;
+                contractMP3Box.Text = contract.MP3.ToString();
+            }
             contractProgrammingBox.Checked = contract.Programming != null ? bool.Parse(contract.Programming.ToString()) : false;
             contractProgrammingArticulBox.Checked = contract.ProgrammingArticul != null ? bool.Parse(contract.ProgrammingArticul.ToString()) : false; ;
             contractWorkBox.Checked = contract.Rabota != null ? bool.Parse(contract.Rabota.ToString()) : false; ;
