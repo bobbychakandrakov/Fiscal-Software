@@ -15,6 +15,7 @@ namespace Fiscal_Software.Forms
     {
         int id, id1;
         bool isSaving = true;
+        HashSet<string> types = new HashSet<string>();
         public ObjectsForm()
         {
             InitializeComponent();
@@ -91,7 +92,13 @@ namespace Fiscal_Software.Forms
 
         private void ObjectsForm_Load(object sender, EventArgs e)
         {
-
+            objectActivityBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            var objects = ObjectCtrl.GetAllObjects();
+            for (int i = 0; i < objects.Length; i++)
+            {
+                types.Add(objects[i].Type);
+            }
+            objectTpeBox.DataSource = types.ToList();
         }
     }
 }

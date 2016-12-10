@@ -17,6 +17,7 @@ namespace Fiscal_Software.Forms
         Form1 f1;
         Client client;
         bool isUpdate = false;
+        HashSet<string> tdds = new HashSet<string>();
         public ClientsForm(Form1 f1)
         {
             InitializeComponent();
@@ -126,7 +127,12 @@ namespace Fiscal_Software.Forms
 
         private void ClientsForm_Load(object sender, EventArgs e)
         {
-
+            var clients = ClientCtrl.GetAllClients();
+            for (int i = 0; i < clients.Length; i++)
+            {
+                tdds.Add(clients[i].TDD);
+            }
+            clientTDDBox.DataSource = tdds.ToList();
         }
     }
 }
