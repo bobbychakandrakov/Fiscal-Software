@@ -20,6 +20,9 @@ namespace Fiscal_Software
         public virtual DbSet<Contract> Contracts { get; set; }
         public virtual DbSet<Objects> Objects { get; set; }
 
+        public virtual DbSet<Activities> Activities { get; set; }
+        public virtual DbSet<NomeraDokumenti> NomeraDokumenti { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Client>()
@@ -252,7 +255,18 @@ namespace Fiscal_Software
                
             modelBuilder.Entity<Contract>()
                 .Property(e => e.Duration);
-                
+
+            modelBuilder.Entity<Activities>()
+                .Property(e => e.Activity)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<NomeraDokumenti>()
+              .Property(e => e.ContractN);
+
+            modelBuilder.Entity<NomeraDokumenti>()
+            .Property(e => e.Svidetelstvo);
+
+
 
         }
     }

@@ -62,12 +62,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Contract.cs" />
+    <Compile Include="Controlles\ActivityCtrl.cs" />
     <Compile Include="Controlles\ClientCtrl.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="Controlles\CompanyCtrl.cs" />
     <Compile Include="Controlles\ContractCtrl.cs" />
+    <Compile Include="Controlles\NomeraDokumentiCtrl.cs" />
     <Compile Include="Controlles\ObjectCtrl.cs" />
     <Compile Include="FiscalDevice.cs" />
     <Compile Include="Controlles\FiscalDeviceCtrl.cs" />
@@ -129,6 +132,7 @@
     <Compile Include="Helpers\BulstatChecker.cs" />
     <Compile Include="Helpers\DatabaseSettings.cs" />
     <Compile Include="Helpers\DocumentNumber.cs" />
+    <Compile Include="NomeraDokumenti.cs" />
     <Compile Include="Objects.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

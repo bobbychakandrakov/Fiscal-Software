@@ -16,6 +16,7 @@ namespace Fiscal_Software.Forms
         int id, id1;
         bool isSaving = true;
         HashSet<string> types = new HashSet<string>();
+        HashSet<string> activitiesHash = new HashSet<string>();
         public ObjectsForm()
         {
             InitializeComponent();
@@ -99,6 +100,12 @@ namespace Fiscal_Software.Forms
                 types.Add(objects[i].Type);
             }
             objectTpeBox.DataSource = types.ToList();
+            var activities = ActivityCtrl.GetAllActivities();
+            for (int i = 0; i < activities.Length; i++)
+            {
+                activitiesHash.Add(activities[i].Activity);
+            }
+            objectActivityBox.DataSource = activitiesHash.ToList();
         }
     }
 }
