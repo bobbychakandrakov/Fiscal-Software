@@ -260,6 +260,13 @@ namespace Fiscal_Software
             }
         }
 
+        public void RefreshObjects()
+        {
+            client = ClientCtrl.GetClient(selectedClientId);
+            var objects = ObjectCtrl.GetObjectsForClient(client.ID);
+            LoadObjects(objects);
+        }
+
         private void deleteClientButton_Click(object sender, EventArgs e)
         {
             if (clientsListView.SelectedItems.Count > 0)
@@ -313,7 +320,7 @@ namespace Fiscal_Software
         {
             if (selectedClientId > 0)
             {
-                ObjectsForm of = new ObjectsForm(selectedClientId);
+                ObjectsForm of = new ObjectsForm(selectedClientId,this);
                 of.Show();
             }
             

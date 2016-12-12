@@ -17,14 +17,16 @@ namespace Fiscal_Software.Forms
         bool isSaving = true;
         HashSet<string> types = new HashSet<string>();
         HashSet<string> activitiesHash = new HashSet<string>();
+        Form1 f1;
         public ObjectsForm()
         {
             InitializeComponent();
         }
-        public ObjectsForm(int id)
+        public ObjectsForm(int id, Form1 f1)
         {
             InitializeComponent();
             this.id = id;
+            this.f1 = f1;
         }
 
         public ObjectsForm(Objects objects)
@@ -76,7 +78,7 @@ namespace Fiscal_Software.Forms
                 {
                     ObjectCtrl.UpdateObject(id1, objectToAdd);
                 }
-                
+                this.f1.RefreshObjects();
                 this.Close();
             }
             else
