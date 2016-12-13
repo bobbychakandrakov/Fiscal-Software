@@ -65,11 +65,13 @@
     <Compile Include="Activities.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Contract.cs" />
+    <Compile Include="ContractFiscalDevices.cs" />
     <Compile Include="Controlles\ActivityCtrl.cs" />
     <Compile Include="Controlles\ClientCtrl.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="Controlles\CompanyCtrl.cs" />
     <Compile Include="Controlles\ContractCtrl.cs" />
+    <Compile Include="Controlles\ContractFiscalDeviceCtrl.cs" />
     <Compile Include="Controlles\NomeraDokumentiCtrl.cs" />
     <Compile Include="Controlles\ObjectCtrl.cs" />
     <Compile Include="FiscalDevice.cs" />

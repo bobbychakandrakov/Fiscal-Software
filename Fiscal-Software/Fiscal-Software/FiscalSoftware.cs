@@ -22,6 +22,7 @@ namespace Fiscal_Software
 
         public virtual DbSet<Activities> Activities { get; set; }
         public virtual DbSet<NomeraDokumenti> NomeraDokumenti { get; set; }
+        public virtual DbSet<ContractFiscalDevices> ContractFiscalDevices { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -265,6 +266,32 @@ namespace Fiscal_Software
 
             modelBuilder.Entity<NomeraDokumenti>()
             .Property(e => e.Svidetelstvo);
+
+            modelBuilder.Entity<ContractFiscalDevices>()
+          .Property(e => e.AutomaticNumbering);
+
+              modelBuilder.Entity<ContractFiscalDevices>()
+          .Property(e => e.ContractN);
+
+            modelBuilder.Entity<ContractFiscalDevices>()
+        .Property(e => e.DateFrom);
+
+            modelBuilder.Entity<ContractFiscalDevices>()
+        .Property(e => e.DateTo);
+
+            modelBuilder.Entity<ContractFiscalDevices>()
+        .Property(e => e.SumMonth);
+
+            modelBuilder.Entity<ContractFiscalDevices>()
+        .Property(e => e.Sum);
+
+
+            modelBuilder.Entity<ContractFiscalDevices>()
+        .Property(e => e.Valid);
+
+            modelBuilder.Entity<ContractFiscalDevices>()
+        .Property(e => e.Notes);
+
 
 
 
