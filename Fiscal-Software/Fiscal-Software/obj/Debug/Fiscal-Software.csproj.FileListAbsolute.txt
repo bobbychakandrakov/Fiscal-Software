@@ -81,3 +81,4 @@ C:\Users\pc\Documents\Fiscal-Software4\Fiscal-Software\Fiscal-Software\obj\Debug
 C:\Users\pc\Documents\Fiscal-Software4\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal-Software.pdb
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.ObjectsForm.resources
 C:\Users\pc\Documents\Fiscal-Software4\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.ObjectsForm.resources
+C:\Users\pc\Documents\Fiscal-Software4\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.ContractFiscalDevice.resources

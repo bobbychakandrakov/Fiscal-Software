@@ -67,11 +67,14 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.molLabel = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.cfdList = new System.Windows.Forms.ListView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.molLabel1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.molLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -81,9 +84,11 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -387,6 +392,7 @@
             this.objectsListView.UseCompatibleStateImageBehavior = false;
             this.objectsListView.View = System.Windows.Forms.View.Details;
             this.objectsListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.objectsListView_ItemSelectionChanged);
+            this.objectsListView.SelectedIndexChanged += new System.EventHandler(this.objectsListView_SelectedIndexChanged);
             // 
             // contextMenuStrip2
             // 
@@ -420,33 +426,35 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(406, 436);
+            this.tabPage2.Size = new System.Drawing.Size(673, 436);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Фискални у-ва";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // panel4
             // 
-            this.groupBox1.Controls.Add(this.molLabel);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(681, 93);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Данни за клиента";
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.cfdList);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(667, 430);
+            this.panel4.TabIndex = 0;
             // 
-            // molLabel
+            // cfdList
             // 
-            this.molLabel.AutoSize = true;
-            this.molLabel.Location = new System.Drawing.Point(147, 46);
-            this.molLabel.Name = "molLabel";
-            this.molLabel.Size = new System.Drawing.Size(35, 13);
-            this.molLabel.TabIndex = 0;
-            this.molLabel.Text = "МОЛ:";
+            this.cfdList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cfdList.Location = new System.Drawing.Point(0, 0);
+            this.cfdList.Name = "cfdList";
+            this.cfdList.Size = new System.Drawing.Size(667, 430);
+            this.cfdList.TabIndex = 0;
+            this.cfdList.UseCompatibleStateImageBehavior = false;
+            this.cfdList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.cfdList_SelectedIndexChanged);
+            this.cfdList.SelectedIndexChanged += new System.EventHandler(this.cfdList_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -477,6 +485,36 @@
             this.molLabel1.TabIndex = 1;
             this.molLabel1.Text = "МОЛ:";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.molLabel);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(681, 93);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Данни за клиента";
+            // 
+            // molLabel
+            // 
+            this.molLabel.AutoSize = true;
+            this.molLabel.Location = new System.Drawing.Point(147, 46);
+            this.molLabel.Name = "molLabel";
+            this.molLabel.Size = new System.Drawing.Size(35, 13);
+            this.molLabel.TabIndex = 0;
+            this.molLabel.Text = "МОЛ:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(71, 34);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(211, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "създаване на Договор за фискално устройство";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -501,11 +539,13 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -555,6 +595,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label molLabel1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ListView cfdList;
+        private System.Windows.Forms.Button button1;
     }
 }
 
