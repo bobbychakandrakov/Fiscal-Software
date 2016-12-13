@@ -19,11 +19,13 @@ namespace Fiscal_Software.Forms
         }
 
         int objectID;
+        Form1 f1;
 
-        public ContractFiscalDevice(int objectID)
+        public ContractFiscalDevice(int objectID,Form1 f1)
         {
             InitializeComponent();
             this.objectID = objectID;
+            this.f1 = f1;
         }
 
         List<string> contractNames = new List<string>();
@@ -44,6 +46,7 @@ namespace Fiscal_Software.Forms
                 cfd.Valid = Valid.Checked;
                 cfd.Notes = Notes.Text;
                 ContractFiscalDeviceCtrl.AddContractFiscalDevice(cfd);
+                f1.LoadCfds();
                 this.Close();
             }
             else

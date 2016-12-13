@@ -26,7 +26,7 @@ namespace Fiscal_Software
         ListViewItem lvi1;
         ListViewItem lvi2;
         ListViewItem lviCfd;
-        int selectedClientId = -1, selectedObjectID = -1,selectedCfdID=-1;
+        int selectedClientId = -1, selectedObjectID = -1, selectedCfdID=-1;
         Client client;
         ContractFiscalDevices cfd;
 
@@ -147,9 +147,9 @@ namespace Fiscal_Software
             }
         }
 
-        public void LoadCfds( ContractFiscalDevices[] cfds)
+        public void LoadCfds()
         {
-            cfdList. Clear();
+            cfdList.Clear();
             cfdList.Columns.Add("Валиден");
             cfdList.Columns.Add("Тип договор");
             cfdList.Columns.Add("Договор N");
@@ -157,18 +157,26 @@ namespace Fiscal_Software
             cfdList.Columns.Add("До Дата");
             cfdList.Columns.Add("Сума");
             cfdList.Columns.Add("Бележки");
-
-            for (int i = 0; i < cfds.Length; i++)
+            var cfds1 = ContractFiscalDeviceCtrl.GetAllContractFiscalDevices(selectedObjectID);
+            for (int i = 0; i < cfds1.Length; i++)
             {
-                lvi2 = new ListViewItem(cfds[i].Valid.ToString());
-                lvi2.SubItems.Add(cfds[i].ContractType.ToString());
-                lvi2.SubItems.Add(cfds[i].ContractN.ToString());
-                lvi2.SubItems.Add(cfds[i].DateFrom.ToString());
-                lvi2.SubItems.Add(cfds[i].DateTo.ToString());
-                lvi2.SubItems.Add(cfds[i].Sum.ToString());
-                lvi2.SubItems.Add(cfds[i].Notes);
-                lvi2.Tag = cfds[i].ID;
-                objectsListView.Items.Add(lvi2);
+                if (cfds1[i].Valid.Value)
+                {
+                    lvi2 = new ListViewItem("Да");
+                }
+                else
+                {
+                    lvi2 = new ListViewItem("Не");
+                }
+                
+                lvi2.SubItems.Add(ContractCtrl.GetContractById(cfds1[i].ContractType).Name);
+                lvi2.SubItems.Add(cfds1[i].ContractN.ToString());
+                lvi2.SubItems.Add(cfds1[i].DateFrom.ToString());
+                lvi2.SubItems.Add(cfds1[i].DateTo.ToString());
+                lvi2.SubItems.Add(cfds1[i].Sum.ToString());
+                lvi2.SubItems.Add(cfds1[i].Notes);
+                lvi2.Tag = cfds1[i].ID;
+                cfdList.Items.Add(lvi2);
             }
             cfdList.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.None);
             cfdList.Columns[0].Width = 150;
@@ -178,7 +186,7 @@ namespace Fiscal_Software
             cfdList.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
             cfdList.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.None);
             cfdList.Columns[2].Width = 150;
-           cfdList.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+            cfdList.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
         public void LoadObjects(Objects[] objects)
         {
@@ -435,6 +443,7 @@ namespace Fiscal_Software
             if (e.IsSelected)
             {
                 selectedObjectID = int.Parse(objectsListView.SelectedItems[0].Tag.ToString());
+                LoadCfds();
             }
            
         }
@@ -451,14 +460,13 @@ namespace Fiscal_Software
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            ContractFiscalDevice cfd = new ContractFiscalDevice(selectedObjectID);
+            ContractFiscalDevice cfd = new ContractFiscalDevice(selectedObjectID,this);
             cfd.Show();
         }
 
         private void добавянеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            ContractFiscalDevice cfd = new ContractFiscalDevice(selectedObjectID);
+            ContractFiscalDevice cfd = new ContractFiscalDevice(selectedObjectID,this);
             cfd.Show();
         }
 

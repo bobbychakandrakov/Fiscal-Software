@@ -457,6 +457,7 @@
             this.cfdList.Size = new System.Drawing.Size(667, 430);
             this.cfdList.TabIndex = 0;
             this.cfdList.UseCompatibleStateImageBehavior = false;
+            this.cfdList.View = System.Windows.Forms.View.Details;
             this.cfdList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.cfdList_SelectedIndexChanged);
             this.cfdList.SelectedIndexChanged += new System.EventHandler(this.cfdList_SelectedIndexChanged);
             // 
