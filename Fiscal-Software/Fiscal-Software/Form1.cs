@@ -455,6 +455,13 @@ namespace Fiscal_Software
             cfd.Show();
         }
 
+        private void добавянеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            ContractFiscalDevice cfd = new ContractFiscalDevice(selectedObjectID);
+            cfd.Show();
+        }
+
         private void cfdList_SelectedIndexChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             /* if (e.IsSelected)

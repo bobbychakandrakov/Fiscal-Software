@@ -74,7 +74,10 @@
             this.molLabel1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.molLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.добавянеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редактиранеНаДоговорToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изтриванеНаДоговорToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -89,6 +92,7 @@
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.contextMenuStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -437,7 +441,6 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.cfdList);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
@@ -447,6 +450,7 @@
             // 
             // cfdList
             // 
+            this.cfdList.ContextMenuStrip = this.contextMenuStrip3;
             this.cfdList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cfdList.Location = new System.Drawing.Point(0, 0);
             this.cfdList.Name = "cfdList";
@@ -505,15 +509,33 @@
             this.molLabel.TabIndex = 0;
             this.molLabel.Text = "МОЛ:";
             // 
-            // button1
+            // contextMenuStrip3
             // 
-            this.button1.Location = new System.Drawing.Point(71, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(211, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "създаване на Договор за фискално устройство";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.contextMenuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавянеToolStripMenuItem,
+            this.редактиранеНаДоговорToolStripMenuItem,
+            this.изтриванеНаДоговорToolStripMenuItem});
+            this.contextMenuStrip3.Name = "contextMenuStrip3";
+            this.contextMenuStrip3.Size = new System.Drawing.Size(208, 70);
+            // 
+            // добавянеToolStripMenuItem
+            // 
+            this.добавянеToolStripMenuItem.Name = "добавянеToolStripMenuItem";
+            this.добавянеToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.добавянеToolStripMenuItem.Text = "Договор за поддръжка";
+            this.добавянеToolStripMenuItem.Click += new System.EventHandler(this.добавянеToolStripMenuItem_Click);
+            // 
+            // редактиранеНаДоговорToolStripMenuItem
+            // 
+            this.редактиранеНаДоговорToolStripMenuItem.Name = "редактиранеНаДоговорToolStripMenuItem";
+            this.редактиранеНаДоговорToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.редактиранеНаДоговорToolStripMenuItem.Text = "Редактиране на договор";
+            // 
+            // изтриванеНаДоговорToolStripMenuItem
+            // 
+            this.изтриванеНаДоговорToolStripMenuItem.Name = "изтриванеНаДоговорToolStripMenuItem";
+            this.изтриванеНаДоговорToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.изтриванеНаДоговорToolStripMenuItem.Text = "Изтриване на договор";
             // 
             // Form1
             // 
@@ -546,6 +568,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.contextMenuStrip3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -597,7 +620,10 @@
         private System.Windows.Forms.Label molLabel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ListView cfdList;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
+        private System.Windows.Forms.ToolStripMenuItem добавянеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem редактиранеНаДоговорToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem изтриванеНаДоговорToolStripMenuItem;
     }
 }
 
