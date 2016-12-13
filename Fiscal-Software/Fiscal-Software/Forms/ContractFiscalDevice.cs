@@ -18,21 +18,38 @@ namespace Fiscal_Software.Forms
             InitializeComponent();
         }
 
+        int objectID;
+
+        public ContractFiscalDevice(int objectID)
+        {
+            InitializeComponent();
+            this.objectID = objectID;
+        }
+
+        List<string> contractNames = new List<string>();
+
         private void button1_Click(object sender, EventArgs e)
         {
-            ContractFiscalDevices cfd = new ContractFiscalDevices();
-            cfd.ContractType = 20;
-            cfd.ObjectId = 2;
-            cfd.AutomaticNumbering = AutomaticNumbering.Checked;
-            cfd.ContractN = Int32.Parse(ContractN.Text);
-            cfd.DateFrom = DateFrom.Value;
-            cfd.DateTo = DateTo.Value;
-            cfd.Sum = float.Parse(Sum.Text);
-            cfd.SumMonth = float.Parse(SumMonth.Text);
-            cfd.Valid = Valid.Checked;
-            cfd.Notes = Notes.Text;
-            ContractFiscalDeviceCtrl.AddContractFiscalDevice(cfd);
-
+            if (ContractType.Text != "" || ContractN.Text != "")
+            {
+                ContractFiscalDevices cfd = new ContractFiscalDevices();
+                cfd.ContractType = ContractCtrl.GetContractByName(ContractType.Text);
+                cfd.ObjectId = this.objectID;
+                cfd.AutomaticNumbering = AutomaticNumbering.Checked;
+                cfd.ContractN = Int32.Parse(ContractN.Text);
+                cfd.DateFrom = DateFrom.Value;
+                cfd.DateTo = DateTo.Value;
+                cfd.Sum = float.Parse(Sum.Text);
+                cfd.SumMonth = float.Parse(SumForMount.Text);
+                cfd.Valid = Valid.Checked;
+                cfd.Notes = Notes.Text;
+                ContractFiscalDeviceCtrl.AddContractFiscalDevice(cfd);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Моля, попълнете полетата!");
+            }
 
         }
 
@@ -48,7 +65,17 @@ namespace Fiscal_Software.Forms
 
         private void ContractFiscalDevice_Load(object sender, EventArgs e)
         {
+            var contracts = ContractCtrl.GetAllContracts();
+            for (int i = 0; i < contracts.Length; i++)
+            {
+                ContractType.Items.Add(contracts[i].Name);
+            }
+            
+        }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

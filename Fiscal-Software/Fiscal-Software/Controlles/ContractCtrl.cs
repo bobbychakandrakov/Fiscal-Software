@@ -18,6 +18,16 @@ namespace Fiscal_Software.Controlles
                 ctx.SaveChanges();
             }
         }
+
+        public static int GetContractByName(string name)
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var contract = ctx.Contracts.Where(b => b.Name == name)
+                   .FirstOrDefault();
+                return contract.ID;
+            }
+        }
         public static void UpdateContract(int id, Contract contract)
         {
             using (var ctx = new FiscalSoftware())

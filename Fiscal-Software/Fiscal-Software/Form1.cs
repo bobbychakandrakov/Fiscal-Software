@@ -451,7 +451,7 @@ namespace Fiscal_Software
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            ContractFiscalDevice cfd = new ContractFiscalDevice();
+            ContractFiscalDevice cfd = new ContractFiscalDevice(selectedObjectID);
             cfd.Show();
         }
 
