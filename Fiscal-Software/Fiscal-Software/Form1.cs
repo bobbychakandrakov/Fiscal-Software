@@ -470,6 +470,53 @@ namespace Fiscal_Software
             cfd.Show();
         }
 
+        private void изтриванеНаДоговорToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (cfdList.SelectedItems.Count > 0)
+            {
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да изтриете този договор ?",
+                                    "Изтриване на договор",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    int id = int.Parse(cfdList.SelectedItems[0].Tag.ToString());
+                    ContractFiscalDeviceCtrl.DeleteContractFiscalDevice(id);
+                    cfdList.SelectedItems[0].Remove();
+                }
+
+            }
+        }
+
+        private void редактиранеНаДоговорToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+         
+                selectedCfdID = int.Parse(cfdList.SelectedItems[0].Tag.ToString());
+                ContractFiscalDevices cfd = ContractFiscalDeviceCtrl.GetContractFiscalDevice(selectedCfdID);
+                ContractFiscalDevice cf = new ContractFiscalDevice(this, cfd);
+            cf.loadDataForUpdate(cfd);
+            //MessageBox.Show(selectedCfdID.ToString());
+                cf.Show();
+            
+            
+          
+              
+              /*  if (cfd != null)
+                {
+                   = "duhai";
+                }*/
+               /* var objects = ObjectCtrl.GetObjectsForClient(client.ID);
+                LoadObjects(objects);
+            }
+
+
+
+        }
+
+        private void contextMenuStrip3_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
         private void cfdList_SelectedIndexChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             /* if (e.IsSelected)

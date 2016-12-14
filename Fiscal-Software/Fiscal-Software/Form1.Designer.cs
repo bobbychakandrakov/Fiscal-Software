@@ -69,15 +69,15 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.cfdList = new System.Windows.Forms.ListView();
+            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.добавянеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редактиранеНаДоговорToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изтриванеНаДоговорToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.molLabel1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.molLabel = new System.Windows.Forms.Label();
-            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.добавянеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редактиранеНаДоговорToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.изтриванеНаДоговорToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -89,10 +89,10 @@
             this.contextMenuStrip2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.contextMenuStrip3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.contextMenuStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -452,6 +452,7 @@
             // 
             this.cfdList.ContextMenuStrip = this.contextMenuStrip3;
             this.cfdList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cfdList.FullRowSelect = true;
             this.cfdList.Location = new System.Drawing.Point(0, 0);
             this.cfdList.Name = "cfdList";
             this.cfdList.Size = new System.Drawing.Size(667, 430);
@@ -460,6 +461,38 @@
             this.cfdList.View = System.Windows.Forms.View.Details;
             this.cfdList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.cfdList_SelectedIndexChanged);
             this.cfdList.SelectedIndexChanged += new System.EventHandler(this.cfdList_SelectedIndexChanged);
+            // 
+            // contextMenuStrip3
+            // 
+            this.contextMenuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавянеToolStripMenuItem,
+            this.редактиранеНаДоговорToolStripMenuItem,
+            this.изтриванеНаДоговорToolStripMenuItem});
+            this.contextMenuStrip3.Name = "contextMenuStrip3";
+            this.contextMenuStrip3.Size = new System.Drawing.Size(208, 92);
+          //  this.contextMenuStrip3.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip3_Opening);
+            // 
+            // добавянеToolStripMenuItem
+            // 
+            this.добавянеToolStripMenuItem.Name = "добавянеToolStripMenuItem";
+            this.добавянеToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.добавянеToolStripMenuItem.Text = "Договор за поддръжка";
+            this.добавянеToolStripMenuItem.Click += new System.EventHandler(this.добавянеToolStripMenuItem_Click);
+            // 
+            // редактиранеНаДоговорToolStripMenuItem
+            // 
+            this.редактиранеНаДоговорToolStripMenuItem.Name = "редактиранеНаДоговорToolStripMenuItem";
+            this.редактиранеНаДоговорToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.редактиранеНаДоговорToolStripMenuItem.Text = "Редактиране на договор";
+           
+           this.редактиранеНаДоговорToolStripMenuItem.Click += new System.EventHandler(this.редактиранеНаДоговорToolStripMenuItem_Click);
+            // 
+            // изтриванеНаДоговорToolStripMenuItem
+            // 
+            this.изтриванеНаДоговорToolStripMenuItem.Name = "изтриванеНаДоговорToolStripMenuItem";
+            this.изтриванеНаДоговорToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.изтриванеНаДоговорToolStripMenuItem.Text = "Изтриване на договор";
+            this.изтриванеНаДоговорToolStripMenuItem.Click += new System.EventHandler(this.изтриванеНаДоговорToolStripMenuItem_Click);
             // 
             // panel2
             // 
@@ -510,34 +543,6 @@
             this.molLabel.TabIndex = 0;
             this.molLabel.Text = "МОЛ:";
             // 
-            // contextMenuStrip3
-            // 
-            this.contextMenuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавянеToolStripMenuItem,
-            this.редактиранеНаДоговорToolStripMenuItem,
-            this.изтриванеНаДоговорToolStripMenuItem});
-            this.contextMenuStrip3.Name = "contextMenuStrip3";
-            this.contextMenuStrip3.Size = new System.Drawing.Size(208, 70);
-            // 
-            // добавянеToolStripMenuItem
-            // 
-            this.добавянеToolStripMenuItem.Name = "добавянеToolStripMenuItem";
-            this.добавянеToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.добавянеToolStripMenuItem.Text = "Договор за поддръжка";
-            this.добавянеToolStripMenuItem.Click += new System.EventHandler(this.добавянеToolStripMenuItem_Click);
-            // 
-            // редактиранеНаДоговорToolStripMenuItem
-            // 
-            this.редактиранеНаДоговорToolStripMenuItem.Name = "редактиранеНаДоговорToolStripMenuItem";
-            this.редактиранеНаДоговорToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.редактиранеНаДоговорToolStripMenuItem.Text = "Редактиране на договор";
-            // 
-            // изтриванеНаДоговорToolStripMenuItem
-            // 
-            this.изтриванеНаДоговорToolStripMenuItem.Name = "изтриванеНаДоговорToolStripMenuItem";
-            this.изтриванеНаДоговорToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.изтриванеНаДоговорToolStripMenuItem.Text = "Изтриване на договор";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -564,12 +569,12 @@
             this.contextMenuStrip2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.contextMenuStrip3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.contextMenuStrip3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -20,6 +20,7 @@ namespace Fiscal_Software.Forms
 
         int objectID;
         Form1 f1;
+        bool isUpdate = false;
 
         public ContractFiscalDevice(int objectID,Form1 f1)
         {
@@ -27,25 +28,75 @@ namespace Fiscal_Software.Forms
             this.objectID = objectID;
             this.f1 = f1;
         }
+       
+
+
+        public ContractFiscalDevice(Form1 form1, ContractFiscalDevices cfd)
+        {
+        
+            InitializeComponent();
+            this.f1 = form1;
+            this.cfd = cfd;
+            this.isUpdate = true;
+            //loadData(this.cfd);
+        
+    }
+       public void loadDataForUpdate(ContractFiscalDevices cfd)
+        {
+             ContractType.Text = ContractCtrl.GetContractById(this.cfd.ContractType).Name;
+             AutomaticNumbering.Checked = cfd.AutomaticNumbering.Value;
+             ContractN.Text = cfd.ContractN.ToString();
+             DateFrom.Value = cfd.DateFrom.Value;
+             DateTo.Value = cfd.DateTo.Value;
+             Sum.Text = cfd.Sum.ToString();
+            SumForMount.Text = cfd.SumMonth.ToString();
+              Valid.Checked= cfd.Valid.Value;
+              Notes.Text = cfd.Notes;
+          
+
+        }
 
         List<string> contractNames = new List<string>();
+        private Form1 form1;
+        private ContractFiscalDevices cfd;
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (ContractType.Text != "" || ContractN.Text != "")
             {
                 ContractFiscalDevices cfd = new ContractFiscalDevices();
-                cfd.ContractType = ContractCtrl.GetContractByName(ContractType.Text);
-                cfd.ObjectId = this.objectID;
-                cfd.AutomaticNumbering = AutomaticNumbering.Checked;
-                cfd.ContractN = Int32.Parse(ContractN.Text);
-                cfd.DateFrom = DateFrom.Value;
-                cfd.DateTo = DateTo.Value;
-                cfd.Sum = float.Parse(Sum.Text);
-                cfd.SumMonth = float.Parse(SumForMount.Text);
-                cfd.Valid = Valid.Checked;
-                cfd.Notes = Notes.Text;
-                ContractFiscalDeviceCtrl.AddContractFiscalDevice(cfd);
+                if (this.isUpdate)
+                {
+
+                    
+                    cfd.ContractType = ContractCtrl.GetContractByName(ContractType.Text);
+                    cfd.ObjectId = this.objectID;
+                    cfd.AutomaticNumbering = AutomaticNumbering.Checked;
+                    cfd.ContractN = Int32.Parse(ContractN.Text);
+                    cfd.DateFrom = DateFrom.Value;
+                    cfd.DateTo = DateTo.Value;
+                    cfd.Sum = float.Parse(Sum.Text);
+                    cfd.SumMonth = float.Parse(SumForMount.Text);
+                    cfd.Valid = Valid.Checked;
+                    cfd.Notes = Notes.Text;
+                    ContractFiscalDeviceCtrl.UpdateControlFiscalDevice(this.cfd.ID,cfd);
+                }
+                else
+                {
+                    //ContractFiscalDevices cfd = new ContractFiscalDevices();
+                    cfd.ContractType = ContractCtrl.GetContractByName(ContractType.Text);
+                    cfd.ObjectId = this.objectID;
+                    cfd.AutomaticNumbering = AutomaticNumbering.Checked;
+                    cfd.ContractN = Int32.Parse(ContractN.Text);
+                    cfd.DateFrom = DateFrom.Value;
+                    cfd.DateTo = DateTo.Value;
+                    cfd.Sum = float.Parse(Sum.Text);
+                    cfd.SumMonth = float.Parse(SumForMount.Text);
+                    cfd.Valid = Valid.Checked;
+                    cfd.Notes = Notes.Text;
+                    ContractFiscalDeviceCtrl.AddContractFiscalDevice(cfd);
+                    
+                }
                 f1.LoadCfds();
                 this.Close();
             }
