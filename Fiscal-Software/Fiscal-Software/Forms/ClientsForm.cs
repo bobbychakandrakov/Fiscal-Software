@@ -58,7 +58,18 @@ namespace Fiscal_Software.Forms
         }
         private void cancelClientBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+            /*  DialogResult msg = MessageBox.Show("Сигурни ли сте, че иската да излезете " + " ?",
+                                  "Изход от картон клиент",
+                          MessageBoxButtons.YesNo);
+              if (msg == DialogResult.Yes)
+              {*/
+              this.Close();
+            
+            
+
+
+
         }
 
         private void saveClientBtn_Click(object sender, EventArgs e)
@@ -133,6 +144,23 @@ namespace Fiscal_Software.Forms
                 tdds.Add(clients[i].TDD);
             }
             clientTDDBox.DataSource = tdds.ToList();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+       
+            switch (MessageBox.Show(this, "Сигурни ли сте, че иската да излезете " + " ?", "Изход от картон клиент", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

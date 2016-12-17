@@ -281,5 +281,21 @@ namespace Fiscal_Software.Forms
         {
 
         }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+
+            switch (MessageBox.Show(this, "Сигурни ли сте, че иската да излезете " + " ?", "Изход от сервизни фирми", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
