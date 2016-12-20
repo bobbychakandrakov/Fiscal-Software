@@ -550,6 +550,27 @@ namespace Fiscal_Software
 
         }
 
+        private void objectsListView_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (selectedClientId > 0)
+            {
+                var objects = ObjectCtrl.GetObjectById(selectedObjectID);
+                ObjectsForm of = new ObjectsForm(objects);
+                of.Show();
+            }
+        }
+
+        private void cfdList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+            if (selectedClientId > 0)
+            {
+                var objects = ObjectCtrl.GetObjectById(selectedObjectID);
+                ObjectsForm of = new ObjectsForm(objects);
+                of.Show();
+            }
+        }
+
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             if (selectedClientId > 0)

@@ -397,6 +397,7 @@
             this.objectsListView.View = System.Windows.Forms.View.Details;
             this.objectsListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.objectsListView_ItemSelectionChanged);
             this.objectsListView.SelectedIndexChanged += new System.EventHandler(this.objectsListView_SelectedIndexChanged);
+            this.objectsListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.objectsListView_MouseDoubleClick);
             // 
             // contextMenuStrip2
             // 
@@ -461,6 +462,7 @@
             this.cfdList.View = System.Windows.Forms.View.Details;
             this.cfdList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.cfdList_SelectedIndexChanged);
             this.cfdList.SelectedIndexChanged += new System.EventHandler(this.cfdList_SelectedIndexChanged);
+            this.cfdList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.cfdList_MouseDoubleClick);
             // 
             // contextMenuStrip3
             // 
@@ -469,8 +471,7 @@
             this.редактиранеНаДоговорToolStripMenuItem,
             this.изтриванеНаДоговорToolStripMenuItem});
             this.contextMenuStrip3.Name = "contextMenuStrip3";
-            this.contextMenuStrip3.Size = new System.Drawing.Size(208, 92);
-          //  this.contextMenuStrip3.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip3_Opening);
+            this.contextMenuStrip3.Size = new System.Drawing.Size(208, 70);
             // 
             // добавянеToolStripMenuItem
             // 
@@ -484,8 +485,7 @@
             this.редактиранеНаДоговорToolStripMenuItem.Name = "редактиранеНаДоговорToolStripMenuItem";
             this.редактиранеНаДоговорToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.редактиранеНаДоговорToolStripMenuItem.Text = "Редактиране на договор";
-           
-           this.редактиранеНаДоговорToolStripMenuItem.Click += new System.EventHandler(this.редактиранеНаДоговорToolStripMenuItem_Click);
+            this.редактиранеНаДоговорToolStripMenuItem.Click += new System.EventHandler(this.редактиранеНаДоговорToolStripMenuItem_Click);
             // 
             // изтриванеНаДоговорToolStripMenuItem
             // 
