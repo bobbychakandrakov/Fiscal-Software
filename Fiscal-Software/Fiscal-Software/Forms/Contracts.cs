@@ -32,7 +32,7 @@ namespace Fiscal_Software.Forms
         {
             this.ToggleControls(false);
             contractsListView.Columns.Add("Име");
-            contractsListView.Columns.Add("Срок");
+            contractsListView.Columns.Add("Срок ");
             var contracts = ContractCtrl.GetAllContracts();
             for (int i = 0; i < contracts.Length; i++)
             {
@@ -50,6 +50,8 @@ namespace Fiscal_Software.Forms
             contractsListView.Columns[1].Width = 150;
             contractsListView.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
             contractsListView.Columns[1].TextAlign = HorizontalAlignment.Right;
+            contractsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            contractsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void ToggleControls(bool isEnabled)

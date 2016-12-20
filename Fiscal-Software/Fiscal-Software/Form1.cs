@@ -65,7 +65,7 @@ namespace Fiscal_Software
         {
             clientsListView.Clear();
             clientsListView.Columns.Add("Фирма");
-            clientsListView.Columns.Add("Дан. N");
+            clientsListView.Columns.Add("ДДС Номер");
             clientsListView.Columns.Add("Булстат");
             //clientsListView.Columns.Add("Телефон");
            // clientsListView.Columns.Add("МОЛ");
@@ -73,7 +73,7 @@ namespace Fiscal_Software
             for (int i = 0; i < clients.Length; i++)
             {
                 lvi = new ListViewItem(clients[i].Name);
-                lvi.SubItems.Add(clients[i].FDNumber);
+                lvi.SubItems.Add(clients[i].DN);
                 lvi.SubItems.Add(clients[i].Bulstat);
                 lvi.Tag = clients[i].ID;
                 clientsListView.Items.Add(lvi);
@@ -87,11 +87,15 @@ namespace Fiscal_Software
             clientsListView.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.None);
             clientsListView.Columns[2].Width = 150;
             clientsListView.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+
+            clientsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            clientsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void exitApp_Click(object sender, EventArgs e)
         {
             Application.Exit();
+
         }
 
         private void addCompanyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -171,8 +175,8 @@ namespace Fiscal_Software
                 
                 lvi2.SubItems.Add(ContractCtrl.GetContractById(cfds1[i].ContractType).Name);
                 lvi2.SubItems.Add(cfds1[i].ContractN.ToString());
-                lvi2.SubItems.Add(cfds1[i].DateFrom.ToString());
-                lvi2.SubItems.Add(cfds1[i].DateTo.ToString());
+                lvi2.SubItems.Add(cfds1[i].DateFrom.Value.ToShortDateString());
+                lvi2.SubItems.Add(cfds1[i].DateTo.Value.ToShortDateString());
                 lvi2.SubItems.Add(cfds1[i].Sum.ToString());
                 lvi2.SubItems.Add(cfds1[i].Notes);
                 lvi2.Tag = cfds1[i].ID;
@@ -187,6 +191,8 @@ namespace Fiscal_Software
             cfdList.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.None);
             cfdList.Columns[2].Width = 150;
             cfdList.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+            cfdList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            cfdList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
         public void LoadObjects(Objects[] objects)
         {
@@ -219,6 +225,8 @@ namespace Fiscal_Software
             objectsListView.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.None);
             objectsListView.Columns[2].Width = 150;
             objectsListView.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+            objectsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            objectsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void настройкиToolStripMenuItem_Click(object sender, EventArgs e)

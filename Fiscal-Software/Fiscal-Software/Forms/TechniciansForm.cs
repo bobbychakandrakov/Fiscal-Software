@@ -57,6 +57,8 @@ namespace Fiscal_Software.Forms
             techniciansList.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.None);
             techniciansList.Columns[1].Width = 150;
             techniciansList.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+           techniciansList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            techniciansList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             LoadTechnicians();
         }
 
@@ -202,6 +204,8 @@ namespace Fiscal_Software.Forms
                 companyHash.Add(companies[j].Name);
             }
             technicianCompanyBox.DataSource = companyHash.ToList();
+            techniciansList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            techniciansList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
         private void technicianEGNBox_KeyPress(object sender, KeyPressEventArgs e)
         {

@@ -162,5 +162,20 @@ namespace Fiscal_Software.Forms
                     break;
             }
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clientMolEGNBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

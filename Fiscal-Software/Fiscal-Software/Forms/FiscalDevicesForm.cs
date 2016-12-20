@@ -59,6 +59,8 @@ namespace Fiscal_Software.Forms
             fiscalDevicesList.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.None);
             fiscalDevicesList.Columns[1].Width = 150;
             fiscalDevicesList.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+           fiscalDevicesList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            fiscalDevicesList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void FiscalTypeLoad()

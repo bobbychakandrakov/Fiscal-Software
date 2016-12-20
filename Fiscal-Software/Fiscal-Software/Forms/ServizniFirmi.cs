@@ -47,6 +47,8 @@ namespace Fiscal_Software.Forms
             companyListView.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.None);
             companyListView.Columns[0].Width = 70;
             companyListView.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
+            companyListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            companyListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 
         }
 
