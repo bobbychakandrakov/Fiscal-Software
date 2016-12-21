@@ -129,6 +129,7 @@ namespace Fiscal_Software
             if (DatabaseSettings.IsSet)
             {
                 RefreshClients();
+                
             }
             /*
             using (var ctx=new FiscalSoftware())
@@ -321,7 +322,10 @@ namespace Fiscal_Software
                 client = ClientCtrl.GetClient(selectedClientId);
                 if (client != null)
                 {
-                    molLabel1.Text = "МОЛ: " + client.Mol;
+                    molLabel1.Text = "МОЛ: " + client.Mol + ", Град: " + client.MolTown + " " + client.MolAddress + ", тел.: " + client.MolTelephone;
+                    companyNamePlaceholder.Text = client.Name;
+                    dnPlaceholder.Text = client.DN;
+                    bulstatPlaceholder.Text = client.Bulstat;
                 }
                 var objects = ObjectCtrl.GetObjectsForClient(client.ID);
                 LoadObjects(objects);
@@ -388,7 +392,8 @@ namespace Fiscal_Software
         {
             if (selectedClientId > 0)
             {
-                ObjectsForm of = new ObjectsForm(selectedClientId,this);
+                var clientForObj = ClientCtrl.GetClient(selectedClientId);
+                ObjectsForm of = new ObjectsForm(clientForObj, this);
                 of.Show();
             }
             

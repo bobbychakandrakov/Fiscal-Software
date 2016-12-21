@@ -30,8 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContractFiscalDevice));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.SaveCfd = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Sum = new System.Windows.Forms.TextBox();
+            this.SumForMount = new System.Windows.Forms.TextBox();
             this.Valid = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.DateTo = new System.Windows.Forms.DateTimePicker();
@@ -47,9 +50,6 @@
             this.AutomaticNumbering = new System.Windows.Forms.CheckBox();
             this.ContractType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.SumForMount = new System.Windows.Forms.TextBox();
-            this.Sum = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +62,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(473, 41);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(153, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Отказ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // SaveCfd
             // 
@@ -96,6 +106,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(602, 259);
             this.panel2.TabIndex = 1;
+            // 
+            // Sum
+            // 
+            this.Sum.Location = new System.Drawing.Point(325, 124);
+            this.Sum.Name = "Sum";
+            this.Sum.Size = new System.Drawing.Size(100, 20);
+            this.Sum.TabIndex = 18;
+            // 
+            // SumForMount
+            // 
+            this.SumForMount.Location = new System.Drawing.Point(98, 90);
+            this.SumForMount.Name = "SumForMount";
+            this.SumForMount.Size = new System.Drawing.Size(149, 20);
+            this.SumForMount.TabIndex = 17;
             // 
             // Valid
             // 
@@ -211,6 +235,7 @@
             // 
             // ContractType
             // 
+            this.ContractType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ContractType.FormattingEnabled = true;
             this.ContractType.Location = new System.Drawing.Point(98, 15);
             this.ContractType.Name = "ContractType";
@@ -226,30 +251,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Тип договор";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(153, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Отказ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // SumForMount
-            // 
-            this.SumForMount.Location = new System.Drawing.Point(98, 90);
-            this.SumForMount.Name = "SumForMount";
-            this.SumForMount.Size = new System.Drawing.Size(149, 20);
-            this.SumForMount.TabIndex = 17;
-            // 
-            // Sum
-            // 
-            this.Sum.Location = new System.Drawing.Point(325, 124);
-            this.Sum.Name = "Sum";
-            this.Sum.Size = new System.Drawing.Size(100, 20);
-            this.Sum.TabIndex = 18;
-            // 
             // ContractFiscalDevice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,7 +260,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ContractFiscalDevice";
-            this.Text = "ContractFiscalDevice";
+            this.Text = "Договор за фискално у-во";
             this.Load += new System.EventHandler(this.ContractFiscalDevice_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

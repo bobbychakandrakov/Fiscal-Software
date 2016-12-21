@@ -75,6 +75,11 @@
             this.изтриванеНаДоговорToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.bulstatPlaceholder = new System.Windows.Forms.Label();
+            this.dnPlaceholder = new System.Windows.Forms.Label();
+            this.companyNamePlaceholder = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.molLabel1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.molLabel = new System.Windows.Forms.Label();
@@ -505,6 +510,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.bulstatPlaceholder);
+            this.groupBox2.Controls.Add(this.dnPlaceholder);
+            this.groupBox2.Controls.Add(this.companyNamePlaceholder);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.molLabel1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
@@ -514,10 +524,53 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Данни за клиента";
             // 
+            // bulstatPlaceholder
+            // 
+            this.bulstatPlaceholder.AutoSize = true;
+            this.bulstatPlaceholder.Location = new System.Drawing.Point(453, 42);
+            this.bulstatPlaceholder.Name = "bulstatPlaceholder";
+            this.bulstatPlaceholder.Size = new System.Drawing.Size(0, 13);
+            this.bulstatPlaceholder.TabIndex = 6;
+            // 
+            // dnPlaceholder
+            // 
+            this.dnPlaceholder.AutoSize = true;
+            this.dnPlaceholder.Location = new System.Drawing.Point(195, 42);
+            this.dnPlaceholder.Name = "dnPlaceholder";
+            this.dnPlaceholder.Size = new System.Drawing.Size(0, 13);
+            this.dnPlaceholder.TabIndex = 5;
+            // 
+            // companyNamePlaceholder
+            // 
+            this.companyNamePlaceholder.AutoSize = true;
+            this.companyNamePlaceholder.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.companyNamePlaceholder.Location = new System.Drawing.Point(243, 16);
+            this.companyNamePlaceholder.Name = "companyNamePlaceholder";
+            this.companyNamePlaceholder.Size = new System.Drawing.Size(0, 18);
+            this.companyNamePlaceholder.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(396, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Булстат:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(99, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Данъчен номер:";
+            // 
             // molLabel1
             // 
             this.molLabel1.AutoSize = true;
-            this.molLabel1.Location = new System.Drawing.Point(100, 45);
+            this.molLabel1.Location = new System.Drawing.Point(47, 64);
             this.molLabel1.Name = "molLabel1";
             this.molLabel1.Size = new System.Drawing.Size(35, 13);
             this.molLabel1.TabIndex = 1;
@@ -556,6 +609,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fiscal-Software";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load_1);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -630,6 +684,11 @@
         private System.Windows.Forms.ToolStripMenuItem добавянеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактиранеНаДоговорToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem изтриванеНаДоговорToolStripMenuItem;
+        private System.Windows.Forms.Label companyNamePlaceholder;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label bulstatPlaceholder;
+        private System.Windows.Forms.Label dnPlaceholder;
     }
 }
 

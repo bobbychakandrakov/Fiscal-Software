@@ -27,7 +27,16 @@ namespace Fiscal_Software.Forms
             InitializeComponent();
             this.id = id;
             this.f1 = f1;
+            
         }
+        public ObjectsForm(Client client, Form1 f1)
+        {
+            InitializeComponent();
+            this.id = client.ID;
+            this.f1 = f1;
+            FillData(client);
+        }
+
 
         public ObjectsForm(Objects objects)
         {
@@ -36,6 +45,18 @@ namespace Fiscal_Software.Forms
             this.id1 = objects.ID;
             this.id = int.Parse(objects.ClientId.ToString());
             LoadPanelData(objects);
+        }
+
+        private void FillData(Client client)
+        {
+            objectTown.Text = client.Town;
+            objectAddressBox.Text = client.Address;
+            objectTelefoneBox.Text = client.Telephone;
+            objectTDDBox.Text = client.TDD;
+            objectMOLBox.Text = client.Mol;
+            objectMolAddressBox.Text = client.MolAddress;
+            objectMolTownBox.Text = client.MolTown;
+            objectTelephoneBox.Text = client.MolTelephone;
         }
 
         private void LoadPanelData(Objects objects)

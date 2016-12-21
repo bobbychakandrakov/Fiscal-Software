@@ -101,6 +101,7 @@ namespace Fiscal_Software.Forms
                    
                     ClientCtrl.AddClient(client);
                     f1.AddClient(client);
+                    this.f1.LoadDataAfter();
                 }
                 else
                 {
@@ -133,7 +134,7 @@ namespace Fiscal_Software.Forms
 
         private void clientDNBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            //e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
         private void ClientsForm_Load(object sender, EventArgs e)
