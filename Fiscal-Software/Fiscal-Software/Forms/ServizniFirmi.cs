@@ -75,6 +75,7 @@ namespace Fiscal_Software.Forms
 
         private void addCompanyBtn_Click(object sender, EventArgs e)
         {
+           
             ResetControlsValue();
             companyListView.Enabled = false;
             this.ToggleControls(true);
@@ -86,11 +87,19 @@ namespace Fiscal_Software.Forms
 
         private void cancelSaveBtn_Click(object sender, EventArgs e)
         {
-            companyListView.Enabled = true;
-            this.ToggleControls(false);
-            addCompanyBtn.Enabled = true;
-            editCompanyBtn.Enabled = true;
-            deleteCompanyBtn.Enabled = true;
+            DialogResult dr = MessageBox.Show("Сигурни ли сте, че иската да излезете от Сервизни фирми ?",
+                                    "Сервизни фирми",
+                            MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                companyListView.Enabled = true;
+                this.ToggleControls(false);
+                addCompanyBtn.Enabled = true;
+                editCompanyBtn.Enabled = true;
+                deleteCompanyBtn.Enabled = true;
+            }
+
+            
         }
 
         private void ResetControlsValue()

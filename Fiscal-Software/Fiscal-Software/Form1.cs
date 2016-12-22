@@ -395,6 +395,7 @@ namespace Fiscal_Software
                 var clientForObj = ClientCtrl.GetClient(selectedClientId);
                 ObjectsForm of = new ObjectsForm(clientForObj, this);
                 of.Show();
+                    of.Text="Добавяне на обект";
             }
             
         }
@@ -481,6 +482,7 @@ namespace Fiscal_Software
         {
             ContractFiscalDevice cfd = new ContractFiscalDevice(selectedObjectID,this);
             cfd.Show();
+            cfd.Text = "Добавяне на договор за подръжка";
         }
 
         private void изтриванеНаДоговорToolStripMenuItem_Click(object sender, EventArgs e)
@@ -509,6 +511,7 @@ namespace Fiscal_Software
             cf.loadDataForUpdate(cfd);
             //MessageBox.Show(selectedCfdID.ToString());
                 cf.Show();
+            cf.Text = "Редактиране на договор за подръжка";
             
             
           
@@ -576,6 +579,11 @@ namespace Fiscal_Software
             }
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             if (selectedClientId > 0)
@@ -583,24 +591,10 @@ namespace Fiscal_Software
                 var objects = ObjectCtrl.GetObjectById(selectedObjectID);
                 ObjectsForm of = new ObjectsForm(objects);
                 of.Show();
+                of.Text = "Редактиране на обект";
             }
         }
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            base.OnFormClosing(e);
-
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
-
-            switch (MessageBox.Show(this, "Сигурни ли сте, че иската да излезете  " + " ?", "Изход от Fiscal-Software", MessageBoxButtons.YesNo))
-            {
-                case DialogResult.No:
-                    e.Cancel = true;
-                    break;
-                default:
-                    break;
-            }
-        }
+        
     }
 
 }

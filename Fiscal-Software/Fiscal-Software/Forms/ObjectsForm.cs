@@ -111,6 +111,7 @@ namespace Fiscal_Software.Forms
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
+
             this.Close();
         }
 

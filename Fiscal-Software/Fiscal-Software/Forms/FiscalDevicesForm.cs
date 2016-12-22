@@ -93,6 +93,7 @@ namespace Fiscal_Software.Forms
 
         private void addFiscalDeviceBtn_Click(object sender, EventArgs e)
         {
+            this.Text = "Добавяне на фискално Устройство";
             ResetControlsValue();
             this.ToggleControls(true);
             addFiscalDeviceBtn.Enabled = false;
@@ -104,11 +105,20 @@ namespace Fiscal_Software.Forms
 
         private void cancelFiscalDeviceBtn_Click(object sender, EventArgs e)
         {
-            fiscalDevicesList.Enabled = true;
-            this.ToggleControls(false);
-            addFiscalDeviceBtn.Enabled = true;
-            editFiscalDeviceBtn.Enabled = true;
-            deleteFiscalDeviceBtn.Enabled = true;
+            DialogResult dr = MessageBox.Show("Сигурни ли сте, че иската да излезете от фискални устройства ?",
+                                   "фискални устройства",
+                           MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                fiscalDevicesList.Enabled = true;
+                this.ToggleControls(false);
+                addFiscalDeviceBtn.Enabled = true;
+                editFiscalDeviceBtn.Enabled = true;
+                deleteFiscalDeviceBtn.Enabled = true;
+                this.Text = "Фискални устройство";
+            }
+
+            
         }
 
         private void saveFiscalDeviceBtn_Click(object sender, EventArgs e)
@@ -174,6 +184,7 @@ namespace Fiscal_Software.Forms
 
         private void editFiscalDeviceBtn_Click(object sender, EventArgs e)
         {
+            this.Text = "Редактиране на фискално Устройство";
             if (fiscalDevicesList.SelectedItems.Count > 0)
             {
                 fiscalDevicesList.Enabled = false;

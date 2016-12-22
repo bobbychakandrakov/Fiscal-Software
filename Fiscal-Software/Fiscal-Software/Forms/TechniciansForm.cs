@@ -84,10 +84,19 @@ namespace Fiscal_Software.Forms
 
         private void cancelTechnicianBtn_Click(object sender, EventArgs e)
         {
-            this.ToggleControls(false,true);
-            addTechnicianBtn.Enabled = true;
-            editTechnicianBtn.Enabled = true;
-            deleteTechnicianBtn.Enabled = true;
+            DialogResult dr = MessageBox.Show("Сигурни ли сте, че иската да излезете от Техници ?",
+                                   "Техници",
+                           MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+
+                this.ToggleControls(false, true);
+                addTechnicianBtn.Enabled = true;
+                editTechnicianBtn.Enabled = true;
+                deleteTechnicianBtn.Enabled = true;
+            }
+
+            
         }
 
         private void saveTechnicianBtn_Click(object sender, EventArgs e)

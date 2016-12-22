@@ -87,15 +87,28 @@ namespace Fiscal_Software.Forms
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            ToggleControls(false);
-            addContractBtn.Enabled = true;
-            editContractBtn.Enabled = true;
-            deleteContractBtn.Enabled = true;
-            contractsListView.Enabled = true;
+            DialogResult dr = MessageBox.Show("Сигурни ли сте, че иската да излезете от договори ?",
+                                    "Договори",
+                            MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                ToggleControls(false);
+                addContractBtn.Enabled = true;
+                editContractBtn.Enabled = true;
+                deleteContractBtn.Enabled = true;
+                contractsListView.Enabled = true;
+                this.Text = "Договори";
+            }
+
+           
+            
+
+           
         }
 
         private void editContractBtn_Click(object sender, EventArgs e)
         {
+            this.Text = "Редактиране на Договор";
             isHover = true;
             addContractFlag = false;
             ToggleControls(true);
@@ -106,6 +119,8 @@ namespace Fiscal_Software.Forms
 
         private void saveContractBtn_Click(object sender, EventArgs e)
         {
+         
+
             if (contractNameBox.Text != "")
             {
                 if (addContractFlag)
@@ -131,6 +146,7 @@ namespace Fiscal_Software.Forms
                 else
                 {
                     var contract = new Contract();
+               
                     contract.Name = contractNameBox.Text;
                     contract.Duration = int.Parse(contractDurationBox.Value.ToString());
                     contract.MP3 = double.Parse(contractMP3Box.Text);

@@ -62,6 +62,7 @@ namespace Fiscal_Software.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             if (ContractType.Text != "" || ContractN.Text != "")
             {
                 ContractFiscalDevices cfd = new ContractFiscalDevices();
@@ -169,5 +170,6 @@ namespace Fiscal_Software.Forms
                     break;
             }
         }
+
     }
 }

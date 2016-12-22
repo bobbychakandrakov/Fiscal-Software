@@ -74,6 +74,7 @@ namespace Fiscal_Software.Forms
 
         private void saveClientBtn_Click(object sender, EventArgs e)
         {
+            
             if (clientNameBox.Text != "" && clientTDDBox.Text != "" && clientMolBox.Text != "" && clientMolTownBox.Text != "" && clientMolAddressBox.Text != "")
             {
                 Client client = new Client();
@@ -178,5 +179,6 @@ namespace Fiscal_Software.Forms
         {
 
         }
+        
     }
 }
