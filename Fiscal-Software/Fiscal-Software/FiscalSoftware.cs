@@ -24,6 +24,7 @@ namespace Fiscal_Software
         public virtual DbSet<NomeraDokumenti> NomeraDokumenti { get; set; }
         public virtual DbSet<ContractFiscalDevices> ContractFiscalDevices { get; set; }
 
+        public virtual DbSet<SvidetelstvoRegistraciq> SvidetelstvoRegistraciq { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Client>()
@@ -291,6 +292,39 @@ namespace Fiscal_Software
 
             modelBuilder.Entity<ContractFiscalDevices>()
         .Property(e => e.Notes);
+
+            modelBuilder.Entity<SvidetelstvoRegistraciq>()
+       .Property(e => e.RegDate);
+
+            modelBuilder.Entity<SvidetelstvoRegistraciq>()
+     .Property(e => e.SvidetelstvoN);
+
+            modelBuilder.Entity<SvidetelstvoRegistraciq>()
+     .Property(e => e.Technician);
+
+            modelBuilder.Entity<SvidetelstvoRegistraciq>()
+     .Property(e => e.Contract);
+
+            modelBuilder.Entity<SvidetelstvoRegistraciq>()
+     .Property(e => e.RegNoNap);
+
+            modelBuilder.Entity<SvidetelstvoRegistraciq>()
+     .Property(e => e.RegNoNapIzdaden);
+
+            modelBuilder.Entity<SvidetelstvoRegistraciq>()
+     .Property(e => e.AutoNumbering);
+
+            modelBuilder.Entity<SvidetelstvoRegistraciq>()
+     .Property(e => e.Notes);
+
+            modelBuilder.Entity<SvidetelstvoRegistraciq>()
+     .Property(e => e.PrietObs);
+
+            modelBuilder.Entity<SvidetelstvoRegistraciq>()
+     .Property(e => e.PrekratenoObs);
+
+            modelBuilder.Entity<SvidetelstvoRegistraciq>()
+     .Property(e => e.Reason);
 
 
 
