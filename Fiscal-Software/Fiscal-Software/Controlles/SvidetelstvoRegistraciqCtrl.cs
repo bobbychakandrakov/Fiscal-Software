@@ -39,6 +39,7 @@ namespace Fiscal_Software.Controlles
                     original.PrietObs = svidetelstvo.PrietObs;
                     original.PrekratenoObs = svidetelstvo.PrekratenoObs;
                     original.Reason = svidetelstvo.Reason;
+                    original.FiscalID = svidetelstvo.FiscalID;
                     ctx.SaveChanges();
                 }
             }
