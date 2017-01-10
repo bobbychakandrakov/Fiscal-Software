@@ -154,6 +154,19 @@ namespace Fiscal_Software
 
         public void LoadCfds()
         {
+            fiscalDeviceListView.Clear();
+            fiscalDeviceListView.Columns.Add("Модел ФУ");
+            fiscalDeviceListView.Columns.Add("Инд N на ФУ");
+            fiscalDeviceListView.Columns.Add("ФП номер");
+            fiscalDeviceListView.Columns.Add("ФП активирана");
+            fiscalDeviceListView.Columns.Add("ФП демонтирана");
+            fiscalDeviceListView.Columns.Add("Сервиз");
+            fiscalDeviceListView.Columns.Add("Гаранция до");
+            fiscalDeviceListView.Columns.Add("Първа регистрация (фирма)");
+            fiscalDeviceListView.Columns.Add("Първа регистрация");
+            fiscalDeviceListView.Columns.Add("Рег.Nr Нап");
+            fiscalDeviceListView.Columns.Add("Рег. НАП");
+            fiscalDeviceListView.Columns.Add("СИМ платен до");
             cfdList.Clear();
             cfdList.Columns.Add("Валиден");
             cfdList.Columns.Add("Тип договор");
@@ -194,6 +207,8 @@ namespace Fiscal_Software
             cfdList.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
             cfdList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             cfdList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            fiscalDeviceListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            fiscalDeviceListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
         public void LoadObjects(Objects[] objects)
         {
@@ -577,6 +592,56 @@ namespace Fiscal_Software
                 ObjectsForm of = new ObjectsForm(objects);
                 of.Show();
             }
+        }
+
+        private void contextMenuStrip4_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void добавянеНаФУToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Open Fiscal Device Form for adding data
+        }
+
+        private void редактиранеНаФУToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Open Fiscal Device Form for editing prefilled data
+        }
+
+        private void изтриванеНаФУToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Dialog Window to confirm deletion of the selected element
+        }
+
+        private void свидетелствоЗаРегистрацияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Open Svidetelstvo Form
+
+        }
+
+        private void договорЗаПоддръжкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Open DogovorPoddrujka Form
+
+        }
+
+        private void демонтажНаФПToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Open Demontaj Form
+
+        }
+
+        private void ремонтToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Open Remont Form
+
+        }
+
+        private void печатДосиеНаФУToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Open Print Dialog with document filled with data
+
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

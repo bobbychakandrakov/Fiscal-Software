@@ -1,4 +1,4 @@
-namespace Fiscal_Software
+﻿namespace Fiscal_Software
 {
     using System;
     using System.Collections.Generic;

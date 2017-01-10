@@ -68,11 +68,24 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.cfdList = new System.Windows.Forms.ListView();
             this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.добавянеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактиранеНаДоговорToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изтриванеНаДоговорToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fiscalDeviceListView = new System.Windows.Forms.ListView();
+            this.contextMenuStrip4 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.добавянеНаФУToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редактиранеНаФУToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изтриванеНаФУToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.свидетелствоЗаРегистрацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.договорЗаПоддръжкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.демонтажНаФПToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ремонтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.печатДосиеНаФУToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.bulstatPlaceholder = new System.Windows.Forms.Label();
@@ -94,7 +107,9 @@
             this.contextMenuStrip2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
+            this.contextMenuStrip4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -448,21 +463,36 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.cfdList);
+            this.panel4.Controls.Add(this.tableLayoutPanel3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(667, 430);
             this.panel4.TabIndex = 0;
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.cfdList, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.fiscalDeviceListView, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(667, 430);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
             // cfdList
             // 
             this.cfdList.ContextMenuStrip = this.contextMenuStrip3;
             this.cfdList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cfdList.FullRowSelect = true;
-            this.cfdList.Location = new System.Drawing.Point(0, 0);
+            this.cfdList.Location = new System.Drawing.Point(3, 218);
             this.cfdList.Name = "cfdList";
-            this.cfdList.Size = new System.Drawing.Size(667, 430);
+            this.cfdList.Size = new System.Drawing.Size(661, 209);
             this.cfdList.TabIndex = 0;
             this.cfdList.UseCompatibleStateImageBehavior = false;
             this.cfdList.View = System.Windows.Forms.View.Details;
@@ -499,6 +529,100 @@
             this.изтриванеНаДоговорToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.изтриванеНаДоговорToolStripMenuItem.Text = "Изтриване на договор";
             this.изтриванеНаДоговорToolStripMenuItem.Click += new System.EventHandler(this.изтриванеНаДоговорToolStripMenuItem_Click);
+            // 
+            // fiscalDeviceListView
+            // 
+            this.fiscalDeviceListView.ContextMenuStrip = this.contextMenuStrip4;
+            this.fiscalDeviceListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fiscalDeviceListView.Location = new System.Drawing.Point(3, 3);
+            this.fiscalDeviceListView.Name = "fiscalDeviceListView";
+            this.fiscalDeviceListView.Size = new System.Drawing.Size(661, 209);
+            this.fiscalDeviceListView.TabIndex = 1;
+            this.fiscalDeviceListView.UseCompatibleStateImageBehavior = false;
+            this.fiscalDeviceListView.View = System.Windows.Forms.View.Details;
+            // 
+            // contextMenuStrip4
+            // 
+            this.contextMenuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавянеНаФУToolStripMenuItem,
+            this.редактиранеНаФУToolStripMenuItem,
+            this.изтриванеНаФУToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.свидетелствоЗаРегистрацияToolStripMenuItem,
+            this.договорЗаПоддръжкаToolStripMenuItem,
+            this.демонтажНаФПToolStripMenuItem,
+            this.ремонтToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.печатДосиеНаФУToolStripMenuItem});
+            this.contextMenuStrip4.Name = "contextMenuStrip4";
+            this.contextMenuStrip4.Size = new System.Drawing.Size(236, 192);
+            this.contextMenuStrip4.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip4_Opening);
+            // 
+            // добавянеНаФУToolStripMenuItem
+            // 
+            this.добавянеНаФУToolStripMenuItem.Name = "добавянеНаФУToolStripMenuItem";
+            this.добавянеНаФУToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.добавянеНаФУToolStripMenuItem.Text = "Добавяне на ФУ";
+            this.добавянеНаФУToolStripMenuItem.Click += new System.EventHandler(this.добавянеНаФУToolStripMenuItem_Click);
+            // 
+            // редактиранеНаФУToolStripMenuItem
+            // 
+            this.редактиранеНаФУToolStripMenuItem.Name = "редактиранеНаФУToolStripMenuItem";
+            this.редактиранеНаФУToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.редактиранеНаФУToolStripMenuItem.Text = "Редактиране на ФУ";
+            this.редактиранеНаФУToolStripMenuItem.Click += new System.EventHandler(this.редактиранеНаФУToolStripMenuItem_Click);
+            // 
+            // изтриванеНаФУToolStripMenuItem
+            // 
+            this.изтриванеНаФУToolStripMenuItem.Name = "изтриванеНаФУToolStripMenuItem";
+            this.изтриванеНаФУToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.изтриванеНаФУToolStripMenuItem.Text = "Изтриване на ФУ";
+            this.изтриванеНаФУToolStripMenuItem.Click += new System.EventHandler(this.изтриванеНаФУToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(232, 6);
+            // 
+            // свидетелствоЗаРегистрацияToolStripMenuItem
+            // 
+            this.свидетелствоЗаРегистрацияToolStripMenuItem.Name = "свидетелствоЗаРегистрацияToolStripMenuItem";
+            this.свидетелствоЗаРегистрацияToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.свидетелствоЗаРегистрацияToolStripMenuItem.Text = "Свидетелство за регистрация";
+            this.свидетелствоЗаРегистрацияToolStripMenuItem.Click += new System.EventHandler(this.свидетелствоЗаРегистрацияToolStripMenuItem_Click);
+            // 
+            // договорЗаПоддръжкаToolStripMenuItem
+            // 
+            this.договорЗаПоддръжкаToolStripMenuItem.Name = "договорЗаПоддръжкаToolStripMenuItem";
+            this.договорЗаПоддръжкаToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.договорЗаПоддръжкаToolStripMenuItem.Text = "Договор за поддръжка";
+            this.договорЗаПоддръжкаToolStripMenuItem.Click += new System.EventHandler(this.договорЗаПоддръжкаToolStripMenuItem_Click);
+            // 
+            // демонтажНаФПToolStripMenuItem
+            // 
+            this.демонтажНаФПToolStripMenuItem.Name = "демонтажНаФПToolStripMenuItem";
+            this.демонтажНаФПToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.демонтажНаФПToolStripMenuItem.Text = "Демонтаж на ФП";
+            this.демонтажНаФПToolStripMenuItem.Click += new System.EventHandler(this.демонтажНаФПToolStripMenuItem_Click);
+            // 
+            // ремонтToolStripMenuItem
+            // 
+            this.ремонтToolStripMenuItem.Name = "ремонтToolStripMenuItem";
+            this.ремонтToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.ремонтToolStripMenuItem.Text = "Ремонт";
+            this.ремонтToolStripMenuItem.Click += new System.EventHandler(this.ремонтToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(232, 6);
+            // 
+            // печатДосиеНаФУToolStripMenuItem
+            // 
+            this.печатДосиеНаФУToolStripMenuItem.Name = "печатДосиеНаФУToolStripMenuItem";
+            this.печатДосиеНаФУToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.печатДосиеНаФУToolStripMenuItem.Text = "Печат досие на ФУ";
+            this.печатДосиеНаФУToolStripMenuItem.Click += new System.EventHandler(this.печатДосиеНаФУToolStripMenuItem_Click);
             // 
             // panel2
             // 
@@ -624,7 +748,9 @@
             this.contextMenuStrip2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.contextMenuStrip3.ResumeLayout(false);
+            this.contextMenuStrip4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -690,6 +816,19 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label bulstatPlaceholder;
         private System.Windows.Forms.Label dnPlaceholder;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.ListView fiscalDeviceListView;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip4;
+        private System.Windows.Forms.ToolStripMenuItem добавянеНаФУToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem редактиранеНаФУToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem изтриванеНаФУToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem свидетелствоЗаРегистрацияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem договорЗаПоддръжкаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem демонтажНаФПToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ремонтToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem печатДосиеНаФУToolStripMenuItem;
     }
 }
 
