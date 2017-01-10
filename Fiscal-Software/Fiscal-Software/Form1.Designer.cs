@@ -96,6 +96,11 @@
             this.molLabel1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.molLabel = new System.Windows.Forms.Label();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -113,6 +118,8 @@
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -474,8 +481,8 @@
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.cfdList, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.fiscalDeviceListView, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tabControl2, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -484,15 +491,16 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(667, 430);
             this.tableLayoutPanel3.TabIndex = 0;
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // cfdList
             // 
             this.cfdList.ContextMenuStrip = this.contextMenuStrip3;
             this.cfdList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cfdList.FullRowSelect = true;
-            this.cfdList.Location = new System.Drawing.Point(3, 218);
+            this.cfdList.Location = new System.Drawing.Point(3, 3);
             this.cfdList.Name = "cfdList";
-            this.cfdList.Size = new System.Drawing.Size(661, 209);
+            this.cfdList.Size = new System.Drawing.Size(647, 177);
             this.cfdList.TabIndex = 0;
             this.cfdList.UseCompatibleStateImageBehavior = false;
             this.cfdList.View = System.Windows.Forms.View.Details;
@@ -721,6 +729,61 @@
             this.molLabel.TabIndex = 0;
             this.molLabel.Text = "МОЛ:";
             // 
+            // tabControl2
+            // 
+            this.tabControl2.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Controls.Add(this.tabPage5);
+            this.tabControl2.Controls.Add(this.tabPage6);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Location = new System.Drawing.Point(3, 218);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(661, 209);
+            this.tabControl2.TabIndex = 1;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.cfdList);
+            this.tabPage3.Location = new System.Drawing.Point(4, 4);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(653, 183);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "Договор за поддръжка";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 4);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(653, 183);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "Ремонти";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 4);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(653, 183);
+            this.tabPage5.TabIndex = 2;
+            this.tabPage5.Text = "Свидетелства за регистрация";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 4);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(653, 183);
+            this.tabPage6.TabIndex = 3;
+            this.tabPage6.Text = "Демонтаж на ФП";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -756,6 +819,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -829,6 +894,11 @@
         private System.Windows.Forms.ToolStripMenuItem ремонтToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem печатДосиеНаФУToolStripMenuItem;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabPage6;
     }
 }
 
