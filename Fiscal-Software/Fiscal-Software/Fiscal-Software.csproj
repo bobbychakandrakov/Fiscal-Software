@@ -137,6 +137,12 @@
     <Compile Include="Forms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SvidetelsvtoRegistraciqForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SvidetelsvtoRegistraciqForm.Designer.cs">
+      <DependentUpon>SvidetelsvtoRegistraciqForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TechniciansForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SvidetelsvtoRegistraciqForm.resx">
+      <DependentUpon>SvidetelsvtoRegistraciqForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TechniciansForm.resx">
       <DependentUpon>TechniciansForm.cs</DependentUpon>

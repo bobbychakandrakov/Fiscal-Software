@@ -619,7 +619,8 @@ namespace Fiscal_Software
         private void свидетелствоЗаРегистрацияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open Svidetelstvo Form
-
+            SvidetelsvtoRegistraciqForm srf = new SvidetelsvtoRegistraciqForm();
+            srf.Show();
         }
 
         private void договорЗаПоддръжкаToolStripMenuItem_Click(object sender, EventArgs e)
