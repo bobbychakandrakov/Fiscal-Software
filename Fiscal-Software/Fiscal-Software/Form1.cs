@@ -626,13 +626,16 @@ namespace Fiscal_Software
         private void договорЗаПоддръжкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open DogovorPoddrujka Form
-
+            ContractFiscalDevice cfd = new ContractFiscalDevice(selectedObjectID, this);
+            cfd.Show();
+            cfd.Text = "Добавяне на договор за подръжка";
         }
 
         private void демонтажНаФПToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open Demontaj Form
-
+            DemontajForm df = new DemontajForm();
+            df.Show();
         }
 
         private void ремонтToolStripMenuItem_Click(object sender, EventArgs e)
