@@ -33,34 +33,34 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.sum4 = new System.Windows.Forms.TextBox();
+            this.sum3 = new System.Windows.Forms.TextBox();
+            this.sum2 = new System.Windows.Forms.TextBox();
+            this.sum1 = new System.Windows.Forms.TextBox();
+            this.oborotSum = new System.Windows.Forms.TextBox();
+            this.oborotDo = new System.Windows.Forms.DateTimePicker();
+            this.oborotOt = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.inspectorTel = new System.Windows.Forms.TextBox();
+            this.inspektorIme = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.dataDemontaj = new System.Windows.Forms.DateTimePicker();
+            this.fpNomer = new System.Windows.Forms.TextBox();
+            this.technicianBox = new System.Windows.Forms.ComboBox();
+            this.prichiniBox = new System.Windows.Forms.RichTextBox();
+            this.oborotPrezGodinite = new System.Windows.Forms.RichTextBox();
+            this.saveDemontaj = new System.Windows.Forms.Button();
+            this.cancelDemontaj = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -94,13 +94,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.dateTimePicker3);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.sum4);
+            this.groupBox1.Controls.Add(this.sum3);
+            this.groupBox1.Controls.Add(this.sum2);
+            this.groupBox1.Controls.Add(this.sum1);
+            this.groupBox1.Controls.Add(this.oborotSum);
+            this.groupBox1.Controls.Add(this.oborotDo);
+            this.groupBox1.Controls.Add(this.oborotOt);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
@@ -115,59 +115,54 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Оборот";
             // 
-            // label4
+            // sum4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 34);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "От";
+            this.sum4.Location = new System.Drawing.Point(228, 147);
+            this.sum4.Name = "sum4";
+            this.sum4.Size = new System.Drawing.Size(107, 20);
+            this.sum4.TabIndex = 14;
             // 
-            // label5
+            // sum3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(188, 34);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(22, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "До";
+            this.sum3.Location = new System.Drawing.Point(228, 121);
+            this.sum3.Name = "sum3";
+            this.sum3.Size = new System.Drawing.Size(107, 20);
+            this.sum3.TabIndex = 13;
             // 
-            // label6
+            // sum2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(23, 91);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Сума";
+            this.sum2.Location = new System.Drawing.Point(228, 95);
+            this.sum2.Name = "sum2";
+            this.sum2.Size = new System.Drawing.Size(107, 20);
+            this.sum2.TabIndex = 12;
             // 
-            // label7
+            // sum1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(188, 71);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "ДДС";
+            this.sum1.Location = new System.Drawing.Point(228, 68);
+            this.sum1.Name = "sum1";
+            this.sum1.Size = new System.Drawing.Size(107, 20);
+            this.sum1.TabIndex = 11;
             // 
-            // label8
+            // oborotSum
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(188, 98);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "ДДС";
+            this.oborotSum.Location = new System.Drawing.Point(62, 88);
+            this.oborotSum.Name = "oborotSum";
+            this.oborotSum.Size = new System.Drawing.Size(107, 20);
+            this.oborotSum.TabIndex = 10;
             // 
-            // label9
+            // oborotDo
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(188, 124);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(32, 13);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "ДДС";
+            this.oborotDo.Location = new System.Drawing.Point(228, 28);
+            this.oborotDo.Name = "oborotDo";
+            this.oborotDo.Size = new System.Drawing.Size(107, 20);
+            this.oborotDo.TabIndex = 9;
+            // 
+            // oborotOt
+            // 
+            this.oborotOt.Location = new System.Drawing.Point(62, 28);
+            this.oborotOt.Name = "oborotOt";
+            this.oborotOt.Size = new System.Drawing.Size(107, 20);
+            this.oborotOt.TabIndex = 8;
             // 
             // label10
             // 
@@ -178,10 +173,64 @@
             this.label10.TabIndex = 6;
             this.label10.Text = "ДДС";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(188, 124);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 13);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "ДДС";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(188, 98);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "ДДС";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(188, 71);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "ДДС";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(23, 91);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(33, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Сума";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(188, 34);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(22, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "До";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(23, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(20, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "От";
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.inspectorTel);
+            this.groupBox2.Controls.Add(this.inspektorIme);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Location = new System.Drawing.Point(48, 331);
@@ -191,14 +240,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Инспектор";
             // 
-            // label11
+            // inspectorTel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(23, 34);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(29, 13);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Име";
+            this.inspectorTel.Location = new System.Drawing.Point(81, 61);
+            this.inspectorTel.Name = "inspectorTel";
+            this.inspectorTel.Size = new System.Drawing.Size(254, 20);
+            this.inspectorTel.TabIndex = 12;
+            // 
+            // inspektorIme
+            // 
+            this.inspektorIme.Location = new System.Drawing.Point(81, 31);
+            this.inspektorIme.Name = "inspektorIme";
+            this.inspektorIme.Size = new System.Drawing.Size(254, 20);
+            this.inspektorIme.TabIndex = 11;
             // 
             // label12
             // 
@@ -208,6 +262,15 @@
             this.label12.Size = new System.Drawing.Size(52, 13);
             this.label12.TabIndex = 1;
             this.label12.Text = "Телефон";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(23, 34);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(29, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Име";
             // 
             // label13
             // 
@@ -227,137 +290,76 @@
             this.label14.TabIndex = 6;
             this.label14.Text = "Оборот през годините";
             // 
-            // dateTimePicker1
+            // dataDemontaj
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(162, 32);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dataDemontaj.Location = new System.Drawing.Point(162, 32);
+            this.dataDemontaj.Name = "dataDemontaj";
+            this.dataDemontaj.Size = new System.Drawing.Size(200, 20);
+            this.dataDemontaj.TabIndex = 7;
             // 
-            // textBox1
+            // fpNomer
             // 
-            this.textBox1.Location = new System.Drawing.Point(162, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 8;
+            this.fpNomer.Location = new System.Drawing.Point(162, 70);
+            this.fpNomer.Name = "fpNomer";
+            this.fpNomer.Size = new System.Drawing.Size(200, 20);
+            this.fpNomer.TabIndex = 8;
             // 
-            // comboBox1
+            // technicianBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(162, 101);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 9;
+            this.technicianBox.FormattingEnabled = true;
+            this.technicianBox.Location = new System.Drawing.Point(162, 101);
+            this.technicianBox.Name = "technicianBox";
+            this.technicianBox.Size = new System.Drawing.Size(200, 21);
+            this.technicianBox.TabIndex = 9;
             // 
-            // dateTimePicker2
+            // prichiniBox
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(62, 28);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(107, 20);
-            this.dateTimePicker2.TabIndex = 8;
+            this.prichiniBox.Location = new System.Drawing.Point(48, 470);
+            this.prichiniBox.Name = "prichiniBox";
+            this.prichiniBox.Size = new System.Drawing.Size(385, 51);
+            this.prichiniBox.TabIndex = 10;
+            this.prichiniBox.Text = "";
             // 
-            // dateTimePicker3
+            // oborotPrezGodinite
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(228, 28);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(107, 20);
-            this.dateTimePicker3.TabIndex = 9;
+            this.oborotPrezGodinite.Location = new System.Drawing.Point(48, 554);
+            this.oborotPrezGodinite.Name = "oborotPrezGodinite";
+            this.oborotPrezGodinite.Size = new System.Drawing.Size(385, 51);
+            this.oborotPrezGodinite.TabIndex = 11;
+            this.oborotPrezGodinite.Text = "";
             // 
-            // textBox2
+            // saveDemontaj
             // 
-            this.textBox2.Location = new System.Drawing.Point(62, 88);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(107, 20);
-            this.textBox2.TabIndex = 10;
+            this.saveDemontaj.Location = new System.Drawing.Point(48, 614);
+            this.saveDemontaj.Name = "saveDemontaj";
+            this.saveDemontaj.Size = new System.Drawing.Size(75, 23);
+            this.saveDemontaj.TabIndex = 12;
+            this.saveDemontaj.Text = "Запис";
+            this.saveDemontaj.UseVisualStyleBackColor = true;
+            this.saveDemontaj.Click += new System.EventHandler(this.saveDemontaj_Click);
             // 
-            // textBox3
+            // cancelDemontaj
             // 
-            this.textBox3.Location = new System.Drawing.Point(228, 68);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(107, 20);
-            this.textBox3.TabIndex = 11;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(228, 95);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(107, 20);
-            this.textBox4.TabIndex = 12;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(228, 121);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(107, 20);
-            this.textBox5.TabIndex = 13;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(228, 147);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(107, 20);
-            this.textBox6.TabIndex = 14;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(81, 31);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(254, 20);
-            this.textBox7.TabIndex = 11;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(81, 61);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(254, 20);
-            this.textBox8.TabIndex = 12;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(48, 470);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(385, 51);
-            this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(48, 554);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(385, 51);
-            this.richTextBox2.TabIndex = 11;
-            this.richTextBox2.Text = "";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(48, 614);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Запис";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(358, 614);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Отказ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cancelDemontaj.Location = new System.Drawing.Point(358, 614);
+            this.cancelDemontaj.Name = "cancelDemontaj";
+            this.cancelDemontaj.Size = new System.Drawing.Size(75, 23);
+            this.cancelDemontaj.TabIndex = 13;
+            this.cancelDemontaj.Text = "Отказ";
+            this.cancelDemontaj.UseVisualStyleBackColor = true;
+            this.cancelDemontaj.Click += new System.EventHandler(this.cancelDemontaj_Click);
             // 
             // DemontajForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 649);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.cancelDemontaj);
+            this.Controls.Add(this.saveDemontaj);
+            this.Controls.Add(this.oborotPrezGodinite);
+            this.Controls.Add(this.prichiniBox);
+            this.Controls.Add(this.technicianBox);
+            this.Controls.Add(this.fpNomer);
+            this.Controls.Add(this.dataDemontaj);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.groupBox2);
@@ -370,6 +372,7 @@
             this.Name = "DemontajForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Демонтаж на ФУ";
+            this.Load += new System.EventHandler(this.DemontajForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -385,13 +388,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox sum4;
+        private System.Windows.Forms.TextBox sum3;
+        private System.Windows.Forms.TextBox sum2;
+        private System.Windows.Forms.TextBox sum1;
+        private System.Windows.Forms.TextBox oborotSum;
+        private System.Windows.Forms.DateTimePicker oborotDo;
+        private System.Windows.Forms.DateTimePicker oborotOt;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -404,14 +407,14 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker dataDemontaj;
+        private System.Windows.Forms.TextBox fpNomer;
+        private System.Windows.Forms.ComboBox technicianBox;
+        private System.Windows.Forms.TextBox inspectorTel;
+        private System.Windows.Forms.TextBox inspektorIme;
+        private System.Windows.Forms.RichTextBox prichiniBox;
+        private System.Windows.Forms.RichTextBox oborotPrezGodinite;
+        private System.Windows.Forms.Button saveDemontaj;
+        private System.Windows.Forms.Button cancelDemontaj;
     }
 }

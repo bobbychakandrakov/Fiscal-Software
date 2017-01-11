@@ -44,19 +44,19 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.data = new System.Windows.Forms.DateTimePicker();
+            this.svidetelstvoN = new System.Windows.Forms.TextBox();
+            this.technikBox = new System.Windows.Forms.ComboBox();
+            this.dogovorBox = new System.Windows.Forms.ComboBox();
+            this.regNapIzdaden = new System.Windows.Forms.DateTimePicker();
+            this.regNapFDRID = new System.Windows.Forms.TextBox();
+            this.avtomatichnoNomerirane = new System.Windows.Forms.CheckBox();
+            this.notesBox = new System.Windows.Forms.RichTextBox();
+            this.prietNa = new System.Windows.Forms.DateTimePicker();
+            this.prekratenNa = new System.Windows.Forms.DateTimePicker();
+            this.prichini = new System.Windows.Forms.ComboBox();
+            this.saveSvidetelsvto = new System.Windows.Forms.Button();
+            this.cancelSvidetelsvto = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -203,126 +203,128 @@
             this.label15.TabIndex = 14;
             this.label15.Text = "<Прекратено обслужване на> празно.";
             // 
-            // dateTimePicker1
+            // data
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(79, 24);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(162, 20);
-            this.dateTimePicker1.TabIndex = 15;
+            this.data.Location = new System.Drawing.Point(79, 24);
+            this.data.Name = "data";
+            this.data.Size = new System.Drawing.Size(162, 20);
+            this.data.TabIndex = 15;
             // 
-            // textBox1
+            // svidetelstvoN
             // 
-            this.textBox1.Location = new System.Drawing.Point(366, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 20);
-            this.textBox1.TabIndex = 16;
+            this.svidetelstvoN.Location = new System.Drawing.Point(366, 27);
+            this.svidetelstvoN.Name = "svidetelstvoN";
+            this.svidetelstvoN.Size = new System.Drawing.Size(106, 20);
+            this.svidetelstvoN.TabIndex = 16;
             // 
-            // comboBox1
+            // technikBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(102, 72);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(370, 21);
-            this.comboBox1.TabIndex = 17;
+            this.technikBox.FormattingEnabled = true;
+            this.technikBox.Location = new System.Drawing.Point(102, 72);
+            this.technikBox.Name = "technikBox";
+            this.technikBox.Size = new System.Drawing.Size(370, 21);
+            this.technikBox.TabIndex = 17;
             // 
-            // comboBox2
+            // dogovorBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(101, 120);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(370, 21);
-            this.comboBox2.TabIndex = 18;
+            this.dogovorBox.FormattingEnabled = true;
+            this.dogovorBox.Location = new System.Drawing.Point(101, 120);
+            this.dogovorBox.Name = "dogovorBox";
+            this.dogovorBox.Size = new System.Drawing.Size(370, 21);
+            this.dogovorBox.TabIndex = 18;
             // 
-            // dateTimePicker2
+            // regNapIzdaden
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(198, 205);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(162, 20);
-            this.dateTimePicker2.TabIndex = 19;
+            this.regNapIzdaden.Location = new System.Drawing.Point(198, 205);
+            this.regNapIzdaden.Name = "regNapIzdaden";
+            this.regNapIzdaden.Size = new System.Drawing.Size(162, 20);
+            this.regNapIzdaden.TabIndex = 19;
             // 
-            // textBox2
+            // regNapFDRID
             // 
-            this.textBox2.Location = new System.Drawing.Point(198, 167);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 20);
-            this.textBox2.TabIndex = 20;
+            this.regNapFDRID.Location = new System.Drawing.Point(198, 167);
+            this.regNapFDRID.Name = "regNapFDRID";
+            this.regNapFDRID.Size = new System.Drawing.Size(162, 20);
+            this.regNapFDRID.TabIndex = 20;
             // 
-            // checkBox1
+            // avtomatichnoNomerirane
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(198, 232);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(157, 17);
-            this.checkBox1.TabIndex = 21;
-            this.checkBox1.Text = "Автоматично номериране";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.avtomatichnoNomerirane.AutoSize = true;
+            this.avtomatichnoNomerirane.Location = new System.Drawing.Point(198, 232);
+            this.avtomatichnoNomerirane.Name = "avtomatichnoNomerirane";
+            this.avtomatichnoNomerirane.Size = new System.Drawing.Size(157, 17);
+            this.avtomatichnoNomerirane.TabIndex = 21;
+            this.avtomatichnoNomerirane.Text = "Автоматично номериране";
+            this.avtomatichnoNomerirane.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // notesBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(43, 266);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(428, 59);
-            this.richTextBox1.TabIndex = 22;
-            this.richTextBox1.Text = "";
+            this.notesBox.Location = new System.Drawing.Point(43, 266);
+            this.notesBox.Name = "notesBox";
+            this.notesBox.Size = new System.Drawing.Size(428, 59);
+            this.notesBox.TabIndex = 22;
+            this.notesBox.Text = "";
             // 
-            // dateTimePicker3
+            // prietNa
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(198, 460);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker3.TabIndex = 23;
+            this.prietNa.Location = new System.Drawing.Point(198, 460);
+            this.prietNa.Name = "prietNa";
+            this.prietNa.Size = new System.Drawing.Size(200, 20);
+            this.prietNa.TabIndex = 23;
             // 
-            // dateTimePicker4
+            // prekratenNa
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(198, 509);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker4.TabIndex = 24;
+            this.prekratenNa.Location = new System.Drawing.Point(198, 509);
+            this.prekratenNa.Name = "prekratenNa";
+            this.prekratenNa.Size = new System.Drawing.Size(200, 20);
+            this.prekratenNa.TabIndex = 24;
             // 
-            // comboBox3
+            // prichini
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(198, 555);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(200, 21);
-            this.comboBox3.TabIndex = 25;
+            this.prichini.FormattingEnabled = true;
+            this.prichini.Location = new System.Drawing.Point(198, 555);
+            this.prichini.Name = "prichini";
+            this.prichini.Size = new System.Drawing.Size(200, 21);
+            this.prichini.TabIndex = 25;
             // 
-            // button1
+            // saveSvidetelsvto
             // 
-            this.button1.Location = new System.Drawing.Point(43, 613);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Запис";
-            this.button1.UseVisualStyleBackColor = true;
+            this.saveSvidetelsvto.Location = new System.Drawing.Point(43, 613);
+            this.saveSvidetelsvto.Name = "saveSvidetelsvto";
+            this.saveSvidetelsvto.Size = new System.Drawing.Size(75, 23);
+            this.saveSvidetelsvto.TabIndex = 26;
+            this.saveSvidetelsvto.Text = "Запис";
+            this.saveSvidetelsvto.UseVisualStyleBackColor = true;
+            this.saveSvidetelsvto.Click += new System.EventHandler(this.saveSvidetelsvto_Click);
             // 
-            // button2
+            // cancelSvidetelsvto
             // 
-            this.button2.Location = new System.Drawing.Point(322, 612);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "Отказ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cancelSvidetelsvto.Location = new System.Drawing.Point(322, 612);
+            this.cancelSvidetelsvto.Name = "cancelSvidetelsvto";
+            this.cancelSvidetelsvto.Size = new System.Drawing.Size(75, 23);
+            this.cancelSvidetelsvto.TabIndex = 27;
+            this.cancelSvidetelsvto.Text = "Отказ";
+            this.cancelSvidetelsvto.UseVisualStyleBackColor = true;
+            this.cancelSvidetelsvto.Click += new System.EventHandler(this.cancelSvidetelsvto_Click);
             // 
             // SvidetelsvtoRegistraciqForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 648);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.dateTimePicker4);
-            this.Controls.Add(this.dateTimePicker3);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.cancelSvidetelsvto);
+            this.Controls.Add(this.saveSvidetelsvto);
+            this.Controls.Add(this.prichini);
+            this.Controls.Add(this.prekratenNa);
+            this.Controls.Add(this.prietNa);
+            this.Controls.Add(this.notesBox);
+            this.Controls.Add(this.avtomatichnoNomerirane);
+            this.Controls.Add(this.regNapFDRID);
+            this.Controls.Add(this.regNapIzdaden);
+            this.Controls.Add(this.dogovorBox);
+            this.Controls.Add(this.technikBox);
+            this.Controls.Add(this.svidetelstvoN);
+            this.Controls.Add(this.data);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -365,18 +367,18 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker data;
+        private System.Windows.Forms.TextBox svidetelstvoN;
+        private System.Windows.Forms.ComboBox technikBox;
+        private System.Windows.Forms.ComboBox dogovorBox;
+        private System.Windows.Forms.DateTimePicker regNapIzdaden;
+        private System.Windows.Forms.TextBox regNapFDRID;
+        private System.Windows.Forms.CheckBox avtomatichnoNomerirane;
+        private System.Windows.Forms.RichTextBox notesBox;
+        private System.Windows.Forms.DateTimePicker prietNa;
+        private System.Windows.Forms.DateTimePicker prekratenNa;
+        private System.Windows.Forms.ComboBox prichini;
+        private System.Windows.Forms.Button saveSvidetelsvto;
+        private System.Windows.Forms.Button cancelSvidetelsvto;
     }
 }

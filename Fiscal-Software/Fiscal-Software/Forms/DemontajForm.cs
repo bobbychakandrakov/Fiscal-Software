@@ -16,5 +16,20 @@ namespace Fiscal_Software.Forms
         {
             InitializeComponent();
         }
+
+        private void saveDemontaj_Click(object sender, EventArgs e)
+        {
+            // Save to db
+        }
+
+        private void cancelDemontaj_Click(object sender, EventArgs e)
+        {
+            // Exit form and show dialog if forms are touched
+        }
+
+        private void DemontajForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

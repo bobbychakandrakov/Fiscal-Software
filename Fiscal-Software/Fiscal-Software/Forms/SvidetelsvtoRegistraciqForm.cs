@@ -16,5 +16,16 @@ namespace Fiscal_Software.Forms
         {
             InitializeComponent();
         }
+
+        private void saveSvidetelsvto_Click(object sender, EventArgs e)
+        {
+            // Save to db
+        }
+
+        private void cancelSvidetelsvto_Click(object sender, EventArgs e)
+        {
+            // Exit form and show dialog if forms are touched
+        }
+
     }
 }

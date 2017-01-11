@@ -16,5 +16,15 @@ namespace Fiscal_Software.Forms
         {
             InitializeComponent();
         }
+
+        private void saveFD_Click(object sender, EventArgs e)
+        {
+            // Save to db
+        }
+
+        private void cancelFD_Click(object sender, EventArgs e)
+        {
+            // Exit form and show dialog if forms are touched
+        }
     }
 }
