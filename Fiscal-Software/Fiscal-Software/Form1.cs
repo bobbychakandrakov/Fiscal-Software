@@ -602,6 +602,8 @@ namespace Fiscal_Software
         private void добавянеНаФУToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open Fiscal Device Form for adding data
+            AddFiscalDevice afd = new AddFiscalDevice();
+            afd.Show();
         }
 
         private void редактиранеНаФУToolStripMenuItem_Click(object sender, EventArgs e)

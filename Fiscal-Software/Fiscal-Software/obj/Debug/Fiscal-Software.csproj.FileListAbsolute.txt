@@ -105,3 +105,4 @@ C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\bin\Debug
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal-Software.exe
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal-Software.pdb
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal-Software.csprojResolveAssemblyReference.cache
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.AddFiscalDevice.resources
