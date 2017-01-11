@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fiscal_Software.Controlles
+namespace Fiscal_Software.Controllers
 {
     class DanniFiskalnoUstroistvoCtrl
     {
@@ -15,7 +15,7 @@ namespace Fiscal_Software.Controlles
             {
                 ctx.DanniFiskalnoUstroistvo.Add(danni);
                 ctx.SaveChanges();
-          
+
             }
 
         }
@@ -36,8 +36,8 @@ namespace Fiscal_Software.Controlles
                     original.FPAktivirana = danni.FPAktivirana;
                     original.FPDeaktivirana = danni.FPDeaktivirana;
                     original.GuaranteeUntil = danni.GuaranteeUntil;
-                    original.PayedSim= danni.PayedSim;
-                    original.RegNoNap =danni.RegNoNap;
+                    original.PayedSim = danni.PayedSim;
+                    original.RegNoNap = danni.RegNoNap;
                     original.RegNapDate = danni.RegNapDate;
                     original.SimID = danni.SimID;
                     original.SimTelNomer = danni.SimTelNomer;

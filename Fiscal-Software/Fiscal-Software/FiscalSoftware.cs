@@ -19,11 +19,10 @@ namespace Fiscal_Software
         public virtual DbSet<Technician> Technicians { get; set; }
         public virtual DbSet<Contract> Contracts { get; set; }
         public virtual DbSet<Objects> Objects { get; set; }
-
         public virtual DbSet<Activities> Activities { get; set; }
         public virtual DbSet<NomeraDokumenti> NomeraDokumenti { get; set; }
         public virtual DbSet<ContractFiscalDevices> ContractFiscalDevices { get; set; }
-
+        public virtual DbSet<DanniFiskalnoUstroistvo> DanniFiskalnoUstroistvo { get; set; }
         public virtual DbSet<SvidetelstvoRegistraciq> SvidetelstvoRegistraciq { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
