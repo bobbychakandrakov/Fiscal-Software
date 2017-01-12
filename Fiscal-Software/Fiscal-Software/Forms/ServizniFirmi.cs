@@ -21,7 +21,6 @@ namespace Fiscal_Software.Forms
         public ServizniFirmi()
         {
             InitializeComponent();
-
         }
 
         private void ServizniFirmi_Load(object sender, EventArgs e)

@@ -160,6 +160,7 @@
     <Compile Include="Helpers\BulstatChecker.cs" />
     <Compile Include="Helpers\ComboboxItem.cs" />
     <Compile Include="Helpers\DatabaseSettings.cs" />
+    <Compile Include="Helpers\DirtyChecker.cs" />
     <Compile Include="Helpers\DocumentNumber.cs" />
     <Compile Include="NomeraDokumenti.cs" />
     <Compile Include="Objects.cs" />
