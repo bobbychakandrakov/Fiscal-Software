@@ -14,11 +14,53 @@ namespace Fiscal_Software.Forms
 {
     public partial class AddFiscalDevice : Form
     {
+        Form1 f1;
+        int id;
+        bool isEditing = false;
         public AddFiscalDevice()
         {
             InitializeComponent();
         }
 
+        public AddFiscalDevice(Form1 f1)
+        {
+            InitializeComponent();
+            this.f1 = f1;
+        }
+
+        public AddFiscalDevice(Form1 f1, int id)
+        {
+            InitializeComponent();
+            this.f1 = f1;
+            this.id = id;
+            isEditing = true;
+        }
+        private void LoadData(DanniFiskalnoUstroistvo dfu)
+        {
+            servizBox.SelectedValue = dfu.Serviz;
+            obektBox.SelectedValue = dfu.Obekt;
+            modelFUCRU.SelectedValue = dfu.ModelFY;
+            fuNomer.Text = dfu.FYNomer.ToString();
+            fpNomer.Text = dfu.FPNomer.ToString();
+            fpAktivirana.Value = dfu.FPAktivirana.Value;
+            fpDemontirana.Value = dfu.FPDeaktivirana.Value;
+            garanciqDo.Value = dfu.GuaranteeUntil.Value;
+            platenSimDo.Value = dfu.PayedSim.Value;
+
+            regNapNomer.Text = dfu.RegNoNap.ToString();
+            simID.Text = dfu.SimID.ToString();
+            simTelN.Text= dfu.SimTelNomer.ToString();
+
+            nivomer.Text = dfu.Nivomer;
+            regFirma.Text = dfu.Company;
+            regGrad.Text = dfu.Town;
+            regTexnik.Text = dfu.Technician;
+            regAdres.Text = dfu.Address;
+            regTel.Text = dfu.Tel;
+            regDate.Value = dfu.RegDate.Value;
+            esfpType.Text = dfu.ESFPT;
+            modelESFP.Text = dfu.ModelESFP;
+        }
         private void saveFD_Click(object sender, EventArgs e)
         {
             // Save to db
@@ -66,7 +108,18 @@ namespace Fiscal_Software.Forms
                 dfu.Address = regAdres.Text;
                 dfu.Tel = regTel.Text;
                 dfu.RegDate = regDate.Value;
-                DanniFiskalnoUstroistvoCtrl.AddDanniFiskalnoUstroistvo(dfu);
+                dfu.ESFPT = esfpType.Text;
+                dfu.ModelESFP = modelESFP.Text;
+                if (isEditing)
+                {
+                    DanniFiskalnoUstroistvoCtrl.UpdateDanniFiskalnoUstroistvo(this.id, dfu);
+                }
+                else
+                {
+                    DanniFiskalnoUstroistvoCtrl.AddDanniFiskalnoUstroistvo(dfu);
+                }
+                f1.LoadDanni();
+                this.Close();
             }
            
         }
@@ -132,6 +185,11 @@ namespace Fiscal_Software.Forms
             //modelESFP.DataSource = fiscalDeviceHash.ToList();
             modelFUCRU.DataSource = list.ToList();
             modelESFP.DataSource = list.ToList();
+            if (isEditing)
+            {
+                LoadData(DanniFiskalnoUstroistvoCtrl.GetDanniFiskalnoUstroistvoById(id));
+            }
+            
         }
 
         private void servizBox_SelectedValueChanged(object sender, EventArgs e)

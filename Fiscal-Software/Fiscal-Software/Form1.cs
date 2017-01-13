@@ -26,7 +26,7 @@ namespace Fiscal_Software
         ListViewItem lvi1;
         ListViewItem lvi2;
         ListViewItem lviCfd;
-        int selectedClientId = -1, selectedObjectID = -1, selectedCfdID=-1;
+        int selectedClientId = -1, selectedObjectID = -1, selectedCfdID=-1, selectedFUDanni = -1;
         Client client;
         ContractFiscalDevices cfd;
 
@@ -475,7 +475,7 @@ namespace Fiscal_Software
            
         }
 
-        private void LoadDanni()
+        public void LoadDanni()
         {
             fiscalDeviceListView.Clear();
             fiscalDeviceListView.Columns.Add("Модел ФУ");
@@ -508,6 +508,8 @@ namespace Fiscal_Software
                 lvi2.Tag = danni[i].ID;
                 fiscalDeviceListView.Items.Add(lvi2);
             }
+            fiscalDeviceListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            fiscalDeviceListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void objectsListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -635,18 +637,37 @@ namespace Fiscal_Software
         private void добавянеНаФУToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open Fiscal Device Form for adding data
-            AddFiscalDevice afd = new AddFiscalDevice();
+            AddFiscalDevice afd = new AddFiscalDevice(this);
             afd.Show();
         }
 
         private void редактиранеНаФУToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open Fiscal Device Form for editing prefilled data
+            selectedFUDanni = int.Parse(fiscalDeviceListView.SelectedItems[0].Tag.ToString());
+            if (selectedFUDanni > 0)
+            {
+                AddFiscalDevice afd = new AddFiscalDevice(this, selectedFUDanni);
+                afd.Show();
+            }
         }
 
         private void изтриванеНаФУToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Dialog Window to confirm deletion of the selected element
+            selectedFUDanni = int.Parse(fiscalDeviceListView.SelectedItems[0].Tag.ToString());
+            if (selectedFUDanni > 0)
+            {
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да изтриете това фускално у-во ?",
+                                    "Изтриване на фискално у-во",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    int id = int.Parse(fiscalDeviceListView.SelectedItems[0].Tag.ToString());
+                    DanniFiskalnoUstroistvoCtrl.DeleteDanniFiskalnoUstroistvoById(selectedFUDanni);
+                    fiscalDeviceListView.SelectedItems[0].Remove();
+                }
+            }
         }
 
         private void свидетелствоЗаРегистрацияToolStripMenuItem_Click(object sender, EventArgs e)
