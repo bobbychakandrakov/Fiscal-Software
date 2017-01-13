@@ -564,6 +564,8 @@
             this.Name = "AddFiscalDevice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавяне на ФУ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddFiscalDevice_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddFiscalDevice_FormClosed);
             this.Load += new System.EventHandler(this.AddFiscalDevice_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

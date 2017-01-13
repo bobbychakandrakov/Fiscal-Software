@@ -16,7 +16,7 @@ namespace Fiscal_Software.Forms
     {
         Form1 f1;
         int id;
-        bool isEditing = false;
+        bool isEditing = false , touched = false;
         public AddFiscalDevice()
         {
             InitializeComponent();
@@ -127,7 +127,21 @@ namespace Fiscal_Software.Forms
         private void cancelFD_Click(object sender, EventArgs e)
         {
             // Exit form and show dialog if forms are touched
-            this.Close();
+            if (touched)
+            {
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да излезете без да запазите информацията ?",
+                                    "Изход",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+            }
+            else
+            {
+                this.Close();
+            }
+            
         }
 
         private void AddFiscalDevice_Load(object sender, EventArgs e)
@@ -189,7 +203,12 @@ namespace Fiscal_Software.Forms
             {
                 LoadData(DanniFiskalnoUstroistvoCtrl.GetDanniFiskalnoUstroistvoById(id));
             }
-            
+            DirtyChecker.Check(this.Controls, c_ControlChanged);
+        }
+
+        void c_ControlChanged(object sender, EventArgs e)
+        {
+            touched = true;
         }
 
         private void servizBox_SelectedValueChanged(object sender, EventArgs e)
@@ -205,6 +224,31 @@ namespace Fiscal_Software.Forms
         private void fuNomer_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void AddFiscalDevice_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+            
+        }
+
+        private void AddFiscalDevice_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (touched)
+            {
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да излезете без да запазите информацията ?",
+                                    "Изход",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    touched = false;
+                    this.Close();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
 
         private void fpNomer_KeyPress(object sender, KeyPressEventArgs e)
