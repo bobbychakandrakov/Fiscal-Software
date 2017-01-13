@@ -19,6 +19,14 @@ namespace Fiscal_Software.Controllers
             }
 
         }
+        public static DanniFiskalnoUstroistvo[] GetDanniFromObject(int id)
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var danni = ctx.DanniFiskalnoUstroistvo.Where(b => b.Obekt == id).ToArray();
+                return danni;
+            }
+        }
         public static void UpdateDanniFiskalnoUstroistvo(int id, DanniFiskalnoUstroistvo danni)
         {
             using (var ctx = new FiscalSoftware())

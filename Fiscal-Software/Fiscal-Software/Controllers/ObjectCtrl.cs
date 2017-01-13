@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fiscal_Software.Controlles
+namespace Fiscal_Software.Controllers
 {
-    class ObjectCtrl
+    public class ObjectCtrl
     {
         public static void AddObject(Objects objects)
         {

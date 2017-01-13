@@ -198,16 +198,20 @@
             // fpNomer
             // 
             this.fpNomer.Location = new System.Drawing.Point(479, 125);
+            this.fpNomer.MaxLength = 8;
             this.fpNomer.Name = "fpNomer";
             this.fpNomer.Size = new System.Drawing.Size(133, 20);
             this.fpNomer.TabIndex = 22;
+            this.fpNomer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fpNomer_KeyPress);
             // 
             // fuNomer
             // 
             this.fuNomer.Location = new System.Drawing.Point(163, 125);
+            this.fuNomer.MaxLength = 8;
             this.fuNomer.Name = "fuNomer";
             this.fuNomer.Size = new System.Drawing.Size(133, 20);
             this.fuNomer.TabIndex = 21;
+            this.fuNomer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fuNomer_KeyPress);
             // 
             // modelESFP
             // 
@@ -240,6 +244,8 @@
             this.servizBox.Name = "servizBox";
             this.servizBox.Size = new System.Drawing.Size(449, 21);
             this.servizBox.TabIndex = 17;
+            this.servizBox.SelectedIndexChanged += new System.EventHandler(this.servizBox_SelectedIndexChanged);
+            this.servizBox.SelectedValueChanged += new System.EventHandler(this.servizBox_SelectedValueChanged);
             // 
             // label21
             // 

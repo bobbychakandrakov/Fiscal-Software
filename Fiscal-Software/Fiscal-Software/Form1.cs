@@ -129,7 +129,16 @@ namespace Fiscal_Software
             if (DatabaseSettings.IsSet)
             {
                 RefreshClients();
-                
+                if (clientsListView.Items.Count > 0)
+                {
+                    clientsListView.Items[0].Selected = true;
+                    clientsListView.Select();
+                }
+                if (objectsListView.Items.Count > 0)
+                {
+                    objectsListView.Items[0].Selected = true;
+                    objectsListView.Select();
+                }
             }
             /*
             using (var ctx=new FiscalSoftware())
@@ -154,19 +163,7 @@ namespace Fiscal_Software
 
         public void LoadCfds()
         {
-            fiscalDeviceListView.Clear();
-            fiscalDeviceListView.Columns.Add("Модел ФУ");
-            fiscalDeviceListView.Columns.Add("Инд N на ФУ");
-            fiscalDeviceListView.Columns.Add("ФП номер");
-            fiscalDeviceListView.Columns.Add("ФП активирана");
-            fiscalDeviceListView.Columns.Add("ФП демонтирана");
-            fiscalDeviceListView.Columns.Add("Сервиз");
-            fiscalDeviceListView.Columns.Add("Гаранция до");
-            fiscalDeviceListView.Columns.Add("Първа регистрация (фирма)");
-            fiscalDeviceListView.Columns.Add("Първа регистрация");
-            fiscalDeviceListView.Columns.Add("Рег.Nr Нап");
-            fiscalDeviceListView.Columns.Add("Рег. НАП");
-            fiscalDeviceListView.Columns.Add("СИМ платен до");
+            
             cfdList.Clear();
             cfdList.Columns.Add("Валиден");
             cfdList.Columns.Add("Тип договор");
@@ -472,14 +469,50 @@ namespace Fiscal_Software
             if (e.IsSelected)
             {
                 selectedObjectID = int.Parse(objectsListView.SelectedItems[0].Tag.ToString());
+                LoadDanni();
                 LoadCfds();
             }
            
         }
 
+        private void LoadDanni()
+        {
+            fiscalDeviceListView.Clear();
+            fiscalDeviceListView.Columns.Add("Модел ФУ");
+            fiscalDeviceListView.Columns.Add("Инд N на ФУ");
+            fiscalDeviceListView.Columns.Add("ФП номер");
+            fiscalDeviceListView.Columns.Add("ФП активирана");
+            fiscalDeviceListView.Columns.Add("ФП демонтирана");
+            fiscalDeviceListView.Columns.Add("Сервиз");
+            fiscalDeviceListView.Columns.Add("Гаранция до");
+            fiscalDeviceListView.Columns.Add("Първа регистрация (фирма)");
+            fiscalDeviceListView.Columns.Add("Първа регистрация");
+            fiscalDeviceListView.Columns.Add("Рег.Nr Нап");
+            fiscalDeviceListView.Columns.Add("Рег. НАП");
+            fiscalDeviceListView.Columns.Add("СИМ платен до");
+            var danni = DanniFiskalnoUstroistvoCtrl.GetDanniFromObject(selectedObjectID);
+            for (int i = 0; i < danni.Length; i++)
+            {
+                lvi2 = new ListViewItem(FiscalDeviceCtrl.GetFiscalDevice(danni[i].ModelFY).Model);
+                lvi2.SubItems.Add(danni[i].FYNomer.ToString());
+                lvi2.SubItems.Add(danni[i].FPNomer.ToString());
+                lvi2.SubItems.Add(danni[i].FPAktivirana.ToString());
+                lvi2.SubItems.Add(danni[i].FPDeaktivirana.ToString());
+                lvi2.SubItems.Add(CompanyCtrl.GetCompanyById(danni[i].Serviz).Name);
+                lvi2.SubItems.Add(danni[i].GuaranteeUntil.ToString());
+                lvi2.SubItems.Add(danni[i].Company);
+                lvi2.SubItems.Add("1va reg");
+                lvi2.SubItems.Add(danni[i].RegNoNap.ToString());
+                lvi2.SubItems.Add(danni[i].RegNapDate.ToString());
+                lvi2.SubItems.Add(danni[i].PayedSim.ToString());
+                lvi2.Tag = danni[i].ID;
+                fiscalDeviceListView.Items.Add(lvi2);
+            }
+        }
+
         private void objectsListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void cfdList_SelectedIndexChanged(object sender, EventArgs e)

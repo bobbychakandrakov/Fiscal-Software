@@ -69,11 +69,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.cfdList = new System.Windows.Forms.ListView();
-            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.добавянеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редактиранеНаДоговорToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.изтриванеНаДоговорToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fiscalDeviceListView = new System.Windows.Forms.ListView();
             this.contextMenuStrip4 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.добавянеНаФУToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,6 +81,16 @@
             this.ремонтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.печатДосиеНаФУToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.cfdList = new System.Windows.Forms.ListView();
+            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.добавянеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редактиранеНаДоговорToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изтриванеНаДоговорToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.bulstatPlaceholder = new System.Windows.Forms.Label();
@@ -96,11 +101,6 @@
             this.molLabel1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.molLabel = new System.Windows.Forms.Label();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -113,13 +113,13 @@
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.contextMenuStrip3.SuspendLayout();
             this.contextMenuStrip4.SuspendLayout();
+            this.tabControl2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.contextMenuStrip3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabControl2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -282,6 +282,7 @@
             this.clientsListView.ContextMenuStrip = this.contextMenuStrip1;
             this.clientsListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.clientsListView.FullRowSelect = true;
+            this.clientsListView.HideSelection = false;
             this.clientsListView.Location = new System.Drawing.Point(3, 36);
             this.clientsListView.MultiSelect = false;
             this.clientsListView.Name = "clientsListView";
@@ -493,56 +494,13 @@
             this.tableLayoutPanel3.TabIndex = 0;
             this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
-            // cfdList
-            // 
-            this.cfdList.ContextMenuStrip = this.contextMenuStrip3;
-            this.cfdList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cfdList.FullRowSelect = true;
-            this.cfdList.Location = new System.Drawing.Point(3, 3);
-            this.cfdList.Name = "cfdList";
-            this.cfdList.Size = new System.Drawing.Size(647, 177);
-            this.cfdList.TabIndex = 0;
-            this.cfdList.UseCompatibleStateImageBehavior = false;
-            this.cfdList.View = System.Windows.Forms.View.Details;
-            this.cfdList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.cfdList_SelectedIndexChanged);
-            this.cfdList.SelectedIndexChanged += new System.EventHandler(this.cfdList_SelectedIndexChanged);
-            this.cfdList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.cfdList_MouseDoubleClick);
-            // 
-            // contextMenuStrip3
-            // 
-            this.contextMenuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавянеToolStripMenuItem,
-            this.редактиранеНаДоговорToolStripMenuItem,
-            this.изтриванеНаДоговорToolStripMenuItem});
-            this.contextMenuStrip3.Name = "contextMenuStrip3";
-            this.contextMenuStrip3.Size = new System.Drawing.Size(208, 70);
-            // 
-            // добавянеToolStripMenuItem
-            // 
-            this.добавянеToolStripMenuItem.Name = "добавянеToolStripMenuItem";
-            this.добавянеToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.добавянеToolStripMenuItem.Text = "Договор за поддръжка";
-            this.добавянеToolStripMenuItem.Click += new System.EventHandler(this.добавянеToolStripMenuItem_Click);
-            // 
-            // редактиранеНаДоговорToolStripMenuItem
-            // 
-            this.редактиранеНаДоговорToolStripMenuItem.Name = "редактиранеНаДоговорToolStripMenuItem";
-            this.редактиранеНаДоговорToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.редактиранеНаДоговорToolStripMenuItem.Text = "Редактиране на договор";
-            this.редактиранеНаДоговорToolStripMenuItem.Click += new System.EventHandler(this.редактиранеНаДоговорToolStripMenuItem_Click);
-            // 
-            // изтриванеНаДоговорToolStripMenuItem
-            // 
-            this.изтриванеНаДоговорToolStripMenuItem.Name = "изтриванеНаДоговорToolStripMenuItem";
-            this.изтриванеНаДоговорToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.изтриванеНаДоговорToolStripMenuItem.Text = "Изтриване на договор";
-            this.изтриванеНаДоговорToolStripMenuItem.Click += new System.EventHandler(this.изтриванеНаДоговорToolStripMenuItem_Click);
-            // 
             // fiscalDeviceListView
             // 
             this.fiscalDeviceListView.ContextMenuStrip = this.contextMenuStrip4;
             this.fiscalDeviceListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fiscalDeviceListView.FullRowSelect = true;
             this.fiscalDeviceListView.Location = new System.Drawing.Point(3, 3);
+            this.fiscalDeviceListView.MultiSelect = false;
             this.fiscalDeviceListView.Name = "fiscalDeviceListView";
             this.fiscalDeviceListView.Size = new System.Drawing.Size(661, 209);
             this.fiscalDeviceListView.TabIndex = 1;
@@ -631,6 +589,106 @@
             this.печатДосиеНаФУToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
             this.печатДосиеНаФУToolStripMenuItem.Text = "Печат досие на ФУ";
             this.печатДосиеНаФУToolStripMenuItem.Click += new System.EventHandler(this.печатДосиеНаФУToolStripMenuItem_Click);
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Controls.Add(this.tabPage5);
+            this.tabControl2.Controls.Add(this.tabPage6);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Location = new System.Drawing.Point(3, 218);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(661, 209);
+            this.tabControl2.TabIndex = 1;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.cfdList);
+            this.tabPage3.Location = new System.Drawing.Point(4, 4);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(653, 183);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "Договор за поддръжка";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // cfdList
+            // 
+            this.cfdList.ContextMenuStrip = this.contextMenuStrip3;
+            this.cfdList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cfdList.FullRowSelect = true;
+            this.cfdList.Location = new System.Drawing.Point(3, 3);
+            this.cfdList.Name = "cfdList";
+            this.cfdList.Size = new System.Drawing.Size(647, 177);
+            this.cfdList.TabIndex = 0;
+            this.cfdList.UseCompatibleStateImageBehavior = false;
+            this.cfdList.View = System.Windows.Forms.View.Details;
+            this.cfdList.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.cfdList_SelectedIndexChanged);
+            this.cfdList.SelectedIndexChanged += new System.EventHandler(this.cfdList_SelectedIndexChanged);
+            this.cfdList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.cfdList_MouseDoubleClick);
+            // 
+            // contextMenuStrip3
+            // 
+            this.contextMenuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавянеToolStripMenuItem,
+            this.редактиранеНаДоговорToolStripMenuItem,
+            this.изтриванеНаДоговорToolStripMenuItem});
+            this.contextMenuStrip3.Name = "contextMenuStrip3";
+            this.contextMenuStrip3.Size = new System.Drawing.Size(208, 70);
+            // 
+            // добавянеToolStripMenuItem
+            // 
+            this.добавянеToolStripMenuItem.Name = "добавянеToolStripMenuItem";
+            this.добавянеToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.добавянеToolStripMenuItem.Text = "Договор за поддръжка";
+            this.добавянеToolStripMenuItem.Click += new System.EventHandler(this.добавянеToolStripMenuItem_Click);
+            // 
+            // редактиранеНаДоговорToolStripMenuItem
+            // 
+            this.редактиранеНаДоговорToolStripMenuItem.Name = "редактиранеНаДоговорToolStripMenuItem";
+            this.редактиранеНаДоговорToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.редактиранеНаДоговорToolStripMenuItem.Text = "Редактиране на договор";
+            this.редактиранеНаДоговорToolStripMenuItem.Click += new System.EventHandler(this.редактиранеНаДоговорToolStripMenuItem_Click);
+            // 
+            // изтриванеНаДоговорToolStripMenuItem
+            // 
+            this.изтриванеНаДоговорToolStripMenuItem.Name = "изтриванеНаДоговорToolStripMenuItem";
+            this.изтриванеНаДоговорToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.изтриванеНаДоговорToolStripMenuItem.Text = "Изтриване на договор";
+            this.изтриванеНаДоговорToolStripMenuItem.Click += new System.EventHandler(this.изтриванеНаДоговорToolStripMenuItem_Click);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 4);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(653, 183);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "Ремонти";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 4);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(653, 183);
+            this.tabPage5.TabIndex = 2;
+            this.tabPage5.Text = "Свидетелства за регистрация";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 4);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(653, 183);
+            this.tabPage6.TabIndex = 3;
+            this.tabPage6.Text = "Демонтаж на ФП";
+            this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -729,61 +787,6 @@
             this.molLabel.TabIndex = 0;
             this.molLabel.Text = "МОЛ:";
             // 
-            // tabControl2
-            // 
-            this.tabControl2.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.tabControl2.Controls.Add(this.tabPage3);
-            this.tabControl2.Controls.Add(this.tabPage4);
-            this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Controls.Add(this.tabPage6);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.Location = new System.Drawing.Point(3, 218);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(661, 209);
-            this.tabControl2.TabIndex = 1;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.cfdList);
-            this.tabPage3.Location = new System.Drawing.Point(4, 4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(653, 183);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Договор за поддръжка";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 4);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(653, 183);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Ремонти";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 4);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(653, 183);
-            this.tabPage5.TabIndex = 2;
-            this.tabPage5.Text = "Свидетелства за регистрация";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 4);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(653, 183);
-            this.tabPage6.TabIndex = 3;
-            this.tabPage6.Text = "Демонтаж на ФП";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -812,15 +815,15 @@
             this.tabPage2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            this.contextMenuStrip3.ResumeLayout(false);
             this.contextMenuStrip4.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.contextMenuStrip3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabControl2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
