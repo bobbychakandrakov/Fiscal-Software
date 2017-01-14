@@ -506,6 +506,8 @@
             this.fiscalDeviceListView.TabIndex = 1;
             this.fiscalDeviceListView.UseCompatibleStateImageBehavior = false;
             this.fiscalDeviceListView.View = System.Windows.Forms.View.Details;
+            this.fiscalDeviceListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.fiscalDeviceListView_ItemSelectionChanged);
+            this.fiscalDeviceListView.SelectedIndexChanged += new System.EventHandler(this.fiscalDeviceListView_SelectedIndexChanged);
             // 
             // contextMenuStrip4
             // 

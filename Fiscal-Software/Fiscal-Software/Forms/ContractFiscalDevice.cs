@@ -68,10 +68,8 @@ namespace Fiscal_Software.Forms
                 ContractFiscalDevices cfd = new ContractFiscalDevices();
                 if (this.isUpdate)
                 {
-
-                    
                     cfd.ContractType = ContractCtrl.GetContractByName(ContractType.Text);
-                    cfd.ObjectId = this.objectID;
+                    cfd.ObjectId = objectID;
                     cfd.AutomaticNumbering = AutomaticNumbering.Checked;
                     cfd.ContractN = Int32.Parse(ContractN.Text);
                     cfd.DateFrom = DateFrom.Value;
@@ -98,17 +96,17 @@ namespace Fiscal_Software.Forms
                     }
                     cfd.DateFrom = DateFrom.Value;
                     cfd.DateTo = DateTo.Value;
-                    if (cfd.Sum.ToString() != "")
+                    if (Sum.Text != "")
                     {
-                        cfd.Sum = double.Parse(Sum.Text);
+                        cfd.Sum = float.Parse(Sum.Text);
                     }
                     else
                     {
                         cfd.Sum = null;
                     }
-                    if (cfd.SumMonth.ToString() != "")
+                    if (SumForMount.Text != "")
                     {
-                        cfd.SumMonth = double.Parse(SumForMount.Text);
+                        cfd.SumMonth = float.Parse(SumForMount.Text);
                     }
                     else
                     {

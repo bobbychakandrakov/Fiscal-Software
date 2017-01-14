@@ -172,7 +172,7 @@ namespace Fiscal_Software
             cfdList.Columns.Add("До Дата");
             cfdList.Columns.Add("Сума");
             cfdList.Columns.Add("Бележки");
-            var cfds1 = ContractFiscalDeviceCtrl.GetAllContractFiscalDevices(selectedObjectID);
+            var cfds1 = ContractFiscalDeviceCtrl.GetAllContractFiscalDevices(selectedFUDanni);
             for (int i = 0; i < cfds1.Length; i++)
             {
                 if (cfds1[i].Valid.Value)
@@ -204,8 +204,8 @@ namespace Fiscal_Software
             cfdList.Columns[2].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
             cfdList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             cfdList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            fiscalDeviceListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            fiscalDeviceListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+           // fiscalDeviceListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            //fiscalDeviceListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
         public void LoadObjects(Objects[] objects)
         {
@@ -470,7 +470,7 @@ namespace Fiscal_Software
             {
                 selectedObjectID = int.Parse(objectsListView.SelectedItems[0].Tag.ToString());
                 LoadDanni();
-                LoadCfds();
+                //LoadCfds();
             }
            
         }
@@ -530,7 +530,7 @@ namespace Fiscal_Software
 
         private void добавянеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ContractFiscalDevice cfd = new ContractFiscalDevice(selectedObjectID,this);
+            ContractFiscalDevice cfd = new ContractFiscalDevice(selectedFUDanni,this);
             cfd.Show();
             cfd.Text = "Добавяне на договор за подръжка";
         }
@@ -680,7 +680,8 @@ namespace Fiscal_Software
         private void договорЗаПоддръжкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open DogovorPoddrujka Form
-            ContractFiscalDevice cfd = new ContractFiscalDevice(selectedObjectID, this);
+            //selectedFUDanni = int.Parse(fiscalDeviceListView.SelectedItems[0].Tag.ToString());
+            ContractFiscalDevice cfd = new ContractFiscalDevice(selectedFUDanni, this);
             cfd.Show();
             cfd.Text = "Добавяне на договор за подръжка";
         }
@@ -702,6 +703,21 @@ namespace Fiscal_Software
         {
             // Open Print Dialog with document filled with data
 
+        }
+
+        private void fiscalDeviceListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void fiscalDeviceListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (e.IsSelected)
+            {
+                selectedFUDanni = int.Parse(fiscalDeviceListView.SelectedItems[0].Tag.ToString());
+                LoadCfds();
+            }
+           
         }
 
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
