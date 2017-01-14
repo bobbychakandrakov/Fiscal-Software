@@ -54,7 +54,7 @@ namespace Fiscal_Software.Controllers
         {
             using (var ctx = new FiscalSoftware())
             {
-                var remont = ctx.Remont.Where(b => b.ID == id).ToArray();
+                var remont = ctx.Remont.Where(b => b.FiscalDeviceID == id).ToArray();
                 return remont;
             }
         }

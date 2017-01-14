@@ -63,7 +63,7 @@ namespace Fiscal_Software.Controlles
         {
             using (var ctx = new FiscalSoftware())
             {
-                var demontaj = ctx.DemontajNaFiskalnoUstroistvo.Where(b => b.ID == id).ToArray();
+                var demontaj = ctx.DemontajNaFiskalnoUstroistvo.Where(b => b.FiscalID == id).ToArray();
                 return demontaj;
             }
         }

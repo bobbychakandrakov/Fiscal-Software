@@ -57,7 +57,7 @@ namespace Fiscal_Software.Controlles
         {
             using (var ctx = new FiscalSoftware())
             {
-                var svidetelstvo = ctx.SvidetelstvoRegistraciq.Where(b => b.id == id).ToArray();
+                var svidetelstvo = ctx.SvidetelstvoRegistraciq.Where(b => b.FiscalID == id).ToArray();
                 return svidetelstvo;
             }
         }

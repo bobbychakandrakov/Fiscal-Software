@@ -165,21 +165,23 @@ namespace Fiscal_Software
         {
 
             remontiList.Clear();
-            remontiList.Columns.Add("Валиден");
+            remontiList.Columns.Add("Заявка в");
+            remontiList.Columns.Add("Приет в");
+            remontiList.Columns.Add("Върнат в");
+            remontiList.Columns.Add("Техник");
+            remontiList.Columns.Add("Описание на дефекта");
+            remontiList.Columns.Add("Вложени части");
 
             var remonti = RemontCtrl.GetRemontsById(selectedFUDanni);
             for (int i = 0; i < remonti.Length; i++)
             {
-                /*
-                lvi2 = new ListViewItem();
-                lvi2.SubItems.Add(ContractCtrl.GetContractById(cfds1[i].ContractType).Name);
-                lvi2.SubItems.Add(cfds1[i].ContractN.ToString());
-                lvi2.SubItems.Add(cfds1[i].DateFrom.Value.ToShortDateString());
-                lvi2.SubItems.Add(cfds1[i].DateTo.Value.ToShortDateString());
-                lvi2.SubItems.Add(cfds1[i].Sum.ToString());
-                lvi2.SubItems.Add(cfds1[i].Notes);
+                lvi2 = new ListViewItem(remonti[i].ZaqvkaZadadena.Value.ToShortDateString());
+                lvi2.SubItems.Add(remonti[i].PrietV.Value.ToShortDateString());
+                lvi2.SubItems.Add(remonti[i].VurnatNa.Value.ToShortDateString());
+                lvi2.SubItems.Add(TechnicianCtrl.GetTechnicianById(remonti[i].Tehnik.Value).Name);
+                lvi2.SubItems.Add(remonti[i].OpisanieDefekt);
+                lvi2.SubItems.Add(remonti[i].ChastiPriRemont);
                 lvi2.Tag = remonti[i].ID;
-                */
                 remontiList.Items.Add(lvi2);
             }
             remontiList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
@@ -190,21 +192,26 @@ namespace Fiscal_Software
         {
 
             svidetelstvaList.Clear();
-            svidetelstvaList.Columns.Add("Валиден");
-
+            svidetelstvaList.Columns.Add("N");
+            svidetelstvaList.Columns.Add("Дата");
+            svidetelstvaList.Columns.Add("Договор");
+            svidetelstvaList.Columns.Add("От дата");
+            svidetelstvaList.Columns.Add("Техник");
+            svidetelstvaList.Columns.Add("Бележки");
+            svidetelstvaList.Columns.Add("Рег. НАП");
+            svidetelstvaList.Columns.Add("Рег. номер НАП");
             var svidetelstva = SvidetelstvoRegistraciqCtrl.GetSvidetelstvaRegistraciqById(selectedFUDanni);
             for (int i = 0; i < svidetelstva.Length; i++)
             {
-                /*
-                lvi2 = new ListViewItem();
-                lvi2.SubItems.Add(ContractCtrl.GetContractById(cfds1[i].ContractType).Name);
-                lvi2.SubItems.Add(cfds1[i].ContractN.ToString());
-                lvi2.SubItems.Add(cfds1[i].DateFrom.Value.ToShortDateString());
-                lvi2.SubItems.Add(cfds1[i].DateTo.Value.ToShortDateString());
-                lvi2.SubItems.Add(cfds1[i].Sum.ToString());
-                lvi2.SubItems.Add(cfds1[i].Notes);
-                lvi2.Tag = remonti[i].ID;
-                */
+                lvi2 = new ListViewItem(svidetelstva[i].SvidetelstvoN.Value.ToString());
+                lvi2.SubItems.Add(svidetelstva[i].RegDate.Value.ToShortDateString());
+                lvi2.SubItems.Add(ContractCtrl.GetContractById(svidetelstva[i].Contract).Name);
+                lvi2.SubItems.Add(svidetelstva[i].RegDate.Value.ToShortDateString());
+                lvi2.SubItems.Add(TechnicianCtrl.GetTechnicianById(svidetelstva[i].Technician).Name);
+                lvi2.SubItems.Add(svidetelstva[i].Notes);
+                lvi2.SubItems.Add(svidetelstva[i].RegNoNapIzdaden.Value.ToShortDateString());
+                lvi2.SubItems.Add(svidetelstva[i].RegNoNap.Value.ToString());
+                lvi2.Tag = svidetelstva[i].id;
                 svidetelstvaList.Items.Add(lvi2);
             }
             svidetelstvaList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
@@ -215,21 +222,29 @@ namespace Fiscal_Software
         {
 
             demontajList.Clear();
-            demontajList.Columns.Add("Валиден");
-
+            demontajList.Columns.Add("Номер ФП");
+            demontajList.Columns.Add("Демонтирана на");
+            demontajList.Columns.Add("От дата");
+            demontajList.Columns.Add("До дата");
+            demontajList.Columns.Add("Сума");
+            demontajList.Columns.Add("Сума А");
+            demontajList.Columns.Add("Сума Б");
+            demontajList.Columns.Add("Сума В");
+            demontajList.Columns.Add("Причини");
             var demontaji = DemontajFiskalnoUstroistvoCtrl.GetDemontajFiskalnoUstroistvaById(selectedFUDanni);
             for (int i = 0; i < demontaji.Length; i++)
             {
-                /*
-                lvi2 = new ListViewItem();
-                lvi2.SubItems.Add(ContractCtrl.GetContractById(cfds1[i].ContractType).Name);
-                lvi2.SubItems.Add(cfds1[i].ContractN.ToString());
-                lvi2.SubItems.Add(cfds1[i].DateFrom.Value.ToShortDateString());
-                lvi2.SubItems.Add(cfds1[i].DateTo.Value.ToShortDateString());
-                lvi2.SubItems.Add(cfds1[i].Sum.ToString());
-                lvi2.SubItems.Add(cfds1[i].Notes);
-                lvi2.Tag = remonti[i].ID;
-                */
+                
+                lvi2 = new ListViewItem(demontaji[i].FPNomer.Value.ToString());
+                lvi2.SubItems.Add(demontaji[i].DateDemontaj.Value.ToShortDateString());
+                lvi2.SubItems.Add(demontaji[i].OborotOt.Value.ToShortDateString());
+                lvi2.SubItems.Add(demontaji[i].OborotDo.Value.ToShortDateString());
+                lvi2.SubItems.Add(demontaji[i].DDS1.Value.ToString());
+                lvi2.SubItems.Add(demontaji[i].DDS2.Value.ToString());
+                lvi2.SubItems.Add(demontaji[i].DDS3.Value.ToString());
+                lvi2.SubItems.Add(demontaji[i].DDS4.Value.ToString());
+                lvi2.SubItems.Add(demontaji[i].Reasons);
+                lvi2.Tag = demontaji[i].ID;
                 demontajList.Items.Add(lvi2);
             }
             demontajList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
@@ -791,6 +806,9 @@ namespace Fiscal_Software
             {
                 selectedFUDanni = int.Parse(fiscalDeviceListView.SelectedItems[0].Tag.ToString());
                 LoadCfds();
+                LoadDemontaji();
+                LoadSvidetelstva();
+                LoadRemonti();
             }
            
         }
