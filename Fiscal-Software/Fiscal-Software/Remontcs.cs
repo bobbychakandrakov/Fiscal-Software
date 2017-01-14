@@ -11,6 +11,8 @@
     {
         public int ID { get; set; }
 
+        public int FiscalDeviceID { get; set; }
+
         public DateTime? PrietV { get; set; }
 
         public DateTime? ZaqvkaZadadena { get; set; }

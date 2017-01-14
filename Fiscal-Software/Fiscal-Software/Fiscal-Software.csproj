@@ -73,9 +73,13 @@
     <Compile Include="Controllers\ContractCtrl.cs" />
     <Compile Include="Controllers\ContractFiscalDeviceCtrl.cs" />
     <Compile Include="Controllers\DanniFiskalnoUstroistvoCtrl.cs" />
+    <Compile Include="Controllers\DemontajCtrl.cs" />
     <Compile Include="Controllers\NomeraDokumentiCtrl.cs" />
     <Compile Include="Controllers\ObjectCtrl.cs" />
+    <Compile Include="Controllers\RemontiCtrl.cs" />
+    <Compile Include="Controllers\SvidetelsvaRegistraciqCtrl.cs" />
     <Compile Include="DanniFiskalnoUstroistvo.cs" />
+    <Compile Include="DemontajNaFiscalnoUstroistvo.cs" />
     <Compile Include="FiscalDevice.cs" />
     <Compile Include="Controllers\FiscalDeviceCtrl.cs" />
     <Compile Include="FiscalSoftware.cs" />

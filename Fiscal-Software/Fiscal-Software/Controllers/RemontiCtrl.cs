@@ -15,12 +15,12 @@ namespace Fiscal_Software.Controllers
             {
                 ctx.Remont.Add(remont);
                 ctx.SaveChanges();
-              
+
             }
 
         }
 
-        public static void UpdateRemont(int id,Remont remont)
+        public static void UpdateRemont(int id, Remont remont)
         {
             using (var ctx = new FiscalSoftware())
             {
@@ -29,13 +29,13 @@ namespace Fiscal_Software.Controllers
 
                 if (original != null)
                 {
-                    original.PrietV =remont.PrietV;
+                    original.PrietV = remont.PrietV;
                     original.ZaqvkaZadadena = remont.ZaqvkaZadadena;
                     original.Tehnik = remont.Tehnik;
                     original.OpisanieDefekt = remont.OpisanieDefekt;
                     original.VurnatNa = remont.VurnatNa;
                     original.ChastiPriRemont = remont.ChastiPriRemont;
-                   
+
                     ctx.SaveChanges();
                 }
             }
@@ -46,6 +46,15 @@ namespace Fiscal_Software.Controllers
             {
                 var remont = ctx.Remont.Where(b => b.ID == id)
                     .FirstOrDefault();
+                return remont;
+            }
+        }
+
+        public static Remont[] GetRemontsById(int id)
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var remont = ctx.Remont.Where(b => b.ID == id).ToArray();
                 return remont;
             }
         }

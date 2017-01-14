@@ -13,9 +13,10 @@ namespace Fiscal_Software.Controlles
 
             using (var ctx = new FiscalSoftware())
             {
+                
                 ctx.DemontajNaFiskalnoUstroistvo.Add(demontaj);
                 ctx.SaveChanges();
-            
+
             }
 
         }
@@ -33,14 +34,17 @@ namespace Fiscal_Software.Controlles
                     original.Technician = demontaj.Technician;
                     original.OborotDo = demontaj.OborotDo;
                     original.OborotOt = demontaj.OborotOt;
-                    original.Suma= demontaj.Suma;
-                    original.DDS = demontaj.DDS;
-                    original.InspectorName= demontaj.InspectorName;
+                    original.Suma = demontaj.Suma;
+                    original.DDS1 = demontaj.DDS1;
+                    original.DDS2 = demontaj.DDS2;
+                    original.DDS3 = demontaj.DDS3;
+                    original.DDS4 = demontaj.DDS4;
+                    original.InspectorName = demontaj.InspectorName;
                     original.InspectorTel = demontaj.InspectorTel;
                     original.Reasons = demontaj.Reasons;
                     original.OborotPoGodini = demontaj.OborotPoGodini;
                     original.FiscalID = demontaj.FiscalID;
-                  
+
                     ctx.SaveChanges();
                 }
             }
@@ -51,6 +55,15 @@ namespace Fiscal_Software.Controlles
             {
                 var demontaj = ctx.DemontajNaFiskalnoUstroistvo.Where(b => b.ID == id)
                     .FirstOrDefault();
+                return demontaj;
+            }
+        }
+
+        public static DemontajNaFiskalnoUstroistvo[] GetDemontajFiskalnoUstroistvaById(int id)
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var demontaj = ctx.DemontajNaFiskalnoUstroistvo.Where(b => b.ID == id).ToArray();
                 return demontaj;
             }
         }

@@ -25,6 +25,7 @@ namespace Fiscal_Software
         public virtual DbSet<DanniFiskalnoUstroistvo> DanniFiskalnoUstroistvo { get; set; }
         public virtual DbSet<SvidetelstvoRegistraciq> SvidetelstvoRegistraciq { get; set; }
 
+        public virtual DbSet<DemontajNaFiskalnoUstroistvo> DemontajNaFiskalnoUstroistvo { get; set; }
         public virtual DbSet<Remont> Remont { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -338,6 +339,8 @@ namespace Fiscal_Software
 .Property(e => e.VurnatNa);
             modelBuilder.Entity<Remont>()
 .Property(e => e.ZaqvkaZadadena);
+            modelBuilder.Entity<Remont>()
+.Property(e => e.FiscalDeviceID);
 
 
 

@@ -15,7 +15,7 @@ namespace Fiscal_Software.Controlles
             {
                 ctx.SvidetelstvoRegistraciq.Add(svidetelstvo);
                 ctx.SaveChanges();
-              
+
             }
 
         }
@@ -48,11 +48,20 @@ namespace Fiscal_Software.Controlles
         {
             using (var ctx = new FiscalSoftware())
             {
-                var svidetelstvo= ctx.SvidetelstvoRegistraciq.Where(b => b.id == id)
+                var svidetelstvo = ctx.SvidetelstvoRegistraciq.Where(b => b.id == id)
                     .FirstOrDefault();
                 return svidetelstvo;
             }
         }
+        public static SvidetelstvoRegistraciq[] GetSvidetelstvaRegistraciqById(int id)
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var svidetelstvo = ctx.SvidetelstvoRegistraciq.Where(b => b.id == id).ToArray();
+                return svidetelstvo;
+            }
+        }
+
         public static void DeleteSvidetelstvoRegistraciqById(int id)
         {
             using (var ctx = new FiscalSoftware())
@@ -62,7 +71,7 @@ namespace Fiscal_Software.Controlles
 
                 if (svidetelstvo != null)
                 {
-                   
+
 
                     ctx.SvidetelstvoRegistraciq.Remove(svidetelstvo);
                     ctx.SaveChanges();

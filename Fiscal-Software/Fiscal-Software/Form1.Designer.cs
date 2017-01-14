@@ -101,6 +101,9 @@
             this.molLabel1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.molLabel = new System.Windows.Forms.Label();
+            this.remontiList = new System.Windows.Forms.ListView();
+            this.svidetelstvaList = new System.Windows.Forms.ListView();
+            this.demontajList = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -117,6 +120,9 @@
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -664,6 +670,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.remontiList);
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -674,6 +681,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.svidetelstvaList);
             this.tabPage5.Location = new System.Drawing.Point(4, 4);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -684,6 +692,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.demontajList);
             this.tabPage6.Location = new System.Drawing.Point(4, 4);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -789,6 +798,36 @@
             this.molLabel.TabIndex = 0;
             this.molLabel.Text = "МОЛ:";
             // 
+            // remontiList
+            // 
+            this.remontiList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.remontiList.Location = new System.Drawing.Point(3, 3);
+            this.remontiList.Name = "remontiList";
+            this.remontiList.Size = new System.Drawing.Size(647, 177);
+            this.remontiList.TabIndex = 0;
+            this.remontiList.UseCompatibleStateImageBehavior = false;
+            this.remontiList.View = System.Windows.Forms.View.Details;
+            // 
+            // svidetelstvaList
+            // 
+            this.svidetelstvaList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.svidetelstvaList.Location = new System.Drawing.Point(3, 3);
+            this.svidetelstvaList.Name = "svidetelstvaList";
+            this.svidetelstvaList.Size = new System.Drawing.Size(647, 177);
+            this.svidetelstvaList.TabIndex = 0;
+            this.svidetelstvaList.UseCompatibleStateImageBehavior = false;
+            this.svidetelstvaList.View = System.Windows.Forms.View.Details;
+            // 
+            // demontajList
+            // 
+            this.demontajList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.demontajList.Location = new System.Drawing.Point(3, 3);
+            this.demontajList.Name = "demontajList";
+            this.demontajList.Size = new System.Drawing.Size(647, 177);
+            this.demontajList.TabIndex = 0;
+            this.demontajList.UseCompatibleStateImageBehavior = false;
+            this.demontajList.View = System.Windows.Forms.View.Details;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -821,6 +860,9 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.contextMenuStrip3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -904,6 +946,9 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.ListView remontiList;
+        private System.Windows.Forms.ListView svidetelstvaList;
+        private System.Windows.Forms.ListView demontajList;
     }
 }
 

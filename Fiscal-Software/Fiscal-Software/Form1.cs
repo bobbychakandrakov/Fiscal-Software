@@ -161,6 +161,81 @@ namespace Fiscal_Software
             }
         }
 
+        public void LoadRemonti()
+        {
+
+            remontiList.Clear();
+            remontiList.Columns.Add("Валиден");
+
+            var remonti = RemontCtrl.GetRemontsById(selectedFUDanni);
+            for (int i = 0; i < remonti.Length; i++)
+            {
+                /*
+                lvi2 = new ListViewItem();
+                lvi2.SubItems.Add(ContractCtrl.GetContractById(cfds1[i].ContractType).Name);
+                lvi2.SubItems.Add(cfds1[i].ContractN.ToString());
+                lvi2.SubItems.Add(cfds1[i].DateFrom.Value.ToShortDateString());
+                lvi2.SubItems.Add(cfds1[i].DateTo.Value.ToShortDateString());
+                lvi2.SubItems.Add(cfds1[i].Sum.ToString());
+                lvi2.SubItems.Add(cfds1[i].Notes);
+                lvi2.Tag = remonti[i].ID;
+                */
+                remontiList.Items.Add(lvi2);
+            }
+            remontiList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            remontiList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
+        public void LoadSvidetelstva()
+        {
+
+            svidetelstvaList.Clear();
+            svidetelstvaList.Columns.Add("Валиден");
+
+            var svidetelstva = SvidetelstvoRegistraciqCtrl.GetSvidetelstvaRegistraciqById(selectedFUDanni);
+            for (int i = 0; i < svidetelstva.Length; i++)
+            {
+                /*
+                lvi2 = new ListViewItem();
+                lvi2.SubItems.Add(ContractCtrl.GetContractById(cfds1[i].ContractType).Name);
+                lvi2.SubItems.Add(cfds1[i].ContractN.ToString());
+                lvi2.SubItems.Add(cfds1[i].DateFrom.Value.ToShortDateString());
+                lvi2.SubItems.Add(cfds1[i].DateTo.Value.ToShortDateString());
+                lvi2.SubItems.Add(cfds1[i].Sum.ToString());
+                lvi2.SubItems.Add(cfds1[i].Notes);
+                lvi2.Tag = remonti[i].ID;
+                */
+                svidetelstvaList.Items.Add(lvi2);
+            }
+            svidetelstvaList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            svidetelstvaList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
+        public void LoadDemontaji()
+        {
+
+            demontajList.Clear();
+            demontajList.Columns.Add("Валиден");
+
+            var demontaji = DemontajFiskalnoUstroistvoCtrl.GetDemontajFiskalnoUstroistvaById(selectedFUDanni);
+            for (int i = 0; i < demontaji.Length; i++)
+            {
+                /*
+                lvi2 = new ListViewItem();
+                lvi2.SubItems.Add(ContractCtrl.GetContractById(cfds1[i].ContractType).Name);
+                lvi2.SubItems.Add(cfds1[i].ContractN.ToString());
+                lvi2.SubItems.Add(cfds1[i].DateFrom.Value.ToShortDateString());
+                lvi2.SubItems.Add(cfds1[i].DateTo.Value.ToShortDateString());
+                lvi2.SubItems.Add(cfds1[i].Sum.ToString());
+                lvi2.SubItems.Add(cfds1[i].Notes);
+                lvi2.Tag = remonti[i].ID;
+                */
+                demontajList.Items.Add(lvi2);
+            }
+            demontajList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            demontajList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
         public void LoadCfds()
         {
             

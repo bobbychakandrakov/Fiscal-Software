@@ -1,4 +1,4 @@
-namespace Fiscal_Software
+﻿namespace Fiscal_Software
 {
     using System;
     using System.Collections.Generic;
@@ -23,7 +23,10 @@ namespace Fiscal_Software
 
         public double? Suma { get; set; }
 
-        public double? DDS { get; set; }
+        public double? DDS1 { get; set; }
+        public double? DDS2 { get; set; }
+        public double? DDS3 { get; set; }
+        public double? DDS4 { get; set; }
 
         [StringLength(50)]
         public string InspectorName { get; set; }
