@@ -345,6 +345,8 @@
             this.Name = "SvidetelsvtoRegistraciqForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Стидетелство за регистрация";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SvidetelsvtoRegistraciqForm_FormClosing);
+            this.Load += new System.EventHandler(this.SvidetelsvtoRegistraciqForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

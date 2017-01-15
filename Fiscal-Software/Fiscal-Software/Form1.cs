@@ -26,7 +26,7 @@ namespace Fiscal_Software
         ListViewItem lvi1;
         ListViewItem lvi2;
         ListViewItem lviCfd;
-        int selectedClientId = -1, selectedObjectID = -1, selectedCfdID=-1, selectedFUDanni = -1;
+        int selectedClientId = -1, selectedObjectID = -1, selectedCfdID=-1, selectedFUDanni = -1, selectedSvidetelstvo = -1;
         Client client;
         ContractFiscalDevices cfd;
 
@@ -203,14 +203,14 @@ namespace Fiscal_Software
             var svidetelstva = SvidetelstvoRegistraciqCtrl.GetSvidetelstvaRegistraciqById(selectedFUDanni);
             for (int i = 0; i < svidetelstva.Length; i++)
             {
-                lvi2 = new ListViewItem(svidetelstva[i].SvidetelstvoN.Value.ToString());
+                lvi2 = new ListViewItem(svidetelstva[i].SvidetelstvoN.ToString());
                 lvi2.SubItems.Add(svidetelstva[i].RegDate.Value.ToShortDateString());
                 lvi2.SubItems.Add(ContractCtrl.GetContractById(svidetelstva[i].Contract).Name);
                 lvi2.SubItems.Add(svidetelstva[i].RegDate.Value.ToShortDateString());
                 lvi2.SubItems.Add(TechnicianCtrl.GetTechnicianById(svidetelstva[i].Technician).Name);
                 lvi2.SubItems.Add(svidetelstva[i].Notes);
-                lvi2.SubItems.Add(svidetelstva[i].RegNoNapIzdaden.Value.ToShortDateString());
-                lvi2.SubItems.Add(svidetelstva[i].RegNoNap.Value.ToString());
+                lvi2.SubItems.Add(svidetelstva[i].RegNoNapIzdaden.ToString());
+                lvi2.SubItems.Add(svidetelstva[i].RegNoNap.ToString());
                 lvi2.Tag = svidetelstva[i].id;
                 svidetelstvaList.Items.Add(lvi2);
             }
@@ -763,7 +763,7 @@ namespace Fiscal_Software
         private void свидетелствоЗаРегистрацияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open Svidetelstvo Form
-            SvidetelsvtoRegistraciqForm srf = new SvidetelsvtoRegistraciqForm();
+            SvidetelsvtoRegistraciqForm srf = new SvidetelsvtoRegistraciqForm(selectedFUDanni, this);
             srf.Show();
         }
 
@@ -810,7 +810,37 @@ namespace Fiscal_Software
                 LoadSvidetelstva();
                 LoadRemonti();
             }
-           
+        }
+
+        private void добавянеНаСвидетелствоToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SvidetelsvtoRegistraciqForm srf = new SvidetelsvtoRegistraciqForm(selectedFUDanni, this);
+            srf.Show();
+        }
+
+        private void изтриванеToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (svidetelstvaList.SelectedItems.Count > 0)
+            {
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да изтриете този договор ?",
+                                    "Изтриване на договор",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    int id = int.Parse(svidetelstvaList.SelectedItems[0].Tag.ToString());
+                    SvidetelstvoRegistraciqCtrl.DeleteSvidetelstvoRegistraciqById(id);
+                    svidetelstvaList.SelectedItems[0].Remove();
+                }
+
+            }
+        }
+
+        private void редактиранеНаСвидетелствоToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            selectedSvidetelstvo = int.Parse(svidetelstvaList.SelectedItems[0].Tag.ToString());
+            var svideletstvo = SvidetelstvoRegistraciqCtrl.GetSvidetelstvoRegistraciqById(selectedSvidetelstvo);
+            SvidetelsvtoRegistraciqForm srf = new SvidetelsvtoRegistraciqForm(selectedFUDanni, svideletstvo, this);
+            srf.Show();
         }
 
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)

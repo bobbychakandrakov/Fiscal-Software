@@ -89,8 +89,15 @@
             this.редактиранеНаДоговорToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изтриванеНаДоговорToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.remontiList = new System.Windows.Forms.ListView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.svidetelstvaList = new System.Windows.Forms.ListView();
+            this.contextMenuStrip5 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.добавянеНаСвидетелствоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редактиранеНаСвидетелствоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изтриванеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.demontajList = new System.Windows.Forms.ListView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.bulstatPlaceholder = new System.Windows.Forms.Label();
@@ -101,9 +108,6 @@
             this.molLabel1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.molLabel = new System.Windows.Forms.Label();
-            this.remontiList = new System.Windows.Forms.ListView();
-            this.svidetelstvaList = new System.Windows.Forms.ListView();
-            this.demontajList = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -122,6 +126,7 @@
             this.contextMenuStrip3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.contextMenuStrip5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -679,6 +684,16 @@
             this.tabPage4.Text = "Ремонти";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // remontiList
+            // 
+            this.remontiList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.remontiList.Location = new System.Drawing.Point(3, 3);
+            this.remontiList.Name = "remontiList";
+            this.remontiList.Size = new System.Drawing.Size(647, 177);
+            this.remontiList.TabIndex = 0;
+            this.remontiList.UseCompatibleStateImageBehavior = false;
+            this.remontiList.View = System.Windows.Forms.View.Details;
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.svidetelstvaList);
@@ -690,6 +705,49 @@
             this.tabPage5.Text = "Свидетелства за регистрация";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // svidetelstvaList
+            // 
+            this.svidetelstvaList.ContextMenuStrip = this.contextMenuStrip5;
+            this.svidetelstvaList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.svidetelstvaList.FullRowSelect = true;
+            this.svidetelstvaList.Location = new System.Drawing.Point(3, 3);
+            this.svidetelstvaList.MultiSelect = false;
+            this.svidetelstvaList.Name = "svidetelstvaList";
+            this.svidetelstvaList.Size = new System.Drawing.Size(647, 177);
+            this.svidetelstvaList.TabIndex = 0;
+            this.svidetelstvaList.UseCompatibleStateImageBehavior = false;
+            this.svidetelstvaList.View = System.Windows.Forms.View.Details;
+            // 
+            // contextMenuStrip5
+            // 
+            this.contextMenuStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавянеНаСвидетелствоToolStripMenuItem,
+            this.редактиранеНаСвидетелствоToolStripMenuItem,
+            this.изтриванеToolStripMenuItem1});
+            this.contextMenuStrip5.Name = "contextMenuStrip5";
+            this.contextMenuStrip5.Size = new System.Drawing.Size(144, 70);
+            // 
+            // добавянеНаСвидетелствоToolStripMenuItem
+            // 
+            this.добавянеНаСвидетелствоToolStripMenuItem.Name = "добавянеНаСвидетелствоToolStripMenuItem";
+            this.добавянеНаСвидетелствоToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.добавянеНаСвидетелствоToolStripMenuItem.Text = "Добавяне";
+            this.добавянеНаСвидетелствоToolStripMenuItem.Click += new System.EventHandler(this.добавянеНаСвидетелствоToolStripMenuItem_Click);
+            // 
+            // редактиранеНаСвидетелствоToolStripMenuItem
+            // 
+            this.редактиранеНаСвидетелствоToolStripMenuItem.Name = "редактиранеНаСвидетелствоToolStripMenuItem";
+            this.редактиранеНаСвидетелствоToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.редактиранеНаСвидетелствоToolStripMenuItem.Text = "Редактиране";
+            this.редактиранеНаСвидетелствоToolStripMenuItem.Click += new System.EventHandler(this.редактиранеНаСвидетелствоToolStripMenuItem_Click);
+            // 
+            // изтриванеToolStripMenuItem1
+            // 
+            this.изтриванеToolStripMenuItem1.Name = "изтриванеToolStripMenuItem1";
+            this.изтриванеToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
+            this.изтриванеToolStripMenuItem1.Text = "Изтриване";
+            this.изтриванеToolStripMenuItem1.Click += new System.EventHandler(this.изтриванеToolStripMenuItem1_Click);
+            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.demontajList);
@@ -700,6 +758,16 @@
             this.tabPage6.TabIndex = 3;
             this.tabPage6.Text = "Демонтаж на ФП";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // demontajList
+            // 
+            this.demontajList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.demontajList.Location = new System.Drawing.Point(3, 3);
+            this.demontajList.Name = "demontajList";
+            this.demontajList.Size = new System.Drawing.Size(647, 177);
+            this.demontajList.TabIndex = 0;
+            this.demontajList.UseCompatibleStateImageBehavior = false;
+            this.demontajList.View = System.Windows.Forms.View.Details;
             // 
             // panel2
             // 
@@ -798,36 +866,6 @@
             this.molLabel.TabIndex = 0;
             this.molLabel.Text = "МОЛ:";
             // 
-            // remontiList
-            // 
-            this.remontiList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.remontiList.Location = new System.Drawing.Point(3, 3);
-            this.remontiList.Name = "remontiList";
-            this.remontiList.Size = new System.Drawing.Size(647, 177);
-            this.remontiList.TabIndex = 0;
-            this.remontiList.UseCompatibleStateImageBehavior = false;
-            this.remontiList.View = System.Windows.Forms.View.Details;
-            // 
-            // svidetelstvaList
-            // 
-            this.svidetelstvaList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.svidetelstvaList.Location = new System.Drawing.Point(3, 3);
-            this.svidetelstvaList.Name = "svidetelstvaList";
-            this.svidetelstvaList.Size = new System.Drawing.Size(647, 177);
-            this.svidetelstvaList.TabIndex = 0;
-            this.svidetelstvaList.UseCompatibleStateImageBehavior = false;
-            this.svidetelstvaList.View = System.Windows.Forms.View.Details;
-            // 
-            // demontajList
-            // 
-            this.demontajList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.demontajList.Location = new System.Drawing.Point(3, 3);
-            this.demontajList.Name = "demontajList";
-            this.demontajList.Size = new System.Drawing.Size(647, 177);
-            this.demontajList.TabIndex = 0;
-            this.demontajList.UseCompatibleStateImageBehavior = false;
-            this.demontajList.View = System.Windows.Forms.View.Details;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -862,6 +900,7 @@
             this.contextMenuStrip3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
+            this.contextMenuStrip5.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -949,6 +988,10 @@
         private System.Windows.Forms.ListView remontiList;
         private System.Windows.Forms.ListView svidetelstvaList;
         private System.Windows.Forms.ListView demontajList;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip5;
+        private System.Windows.Forms.ToolStripMenuItem добавянеНаСвидетелствоToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem редактиранеНаСвидетелствоToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem изтриванеToolStripMenuItem1;
     }
 }
 
