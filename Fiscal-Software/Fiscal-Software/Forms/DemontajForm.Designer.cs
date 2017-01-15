@@ -372,6 +372,7 @@
             this.Name = "DemontajForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Демонтаж на ФУ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DemontajForm_FormClosing);
             this.Load += new System.EventHandler(this.DemontajForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

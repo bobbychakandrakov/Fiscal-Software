@@ -26,7 +26,7 @@ namespace Fiscal_Software
         ListViewItem lvi1;
         ListViewItem lvi2;
         ListViewItem lviCfd;
-        int selectedClientId = -1, selectedObjectID = -1, selectedCfdID=-1, selectedFUDanni = -1, selectedSvidetelstvo = -1;
+        int selectedClientId = -1, selectedObjectID = -1, selectedCfdID=-1, selectedFUDanni = -1, selectedSvidetelstvo = -1, selectedDemontaj = -1;
         Client client;
         ContractFiscalDevices cfd;
 
@@ -779,7 +779,7 @@ namespace Fiscal_Software
         private void демонтажНаФПToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open Demontaj Form
-            DemontajForm df = new DemontajForm();
+            DemontajForm df = new DemontajForm(selectedFUDanni, this);
             df.Show();
         }
 
@@ -833,6 +833,36 @@ namespace Fiscal_Software
                 }
 
             }
+        }
+
+        private void добавянеНаДемонтажToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DemontajForm df = new DemontajForm(selectedFUDanni, this);
+            df.Show();
+        }
+
+        private void изтриванеНаДемонтажToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (demontajList.SelectedItems.Count > 0)
+            {
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да изтриете този договор ?",
+                                    "Изтриване на договор",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    int id = int.Parse(demontajList.SelectedItems[0].Tag.ToString());
+                    DemontajFiskalnoUstroistvoCtrl.DeleteDemontajFiskalnoUstroistvoById(id);
+                    demontajList.SelectedItems[0].Remove();
+                }
+
+            }
+        }
+
+        private void редактиранеНаДемонтажToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            selectedDemontaj = int.Parse(demontajList.SelectedItems[0].Tag.ToString());
+            DemontajForm df = new DemontajForm(selectedFUDanni, this, selectedDemontaj);
+            df.Show();
         }
 
         private void редактиранеНаСвидетелствоToolStripMenuItem_Click(object sender, EventArgs e)

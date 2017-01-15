@@ -98,6 +98,10 @@
             this.изтриванеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.demontajList = new System.Windows.Forms.ListView();
+            this.contextMenuStrip6 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.добавянеНаДемонтажToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редактиранеНаДемонтажToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изтриванеНаДемонтажToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.bulstatPlaceholder = new System.Windows.Forms.Label();
@@ -128,6 +132,7 @@
             this.tabPage5.SuspendLayout();
             this.contextMenuStrip5.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.contextMenuStrip6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -725,27 +730,27 @@
             this.редактиранеНаСвидетелствоToolStripMenuItem,
             this.изтриванеToolStripMenuItem1});
             this.contextMenuStrip5.Name = "contextMenuStrip5";
-            this.contextMenuStrip5.Size = new System.Drawing.Size(144, 70);
+            this.contextMenuStrip5.Size = new System.Drawing.Size(236, 70);
             // 
             // добавянеНаСвидетелствоToolStripMenuItem
             // 
             this.добавянеНаСвидетелствоToolStripMenuItem.Name = "добавянеНаСвидетелствоToolStripMenuItem";
-            this.добавянеНаСвидетелствоToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.добавянеНаСвидетелствоToolStripMenuItem.Text = "Добавяне";
+            this.добавянеНаСвидетелствоToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.добавянеНаСвидетелствоToolStripMenuItem.Text = "Добавяне на свидетелство";
             this.добавянеНаСвидетелствоToolStripMenuItem.Click += new System.EventHandler(this.добавянеНаСвидетелствоToolStripMenuItem_Click);
             // 
             // редактиранеНаСвидетелствоToolStripMenuItem
             // 
             this.редактиранеНаСвидетелствоToolStripMenuItem.Name = "редактиранеНаСвидетелствоToolStripMenuItem";
-            this.редактиранеНаСвидетелствоToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.редактиранеНаСвидетелствоToolStripMenuItem.Text = "Редактиране";
+            this.редактиранеНаСвидетелствоToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.редактиранеНаСвидетелствоToolStripMenuItem.Text = "Редактиране на свидетелство";
             this.редактиранеНаСвидетелствоToolStripMenuItem.Click += new System.EventHandler(this.редактиранеНаСвидетелствоToolStripMenuItem_Click);
             // 
             // изтриванеToolStripMenuItem1
             // 
             this.изтриванеToolStripMenuItem1.Name = "изтриванеToolStripMenuItem1";
-            this.изтриванеToolStripMenuItem1.Size = new System.Drawing.Size(143, 22);
-            this.изтриванеToolStripMenuItem1.Text = "Изтриване";
+            this.изтриванеToolStripMenuItem1.Size = new System.Drawing.Size(235, 22);
+            this.изтриванеToolStripMenuItem1.Text = "Изтриване на свидетелство";
             this.изтриванеToolStripMenuItem1.Click += new System.EventHandler(this.изтриванеToolStripMenuItem1_Click);
             // 
             // tabPage6
@@ -761,13 +766,46 @@
             // 
             // demontajList
             // 
+            this.demontajList.ContextMenuStrip = this.contextMenuStrip6;
             this.demontajList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.demontajList.FullRowSelect = true;
             this.demontajList.Location = new System.Drawing.Point(3, 3);
+            this.demontajList.MultiSelect = false;
             this.demontajList.Name = "demontajList";
             this.demontajList.Size = new System.Drawing.Size(647, 177);
             this.demontajList.TabIndex = 0;
             this.demontajList.UseCompatibleStateImageBehavior = false;
             this.demontajList.View = System.Windows.Forms.View.Details;
+            // 
+            // contextMenuStrip6
+            // 
+            this.contextMenuStrip6.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавянеНаДемонтажToolStripMenuItem,
+            this.редактиранеНаДемонтажToolStripMenuItem,
+            this.изтриванеНаДемонтажToolStripMenuItem});
+            this.contextMenuStrip6.Name = "contextMenuStrip6";
+            this.contextMenuStrip6.Size = new System.Drawing.Size(218, 92);
+            // 
+            // добавянеНаДемонтажToolStripMenuItem
+            // 
+            this.добавянеНаДемонтажToolStripMenuItem.Name = "добавянеНаДемонтажToolStripMenuItem";
+            this.добавянеНаДемонтажToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.добавянеНаДемонтажToolStripMenuItem.Text = "Добавяне на демонтаж";
+            this.добавянеНаДемонтажToolStripMenuItem.Click += new System.EventHandler(this.добавянеНаДемонтажToolStripMenuItem_Click);
+            // 
+            // редактиранеНаДемонтажToolStripMenuItem
+            // 
+            this.редактиранеНаДемонтажToolStripMenuItem.Name = "редактиранеНаДемонтажToolStripMenuItem";
+            this.редактиранеНаДемонтажToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.редактиранеНаДемонтажToolStripMenuItem.Text = "Редактиране на демонтаж";
+            this.редактиранеНаДемонтажToolStripMenuItem.Click += new System.EventHandler(this.редактиранеНаДемонтажToolStripMenuItem_Click);
+            // 
+            // изтриванеНаДемонтажToolStripMenuItem
+            // 
+            this.изтриванеНаДемонтажToolStripMenuItem.Name = "изтриванеНаДемонтажToolStripMenuItem";
+            this.изтриванеНаДемонтажToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.изтриванеНаДемонтажToolStripMenuItem.Text = "Изтриване на демонтаж";
+            this.изтриванеНаДемонтажToolStripMenuItem.Click += new System.EventHandler(this.изтриванеНаДемонтажToolStripMenuItem_Click);
             // 
             // panel2
             // 
@@ -902,6 +940,7 @@
             this.tabPage5.ResumeLayout(false);
             this.contextMenuStrip5.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
+            this.contextMenuStrip6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -992,6 +1031,10 @@
         private System.Windows.Forms.ToolStripMenuItem добавянеНаСвидетелствоToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактиранеНаСвидетелствоToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem изтриванеToolStripMenuItem1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip6;
+        private System.Windows.Forms.ToolStripMenuItem добавянеНаДемонтажToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem редактиранеНаДемонтажToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem изтриванеНаДемонтажToolStripMenuItem;
     }
 }
 
