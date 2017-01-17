@@ -137,6 +137,12 @@
     <Compile Include="Forms\ObjectsForm.Designer.cs">
       <DependentUpon>ObjectsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RemontiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RemontiForm.Designer.cs">
+      <DependentUpon>RemontiForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ServizniFirmi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ObjectsForm.resx">
       <DependentUpon>ObjectsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RemontiForm.resx">
+      <DependentUpon>RemontiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ServizniFirmi.resx">
       <DependentUpon>ServizniFirmi.cs</DependentUpon>

@@ -786,7 +786,8 @@ namespace Fiscal_Software
         private void ремонтToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open Remont Form
-
+            RemontiForm rf = new RemontiForm(selectedFUDanni, this);
+            rf.Show();
         }
 
         private void печатДосиеНаФУToolStripMenuItem_Click(object sender, EventArgs e)
@@ -853,6 +854,36 @@ namespace Fiscal_Software
                     int id = int.Parse(demontajList.SelectedItems[0].Tag.ToString());
                     DemontajFiskalnoUstroistvoCtrl.DeleteDemontajFiskalnoUstroistvoById(id);
                     demontajList.SelectedItems[0].Remove();
+                }
+
+            }
+        }
+
+        private void добавянеНаРемонтToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RemontiForm rf = new RemontiForm(selectedFUDanni, this);
+            rf.Show();
+        }
+
+        private void редактиранеНаРемонтToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(remontiList.SelectedItems[0].Tag.ToString());
+            RemontiForm rf = new RemontiForm(selectedFUDanni, this, id);
+            rf.Show();
+        }
+
+        private void изтриванеНаРемонтToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (remontiList.SelectedItems.Count > 0)
+            {
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да изтриете този ремонт ?",
+                                    "Изтриване на договор",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    int id = int.Parse(remontiList.SelectedItems[0].Tag.ToString());
+                    RemontCtrl.DeleteRemontById(id);
+                    remontiList.SelectedItems[0].Remove();
                 }
 
             }
