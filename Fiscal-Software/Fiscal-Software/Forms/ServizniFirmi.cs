@@ -16,7 +16,7 @@ namespace Fiscal_Software.Forms
     {
         ListViewItem lvi;
         // Add -> true Edit -> false
-        bool addCompanyFlag = true;
+        bool addCompanyFlag = true, touched = false;
         int selectedCompanyID;
         public ServizniFirmi()
         {
@@ -27,6 +27,13 @@ namespace Fiscal_Software.Forms
         {
             this.ToggleControls(false);
             this.LoadListData();
+            DirtyChecker.Check(Controls, c_ControlChanged);
+        }
+
+
+        void c_ControlChanged(object sender, EventArgs e)
+        {
+            touched = true;
         }
 
         private void LoadListData()
@@ -86,17 +93,13 @@ namespace Fiscal_Software.Forms
 
         private void cancelSaveBtn_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Сигурни ли сте, че иската да излезете от Сервизни фирми ?",
-                                    "Сервизни фирми",
-                            MessageBoxButtons.YesNo);
-            if (dr == DialogResult.Yes)
-            {
+            ResetControlsValue();
                 companyListView.Enabled = true;
                 this.ToggleControls(false);
                 addCompanyBtn.Enabled = true;
                 editCompanyBtn.Enabled = true;
                 deleteCompanyBtn.Enabled = true;
-            }
+            touched = false;
 
             
         }
@@ -291,20 +294,23 @@ namespace Fiscal_Software.Forms
         {
 
         }
-        protected override void OnFormClosing(FormClosingEventArgs e)
+
+        private void ServizniFirmi_FormClosing(object sender, FormClosingEventArgs e)
         {
-            base.OnFormClosing(e);
-
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
-
-            switch (MessageBox.Show(this, "Сигурни ли сте, че иската да излезете " + " ?", "Изход от сервизни фирми", MessageBoxButtons.YesNo))
+            if (touched)
             {
-                case DialogResult.No:
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да излезете без да запазите информацията ?",
+                                    "Изход",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    touched = false;
+                    this.Close();
+                }
+                else
+                {
                     e.Cancel = true;
-                    break;
-                default:
-                    break;
+                }
             }
         }
     }

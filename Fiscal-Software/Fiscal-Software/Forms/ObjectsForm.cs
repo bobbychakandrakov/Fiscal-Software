@@ -1,5 +1,6 @@
 ﻿using Fiscal_Software.Controllers;
 using Fiscal_Software.Controlles;
+using Fiscal_Software.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,11 @@ namespace Fiscal_Software.Forms
     public partial class ObjectsForm : Form
     {
         int id, id1;
-        bool isSaving = true;
+        bool isSaving = true, touched = false;
         HashSet<string> types = new HashSet<string>();
         HashSet<string> activitiesHash = new HashSet<string>();
         Form1 f1;
+        Objects objects;
         public ObjectsForm()
         {
             InitializeComponent();
@@ -39,13 +41,14 @@ namespace Fiscal_Software.Forms
         }
 
 
-        public ObjectsForm(Objects objects)
+        public ObjectsForm(Objects objects, Form1 f1)
         {
             InitializeComponent();
             this.isSaving = false;
             this.id1 = objects.ID;
             this.id = int.Parse(objects.ClientId.ToString());
-            LoadPanelData(objects);
+            this.f1 = f1;
+            this.objects = objects;
         }
 
         private void FillData(Client client)
@@ -100,7 +103,8 @@ namespace Fiscal_Software.Forms
                 {
                     ObjectCtrl.UpdateObject(id1, objectToAdd);
                 }
-                this.f1.RefreshObjects();
+                f1.RefreshObjects();
+                touched = false;
                 this.Close();
             }
             else
@@ -118,35 +122,42 @@ namespace Fiscal_Software.Forms
 
         private void ObjectsForm_Load(object sender, EventArgs e)
         {
-            objectActivityBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            objectActivityBox.DropDownStyle = ComboBoxStyle.DropDown;
             var objects = ObjectCtrl.GetAllObjects();
             for (int i = 0; i < objects.Length; i++)
             {
                 types.Add(objects[i].Type);
+                activitiesHash.Add(objects[i].Activity);
             }
             objectTpeBox.DataSource = types.ToList();
-            var activities = ActivityCtrl.GetAllActivities();
-            for (int i = 0; i < activities.Length; i++)
-            {
-                activitiesHash.Add(activities[i].Activity);
-            }
+            
             objectActivityBox.DataSource = activitiesHash.ToList();
+            LoadPanelData(this.objects);
+            DirtyChecker.Check(Controls, c_ControlChanged);
         }
-        protected override void OnFormClosing(FormClosingEventArgs e)
+
+        private void ObjectsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            base.OnFormClosing(e);
-
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
-
-            switch (MessageBox.Show(this, "Сигурни ли сте, че иската да излезете " + " ?", "Изход от обекти", MessageBoxButtons.YesNo))
+            if (touched)
             {
-                case DialogResult.No:
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да излезете без да запазите информацията ?",
+                                    "Изход",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    touched = false;
+                    this.Close();
+                }
+                else
+                {
                     e.Cancel = true;
-                    break;
-                default:
-                    break;
+                }
             }
+        }
+
+        void c_ControlChanged(object sender, EventArgs e)
+        {
+            touched = true;
         }
     }
 }

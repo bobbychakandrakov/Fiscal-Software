@@ -382,6 +382,7 @@
             this.Name = "Contracts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Договори";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Contracts_FormClosing);
             this.Load += new System.EventHandler(this.Contracts_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

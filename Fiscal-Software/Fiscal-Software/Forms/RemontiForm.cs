@@ -15,7 +15,7 @@ namespace Fiscal_Software.Forms
     public partial class RemontiForm : Form
     {
         int id , rId;
-        bool isUpdate = false;
+        bool isUpdate = false, touched = false;
         Form1 f1;
         public RemontiForm()
         {
@@ -43,6 +43,14 @@ namespace Fiscal_Software.Forms
         private void RemontiForm_Load(object sender, EventArgs e)
         {
             LoadTech();
+
+            DirtyChecker.Check(Controls, c_ControlChanged);
+        }
+
+
+        void c_ControlChanged(object sender, EventArgs e)
+        {
+            touched = true;
         }
 
         private void LoadTech()
@@ -88,6 +96,25 @@ namespace Fiscal_Software.Forms
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void RemontiForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (touched)
+            {
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да излезете без да запазите информацията ?",
+                                    "Изход",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    touched = false;
+                    this.Close();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
 
         private void LoadData(Remont remont)

@@ -703,7 +703,7 @@ namespace Fiscal_Software
             if (selectedClientId > 0)
             {
                 var objects = ObjectCtrl.GetObjectById(selectedObjectID);
-                ObjectsForm of = new ObjectsForm(objects);
+                ObjectsForm of = new ObjectsForm(objects, this);
                 of.Show();
             }
         }
@@ -714,7 +714,7 @@ namespace Fiscal_Software
             if (selectedClientId > 0)
             {
                 var objects = ObjectCtrl.GetObjectById(selectedObjectID);
-                ObjectsForm of = new ObjectsForm(objects);
+                ObjectsForm of = new ObjectsForm(objects, this);
                 of.Show();
             }
         }
@@ -919,7 +919,7 @@ namespace Fiscal_Software
             if (selectedClientId > 0)
             {
                 var objects = ObjectCtrl.GetObjectById(selectedObjectID);
-                ObjectsForm of = new ObjectsForm(objects);
+                ObjectsForm of = new ObjectsForm(objects, this);
                 of.Show();
                 of.Text = "Редактиране на обект";
             }

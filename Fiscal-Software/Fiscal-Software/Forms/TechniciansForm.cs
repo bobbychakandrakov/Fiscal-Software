@@ -18,7 +18,7 @@ namespace Fiscal_Software.Forms
     {
         ListViewItem lvi;
         // Add -> true Edit -> false
-        bool addTechnicianFlag = true;
+        bool addTechnicianFlag = true, touched = false;
         int selectedTechnicianID;
         public TechniciansForm()
         {
@@ -60,6 +60,12 @@ namespace Fiscal_Software.Forms
            techniciansList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             techniciansList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             LoadTechnicians();
+            DirtyChecker.Check(Controls, c_ControlChanged);
+        }
+
+        void c_ControlChanged(object sender, EventArgs e)
+        {
+            touched = true;
         }
 
         private void ToggleControls(bool areEnabled, bool list)
@@ -84,18 +90,13 @@ namespace Fiscal_Software.Forms
 
         private void cancelTechnicianBtn_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Сигурни ли сте, че иската да излезете от Техници ?",
-                                   "Техници",
-                           MessageBoxButtons.YesNo);
-            if (dr == DialogResult.Yes)
-            {
 
+            ResetControls();
                 this.ToggleControls(false, true);
                 addTechnicianBtn.Enabled = true;
                 editTechnicianBtn.Enabled = true;
                 deleteTechnicianBtn.Enabled = true;
-            }
-
+            touched = false;
             
         }
 
@@ -162,13 +163,17 @@ namespace Fiscal_Software.Forms
 
         private void editTechnicianBtn_Click(object sender, EventArgs e)
         {
-            addTechnicianFlag = false;
-            var tech = TechnicianCtrl.GetTechnicianById(selectedTechnicianID);
-            LoadPanelWithData(tech, true);
-            addTechnicianBtn.Enabled = false;
-            editTechnicianBtn.Enabled = false;
-            deleteTechnicianBtn.Enabled = false;
-            techniciansList.Enabled = false;
+            if (techniciansList.SelectedItems.Count > 0)
+            {
+                addTechnicianFlag = false;
+                var tech = TechnicianCtrl.GetTechnicianById(selectedTechnicianID);
+                LoadPanelWithData(tech, true);
+                addTechnicianBtn.Enabled = false;
+                editTechnicianBtn.Enabled = false;
+                deleteTechnicianBtn.Enabled = false;
+                techniciansList.Enabled = false;
+            }
+            
         }
 
         private void LoadPanelWithData(Technician tech, bool toggle)
@@ -236,21 +241,25 @@ namespace Fiscal_Software.Forms
         {
 
         }
-        protected override void OnFormClosing(FormClosingEventArgs e)
+
+        private void TechniciansForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            base.OnFormClosing(e);
-
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
-
-            switch (MessageBox.Show(this, "Сигурни ли сте, че иската да излезете " + " ?", "Изход от техници", MessageBoxButtons.YesNo))
+            if (touched)
             {
-                case DialogResult.No:
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да излезете без да запазите информацията ?",
+                                    "Изход",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    touched = false;
+                    this.Close();
+                }
+                else
+                {
                     e.Cancel = true;
-                    break;
-                default:
-                    break;
+                }
             }
+
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Fiscal_Software.Controllers;
 using Fiscal_Software.Controlles;
+using Fiscal_Software.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,7 @@ namespace Fiscal_Software.Forms
 
         ListViewItem lvi;
         // Add -> true Edit -> false
-        bool addContractFlag = true, isHover = false;
+        bool addContractFlag = true, isHover = false, touched = false;
         int selectedContract;
         public Contracts()
         {
@@ -53,6 +54,12 @@ namespace Fiscal_Software.Forms
             contractsListView.Columns[1].TextAlign = HorizontalAlignment.Right;
             contractsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             contractsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            DirtyChecker.Check(Controls, c_ControlChanged);
+        }
+
+        void c_ControlChanged(object sender, EventArgs e)
+        {
+            touched = true;
         }
 
         private void ToggleControls(bool isEnabled)
@@ -88,18 +95,14 @@ namespace Fiscal_Software.Forms
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Сигурни ли сте, че иската да излезете от договори ?",
-                                    "Договори",
-                            MessageBoxButtons.YesNo);
-            if (dr == DialogResult.Yes)
-            {
+            ResetControls();
                 ToggleControls(false);
                 addContractBtn.Enabled = true;
                 editContractBtn.Enabled = true;
                 deleteContractBtn.Enabled = true;
                 contractsListView.Enabled = true;
                 this.Text = "Договори";
-            }
+            touched = false;
 
            
             
@@ -218,6 +221,25 @@ namespace Fiscal_Software.Forms
         private void deleteContractBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Contracts_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (touched)
+            {
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да излезете без да запазите информацията ?",
+                                    "Изход",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    touched = false;
+                    this.Close();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
 
         private void LoadPanelWithData(Contract contract)

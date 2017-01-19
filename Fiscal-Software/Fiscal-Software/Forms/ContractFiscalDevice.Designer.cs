@@ -261,6 +261,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ContractFiscalDevice";
             this.Text = "Договор за фискално у-во";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ContractFiscalDevice_FormClosing);
             this.Load += new System.EventHandler(this.ContractFiscalDevice_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

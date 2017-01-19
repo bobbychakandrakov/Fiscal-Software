@@ -293,6 +293,7 @@
             this.Name = "TechniciansForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Техници";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TechniciansForm_FormClosing);
             this.Load += new System.EventHandler(this.TechniciansForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

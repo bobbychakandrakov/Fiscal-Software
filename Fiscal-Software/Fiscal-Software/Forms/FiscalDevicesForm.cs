@@ -16,7 +16,7 @@ namespace Fiscal_Software.Forms
     {
         ListViewItem lvi;
         // Add -> true Edit -> false
-        bool addFiscalDiviceFlag = true;
+        bool addFiscalDiviceFlag = true, touched = false;
         HashSet<string> hash = new HashSet<string>();
         HashSet<string> man = new HashSet<string>();
         int selectedFiscalDeviceID;
@@ -30,7 +30,12 @@ namespace Fiscal_Software.Forms
         {
             this.ToggleControls(false);
             this.LoadListData();
-            
+            DirtyChecker.Check(Controls, c_ControlChanged);
+        }
+
+        void c_ControlChanged(object sender, EventArgs e)
+        {
+            touched = true;
         }
 
         private void LoadListData()
@@ -105,18 +110,14 @@ namespace Fiscal_Software.Forms
 
         private void cancelFiscalDeviceBtn_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Сигурни ли сте, че иската да излезете от фискални устройства ?",
-                                   "фискални устройства",
-                           MessageBoxButtons.YesNo);
-            if (dr == DialogResult.Yes)
-            {
+            ResetControlsValue();
                 fiscalDevicesList.Enabled = true;
                 this.ToggleControls(false);
                 addFiscalDeviceBtn.Enabled = true;
                 editFiscalDeviceBtn.Enabled = true;
                 deleteFiscalDeviceBtn.Enabled = true;
-                this.Text = "Фискални устройство";
-            }
+            touched = false;
+
 
             
         }
@@ -280,21 +281,25 @@ namespace Fiscal_Software.Forms
         {
 
         }
-        protected override void OnFormClosing(FormClosingEventArgs e)
+
+        private void FiscalDevicesForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            base.OnFormClosing(e);
-
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
-
-            switch (MessageBox.Show(this, "Сигурни ли сте, че иската да излезете " + " ?", "Изход от фискални устройства", MessageBoxButtons.YesNo))
+            if (touched)
             {
-                case DialogResult.No:
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да излезете без да запазите информацията ?",
+                                    "Изход",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    touched = false;
+                    this.Close();
+                }
+                else
+                {
                     e.Cancel = true;
-                    break;
-                default:
-                    break;
+                }
             }
         }
+
     }
 }

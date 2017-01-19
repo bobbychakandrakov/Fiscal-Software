@@ -356,6 +356,7 @@
             this.Name = "FiscalDevicesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Фискални устройства";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FiscalDevicesForm_FormClosing);
             this.Load += new System.EventHandler(this.FiscalDevicesForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

@@ -1,4 +1,5 @@
 ﻿using Fiscal_Software.Controllers;
+using Fiscal_Software.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace Fiscal_Software.Forms
     {
         Form1 f1;
         Client client;
-        bool isUpdate = false;
+        bool isUpdate = false, touched = false;
         HashSet<string> tdds = new HashSet<string>();
         public ClientsForm(Form1 f1)
         {
@@ -64,11 +65,7 @@ namespace Fiscal_Software.Forms
                           MessageBoxButtons.YesNo);
               if (msg == DialogResult.Yes)
               {*/
-              this.Close();
-            
-            
-
-
+            this.Close();
 
         }
 
@@ -109,7 +106,7 @@ namespace Fiscal_Software.Forms
                     ClientCtrl.UpdateClient(this.client.ID, client);
                     this.f1.LoadDataAfter();
                 }
-                
+                touched = false;
                 this.Close();
             }
             else
@@ -146,24 +143,15 @@ namespace Fiscal_Software.Forms
                 tdds.Add(clients[i].TDD);
             }
             clientTDDBox.DataSource = tdds.ToList();
+            DirtyChecker.Check(this.Controls, c_ControlChanged);
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e)
+
+        void c_ControlChanged(object sender, EventArgs e)
         {
-            base.OnFormClosing(e);
-
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
-       
-            switch (MessageBox.Show(this, "Сигурни ли сте, че иската да излезете " + " ?", "Изход от картон клиент", MessageBoxButtons.YesNo))
-            {
-                case DialogResult.No:
-                    e.Cancel = true;
-                    break;
-                default:
-                    break;
-            }
+            touched = true;
         }
+
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -179,6 +167,24 @@ namespace Fiscal_Software.Forms
         {
 
         }
-        
+
+        private void ClientsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (touched)
+            {
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да излезете без да запазите информацията ?",
+                                    "Изход",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    touched = false;
+                    this.Close();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
     }
 }

@@ -188,6 +188,7 @@
             this.Name = "RemontiForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавяне на ремонт";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RemontiForm_FormClosing);
             this.Load += new System.EventHandler(this.RemontiForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

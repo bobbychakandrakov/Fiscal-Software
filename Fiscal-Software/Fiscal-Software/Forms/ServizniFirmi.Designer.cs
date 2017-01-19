@@ -479,6 +479,7 @@
             this.Name = "ServizniFirmi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сервизни фирми";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ServizniFirmi_FormClosing);
             this.Load += new System.EventHandler(this.ServizniFirmi_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

@@ -1,5 +1,6 @@
 ﻿using Fiscal_Software.Controllers;
 using Fiscal_Software.Controlles;
+using Fiscal_Software.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,7 @@ namespace Fiscal_Software.Forms
 
         int objectID;
         Form1 f1;
-        bool isUpdate = false;
+        bool isUpdate = false, touched = false;
 
         public ContractFiscalDevice(int objectID,Form1 f1)
         {
@@ -146,29 +147,39 @@ namespace Fiscal_Software.Forms
             {
                 ContractType.Items.Add(contracts[i].Name);
             }
-            
+
+            DirtyChecker.Check(Controls, c_ControlChanged);
+        }
+
+        void c_ControlChanged(object sender, EventArgs e)
+        {
+            touched = true;
+        }
+
+        private void ContractFiscalDevice_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (touched)
+            {
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да излезете без да запазите информацията ?",
+                                    "Изход",
+                            MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    touched = false;
+                    this.Close();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            base.OnFormClosing(e);
-
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
-
-            switch (MessageBox.Show(this, "Сигурни ли сте, че иската да излезете " + " ?", "Договор за фискално устроийство", MessageBoxButtons.YesNo))
-            {
-                case DialogResult.No:
-                    e.Cancel = true;
-                    break;
-                default:
-                    break;
-            }
-        }
+        
 
     }
 }
