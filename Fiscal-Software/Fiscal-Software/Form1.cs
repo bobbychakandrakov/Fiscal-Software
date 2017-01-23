@@ -793,7 +793,8 @@ namespace Fiscal_Software
         private void печатДосиеНаФУToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open Print Dialog with document filled with data
-
+            PrintSvidetelstvo ps = new PrintSvidetelstvo();
+            ps.Show();
         }
 
         private void fiscalDeviceListView_SelectedIndexChanged(object sender, EventArgs e)

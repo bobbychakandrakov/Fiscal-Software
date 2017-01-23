@@ -41,6 +41,8 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
       <Private>True</Private>
@@ -51,6 +53,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -137,6 +140,12 @@
     <Compile Include="Forms\ObjectsForm.Designer.cs">
       <DependentUpon>ObjectsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PrintSvidetelstvo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintSvidetelstvo.Designer.cs">
+      <DependentUpon>PrintSvidetelstvo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\RemontiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +222,9 @@
     <EmbeddedResource Include="Forms\ObjectsForm.resx">
       <DependentUpon>ObjectsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintSvidetelstvo.resx">
+      <DependentUpon>PrintSvidetelstvo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\RemontiForm.resx">
       <DependentUpon>RemontiForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +249,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\SvidetelstvoReport.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

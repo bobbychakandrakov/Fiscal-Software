@@ -136,3 +136,7 @@ C:\Users\pc\Documents\Fiscal-Software8\Fiscal-Software\Fiscal-Software\obj\Debug
 C:\Users\pc\Documents\Fiscal-Software8\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal-Software.csproj.GenerateResource.Cache
 C:\Users\pc\Documents\Fiscal-Software8\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal-Software.exe
 C:\Users\pc\Documents\Fiscal-Software8\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal-Software.pdb
+C:\Users\pc\Documents\Fiscal-Software8\Fiscal-Software\Fiscal-Software\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\pc\Documents\Fiscal-Software8\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintSvidetelstvo.resources
+C:\Users\pc\Documents\Fiscal-Software8\Fiscal-Software\Fiscal-Software\obj\Debug\RdlCompile.cache
+C:\Users\pc\Documents\Fiscal-Software8\Fiscal-Software\Fiscal-Software\obj\Debug\RdlCompile.compiled
