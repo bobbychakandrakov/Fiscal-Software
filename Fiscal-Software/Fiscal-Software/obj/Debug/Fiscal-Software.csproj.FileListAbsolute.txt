@@ -140,3 +140,7 @@ C:\Users\pc\Documents\Fiscal-Software8\Fiscal-Software\Fiscal-Software\bin\Debug
 C:\Users\pc\Documents\Fiscal-Software8\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintSvidetelstvo.resources
 C:\Users\pc\Documents\Fiscal-Software8\Fiscal-Software\Fiscal-Software\obj\Debug\RdlCompile.cache
 C:\Users\pc\Documents\Fiscal-Software8\Fiscal-Software\Fiscal-Software\obj\Debug\RdlCompile.compiled
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintSvidetelstvo.resources
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\RdlCompile.cache
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\RdlCompile.compiled

@@ -129,6 +129,7 @@ namespace Fiscal_Software
             if (DatabaseSettings.IsSet)
             {
                 RefreshClients();
+                LoadColums();
                 if (clientsListView.Items.Count > 0)
                 {
                     clientsListView.Items[0].Selected = true;
@@ -152,7 +153,82 @@ namespace Fiscal_Software
             
             
         }
-
+        private void LoadColums()
+        {
+            // Obekti
+            objectsListView.Clear();
+            objectsListView.Columns.Add("ТДД");
+            objectsListView.Columns.Add("Тип на обекта");
+            objectsListView.Columns.Add("Град");
+            objectsListView.Columns.Add("Телефон");
+            objectsListView.Columns.Add("МОЛ (име)");
+            objectsListView.Columns.Add("МОЛ (град)");
+            objectsListView.Columns.Add("МОЛ (телефон)");
+            objectsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            objectsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            // FiscalDevices
+            fiscalDeviceListView.Clear();
+            fiscalDeviceListView.Columns.Add("Модел ФУ");
+            fiscalDeviceListView.Columns.Add("Инд N на ФУ");
+            fiscalDeviceListView.Columns.Add("ФП номер");
+            fiscalDeviceListView.Columns.Add("ФП активирана");
+            fiscalDeviceListView.Columns.Add("ФП демонтирана");
+            fiscalDeviceListView.Columns.Add("Сервиз");
+            fiscalDeviceListView.Columns.Add("Гаранция до");
+            fiscalDeviceListView.Columns.Add("Първа регистрация (фирма)");
+            fiscalDeviceListView.Columns.Add("Първа регистрация");
+            fiscalDeviceListView.Columns.Add("Рег.Nr Нап");
+            fiscalDeviceListView.Columns.Add("Рег. НАП");
+            fiscalDeviceListView.Columns.Add("СИМ платен до");
+            fiscalDeviceListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            fiscalDeviceListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            // Dogovori
+            cfdList.Clear();
+            cfdList.Columns.Add("Валиден");
+            cfdList.Columns.Add("Тип договор");
+            cfdList.Columns.Add("Договор N");
+            cfdList.Columns.Add("От Дата");
+            cfdList.Columns.Add("До Дата");
+            cfdList.Columns.Add("Сума");
+            cfdList.Columns.Add("Бележки");
+            cfdList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            cfdList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            // Svidetelstva
+            svidetelstvaList.Clear();
+            svidetelstvaList.Columns.Add("N");
+            svidetelstvaList.Columns.Add("Дата");
+            svidetelstvaList.Columns.Add("Договор");
+            svidetelstvaList.Columns.Add("От дата");
+            svidetelstvaList.Columns.Add("Техник");
+            svidetelstvaList.Columns.Add("Бележки");
+            svidetelstvaList.Columns.Add("Рег. НАП");
+            svidetelstvaList.Columns.Add("Рег. номер НАП");
+            svidetelstvaList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            svidetelstvaList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            // Remonti
+            remontiList.Clear();
+            remontiList.Columns.Add("Заявка в");
+            remontiList.Columns.Add("Приет в");
+            remontiList.Columns.Add("Върнат в");
+            remontiList.Columns.Add("Техник");
+            remontiList.Columns.Add("Описание на дефекта");
+            remontiList.Columns.Add("Вложени части");
+            remontiList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            remontiList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            // Demontaj
+            demontajList.Clear();
+            demontajList.Columns.Add("Номер ФП");
+            demontajList.Columns.Add("Демонтирана на");
+            demontajList.Columns.Add("От дата");
+            demontajList.Columns.Add("До дата");
+            demontajList.Columns.Add("Сума");
+            demontajList.Columns.Add("Сума А");
+            demontajList.Columns.Add("Сума Б");
+            demontajList.Columns.Add("Сума В");
+            demontajList.Columns.Add("Причини");
+            demontajList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            demontajList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
         public void LoadDataAfter()
         {
             if (DatabaseSettings.IsSet)
@@ -497,7 +573,6 @@ namespace Fiscal_Software
                 var clientForObj = ClientCtrl.GetClient(selectedClientId);
                 ObjectsForm of = new ObjectsForm(clientForObj, this);
                 of.Show();
-                    of.Text="Добавяне на обект";
             }
             
         }

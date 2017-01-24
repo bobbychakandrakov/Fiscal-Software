@@ -16,7 +16,7 @@ namespace Fiscal_Software.Forms
     public partial class ObjectsForm : Form
     {
         int id, id1;
-        bool isSaving = true, touched = false;
+        bool isSaving = true, touched = false, write = false;
         HashSet<string> types = new HashSet<string>();
         HashSet<string> activitiesHash = new HashSet<string>();
         Form1 f1;
@@ -30,7 +30,7 @@ namespace Fiscal_Software.Forms
             InitializeComponent();
             this.id = id;
             this.f1 = f1;
-            
+            write = true;
         }
         public ObjectsForm(Client client, Form1 f1)
         {
@@ -132,7 +132,11 @@ namespace Fiscal_Software.Forms
             objectTpeBox.DataSource = types.ToList();
             
             objectActivityBox.DataSource = activitiesHash.ToList();
-            LoadPanelData(this.objects);
+            if (this.objects != null)
+            {
+                LoadPanelData(this.objects);
+            }
+            //LoadPanelData(this.objects);
             DirtyChecker.Check(Controls, c_ControlChanged);
         }
 
