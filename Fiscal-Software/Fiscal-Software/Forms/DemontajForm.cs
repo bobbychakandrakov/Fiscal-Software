@@ -167,6 +167,11 @@ namespace Fiscal_Software.Forms
             }
         }
 
+        private void dataDemontaj_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
         void c_ControlChanged(object sender, EventArgs e)
         {
             touched = true;

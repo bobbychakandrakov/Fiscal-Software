@@ -142,8 +142,10 @@
             // 
             // DateTo
             // 
+            this.DateTo.Checked = false;
             this.DateTo.Location = new System.Drawing.Point(451, 48);
             this.DateTo.Name = "DateTo";
+            this.DateTo.ShowCheckBox = true;
             this.DateTo.Size = new System.Drawing.Size(131, 20);
             this.DateTo.TabIndex = 13;
             // 
@@ -166,8 +168,10 @@
             // 
             // DateFrom
             // 
+            this.DateFrom.Checked = false;
             this.DateFrom.Location = new System.Drawing.Point(280, 51);
             this.DateFrom.Name = "DateFrom";
+            this.DateFrom.ShowCheckBox = true;
             this.DateFrom.Size = new System.Drawing.Size(127, 20);
             this.DateFrom.TabIndex = 10;
             // 

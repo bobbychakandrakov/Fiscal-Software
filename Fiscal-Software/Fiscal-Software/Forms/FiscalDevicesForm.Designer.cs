@@ -257,8 +257,10 @@
             // 
             // fiscalDeviceStartDateBox
             // 
+            this.fiscalDeviceStartDateBox.Checked = false;
             this.fiscalDeviceStartDateBox.Location = new System.Drawing.Point(296, 156);
             this.fiscalDeviceStartDateBox.Name = "fiscalDeviceStartDateBox";
+            this.fiscalDeviceStartDateBox.ShowCheckBox = true;
             this.fiscalDeviceStartDateBox.Size = new System.Drawing.Size(178, 20);
             this.fiscalDeviceStartDateBox.TabIndex = 9;
             // 

@@ -119,6 +119,7 @@ namespace Fiscal_Software.Forms
                     DanniFiskalnoUstroistvoCtrl.AddDanniFiskalnoUstroistvo(dfu);
                 }
                 f1.LoadDanni();
+                touched = false;
                 this.Close();
             }
            
@@ -146,6 +147,7 @@ namespace Fiscal_Software.Forms
 
         private void AddFiscalDevice_Load(object sender, EventArgs e)
         {
+            fpDemontirana.ShowCheckBox = true;
             servizBox.DisplayMember = "Text";
             servizBox.ValueMember = "Value";
             List<ComboboxItem> list = new List<ComboboxItem>();
@@ -249,6 +251,21 @@ namespace Fiscal_Software.Forms
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void fpDemontirana_ValueChanged(object sender, EventArgs e)
+        {
+            fpDemontirana.Format = DateTimePickerFormat.Long;
+        }
+
+        private void fpDemontirana_DropDown(object sender, EventArgs e)
+        {
+            fpDemontirana.Format = DateTimePickerFormat.Long;
+        }
+
+        private void platenSimDo_ValueChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void fpNomer_KeyPress(object sender, KeyPressEventArgs e)

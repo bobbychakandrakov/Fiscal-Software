@@ -152,15 +152,19 @@
             // 
             // oborotDo
             // 
+            this.oborotDo.Checked = false;
             this.oborotDo.Location = new System.Drawing.Point(228, 28);
             this.oborotDo.Name = "oborotDo";
+            this.oborotDo.ShowCheckBox = true;
             this.oborotDo.Size = new System.Drawing.Size(107, 20);
             this.oborotDo.TabIndex = 9;
             // 
             // oborotOt
             // 
+            this.oborotOt.Checked = false;
             this.oborotOt.Location = new System.Drawing.Point(62, 28);
             this.oborotOt.Name = "oborotOt";
+            this.oborotOt.ShowCheckBox = true;
             this.oborotOt.Size = new System.Drawing.Size(107, 20);
             this.oborotOt.TabIndex = 8;
             // 
@@ -292,10 +296,13 @@
             // 
             // dataDemontaj
             // 
+            this.dataDemontaj.Checked = false;
             this.dataDemontaj.Location = new System.Drawing.Point(162, 32);
             this.dataDemontaj.Name = "dataDemontaj";
+            this.dataDemontaj.ShowCheckBox = true;
             this.dataDemontaj.Size = new System.Drawing.Size(200, 20);
             this.dataDemontaj.TabIndex = 7;
+            this.dataDemontaj.ValueChanged += new System.EventHandler(this.dataDemontaj_ValueChanged);
             // 
             // fpNomer
             // 

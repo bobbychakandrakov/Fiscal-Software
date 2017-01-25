@@ -134,15 +134,19 @@
             // 
             // regNapDate
             // 
+            this.regNapDate.Checked = false;
             this.regNapDate.Location = new System.Drawing.Point(479, 212);
             this.regNapDate.Name = "regNapDate";
+            this.regNapDate.ShowCheckBox = true;
             this.regNapDate.Size = new System.Drawing.Size(133, 20);
             this.regNapDate.TabIndex = 31;
             // 
             // garanciqDo
             // 
+            this.garanciqDo.Checked = false;
             this.garanciqDo.Location = new System.Drawing.Point(163, 183);
             this.garanciqDo.Name = "garanciqDo";
+            this.garanciqDo.ShowCheckBox = true;
             this.garanciqDo.Size = new System.Drawing.Size(133, 20);
             this.garanciqDo.TabIndex = 30;
             // 
@@ -155,22 +159,33 @@
             // 
             // platenSimDo
             // 
+            this.platenSimDo.Checked = false;
             this.platenSimDo.Location = new System.Drawing.Point(479, 183);
             this.platenSimDo.Name = "platenSimDo";
+            this.platenSimDo.ShowCheckBox = true;
             this.platenSimDo.Size = new System.Drawing.Size(133, 20);
             this.platenSimDo.TabIndex = 28;
+            this.platenSimDo.ValueChanged += new System.EventHandler(this.platenSimDo_ValueChanged);
             // 
             // fpDemontirana
             // 
+            this.fpDemontirana.Checked = false;
+            this.fpDemontirana.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.fpDemontirana.Location = new System.Drawing.Point(479, 154);
             this.fpDemontirana.Name = "fpDemontirana";
+            this.fpDemontirana.ShowCheckBox = true;
             this.fpDemontirana.Size = new System.Drawing.Size(133, 20);
             this.fpDemontirana.TabIndex = 27;
+            this.fpDemontirana.Value = new System.DateTime(2017, 1, 25, 12, 15, 21, 0);
+            this.fpDemontirana.ValueChanged += new System.EventHandler(this.fpDemontirana_ValueChanged);
+            this.fpDemontirana.DropDown += new System.EventHandler(this.fpDemontirana_DropDown);
             // 
             // fpAktivirana
             // 
+            this.fpAktivirana.Checked = false;
             this.fpAktivirana.Location = new System.Drawing.Point(163, 154);
             this.fpAktivirana.Name = "fpAktivirana";
+            this.fpAktivirana.ShowCheckBox = true;
             this.fpAktivirana.Size = new System.Drawing.Size(133, 20);
             this.fpAktivirana.TabIndex = 26;
             // 
@@ -461,8 +476,10 @@
             // 
             // regDate
             // 
+            this.regDate.Checked = false;
             this.regDate.Location = new System.Drawing.Point(479, 186);
             this.regDate.Name = "regDate";
+            this.regDate.ShowCheckBox = true;
             this.regDate.Size = new System.Drawing.Size(133, 20);
             this.regDate.TabIndex = 37;
             // 

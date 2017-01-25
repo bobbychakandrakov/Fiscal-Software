@@ -357,8 +357,10 @@
             // 
             // clientFDDateBox
             // 
+            this.clientFDDateBox.Checked = false;
             this.clientFDDateBox.Location = new System.Drawing.Point(354, 114);
             this.clientFDDateBox.Name = "clientFDDateBox";
+            this.clientFDDateBox.ShowCheckBox = true;
             this.clientFDDateBox.Size = new System.Drawing.Size(184, 20);
             this.clientFDDateBox.TabIndex = 9;
             // 

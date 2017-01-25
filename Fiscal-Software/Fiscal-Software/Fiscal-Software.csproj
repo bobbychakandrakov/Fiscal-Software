@@ -249,7 +249,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\Dogovor.rdlc" />
+    <EmbeddedResource Include="Reports\ProtokolDemontaJ.rdlc" />
+    <EmbeddedResource Include="Reports\RemontProtokol.rdlc" />
     <EmbeddedResource Include="Reports\SvidetelstvoReport.rdlc" />
+    <EmbeddedResource Include="Reports\Uvedomlenie.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
