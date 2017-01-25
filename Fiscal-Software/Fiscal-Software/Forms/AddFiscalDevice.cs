@@ -147,7 +147,6 @@ namespace Fiscal_Software.Forms
 
         private void AddFiscalDevice_Load(object sender, EventArgs e)
         {
-            fpDemontirana.ShowCheckBox = true;
             servizBox.DisplayMember = "Text";
             servizBox.ValueMember = "Value";
             List<ComboboxItem> list = new List<ComboboxItem>();
@@ -266,6 +265,24 @@ namespace Fiscal_Software.Forms
         private void platenSimDo_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void fillDataBtn_Click(object sender, EventArgs e)
+        {
+            if (servizBox.SelectedValue.ToString() != "")
+            {
+                int id = int.Parse(servizBox.SelectedValue.ToString());
+                var com = CompanyCtrl.GetCompanyById(id);
+                var c = TechnicianCtrl.GetAllTechnicianByCompany(id);
+                regFirma.Text = com.Name;
+               regGrad.Text = com.Town;
+                if (c.Length > 0)
+                {
+                    regTexnik.Text = c[0].Name;
+                }
+                
+                regAdres.Text = com.Address;
+            }
         }
 
         private void fpNomer_KeyPress(object sender, KeyPressEventArgs e)

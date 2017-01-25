@@ -10,9 +10,9 @@ namespace Fiscal_Software.Controllers
     {
         public static void AddTechnician(Technician technician)
         {
-           
-            technician.CompanyID =technician. CompanyID;
-            technician.Name =technician. Name;
+
+            technician.CompanyID = technician.CompanyID;
+            technician.Name = technician.Name;
             technician.EGN = technician.EGN;
             technician.Telephone = technician.Telephone;
             using (var ctx = new FiscalSoftware())
@@ -20,6 +20,15 @@ namespace Fiscal_Software.Controllers
                 ctx.Technicians.Add(technician);
                 ctx.SaveChanges();
                 Console.WriteLine("technician added");
+            }
+        }
+
+        public static Technician[] GetAllTechnicianByCompany(int id)
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var technicians = ctx.Set<Technician>().Where(c => c.CompanyID == id).ToArray();
+                return technicians;
             }
         }
         public static void UpdateTechnician(int id, Technician technician)

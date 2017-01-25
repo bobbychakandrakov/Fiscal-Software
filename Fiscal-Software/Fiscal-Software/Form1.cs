@@ -786,12 +786,13 @@ namespace Fiscal_Software
         private void cfdList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
-            if (selectedClientId > 0)
-            {
-                var objects = ObjectCtrl.GetObjectById(selectedObjectID);
-                ObjectsForm of = new ObjectsForm(objects, this);
-                of.Show();
-            }
+            selectedCfdID = int.Parse(cfdList.SelectedItems[0].Tag.ToString());
+            ContractFiscalDevices cfd = ContractFiscalDeviceCtrl.GetContractFiscalDevice(selectedCfdID);
+            ContractFiscalDevice cf = new ContractFiscalDevice(this, cfd);
+            cf.loadDataForUpdate(cfd);
+            //MessageBox.Show(selectedCfdID.ToString());
+            cf.Show();
+            cf.Text = "Редактиране на договор за подръжка";
         }
 
         private void contextMenuStrip4_Opening(object sender, CancelEventArgs e)
@@ -802,6 +803,7 @@ namespace Fiscal_Software
         private void добавянеНаФУToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open Fiscal Device Form for adding data
+            
             AddFiscalDevice afd = new AddFiscalDevice(this);
             afd.Show();
         }
@@ -971,6 +973,50 @@ namespace Fiscal_Software
                 }
 
             }
+        }
+
+        private void clientsListView_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (client != null)
+            {
+                ClientsForm cf = new ClientsForm(this, client);
+                cf.Show();
+            }
+        }
+
+        private void fiscalDeviceListView_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (fiscalDeviceListView.SelectedItems.Count > 0)
+            {
+                selectedFUDanni = int.Parse(fiscalDeviceListView.SelectedItems[0].Tag.ToString());
+                if (selectedFUDanni > 0)
+                {
+                    AddFiscalDevice afd = new AddFiscalDevice(this, selectedFUDanni);
+                    afd.Show();
+                }
+            }
+        }
+
+        private void demontajList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            selectedDemontaj = int.Parse(demontajList.SelectedItems[0].Tag.ToString());
+            DemontajForm df = new DemontajForm(selectedFUDanni, this, selectedDemontaj);
+            df.Show();
+        }
+
+        private void svidetelstvaList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            selectedSvidetelstvo = int.Parse(svidetelstvaList.SelectedItems[0].Tag.ToString());
+            var svideletstvo = SvidetelstvoRegistraciqCtrl.GetSvidetelstvoRegistraciqById(selectedSvidetelstvo);
+            SvidetelsvtoRegistraciqForm srf = new SvidetelsvtoRegistraciqForm(selectedFUDanni, svideletstvo, this);
+            srf.Show();
+        }
+
+        private void remontiList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int id = int.Parse(remontiList.SelectedItems[0].Tag.ToString());
+            RemontiForm rf = new RemontiForm(selectedFUDanni, this, id);
+            rf.Show();
         }
 
         private void редактиранеНаДемонтажToolStripMenuItem_Click(object sender, EventArgs e)

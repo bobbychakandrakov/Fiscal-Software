@@ -78,6 +78,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.fillDataBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -183,6 +184,8 @@
             // fpAktivirana
             // 
             this.fpAktivirana.Checked = false;
+            this.fpAktivirana.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            this.fpAktivirana.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.fpAktivirana.Location = new System.Drawing.Point(163, 154);
             this.fpAktivirana.Name = "fpAktivirana";
             this.fpAktivirana.ShowCheckBox = true;
@@ -424,6 +427,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.fillDataBtn);
             this.groupBox2.Controls.Add(this.cancelFD);
             this.groupBox2.Controls.Add(this.saveFD);
             this.groupBox2.Controls.Add(this.regAdres);
@@ -569,6 +573,16 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Фирма*";
             // 
+            // fillDataBtn
+            // 
+            this.fillDataBtn.Location = new System.Drawing.Point(631, 31);
+            this.fillDataBtn.Name = "fillDataBtn";
+            this.fillDataBtn.Size = new System.Drawing.Size(75, 23);
+            this.fillDataBtn.TabIndex = 41;
+            this.fillDataBtn.Text = "Попълни";
+            this.fillDataBtn.UseVisualStyleBackColor = true;
+            this.fillDataBtn.Click += new System.EventHandler(this.fillDataBtn_Click);
+            // 
             // AddFiscalDevice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -643,5 +657,6 @@
         private System.Windows.Forms.TextBox regTexnik;
         private System.Windows.Forms.TextBox regGrad;
         private System.Windows.Forms.TextBox regFirma;
+        private System.Windows.Forms.Button fillDataBtn;
     }
 }

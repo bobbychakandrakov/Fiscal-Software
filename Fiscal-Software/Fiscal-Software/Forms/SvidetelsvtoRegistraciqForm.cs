@@ -135,6 +135,23 @@ namespace Fiscal_Software.Forms
             
         }
 
+        private void prekratenNa_EnabledChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void prekratenNa_ValueChanged(object sender, EventArgs e)
+        {
+            if (prekratenNa.Checked)
+            {
+                prichini.Enabled = true;
+            }
+            else
+            {
+                prichini.Enabled = false;
+            }
+        }
+
         private void LoadTech()
         {
             technikBox.DisplayMember = "Text";

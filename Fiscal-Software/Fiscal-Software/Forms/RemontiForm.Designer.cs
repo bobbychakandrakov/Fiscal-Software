@@ -101,8 +101,10 @@
             // 
             // prietB
             // 
+            this.prietB.Checked = false;
             this.prietB.Location = new System.Drawing.Point(127, 46);
             this.prietB.Name = "prietB";
+            this.prietB.ShowCheckBox = true;
             this.prietB.Size = new System.Drawing.Size(200, 20);
             this.prietB.TabIndex = 6;
             // 
@@ -132,15 +134,19 @@
             // 
             // varnatNa
             // 
+            this.varnatNa.Checked = false;
             this.varnatNa.Location = new System.Drawing.Point(127, 275);
             this.varnatNa.Name = "varnatNa";
+            this.varnatNa.ShowCheckBox = true;
             this.varnatNa.Size = new System.Drawing.Size(197, 20);
             this.varnatNa.TabIndex = 10;
             // 
             // zaqvkaPodadena
             // 
+            this.zaqvkaPodadena.Checked = false;
             this.zaqvkaPodadena.Location = new System.Drawing.Point(127, 83);
             this.zaqvkaPodadena.Name = "zaqvkaPodadena";
+            this.zaqvkaPodadena.ShowCheckBox = true;
             this.zaqvkaPodadena.Size = new System.Drawing.Size(200, 20);
             this.zaqvkaPodadena.TabIndex = 11;
             // 

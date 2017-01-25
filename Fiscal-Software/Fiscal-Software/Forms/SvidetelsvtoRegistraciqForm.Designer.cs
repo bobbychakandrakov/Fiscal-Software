@@ -205,8 +205,10 @@
             // 
             // data
             // 
+            this.data.Checked = false;
             this.data.Location = new System.Drawing.Point(79, 24);
             this.data.Name = "data";
+            this.data.ShowCheckBox = true;
             this.data.Size = new System.Drawing.Size(162, 20);
             this.data.TabIndex = 15;
             // 
@@ -235,8 +237,10 @@
             // 
             // regNapIzdaden
             // 
+            this.regNapIzdaden.Checked = false;
             this.regNapIzdaden.Location = new System.Drawing.Point(198, 205);
             this.regNapIzdaden.Name = "regNapIzdaden";
+            this.regNapIzdaden.ShowCheckBox = true;
             this.regNapIzdaden.Size = new System.Drawing.Size(162, 20);
             this.regNapIzdaden.TabIndex = 19;
             // 
@@ -267,21 +271,33 @@
             // 
             // prietNa
             // 
+            this.prietNa.Checked = false;
             this.prietNa.Location = new System.Drawing.Point(198, 460);
             this.prietNa.Name = "prietNa";
+            this.prietNa.ShowCheckBox = true;
             this.prietNa.Size = new System.Drawing.Size(200, 20);
             this.prietNa.TabIndex = 23;
             // 
             // prekratenNa
             // 
+            this.prekratenNa.Checked = false;
             this.prekratenNa.Location = new System.Drawing.Point(198, 509);
             this.prekratenNa.Name = "prekratenNa";
+            this.prekratenNa.ShowCheckBox = true;
             this.prekratenNa.Size = new System.Drawing.Size(200, 20);
             this.prekratenNa.TabIndex = 24;
+            this.prekratenNa.ValueChanged += new System.EventHandler(this.prekratenNa_ValueChanged);
+            this.prekratenNa.EnabledChanged += new System.EventHandler(this.prekratenNa_EnabledChanged);
             // 
             // prichini
             // 
+            this.prichini.Enabled = false;
             this.prichini.FormattingEnabled = true;
+            this.prichini.Items.AddRange(new object[] {
+            "Всички останали случай",
+            "Кражба на ФУ",
+            "Загубване на ФУ",
+            "Унищожаване на ФУ"});
             this.prichini.Location = new System.Drawing.Point(198, 555);
             this.prichini.Name = "prichini";
             this.prichini.Size = new System.Drawing.Size(200, 21);

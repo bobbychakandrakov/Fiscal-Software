@@ -313,6 +313,7 @@
             this.clientsListView.View = System.Windows.Forms.View.Details;
             this.clientsListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.clientsListView_ItemSelectionChanged);
             this.clientsListView.SelectedIndexChanged += new System.EventHandler(this.clientsListView_SelectedIndexChanged);
+            this.clientsListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.clientsListView_MouseDoubleClick);
             // 
             // contextMenuStrip1
             // 
@@ -529,6 +530,7 @@
             this.fiscalDeviceListView.View = System.Windows.Forms.View.Details;
             this.fiscalDeviceListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.fiscalDeviceListView_ItemSelectionChanged);
             this.fiscalDeviceListView.SelectedIndexChanged += new System.EventHandler(this.fiscalDeviceListView_SelectedIndexChanged);
+            this.fiscalDeviceListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.fiscalDeviceListView_MouseDoubleClick);
             // 
             // contextMenuStrip4
             // 
@@ -706,6 +708,7 @@
             this.remontiList.TabIndex = 0;
             this.remontiList.UseCompatibleStateImageBehavior = false;
             this.remontiList.View = System.Windows.Forms.View.Details;
+            this.remontiList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.remontiList_MouseDoubleClick);
             // 
             // contextMenuStrip7
             // 
@@ -714,7 +717,7 @@
             this.редактиранеНаРемонтToolStripMenuItem,
             this.изтриванеНаРемонтToolStripMenuItem});
             this.contextMenuStrip7.Name = "contextMenuStrip7";
-            this.contextMenuStrip7.Size = new System.Drawing.Size(204, 92);
+            this.contextMenuStrip7.Size = new System.Drawing.Size(204, 70);
             // 
             // добавянеНаРемонтToolStripMenuItem
             // 
@@ -760,6 +763,7 @@
             this.svidetelstvaList.TabIndex = 0;
             this.svidetelstvaList.UseCompatibleStateImageBehavior = false;
             this.svidetelstvaList.View = System.Windows.Forms.View.Details;
+            this.svidetelstvaList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.svidetelstvaList_MouseDoubleClick);
             // 
             // contextMenuStrip5
             // 
@@ -814,6 +818,7 @@
             this.demontajList.TabIndex = 0;
             this.demontajList.UseCompatibleStateImageBehavior = false;
             this.demontajList.View = System.Windows.Forms.View.Details;
+            this.demontajList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.demontajList_MouseDoubleClick);
             // 
             // contextMenuStrip6
             // 

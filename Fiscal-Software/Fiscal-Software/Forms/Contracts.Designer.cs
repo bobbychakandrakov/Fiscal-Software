@@ -105,6 +105,7 @@
             this.deleteContractBtn.TabIndex = 2;
             this.deleteContractBtn.Text = "Изтриване";
             this.deleteContractBtn.UseVisualStyleBackColor = true;
+            this.deleteContractBtn.Click += new System.EventHandler(this.deleteContractBtn_Click_1);
             // 
             // editContractBtn
             // 

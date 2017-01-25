@@ -79,6 +79,7 @@ namespace Fiscal_Software.Forms
             cancelBtn.Enabled = isEnabled;
             saveContractBtn.Enabled = isEnabled;
         }
+        
 
         private void addContractBtn_Click(object sender, EventArgs e)
         {
@@ -171,6 +172,7 @@ namespace Fiscal_Software.Forms
                     deleteContractBtn.Enabled = true;
                     contractsListView.Enabled = true;
                 }
+                ResetControls();
             }
             else
             {
@@ -238,6 +240,22 @@ namespace Fiscal_Software.Forms
                 else
                 {
                     e.Cancel = true;
+                }
+            }
+        }
+
+        private void deleteContractBtn_Click_1(object sender, EventArgs e)
+        {
+            if (contractsListView.SelectedItems.Count > 0)
+            {
+                DialogResult deleteResult = MessageBox.Show("Сигурни ли сте, че иската да изтриете този договор ?",
+                                   "Изход",
+                           MessageBoxButtons.YesNo);
+                if (deleteResult == DialogResult.Yes)
+                {
+                    int id = int.Parse(contractsListView.SelectedItems[0].Tag.ToString());
+                    ContractCtrl.DeleteContractById(id);
+                    contractsListView.SelectedItems[0].Remove();
                 }
             }
         }
