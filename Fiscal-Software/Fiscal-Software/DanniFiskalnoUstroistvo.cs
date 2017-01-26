@@ -17,9 +17,9 @@
 
         public int ModelFY { get; set; }
 
-        public int FYNomer { get; set; }
+        public string FYNomer { get; set; }
 
-        public int FPNomer { get; set; }
+        public string FPNomer { get; set; }
 
         public DateTime? FPAktivirana { get; set; }
 

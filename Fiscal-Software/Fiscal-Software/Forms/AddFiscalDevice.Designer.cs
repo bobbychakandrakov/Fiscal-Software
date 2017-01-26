@@ -64,6 +64,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.fillDataBtn = new System.Windows.Forms.Button();
             this.cancelFD = new System.Windows.Forms.Button();
             this.saveFD = new System.Windows.Forms.Button();
             this.regAdres = new System.Windows.Forms.RichTextBox();
@@ -78,7 +79,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.fillDataBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -220,6 +220,7 @@
             this.fpNomer.Name = "fpNomer";
             this.fpNomer.Size = new System.Drawing.Size(133, 20);
             this.fpNomer.TabIndex = 22;
+            this.fpNomer.TextChanged += new System.EventHandler(this.fpNomer_TextChanged);
             this.fpNomer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fpNomer_KeyPress);
             // 
             // fuNomer
@@ -229,6 +230,7 @@
             this.fuNomer.Name = "fuNomer";
             this.fuNomer.Size = new System.Drawing.Size(133, 20);
             this.fuNomer.TabIndex = 21;
+            this.fuNomer.TextChanged += new System.EventHandler(this.fuNomer_TextChanged);
             this.fuNomer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fuNomer_KeyPress);
             // 
             // modelESFP
@@ -450,6 +452,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Първа регистрация в";
             // 
+            // fillDataBtn
+            // 
+            this.fillDataBtn.Location = new System.Drawing.Point(631, 31);
+            this.fillDataBtn.Name = "fillDataBtn";
+            this.fillDataBtn.Size = new System.Drawing.Size(75, 23);
+            this.fillDataBtn.TabIndex = 41;
+            this.fillDataBtn.Text = "Попълни";
+            this.fillDataBtn.UseVisualStyleBackColor = true;
+            this.fillDataBtn.Click += new System.EventHandler(this.fillDataBtn_Click);
+            // 
             // cancelFD
             // 
             this.cancelFD.Location = new System.Drawing.Point(479, 234);
@@ -572,16 +584,6 @@
             this.label3.Size = new System.Drawing.Size(48, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Фирма*";
-            // 
-            // fillDataBtn
-            // 
-            this.fillDataBtn.Location = new System.Drawing.Point(631, 31);
-            this.fillDataBtn.Name = "fillDataBtn";
-            this.fillDataBtn.Size = new System.Drawing.Size(75, 23);
-            this.fillDataBtn.TabIndex = 41;
-            this.fillDataBtn.Text = "Попълни";
-            this.fillDataBtn.UseVisualStyleBackColor = true;
-            this.fillDataBtn.Click += new System.EventHandler(this.fillDataBtn_Click);
             // 
             // AddFiscalDevice
             // 

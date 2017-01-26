@@ -82,8 +82,8 @@ namespace Fiscal_Software.Forms
                 dfu.Serviz = int.Parse(servizBox.SelectedValue.ToString());
                 dfu.Obekt = int.Parse(obektBox.SelectedValue.ToString());
                 dfu.ModelFY = int.Parse(modelFUCRU.SelectedValue.ToString());
-                dfu.FYNomer = int.Parse(fuNomer.Text);
-                dfu.FPNomer = int.Parse(fpNomer.Text);
+                dfu.FYNomer = fuNomer.Text;
+                dfu.FPNomer = fpNomer.Text;
                 dfu.FPAktivirana = fpAktivirana.Value;
                 dfu.FPDeaktivirana = fpDemontirana.Value;
                 dfu.GuaranteeUntil = garanciqDo.Value;
@@ -224,7 +224,7 @@ namespace Fiscal_Software.Forms
 
         private void fuNomer_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            // e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
         private void AddFiscalDevice_FormClosed(object sender, FormClosedEventArgs e)
@@ -285,9 +285,19 @@ namespace Fiscal_Software.Forms
             }
         }
 
+        private void fuNomer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fpNomer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void fpNomer_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+           // e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }
