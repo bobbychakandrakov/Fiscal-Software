@@ -333,9 +333,10 @@
             this.contractSumForMonth.AutoSize = true;
             this.contractSumForMonth.Location = new System.Drawing.Point(29, 88);
             this.contractSumForMonth.Name = "contractSumForMonth";
-            this.contractSumForMonth.Size = new System.Drawing.Size(182, 17);
+            this.contractSumForMonth.Size = new System.Drawing.Size(247, 43);
             this.contractSumForMonth.TabIndex = 4;
-            this.contractSumForMonth.Text = "Сума по договора (за 1 месец)";
+            this.contractSumForMonth.Text = "Сума по договора (за 1 месец)\r\nАко не е чекнато е твърда сума за месец , \r\nа ако " +
+    "е чекнато е процент от МРЗ";
             this.contractSumForMonth.UseVisualStyleBackColor = true;
             this.contractSumForMonth.CheckedChanged += new System.EventHandler(this.contractSumForMonth_CheckedChanged);
             // 

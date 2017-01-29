@@ -283,8 +283,10 @@
             // 
             // companyFDDateBox
             // 
+            this.companyFDDateBox.Checked = false;
             this.companyFDDateBox.Location = new System.Drawing.Point(326, 108);
             this.companyFDDateBox.Name = "companyFDDateBox";
+            this.companyFDDateBox.ShowCheckBox = true;
             this.companyFDDateBox.Size = new System.Drawing.Size(166, 20);
             this.companyFDDateBox.TabIndex = 9;
             // 

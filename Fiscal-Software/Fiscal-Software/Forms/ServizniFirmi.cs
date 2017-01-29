@@ -153,7 +153,14 @@ namespace Fiscal_Software.Forms
                         company.DanNumber = companyDanNumberBox.Text;
                         company.Email = companyEmailBox.Text;
                         company.Fax = companyFaxBox.Text;
-                        company.FDDate = companyFDDateBox.Value;
+                        if (companyFDDateBox.Checked)
+                        {
+                            company.FDDate = companyFDDateBox.Value;
+                        }
+                        else
+                        {
+                            company.FDDate = null;
+                        }
                         company.FDNumber = companyFDNumberBox.Text;
                         company.FDTown = companyFDTownBox.Text;
                         company.Telephone = companyTelephoneBox.Text;
@@ -248,7 +255,15 @@ namespace Fiscal_Software.Forms
             companyDanNumberBox.Text = company.DanNumber;
             companyBulstatBox.Text = company.Bulstat;
             companyFDTownBox.Text = company.FDTown;
-            companyFDDateBox.Value = DateTime.Parse(company.FDDate.ToString());
+            if (company.FDDate.HasValue)
+            {
+                companyFDDateBox.Value = DateTime.Parse(company.FDDate.ToString());
+            }
+            else
+            {
+                companyFDDateBox.Value = DateTime.Now;
+                companyFDDateBox.Checked = false;
+            }
             companyFDNumberBox.Text = company.FDNumber;
             companyCertificateNBox.Text = company.CertificateN.ToString();
             companyTownBox.Text = company.Town;

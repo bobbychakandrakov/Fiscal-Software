@@ -251,9 +251,30 @@ namespace Fiscal_Software
             var remonti = RemontCtrl.GetRemontsById(selectedFUDanni);
             for (int i = 0; i < remonti.Length; i++)
             {
-                lvi2 = new ListViewItem(remonti[i].ZaqvkaZadadena.Value.ToShortDateString());
-                lvi2.SubItems.Add(remonti[i].PrietV.Value.ToShortDateString());
-                lvi2.SubItems.Add(remonti[i].VurnatNa.Value.ToShortDateString());
+                if (remonti[i].ZaqvkaZadadena.HasValue)
+                {
+                    lvi2 = new ListViewItem(remonti[i].ZaqvkaZadadena.Value.ToShortDateString());
+                }
+                else
+                {
+                    lvi2 = new ListViewItem("");
+                }
+                if (remonti[i].PrietV.HasValue)
+                {
+                    lvi2.SubItems.Add(remonti[i].PrietV.Value.ToShortDateString());
+                }
+                else
+                {
+                    lvi2.SubItems.Add("");
+                }
+                if (remonti[i].VurnatNa.HasValue)
+                {
+                    lvi2.SubItems.Add(remonti[i].VurnatNa.Value.ToShortDateString());
+                }
+                else
+                {
+                    lvi2.SubItems.Add("");
+                }
                 lvi2.SubItems.Add(TechnicianCtrl.GetTechnicianById(remonti[i].Tehnik.Value).Name);
                 lvi2.SubItems.Add(remonti[i].OpisanieDefekt);
                 lvi2.SubItems.Add(remonti[i].ChastiPriRemont);
@@ -280,12 +301,33 @@ namespace Fiscal_Software
             for (int i = 0; i < svidetelstva.Length; i++)
             {
                 lvi2 = new ListViewItem(svidetelstva[i].SvidetelstvoN.ToString());
-                lvi2.SubItems.Add(svidetelstva[i].RegDate.Value.ToShortDateString());
+                if (svidetelstva[i].RegDate.HasValue)
+                {
+                    lvi2.SubItems.Add(svidetelstva[i].RegDate.Value.ToShortDateString());
+                }
+                else
+                {
+                    lvi2.SubItems.Add("");
+                }
                 lvi2.SubItems.Add(ContractCtrl.GetContractById(svidetelstva[i].Contract).Name);
-                lvi2.SubItems.Add(svidetelstva[i].RegDate.Value.ToShortDateString());
+                if (svidetelstva[i].RegDate.HasValue)
+                {
+                    lvi2.SubItems.Add(svidetelstva[i].RegDate.Value.ToShortDateString());
+                }
+                else
+                {
+                    lvi2.SubItems.Add("");
+                }
                 lvi2.SubItems.Add(TechnicianCtrl.GetTechnicianById(svidetelstva[i].Technician).Name);
                 lvi2.SubItems.Add(svidetelstva[i].Notes);
-                lvi2.SubItems.Add(svidetelstva[i].RegNoNapIzdaden.ToString());
+                if (svidetelstva[i].RegNoNapIzdaden.HasValue)
+                {
+                    lvi2.SubItems.Add(svidetelstva[i].RegNoNapIzdaden.ToString());
+                }
+                else
+                {
+                    lvi2.SubItems.Add("");
+                }
                 lvi2.SubItems.Add(svidetelstva[i].RegNoNap.ToString());
                 lvi2.Tag = svidetelstva[i].id;
                 svidetelstvaList.Items.Add(lvi2);
@@ -310,15 +352,70 @@ namespace Fiscal_Software
             var demontaji = DemontajFiskalnoUstroistvoCtrl.GetDemontajFiskalnoUstroistvaById(selectedFUDanni);
             for (int i = 0; i < demontaji.Length; i++)
             {
-                
-                lvi2 = new ListViewItem(demontaji[i].FPNomer.Value.ToString());
-                lvi2.SubItems.Add(demontaji[i].DateDemontaj.Value.ToShortDateString());
-                lvi2.SubItems.Add(demontaji[i].OborotOt.Value.ToShortDateString());
-                lvi2.SubItems.Add(demontaji[i].OborotDo.Value.ToShortDateString());
-                lvi2.SubItems.Add(demontaji[i].DDS1.Value.ToString());
-                lvi2.SubItems.Add(demontaji[i].DDS2.Value.ToString());
-                lvi2.SubItems.Add(demontaji[i].DDS3.Value.ToString());
-                lvi2.SubItems.Add(demontaji[i].DDS4.Value.ToString());
+                if (demontaji[i].FPNomer.HasValue)
+                {
+                    lvi2 = new ListViewItem(demontaji[i].FPNomer.Value.ToString());
+                }
+                else
+                {
+                    lvi2 = new ListViewItem("");
+                }
+                if (demontaji[i].DateDemontaj.HasValue)
+                {
+                    lvi2.SubItems.Add(demontaji[i].DateDemontaj.Value.ToShortDateString());
+                }
+                else
+                {
+                    lvi2.SubItems.Add("");
+                }
+                if (demontaji[i].OborotOt.HasValue)
+                {
+                    lvi2.SubItems.Add(demontaji[i].OborotOt.Value.ToShortDateString());
+                }
+                else
+                {
+                    lvi2.SubItems.Add("");
+                }
+                if (demontaji[i].OborotDo.HasValue)
+                {
+                    lvi2.SubItems.Add(demontaji[i].OborotDo.Value.ToShortDateString());
+                }
+                else
+                {
+                    lvi2.SubItems.Add("");
+                }
+                if (demontaji[i].DDS1.HasValue)
+                {
+                    lvi2.SubItems.Add(demontaji[i].DDS1.Value.ToString());
+                }
+                else
+                {
+                    lvi2.SubItems.Add("");
+                }
+                if (demontaji[i].DDS2.HasValue)
+                {
+                    lvi2.SubItems.Add(demontaji[i].DDS2.Value.ToString());
+                }
+                else
+                {
+                    lvi2.SubItems.Add("");
+                }
+                if (demontaji[i].DDS3.HasValue)
+                {
+                    lvi2.SubItems.Add(demontaji[i].DDS3.Value.ToString());
+                }
+                else
+                {
+                    lvi2.SubItems.Add("");
+                }
+                if (demontaji[i].DDS4.HasValue)
+                {
+                    lvi2.SubItems.Add(demontaji[i].DDS4.Value.ToString());
+                }
+                else
+                {
+                    lvi2.SubItems.Add("");
+                }
                 lvi2.SubItems.Add(demontaji[i].Reasons);
                 lvi2.Tag = demontaji[i].ID;
                 demontajList.Items.Add(lvi2);
@@ -352,8 +449,22 @@ namespace Fiscal_Software
                 
                 lvi2.SubItems.Add(ContractCtrl.GetContractById(cfds1[i].ContractType).Name);
                 lvi2.SubItems.Add(cfds1[i].ContractN.ToString());
-                lvi2.SubItems.Add(cfds1[i].DateFrom.Value.ToShortDateString());
-                lvi2.SubItems.Add(cfds1[i].DateTo.Value.ToShortDateString());
+                if (cfds1[i].DateFrom.HasValue)
+                {
+                    lvi2.SubItems.Add(cfds1[i].DateFrom.Value.ToShortDateString());
+                }
+                else
+                {
+                    lvi2.SubItems.Add("");
+                }
+                if (cfds1[i].DateTo.HasValue)
+                {
+                    lvi2.SubItems.Add(cfds1[i].DateTo.Value.ToShortDateString());
+                }
+                else
+                {
+                    lvi2.SubItems.Add("");
+                }
                 lvi2.SubItems.Add(cfds1[i].Sum.ToString());
                 lvi2.SubItems.Add(cfds1[i].Notes);
                 lvi2.Tag = cfds1[i].ID;
@@ -695,9 +806,13 @@ namespace Fiscal_Software
 
         private void добавянеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ContractFiscalDevice cfd = new ContractFiscalDevice(selectedFUDanni,this);
-            cfd.Show();
-            cfd.Text = "Добавяне на договор за подръжка";
+            if (selectedFUDanni > 0)
+            {
+                ContractFiscalDevice cfd = new ContractFiscalDevice(selectedFUDanni, this);
+                cfd.Show();
+                cfd.Text = "Добавяне на договор за подръжка";
+            }
+            
         }
 
         private void изтриванеНаДоговорToolStripMenuItem_Click(object sender, EventArgs e)
@@ -848,31 +963,47 @@ namespace Fiscal_Software
         private void свидетелствоЗаРегистрацияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open Svidetelstvo Form
-            SvidetelsvtoRegistraciqForm srf = new SvidetelsvtoRegistraciqForm(selectedFUDanni, this);
-            srf.Show();
+            if (selectedFUDanni > 0)
+            {
+                SvidetelsvtoRegistraciqForm srf = new SvidetelsvtoRegistraciqForm(selectedFUDanni, this);
+                srf.Show();
+            }
+            
         }
 
         private void договорЗаПоддръжкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open DogovorPoddrujka Form
             //selectedFUDanni = int.Parse(fiscalDeviceListView.SelectedItems[0].Tag.ToString());
-            ContractFiscalDevice cfd = new ContractFiscalDevice(selectedFUDanni, this);
-            cfd.Show();
-            cfd.Text = "Добавяне на договор за подръжка";
+            if (selectedFUDanni > 0)
+            {
+                ContractFiscalDevice cfd = new ContractFiscalDevice(selectedFUDanni, this);
+                cfd.Show();
+                cfd.Text = "Добавяне на договор за подръжка";
+            }
+            
         }
 
         private void демонтажНаФПToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open Demontaj Form
-            DemontajForm df = new DemontajForm(selectedFUDanni, this);
-            df.Show();
+            if (selectedFUDanni > 0)
+            {
+                DemontajForm df = new DemontajForm(selectedFUDanni, this);
+                df.Show();
+            }
+            
         }
 
         private void ремонтToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open Remont Form
-            RemontiForm rf = new RemontiForm(selectedFUDanni, this);
-            rf.Show();
+            if (selectedFUDanni > 0)
+            {
+                RemontiForm rf = new RemontiForm(selectedFUDanni, this);
+                rf.Show();
+            }
+            
         }
 
         private void печатДосиеНаФУToolStripMenuItem_Click(object sender, EventArgs e)
@@ -901,8 +1032,12 @@ namespace Fiscal_Software
 
         private void добавянеНаСвидетелствоToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SvidetelsvtoRegistraciqForm srf = new SvidetelsvtoRegistraciqForm(selectedFUDanni, this);
-            srf.Show();
+            if (selectedFUDanni > 0)
+            {
+                SvidetelsvtoRegistraciqForm srf = new SvidetelsvtoRegistraciqForm(selectedFUDanni, this);
+                srf.Show();
+            }
+            
         }
 
         private void изтриванеToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -924,8 +1059,12 @@ namespace Fiscal_Software
 
         private void добавянеНаДемонтажToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DemontajForm df = new DemontajForm(selectedFUDanni, this);
-            df.Show();
+            if (selectedFUDanni > 0)
+            {
+                DemontajForm df = new DemontajForm(selectedFUDanni, this);
+                df.Show();
+            }
+            
         }
 
         private void изтриванеНаДемонтажToolStripMenuItem_Click(object sender, EventArgs e)
@@ -947,8 +1086,11 @@ namespace Fiscal_Software
 
         private void добавянеНаРемонтToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RemontiForm rf = new RemontiForm(selectedFUDanni, this);
-            rf.Show();
+            if (selectedFUDanni > 0)
+            {
+                RemontiForm rf = new RemontiForm(selectedFUDanni, this);
+                rf.Show();
+            }
         }
 
         private void редактиранеНаРемонтToolStripMenuItem_Click(object sender, EventArgs e)

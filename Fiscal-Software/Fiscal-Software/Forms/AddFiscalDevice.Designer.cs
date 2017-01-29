@@ -171,11 +171,12 @@
             // fpDemontirana
             // 
             this.fpDemontirana.Checked = false;
+            this.fpDemontirana.CustomFormat = "MM/dd/yyyy hh:mm";
             this.fpDemontirana.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.fpDemontirana.Location = new System.Drawing.Point(479, 154);
             this.fpDemontirana.Name = "fpDemontirana";
             this.fpDemontirana.ShowCheckBox = true;
-            this.fpDemontirana.Size = new System.Drawing.Size(133, 20);
+            this.fpDemontirana.Size = new System.Drawing.Size(149, 20);
             this.fpDemontirana.TabIndex = 27;
             this.fpDemontirana.Value = new System.DateTime(2017, 1, 25, 12, 15, 21, 0);
             this.fpDemontirana.ValueChanged += new System.EventHandler(this.fpDemontirana_ValueChanged);
@@ -184,12 +185,12 @@
             // fpAktivirana
             // 
             this.fpAktivirana.Checked = false;
-            this.fpAktivirana.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            this.fpAktivirana.CustomFormat = "MM/dd/yyyy hh:mm";
             this.fpAktivirana.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.fpAktivirana.Location = new System.Drawing.Point(163, 154);
             this.fpAktivirana.Name = "fpAktivirana";
             this.fpAktivirana.ShowCheckBox = true;
-            this.fpAktivirana.Size = new System.Drawing.Size(133, 20);
+            this.fpAktivirana.Size = new System.Drawing.Size(147, 20);
             this.fpAktivirana.TabIndex = 26;
             // 
             // simTelN

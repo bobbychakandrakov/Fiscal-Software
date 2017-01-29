@@ -42,7 +42,7 @@ namespace Fiscal_Software.Forms
         private void saveSvidetelsvto_Click(object sender, EventArgs e)
         {
             // Save to db
-            if (technikBox.SelectedValue.ToString() == "" || dogovorBox.SelectedValue.ToString() == "")
+            if (technikBox.SelectedValue.ToString() == "" || dogovorBox.SelectedValue.ToString() == "" || prietNa.Checked == false || prekratenNa.Checked == false)
             {
                 MessageBox.Show("Моля, попълнете задължителните полета!");
             }
@@ -50,7 +50,25 @@ namespace Fiscal_Software.Forms
             {
                 SvidetelstvoRegistraciq sr = new SvidetelstvoRegistraciq();
                 sr.FiscalID = id;
-                sr.RegDate = data.Value;
+                if (data.Checked)
+                {
+                    sr.RegDate = data.Value;
+                }
+                else
+                {
+                    sr.RegDate = null;
+                }
+                sr.PrietObs = prietNa.Value;
+                sr.PrekratenoObs = prekratenNa.Value;
+                if (regNapIzdaden.Checked)
+                {
+                    sr.RegNoNapIzdaden = regNapIzdaden.Value;
+                }
+                else
+                {
+                    sr.RegNoNapIzdaden = null;
+                }
+                
                 if (svidetelstvoN.Text != "")
                 {
                     sr.SvidetelstvoN = int.Parse(svidetelstvoN.Text);
@@ -63,8 +81,6 @@ namespace Fiscal_Software.Forms
                 }
                 sr.AutoNumbering = avtomatichnoNomerirane.Checked;
                 sr.Notes = notesBox.Text;
-                sr.PrietObs = prietNa.Value;
-                sr.PrekratenoObs = prekratenNa.Value;
                 sr.Reason = prichini.Text;
                 if (isUpdate)
                 {
@@ -82,7 +98,17 @@ namespace Fiscal_Software.Forms
 
         private void LoadData(SvidetelstvoRegistraciq sr)
         {
-            data.Value = sr.RegDate.Value;
+            if (sr.RegDate.HasValue)
+            {
+                data.Checked = true;
+                data.Value = sr.RegDate.Value;
+            }
+            if (sr.RegNoNapIzdaden.HasValue)
+            {
+                regNapIzdaden.Checked = true;
+                regNapIzdaden.Value = sr.RegNoNapIzdaden.Value;
+            }
+            
             svidetelstvoN.Text  = sr.SvidetelstvoN.ToString();
             technikBox.SelectedValue = sr.Technician;
             dogovorBox.SelectedValue = sr.Contract;
@@ -93,8 +119,11 @@ namespace Fiscal_Software.Forms
             }
             notesBox.Text = sr.Notes;
             prietNa.Value = sr.PrietObs;
+            prietNa.Checked = true;
             prekratenNa.Value = sr.PrekratenoObs.Value;
-            prichini.Text = sr.Reason ;
+            prekratenNa.Checked = true;
+            prichini.Text = sr.Reason;
+            prichini.Enabled = true;
             //SvidetelstvoRegistraciqCtrl.AddSvidetelstvoRegistraciq(sr);
         }
 

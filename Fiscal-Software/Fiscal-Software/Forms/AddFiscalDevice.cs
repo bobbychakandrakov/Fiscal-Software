@@ -42,10 +42,32 @@ namespace Fiscal_Software.Forms
             modelFUCRU.SelectedValue = dfu.ModelFY;
             fuNomer.Text = dfu.FYNomer.ToString();
             fpNomer.Text = dfu.FPNomer.ToString();
-            fpAktivirana.Value = dfu.FPAktivirana.Value;
-            fpDemontirana.Value = dfu.FPDeaktivirana.Value;
-            garanciqDo.Value = dfu.GuaranteeUntil.Value;
-            platenSimDo.Value = dfu.PayedSim.Value;
+            if (dfu.FPAktivirana.HasValue)
+            {
+                fpAktivirana.Value = dfu.FPAktivirana.Value;
+            }
+            if (dfu.FPDeaktivirana.HasValue)
+            {
+                fpDemontirana.Value = DateTime.Parse(dfu.FPDeaktivirana.ToString());
+            }
+            if (dfu.GuaranteeUntil.HasValue)
+            {
+                garanciqDo.Value = dfu.GuaranteeUntil.Value;
+            }
+            if (dfu.PayedSim.HasValue)
+            {
+                platenSimDo.Value = dfu.PayedSim.Value;
+            }
+            if (dfu.RegDate.HasValue)
+            {
+                regDate.Value = dfu.RegDate.Value;
+            }
+            if (dfu.RegNapDate.HasValue)
+            {
+                regNapDate.Value = dfu.RegNapDate.Value;
+            }
+            
+
 
             regNapNomer.Text = dfu.RegNoNap.ToString();
             simID.Text = dfu.SimID.ToString();
@@ -57,16 +79,16 @@ namespace Fiscal_Software.Forms
             regTexnik.Text = dfu.Technician;
             regAdres.Text = dfu.Address;
             regTel.Text = dfu.Tel;
-            regDate.Value = dfu.RegDate.Value;
+            
             esfpType.Text = dfu.ESFPT;
             modelESFP.Text = dfu.ModelESFP;
         }
         private void saveFD_Click(object sender, EventArgs e)
         {
             // Save to db
-            if (fuNomer.Text.Length != 8)
+            if (!char.IsLetter(fuNomer.Text[0]) || !char.IsLetter(fuNomer.Text[1]) || fuNomer.Text.Length != 8)
             {
-                MessageBox.Show("ФУ номер трябва да е 8 символа!");
+                MessageBox.Show("Невалиден ФУ номер!");
             }
             else if(fpNomer.Text.Length != 8)
             {
@@ -84,15 +106,61 @@ namespace Fiscal_Software.Forms
                 dfu.ModelFY = int.Parse(modelFUCRU.SelectedValue.ToString());
                 dfu.FYNomer = fuNomer.Text;
                 dfu.FPNomer = fpNomer.Text;
-                dfu.FPAktivirana = fpAktivirana.Value;
-                dfu.FPDeaktivirana = fpDemontirana.Value;
-                dfu.GuaranteeUntil = garanciqDo.Value;
-                dfu.PayedSim = platenSimDo.Value;
+                // Date checking
+                if (fpAktivirana.Checked)
+                {
+                    dfu.FPAktivirana = fpAktivirana.Value;
+                }
+                else
+                {
+                    dfu.FPAktivirana = null;
+                }
+                if (fpDemontirana.Checked)
+                {
+                    dfu.FPDeaktivirana = fpDemontirana.Value;
+                }
+                else
+                {
+                    dfu.FPDeaktivirana = null;
+                }
+                if (garanciqDo.Checked)
+                {
+                    dfu.GuaranteeUntil = garanciqDo.Value;
+                }
+                else
+                {
+                    dfu.GuaranteeUntil = null;
+                }
+                if (platenSimDo.Checked)
+                {
+                    dfu.PayedSim = platenSimDo.Value;
+                }
+                else
+                {
+                    dfu.PayedSim = null;
+                }
+                if (regNapDate.Checked)
+                {
+                    dfu.RegNapDate = regNapDate.Value;
+                }
+                else
+                {
+                    dfu.RegNapDate = null;
+                }
+                
                 if (regNapNomer.Text != "")
                 {
                     dfu.RegNoNap = int.Parse(regNapNomer.Text);
                 }
-                dfu.RegNapDate = regNapDate.Value;
+                if (regDate.Checked)
+                {
+                    dfu.RegDate = regDate.Value;
+                }
+                else
+                {
+                    dfu.RegDate = null;
+                }
+                // Date checking end
                 if (simTelN.Text != "")
                 {
                     dfu.SimTelNomer = int.Parse(simTelN.Text);
@@ -107,7 +175,6 @@ namespace Fiscal_Software.Forms
                 dfu.Technician = regTexnik.Text;
                 dfu.Address = regAdres.Text;
                 dfu.Tel = regTel.Text;
-                dfu.RegDate = regDate.Value;
                 dfu.ESFPT = esfpType.Text;
                 dfu.ModelESFP = modelESFP.Text;
                 if (isEditing)
@@ -254,12 +321,12 @@ namespace Fiscal_Software.Forms
 
         private void fpDemontirana_ValueChanged(object sender, EventArgs e)
         {
-            fpDemontirana.Format = DateTimePickerFormat.Long;
+            
         }
 
         private void fpDemontirana_DropDown(object sender, EventArgs e)
         {
-            fpDemontirana.Format = DateTimePickerFormat.Long;
+            
         }
 
         private void platenSimDo_ValueChanged(object sender, EventArgs e)
@@ -279,6 +346,7 @@ namespace Fiscal_Software.Forms
                 if (c.Length > 0)
                 {
                     regTexnik.Text = c[0].Name;
+                    regTel.Text = c[0].Telephone;
                 }
                 
                 regAdres.Text = com.Address;

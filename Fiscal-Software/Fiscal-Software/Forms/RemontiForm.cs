@@ -75,11 +75,34 @@ namespace Fiscal_Software.Forms
         {
             Remont remont = new Remont();
             remont.FiscalDeviceID = id;
-            remont.PrietV = prietB.Value;
-            remont.ZaqvkaZadadena = zaqvkaPodadena.Value;
+            if (prietB.Checked)
+            {
+                remont.PrietV = prietB.Value;
+            }
+            else
+            {
+                remont.PrietV = null;
+            }
+            if (zaqvkaPodadena.Checked)
+            {
+                remont.ZaqvkaZadadena = zaqvkaPodadena.Value;
+            }
+            else
+            {
+                remont.ZaqvkaZadadena = null;
+            }
+            if (varnatNa.Checked)
+            {
+                remont.VurnatNa = varnatNa.Value;
+            }
+            else
+            {
+                remont.VurnatNa = null;
+            }
+            
             remont.Tehnik = int.Parse(technicBox.SelectedValue.ToString());
             remont.OpisanieDefekt = opisanieDefekt.Text;
-            remont.VurnatNa = varnatNa.Value;
+            
             remont.ChastiPriRemont = chastiRemont.Text;
             if (isUpdate)
             {
@@ -121,10 +144,12 @@ namespace Fiscal_Software.Forms
         {
             if (remont.PrietV.HasValue)
             {
+                prietB.Checked = true;
                 prietB.Value = remont.PrietV.Value;
             }
             if (remont.ZaqvkaZadadena.HasValue)
             {
+                zaqvkaPodadena.Checked = true;
                 zaqvkaPodadena.Value = remont.ZaqvkaZadadena.Value;
             }
             if (remont.Tehnik.HasValue)
@@ -133,6 +158,7 @@ namespace Fiscal_Software.Forms
             }
             if (remont.VurnatNa.HasValue)
             {
+                varnatNa.Checked = true;
                 varnatNa.Value = remont.VurnatNa.Value;
             }
             opisanieDefekt.Text = remont.OpisanieDefekt;

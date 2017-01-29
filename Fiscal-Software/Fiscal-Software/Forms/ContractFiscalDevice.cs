@@ -48,8 +48,28 @@ namespace Fiscal_Software.Forms
              ContractType.Text = ContractCtrl.GetContractById(this.cfd.ContractType).Name;
              AutomaticNumbering.Checked = cfd.AutomaticNumbering.Value;
              ContractN.Text = cfd.ContractN.ToString();
-             DateFrom.Value = cfd.DateFrom.Value;
-             DateTo.Value = cfd.DateTo.Value;
+            if (cfd.DateFrom.HasValue)
+            {
+                DateFrom.Checked = true;
+                DateFrom.Value = cfd.DateFrom.Value;
+            }
+            else
+            {
+                DateFrom.Checked = false;
+                DateFrom.Value = DateTime.Now;
+            }
+
+            if (cfd.DateTo.HasValue)
+            {
+                DateTo.Checked = true;
+                DateTo.Value = cfd.DateTo.Value;
+            }
+            else
+            {
+                DateFrom.Checked = false;
+                DateFrom.Value = DateTime.Now;
+            }
+             
              Sum.Text = cfd.Sum.ToString();
             SumForMount.Text = cfd.SumMonth.ToString();
               Valid.Checked= cfd.Valid.Value;
@@ -65,7 +85,7 @@ namespace Fiscal_Software.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             
-            if (ContractType.Text != "" || ContractN.Text != "")
+            if (ContractType.Text != "" && ContractN.Text != "")
             {
                 ContractFiscalDevices cfd = new ContractFiscalDevices();
                 if (this.isUpdate)
@@ -74,8 +94,22 @@ namespace Fiscal_Software.Forms
                     cfd.ObjectId = objectID;
                     cfd.AutomaticNumbering = AutomaticNumbering.Checked;
                     cfd.ContractN = Int32.Parse(ContractN.Text);
-                    cfd.DateFrom = DateFrom.Value;
-                    cfd.DateTo = DateTo.Value;
+                    if (DateFrom.Checked)
+                    {
+                        cfd.DateFrom = DateFrom.Value;
+                    }
+                    else
+                    {
+                        cfd.DateFrom = null;
+                    }
+                    if (DateTo.Checked)
+                    {
+                        cfd.DateTo = DateTo.Value;
+                    }
+                    else
+                    {
+                        cfd.DateTo = null;
+                    }
                     cfd.Sum = float.Parse(Sum.Text);
                     cfd.SumMonth = float.Parse(SumForMount.Text);
                     cfd.Valid = Valid.Checked;
@@ -96,8 +130,22 @@ namespace Fiscal_Software.Forms
                     {
                         cfd.ContractN = null;
                     }
-                    cfd.DateFrom = DateFrom.Value;
-                    cfd.DateTo = DateTo.Value;
+                    if (DateFrom.Checked)
+                    {
+                        cfd.DateFrom = DateFrom.Value;
+                    }
+                    else
+                    {
+                        cfd.DateFrom = null;
+                    }
+                    if (DateTo.Checked)
+                    {
+                        cfd.DateTo = DateTo.Value;
+                    }
+                    else
+                    {
+                        cfd.DateTo = null;
+                    }
                     if (Sum.Text != "")
                     {
                         cfd.Sum = float.Parse(Sum.Text);

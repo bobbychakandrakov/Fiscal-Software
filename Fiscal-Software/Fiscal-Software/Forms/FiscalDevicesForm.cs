@@ -131,7 +131,15 @@ namespace Fiscal_Software.Forms
                 fiscalDevice.CertificateN = int.Parse(fiscalDeviceCerificateN.Text);
                 fiscalDevice.Type = fiscalDeviceTypeBox.Text;
                 fiscalDevice.Manufacturer = fiscalDeviceManufacturerBox.Text;
-                fiscalDevice.StartDate = fiscalDeviceStartDateBox.Value;
+                if (fiscalDeviceStartDateBox.Checked)
+                {
+                    fiscalDevice.StartDate = fiscalDeviceStartDateBox.Value;
+                }
+                else
+                {
+                    fiscalDevice.StartDate = null;
+                }
+                
                 if (fiscalDevicePriceBox.Text != "")
                 {
                     fiscalDevice.Price = decimal.Parse(fiscalDevicePriceBox.Text);
@@ -210,7 +218,15 @@ namespace Fiscal_Software.Forms
             fiscalDeviceModelBox.Text = fiscalDevice.Model;
             fiscalDeviceManufacturerBox.Text = fiscalDevice.Manufacturer;
             fiscalDeviceCerificateN.Text = fiscalDevice.CertificateN.ToString();
-            fiscalDeviceStartDateBox.Value = DateTime.Parse(fiscalDevice.StartDate.ToString());
+            if (fiscalDevice.StartDate.HasValue)
+            {
+                fiscalDeviceStartDateBox.Value = DateTime.Parse(fiscalDevice.StartDate.ToString());
+            }
+            else
+            {
+                fiscalDeviceStartDateBox.Value = DateTime.Now;
+                fiscalDeviceStartDateBox.Checked = false;
+            }
             fiscalDevicePriceBox.Text = fiscalDevice.Price.ToString();
             fiscalDeviceWarrantyBox.Text = fiscalDevice.Warranty.ToString();
             fiscalDeviceManufacturerBulstatBox.Text = fiscalDevice.BulstatManufacturer;

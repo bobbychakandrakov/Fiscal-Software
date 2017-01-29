@@ -43,8 +43,17 @@ namespace Fiscal_Software.Forms
              clientMolAddressBox.Text= client.MolAddress;
              clientDNBox.Text=client.DN;
             clientBulstatBox.Text=client.Bulstat;
-            clientFDDateBox.Value = client.FDDate.Value;
-           clientFDNumberBox.Text = client.FDNumber ;
+            if (client.FDDate.HasValue)
+            {
+                clientFDDateBox.Checked = true;
+                clientFDDateBox.Value = DateTime.Parse(client.FDDate.Value.ToString());
+            }
+            else
+            {
+                clientFDDateBox.Value = DateTime.Now;
+                clientFDDateBox.Checked = false;
+            }
+           clientFDNumberBox.Text = client.FDNumber;
              clientFDTownBox.Text= client.FDTown;
             clientTownBox.Text = client.Town ;
             clientAddressBox.Text= client.Address;
@@ -82,7 +91,14 @@ namespace Fiscal_Software.Forms
                 client.MolAddress = clientMolAddressBox.Text;
                 client.DN = clientDNBox.Text;
                 client.Bulstat = clientBulstatBox.Text;
-                client.FDDate = clientFDDateBox.Value;
+                if (clientFDDateBox.Checked)
+                {
+                    client.FDDate = clientFDDateBox.Value;
+                }
+                else
+                {
+                    client.FDDate = null;
+                }
                 client.FDNumber = clientFDNumberBox.Text;
                 client.FDTown = clientFDTownBox.Text;
                 client.Town = clientTownBox.Text;

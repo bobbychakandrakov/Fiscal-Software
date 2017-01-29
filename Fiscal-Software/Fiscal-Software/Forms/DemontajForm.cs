@@ -44,16 +44,19 @@ namespace Fiscal_Software.Forms
         {
             if (dfu.DateDemontaj.HasValue)
             {
+                dataDemontaj.Checked = true;
                 dataDemontaj.Value = dfu.DateDemontaj.Value;
             }
             fpNomer.Text = dfu.FPNomer.ToString();
             technicianBox.SelectedValue = dfu.Technician;
             if (dfu.OborotOt.HasValue)
             {
+                oborotOt.Checked = true;
                 oborotOt.Value = dfu.OborotOt.Value;
             }
             if (dfu.OborotDo.HasValue)
             {
+                oborotDo.Checked = true;
                 oborotDo.Value =  dfu.OborotDo.Value;
             }
             oborotSum.Text = dfu.Suma.ToString();
@@ -85,15 +88,36 @@ namespace Fiscal_Software.Forms
             if (technicianBox.SelectedValue.ToString() != "")
             {
                 DemontajNaFiskalnoUstroistvo dfu = new DemontajNaFiskalnoUstroistvo();
-                dfu.DateDemontaj = dataDemontaj.Value;
+                if (dataDemontaj.Checked)
+                {
+                    dfu.DateDemontaj = dataDemontaj.Value;
+                }
+                else
+                {
+                    dfu.DateDemontaj = null;
+                }
                 dfu.FiscalID = this.id;
                 if (fpNomer.Text != "")
                 {
                     dfu.FPNomer = int.Parse(fpNomer.Text);
                 }
                 dfu.Technician = int.Parse(technicianBox.SelectedValue.ToString());
-                dfu.OborotOt = oborotOt.Value;
-                dfu.OborotDo = oborotDo.Value;
+                if (oborotOt.Checked)
+                {
+                    dfu.OborotOt = oborotOt.Value;
+                }
+                else
+                {
+                    dfu.OborotOt = null;
+                }
+                if (oborotDo.Checked)
+                {
+                    dfu.OborotDo = oborotDo.Value;
+                }
+                else
+                {
+                    dfu.OborotDo = null;
+                }
                 if (oborotSum.Text != "")
                 {
                     dfu.Suma = double.Parse(oborotSum.Text);

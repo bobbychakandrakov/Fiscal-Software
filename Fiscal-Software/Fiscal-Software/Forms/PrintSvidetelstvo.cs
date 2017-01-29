@@ -20,8 +20,7 @@ namespace Fiscal_Software.Forms
 
         private void PrintSvidetelstvo_Load(object sender, EventArgs e)
         {
-            ReportParameter param = new ReportParameter("ReportParameter1", "Dincho");
-            this.reportViewer1.LocalReport.SetParameters(param);
+           
             this.reportViewer1.RefreshReport();
         }
     }
