@@ -36,6 +36,19 @@ namespace Fiscal_Software.Controllers
                 return fiscalDivices;
             }
         }
+
+        public static string GetBulstat(string man)
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var fiscalDivice = ctx.FiscalDevices.Where(fd => fd.Manufacturer == man).FirstOrDefault();
+                if (fiscalDivice != null)
+                {
+                    return fiscalDivice.BulstatManufacturer;
+                }
+                return string.Empty;
+            }
+        }
         public static FiscalDevice GetFiscalDevice(int id)
         {
             using (var ctx = new FiscalSoftware())

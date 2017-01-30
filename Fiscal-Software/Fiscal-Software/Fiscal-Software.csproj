@@ -140,11 +140,29 @@
     <Compile Include="Forms\ObjectsForm.Designer.cs">
       <DependentUpon>ObjectsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PrintSvidetelstvo.cs">
+    <Compile Include="Forms\PrintDemontaj.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PrintSvidetelstvo.Designer.cs">
-      <DependentUpon>PrintSvidetelstvo.cs</DependentUpon>
+    <Compile Include="Forms\PrintDemontaj.Designer.cs">
+      <DependentUpon>PrintDemontaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrintDogovor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintDogovor.Designer.cs">
+      <DependentUpon>PrintDogovor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrintRemont.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintRemont.Designer.cs">
+      <DependentUpon>PrintRemont.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrintUvedomleniecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintUvedomleniecs.Designer.cs">
+      <DependentUpon>PrintUvedomleniecs.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\RemontiForm.cs">
       <SubType>Form</SubType>
@@ -222,8 +240,17 @@
     <EmbeddedResource Include="Forms\ObjectsForm.resx">
       <DependentUpon>ObjectsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PrintSvidetelstvo.resx">
-      <DependentUpon>PrintSvidetelstvo.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\PrintDemontaj.resx">
+      <DependentUpon>PrintDemontaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintDogovor.resx">
+      <DependentUpon>PrintDogovor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintRemont.resx">
+      <DependentUpon>PrintRemont.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintUvedomleniecs.resx">
+      <DependentUpon>PrintUvedomleniecs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RemontiForm.resx">
       <DependentUpon>RemontiForm.cs</DependentUpon>

@@ -290,12 +290,17 @@ namespace Fiscal_Software.Forms
 
         private void fiscalDeviceManufacturerBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            fiscalDeviceManufacturerBulstatBox.Text = FiscalDeviceCtrl.GetBulstat(fiscalDeviceManufacturerBox.Text);
         }
 
         private void fiscalDeviceTypeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void fiscalDeviceManufacturerBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            //fiscalDeviceManufacturerBulstatBox.Text = FiscalDeviceCtrl.GetBulstat(fiscalDeviceManufacturerBox.Text);
         }
 
         private void FiscalDevicesForm_FormClosing(object sender, FormClosingEventArgs e)

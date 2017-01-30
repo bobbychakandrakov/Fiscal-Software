@@ -20,7 +20,7 @@ namespace Fiscal_Software
         [StringLength(50)]
         public string Manufacturer { get; set; }
 
-        public int? CertificateN { get; set; }
+        public long? CertificateN { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? StartDate { get; set; }

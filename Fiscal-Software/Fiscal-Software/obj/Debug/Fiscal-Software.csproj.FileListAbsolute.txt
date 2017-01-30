@@ -141,7 +141,6 @@ C:\Users\pc\Documents\Fiscal-Software8\Fiscal-Software\Fiscal-Software\obj\Debug
 C:\Users\pc\Documents\Fiscal-Software8\Fiscal-Software\Fiscal-Software\obj\Debug\RdlCompile.cache
 C:\Users\pc\Documents\Fiscal-Software8\Fiscal-Software\Fiscal-Software\obj\Debug\RdlCompile.compiled
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\bin\Debug\Microsoft.ReportViewer.WinForms.dll
-C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintSvidetelstvo.resources
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\RdlCompile.cache
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\RdlCompile.compiled
 C:\Users\pc\Documents\Fiscal-Software9\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal-Software.csprojResolveAssemblyReference.cache
@@ -174,3 +173,7 @@ C:\Users\pc\Documents\Fiscal-Software9\Fiscal-Software\Fiscal-Software\bin\Debug
 C:\Users\pc\Documents\Fiscal-Software9\Fiscal-Software\Fiscal-Software\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\pc\Documents\Fiscal-Software9\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal-Software.exe
 C:\Users\pc\Documents\Fiscal-Software9\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal-Software.pdb
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintDogovor.resources
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintRemont.resources
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintUvedomleniecs.resources
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintDemontaj.resources

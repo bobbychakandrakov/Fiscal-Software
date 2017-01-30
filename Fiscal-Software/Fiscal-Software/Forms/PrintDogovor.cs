@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Fiscal_Software.Forms
 {
-    public partial class PrintSvidetelstvo : Form
+    public partial class PrintDogovor : Form
     {
-        public PrintSvidetelstvo()
+        public PrintDogovor()
         {
             InitializeComponent();
         }
@@ -69,7 +69,7 @@ namespace Fiscal_Software.Forms
             );
             */
 
-            /* Report dogovor
+            // Report dogovor
             ReportParameter RemontNomer = new ReportParameter("RemontNomer", " ");
             ReportParameter todayDate = new ReportParameter("todayDate", " ");
             ReportParameter vGrad = new ReportParameter("vGrad", " ");
@@ -140,7 +140,6 @@ namespace Fiscal_Software.Forms
            }
            );
 
-    */
 
 
             /* RemontProtokol 
@@ -170,7 +169,7 @@ namespace Fiscal_Software.Forms
           }
           );
           */
-
+          /*
             ReportParameter datetime = new ReportParameter("datetime", " ");
             ReportParameter identNomer = new ReportParameter("identNomer", " ");
             ReportParameter sobstvenostNa = new ReportParameter("sobstvenostNa", " ");
@@ -226,6 +225,7 @@ namespace Fiscal_Software.Forms
 
        }
        );
+       */
 
             reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
             this.reportViewer1.RefreshReport();

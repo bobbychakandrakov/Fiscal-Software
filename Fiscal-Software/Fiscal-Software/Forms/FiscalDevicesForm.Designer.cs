@@ -300,6 +300,7 @@
             this.fiscalDeviceManufacturerBox.Size = new System.Drawing.Size(273, 21);
             this.fiscalDeviceManufacturerBox.TabIndex = 5;
             this.fiscalDeviceManufacturerBox.SelectedIndexChanged += new System.EventHandler(this.fiscalDeviceManufacturerBox_SelectedIndexChanged);
+            this.fiscalDeviceManufacturerBox.SelectionChangeCommitted += new System.EventHandler(this.fiscalDeviceManufacturerBox_SelectionChangeCommitted);
             // 
             // label3
             // 

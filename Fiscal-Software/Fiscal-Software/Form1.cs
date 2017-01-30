@@ -767,9 +767,25 @@ namespace Fiscal_Software
             fiscalDeviceListView.Columns.Add("Рег. НАП");
             fiscalDeviceListView.Columns.Add("СИМ платен до");
             var danni = DanniFiskalnoUstroistvoCtrl.GetDanniFromObject(selectedObjectID);
+            if (danni == null)
+            {
+                return;
+            }
             for (int i = 0; i < danni.Length; i++)
             {
-                lvi2 = new ListViewItem(FiscalDeviceCtrl.GetFiscalDevice(danni[i].ModelFY).Model);
+                if (danni[i].ModelFY > 0)
+                {
+                    var m = FiscalDeviceCtrl.GetFiscalDevice(danni[i].ModelFY);
+                    if (m != null)
+                    {
+                        lvi2 = new ListViewItem(FiscalDeviceCtrl.GetFiscalDevice(danni[i].ModelFY).Model);
+                    }
+                    
+                }
+                else
+                {
+                    lvi2 = new ListViewItem("");
+                }
                 lvi2.SubItems.Add(danni[i].FYNomer.ToString());
                 lvi2.SubItems.Add(danni[i].FPNomer.ToString());
                 lvi2.SubItems.Add(danni[i].FPAktivirana.ToString());
@@ -1009,7 +1025,7 @@ namespace Fiscal_Software
         private void печатДосиеНаФУToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Open Print Dialog with document filled with data
-            PrintSvidetelstvo ps = new PrintSvidetelstvo();
+            PrintDogovor ps = new PrintDogovor();
             ps.Show();
         }
 
@@ -1159,6 +1175,30 @@ namespace Fiscal_Software
             int id = int.Parse(remontiList.SelectedItems[0].Tag.ToString());
             RemontiForm rf = new RemontiForm(selectedFUDanni, this, id);
             rf.Show();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            PrintDogovor pd = new PrintDogovor();
+            pd.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PrintDemontaj pd = new PrintDemontaj();
+            pd.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PrintRemont pr = new PrintRemont();
+            pr.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            PrintUvedomleniecs pu = new PrintUvedomleniecs();
+            pu.Show();
         }
 
         private void редактиранеНаДемонтажToolStripMenuItem_Click(object sender, EventArgs e)

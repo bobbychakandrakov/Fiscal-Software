@@ -163,11 +163,11 @@ namespace Fiscal_Software.Forms
                 // Date checking end
                 if (simTelN.Text != "")
                 {
-                    dfu.SimTelNomer = int.Parse(simTelN.Text);
+                    dfu.SimTelNomer = simTelN.Text;
                 }
                 if (simID.Text != "")
                 {
-                    dfu.SimID = int.Parse(simID.Text);
+                    dfu.SimID = simID.Text;
                 }
                 dfu.Nivomer = nivomer.Text;
                 dfu.Company = regFirma.Text;

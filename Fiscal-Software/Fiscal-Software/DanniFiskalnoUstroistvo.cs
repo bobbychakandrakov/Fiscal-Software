@@ -33,9 +33,9 @@
 
         public DateTime? RegNapDate { get; set; }
 
-        public int? SimTelNomer { get; set; }
+        public string SimTelNomer { get; set; }
 
-        public int? SimID { get; set; }
+        public string SimID { get; set; }
 
         [StringLength(50)]
         public string Nivomer { get; set; }
