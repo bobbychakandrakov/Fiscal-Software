@@ -69,6 +69,7 @@ namespace Fiscal_Software.Forms
             );
             */
 
+            /* Report dogovor
             ReportParameter RemontNomer = new ReportParameter("RemontNomer", " ");
             ReportParameter todayDate = new ReportParameter("todayDate", " ");
             ReportParameter vGrad = new ReportParameter("vGrad", " ");
@@ -77,7 +78,7 @@ namespace Fiscal_Software.Forms
             ReportParameter organizaciqVazlojitel = new ReportParameter("organizaciqVazlojitel", " ");
             ReportParameter identNomer = new ReportParameter("identNomer", " ");
             ReportParameter addres1 = new ReportParameter("addres1", " ");
-            ReportParameter predstavenaOt2 = new ReportParameter(" predstavenaOt2", " ");
+            ReportParameter predstavenaOt2 = new ReportParameter("predstavenaOt2", " ");
             ReportParameter vidTehnika = new ReportParameter("vidTehnika", " ");
             ReportParameter identNomer2 = new ReportParameter("identNomer2", " ");
             ReportParameter NomerFp = new ReportParameter("NomerFp", " ");
@@ -85,15 +86,15 @@ namespace Fiscal_Software.Forms
             ReportParameter validenOt = new ReportParameter("validenOt", " ");
             ReportParameter validenDo = new ReportParameter("validenDo", " ");
             ReportParameter BankovaSmetka = new ReportParameter("BankovaSmetka", " ");
-            ReportParameter data2 = new ReportParameter(" data2", " ");
+            ReportParameter data2 = new ReportParameter("data2", " ");
             ReportParameter EikBulstad = new ReportParameter("EikBulstad", " ");
             ReportParameter sobstvenostNa = new ReportParameter("sobstvenostNa", " ");
             ReportParameter address2 = new ReportParameter("address2", " ");
             ReportParameter predstavlqvanaOt = new ReportParameter("predstavlqvanaOt", " ");
-            ReportParameter TargovskiObekt= new ReportParameter("TargovskiObek", " ");
-            ReportParameter Model = new ReportParameter(" Model", " ");
+            ReportParameter TargovskiObekt= new ReportParameter("TargovskiObekt", " ");
+            ReportParameter Model = new ReportParameter("Model", " ");
             ReportParameter BimNomer = new ReportParameter("BimNomer", " ");
-            ReportParameter indNomerNafiskalnotoUstroistvo = new ReportParameter(" indNomerNafiskalnotoUstroistvo", " ");
+            ReportParameter indNomerNafiskalnotoUstroistvo = new ReportParameter("indNomerNafiskalnotoUstroistvo", " ");
             ReportParameter FiskalnaPamet = new ReportParameter("FiskalnaPamet", " ");
             ReportParameter ValidenOt2 = new ReportParameter("ValidenOt2", " ");
             ReportParameter Eik = new ReportParameter("Eik", " ");
@@ -121,11 +122,50 @@ namespace Fiscal_Software.Forms
                 BankovaSmetka,
                data2,
                 EikBulstad,
-                sobstvenostNa
+                sobstvenostNa,
+                address2,
+                predstavenaOt,
+                TargovskiObekt,
+                Model,
+                BimNomer,
+                indNomerNafiskalnotoUstroistvo,
+                FiskalnaPamet,
+                ValidenOt2,
+                Eik,
+                Adress3,
+                ServzienTehnik,
+                Data
+
 
            }
            );
 
+    */
+
+            ReportParameter TodayDate = new ReportParameter("TodayDate", " ");
+            ReportParameter CompnayName = new ReportParameter("CompnayName", " ");
+            ReportParameter MOL = new ReportParameter("MOL", " ");
+            ReportParameter SobstvenostNa = new ReportParameter("SobstvenostNa", " ");
+            ReportParameter Name = new ReportParameter("Name", " ");
+            ReportParameter KonstatiranePovreda = new ReportParameter("KonstatiranePovreda", " ");
+            ReportParameter PodavaneZaqvka = new ReportParameter("PodavaneZaqvka", " ");
+            ReportParameter VarnatNa = new ReportParameter("VarnatNa", " ");
+            ReportParameter OpisaniePovreda = new ReportParameter("OpisaniePovreda", " ");
+
+            reportViewer1.LocalReport.SetParameters(new ReportParameter[]
+          {
+               TodayDate,
+               CompnayName,
+               MOL,
+               SobstvenostNa,
+               Name,
+               KonstatiranePovreda,
+               PodavaneZaqvka,
+               VarnatNa,
+               OpisaniePovreda
+
+          }
+          );
 
             reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
             this.reportViewer1.RefreshReport();
