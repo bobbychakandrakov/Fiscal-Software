@@ -66,22 +66,55 @@ namespace Fiscal_Software.Forms
             {
                 regNapDate.Value = dfu.RegNapDate.Value;
             }
+
+
+            if (dfu.RegNoNap.HasValue)
+            {
+                regNapNomer.Text = dfu.RegNoNap.ToString();
+            }
+            if (dfu.SimID != null)
+            {
+                simID.Text = dfu.SimID;
+            }
+            if (dfu.SimTelNomer != null)
+            {
+                simTelN.Text = dfu.SimTelNomer;
+            }
+
+            if (dfu.Nivomer != null)
+            {
+                nivomer.Text = dfu.Nivomer;
+            }
+            if (dfu.Company != null)
+            {
+                regFirma.Text = dfu.Company;
+            }
+            if (dfu.Town != null)
+            {
+                regGrad.Text = dfu.Town;
+            }
+            if (dfu.Technician != null)
+            {
+                regTexnik.Text = dfu.Technician;
+            }
+            if (dfu.Address != null)
+            {
+                regAdres.Text = dfu.Address;
+            }
+            if (dfu.Tel != null)
+            {
+                regTel.Text = dfu.Tel;
+            }
+
+            if (dfu.ESFPT != null)
+            {
+                esfpType.Text = dfu.ESFPT;
+            }
+            if (dfu.ModelESFP != null)
+            {
+                modelESFP.Text = dfu.ModelESFP;
+            }
             
-
-
-            regNapNomer.Text = dfu.RegNoNap.ToString();
-            simID.Text = dfu.SimID.ToString();
-            simTelN.Text= dfu.SimTelNomer.ToString();
-
-            nivomer.Text = dfu.Nivomer;
-            regFirma.Text = dfu.Company;
-            regGrad.Text = dfu.Town;
-            regTexnik.Text = dfu.Technician;
-            regAdres.Text = dfu.Address;
-            regTel.Text = dfu.Tel;
-            
-            esfpType.Text = dfu.ESFPT;
-            modelESFP.Text = dfu.ModelESFP;
         }
         private void saveFD_Click(object sender, EventArgs e)
         {

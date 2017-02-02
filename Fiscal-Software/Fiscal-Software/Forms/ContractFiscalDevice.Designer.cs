@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("2edq2eq");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContractFiscalDevice));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -53,31 +54,36 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.notesPayment = new System.Windows.Forms.RichTextBox();
+            this.sumPayment = new System.Windows.Forms.TextBox();
+            this.dataDoPayment = new System.Windows.Forms.DateTimePicker();
+            this.dataNaPayment = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.paymentsList = new System.Windows.Forms.ListView();
+            this.savePayment = new System.Windows.Forms.Button();
+            this.cancelPayment = new System.Windows.Forms.Button();
+            this.deletePayments = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.totalSum = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.SaveCfd);
-            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Location = new System.Drawing.Point(19, 15);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(473, 41);
             this.panel1.TabIndex = 0;
@@ -121,9 +127,9 @@
             this.panel2.Controls.Add(this.AutomaticNumbering);
             this.panel2.Controls.Add(this.ContractType);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(21, 26);
+            this.panel2.Location = new System.Drawing.Point(19, 87);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(602, 259);
+            this.panel2.Size = new System.Drawing.Size(648, 288);
             this.panel2.TabIndex = 1;
             // 
             // Sum
@@ -278,139 +284,202 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(2, 59);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(678, 340);
+            this.tabControl1.Size = new System.Drawing.Size(683, 464);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.panel2);
+            this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(670, 314);
+            this.tabPage1.Size = new System.Drawing.Size(675, 383);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Данни за договора";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.totalSum);
+            this.tabPage2.Controls.Add(this.label13);
+            this.tabPage2.Controls.Add(this.deletePayments);
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(670, 314);
+            this.tabPage2.Size = new System.Drawing.Size(675, 438);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Плащания към договора";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.paymentsList);
+            this.panel4.Location = new System.Drawing.Point(6, 127);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(657, 272);
+            this.panel4.TabIndex = 1;
+            // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.richTextBox1);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.dateTimePicker2);
-            this.panel3.Controls.Add(this.dateTimePicker1);
+            this.panel3.Controls.Add(this.cancelPayment);
+            this.panel3.Controls.Add(this.savePayment);
+            this.panel3.Controls.Add(this.notesPayment);
+            this.panel3.Controls.Add(this.sumPayment);
+            this.panel3.Controls.Add(this.dataDoPayment);
+            this.panel3.Controls.Add(this.dataNaPayment);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Location = new System.Drawing.Point(6, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(657, 100);
+            this.panel3.Size = new System.Drawing.Size(657, 118);
             this.panel3.TabIndex = 0;
             // 
-            // panel4
+            // notesPayment
             // 
-            this.panel4.Controls.Add(this.listView1);
-            this.panel4.Location = new System.Drawing.Point(6, 109);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(657, 199);
-            this.panel4.TabIndex = 1;
+            this.notesPayment.Location = new System.Drawing.Point(398, 62);
+            this.notesPayment.Name = "notesPayment";
+            this.notesPayment.Size = new System.Drawing.Size(211, 43);
+            this.notesPayment.TabIndex = 7;
+            this.notesPayment.Text = "";
             // 
-            // listView1
+            // sumPayment
             // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(657, 199);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.sumPayment.Location = new System.Drawing.Point(283, 61);
+            this.sumPayment.Name = "sumPayment";
+            this.sumPayment.Size = new System.Drawing.Size(100, 20);
+            this.sumPayment.TabIndex = 6;
             // 
-            // label9
+            // dataDoPayment
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(42, 22);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Дата на плащане";
+            this.dataDoPayment.Checked = false;
+            this.dataDoPayment.Location = new System.Drawing.Point(156, 62);
+            this.dataDoPayment.Name = "dataDoPayment";
+            this.dataDoPayment.ShowCheckBox = true;
+            this.dataDoPayment.Size = new System.Drawing.Size(93, 20);
+            this.dataDoPayment.TabIndex = 5;
             // 
-            // label10
+            // dataNaPayment
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(180, 22);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(48, 13);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "До дата";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(306, 22);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(33, 13);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Сума";
+            this.dataNaPayment.Checked = false;
+            this.dataNaPayment.Location = new System.Drawing.Point(46, 62);
+            this.dataNaPayment.Name = "dataNaPayment";
+            this.dataNaPayment.ShowCheckBox = true;
+            this.dataNaPayment.Size = new System.Drawing.Size(93, 20);
+            this.dataNaPayment.TabIndex = 4;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(465, 22);
+            this.label12.Location = new System.Drawing.Point(465, 45);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(52, 13);
             this.label12.TabIndex = 3;
             this.label12.Text = "Бележки";
             // 
-            // dateTimePicker1
+            // label11
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(45, 39);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(93, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(319, 45);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(33, 13);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Сума";
             // 
-            // dateTimePicker2
+            // label10
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(155, 39);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(93, 20);
-            this.dateTimePicker2.TabIndex = 5;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(181, 45);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(48, 13);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "До дата";
             // 
-            // textBox1
+            // label9
             // 
-            this.textBox1.Location = new System.Drawing.Point(270, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(43, 45);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(96, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Дата на плащане";
             // 
-            // richTextBox1
+            // paymentsList
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(398, 39);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(211, 20);
-            this.richTextBox1.TabIndex = 7;
-            this.richTextBox1.Text = "";
+            this.paymentsList.CheckBoxes = true;
+            this.paymentsList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.paymentsList.FullRowSelect = true;
+            listViewItem1.StateImageIndex = 0;
+            this.paymentsList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
+            this.paymentsList.Location = new System.Drawing.Point(0, 0);
+            this.paymentsList.Name = "paymentsList";
+            this.paymentsList.Size = new System.Drawing.Size(657, 272);
+            this.paymentsList.TabIndex = 0;
+            this.paymentsList.UseCompatibleStateImageBehavior = false;
+            this.paymentsList.View = System.Windows.Forms.View.Details;
+            // 
+            // savePayment
+            // 
+            this.savePayment.Location = new System.Drawing.Point(46, 14);
+            this.savePayment.Name = "savePayment";
+            this.savePayment.Size = new System.Drawing.Size(75, 23);
+            this.savePayment.TabIndex = 8;
+            this.savePayment.Text = "Запис";
+            this.savePayment.UseVisualStyleBackColor = true;
+            this.savePayment.Click += new System.EventHandler(this.savePayment_Click);
+            // 
+            // cancelPayment
+            // 
+            this.cancelPayment.Location = new System.Drawing.Point(156, 14);
+            this.cancelPayment.Name = "cancelPayment";
+            this.cancelPayment.Size = new System.Drawing.Size(75, 23);
+            this.cancelPayment.TabIndex = 9;
+            this.cancelPayment.Text = "Отказ";
+            this.cancelPayment.UseVisualStyleBackColor = true;
+            this.cancelPayment.Click += new System.EventHandler(this.cancelPayment_Click);
+            // 
+            // deletePayments
+            // 
+            this.deletePayments.Location = new System.Drawing.Point(540, 409);
+            this.deletePayments.Name = "deletePayments";
+            this.deletePayments.Size = new System.Drawing.Size(75, 23);
+            this.deletePayments.TabIndex = 2;
+            this.deletePayments.Text = "Изтриване";
+            this.deletePayments.UseVisualStyleBackColor = true;
+            this.deletePayments.Click += new System.EventHandler(this.deletePayments_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(8, 414);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(39, 13);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Общо:";
+            // 
+            // totalSum
+            // 
+            this.totalSum.AutoSize = true;
+            this.totalSum.Location = new System.Drawing.Point(53, 414);
+            this.totalSum.Name = "totalSum";
+            this.totalSum.Size = new System.Drawing.Size(0, 13);
+            this.totalSum.TabIndex = 4;
             // 
             // ContractFiscalDevice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 409);
+            this.ClientSize = new System.Drawing.Size(683, 464);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ContractFiscalDevice";
             this.Text = "Договор за фискално у-во";
@@ -422,9 +491,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -456,15 +526,20 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.RichTextBox notesPayment;
+        private System.Windows.Forms.TextBox sumPayment;
+        private System.Windows.Forms.DateTimePicker dataDoPayment;
+        private System.Windows.Forms.DateTimePicker dataNaPayment;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ListView paymentsList;
+        private System.Windows.Forms.Button cancelPayment;
+        private System.Windows.Forms.Button savePayment;
+        private System.Windows.Forms.Button deletePayments;
+        private System.Windows.Forms.Label totalSum;
+        private System.Windows.Forms.Label label13;
     }
 }

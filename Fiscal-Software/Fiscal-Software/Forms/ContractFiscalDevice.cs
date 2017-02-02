@@ -21,14 +21,19 @@ namespace Fiscal_Software.Forms
         }
 
         int objectID;
+        decimal sum = 0;
         Form1 f1;
         bool isUpdate = false, touched = false;
+        ListViewItem lvi;
+
 
         public ContractFiscalDevice(int objectID,Form1 f1)
         {
             InitializeComponent();
             this.objectID = objectID;
             this.f1 = f1;
+            panel3.Enabled = false;
+            paymentsList.Enabled = false;
         }
        
 
@@ -81,7 +86,16 @@ namespace Fiscal_Software.Forms
         List<string> contractNames = new List<string>();
         private Form1 form1;
         private ContractFiscalDevices cfd;
-
+        private void LoadColums()
+        {
+            paymentsList.Clear();
+            paymentsList.Columns.Add("Дата на плащане");
+            paymentsList.Columns.Add("До дата");
+            paymentsList.Columns.Add("Сума");
+            paymentsList.Columns.Add("Бележки");
+            paymentsList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            paymentsList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             
@@ -169,6 +183,7 @@ namespace Fiscal_Software.Forms
                     
                 }
                 f1.LoadCfds();
+                touched = false;
                 this.Close();
             }
             else
@@ -195,7 +210,8 @@ namespace Fiscal_Software.Forms
             {
                 ContractType.Items.Add(contracts[i].Name);
             }
-            
+            LoadColums();
+            LoadPayments();
             DirtyChecker.Check(Controls, c_ControlChanged);
         }
 
@@ -223,9 +239,69 @@ namespace Fiscal_Software.Forms
             }
         }
 
+        private void cancelPayment_Click(object sender, EventArgs e)
+        {
+            touched = false;
+            this.Close();
+        }
+
+        private void savePayment_Click(object sender, EventArgs e)
+        {
+            if (dataDoPayment.Checked == false || dataNaPayment.Checked == false || sumPayment.Text == "")
+            {
+                MessageBox.Show("Моля, попълнете задължителните полета!");
+            }
+            else
+            {
+                Plashtaniq p = new Plashtaniq();
+                p.DogovorID = this.cfd.ID;
+                p.DataDo = dataDoPayment.Value;
+                p.DataNa = dataNaPayment.Value;
+                p.Suma = decimal.Parse(sumPayment.Text);
+                p.Notes = notesPayment.Text;
+                PlashtaniqCtrl.AddPlashtaniq(p);
+                touched = false;
+                Close();
+            }
+            
+        }
+
+        private void LoadPayments()
+        {
+            var payments = PlashtaniqCtrl.GetAll(this.cfd.ID);
+            paymentsList.Items.Clear();
+            for (int i = 0; i < payments.Length; i++)
+            {
+                lvi = new ListViewItem(payments[i].DataNa.ToString());
+                lvi.SubItems.Add(payments[i].DataDo.ToString());
+                lvi.SubItems.Add(string.Format("{0:#.00}", Convert.ToDecimal(payments[i].Suma.ToString())));
+                lvi.SubItems.Add(payments[i].Notes);
+                lvi.Tag = payments[i].ID;
+                paymentsList.Items.Add(lvi);
+                if (payments[i].Suma.HasValue)
+                {
+                    sum += payments[i].Suma.Value;
+                }
+                
+            }
+            totalSum.Text = string.Format("{0:#.00}", Convert.ToDecimal(sum.ToString()));
+            paymentsList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            paymentsList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
+        private void deletePayments_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < paymentsList.CheckedItems.Count; i++)
+            {
+                PlashtaniqCtrl.DeletePlashtane(int.Parse(paymentsList.CheckedItems[i].Tag.ToString()));
+            }
+            sum = 0;
+            LoadPayments();
+        }
+
         private void button1_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
         
 

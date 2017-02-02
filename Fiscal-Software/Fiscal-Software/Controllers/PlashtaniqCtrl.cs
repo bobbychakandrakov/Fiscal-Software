@@ -19,6 +19,15 @@ namespace Fiscal_Software.Controllers
             }
         }
 
+        public static Plashtaniq[] GetAll(int id)
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var p = ctx.Plashtaniq.Where(pa => pa.DogovorID == id).ToArray();
+                return p;
+            }
+        }
+
         public static void UpdatePlashtaniq(int id, Plashtaniq p)
         {
             using (var ctx = new FiscalSoftware())
@@ -34,10 +43,10 @@ namespace Fiscal_Software.Controllers
                     original.DataNa = p.DataNa;
                     original.Suma = p.Suma;
                     original.Notes = p.Notes;
-                   
-                   
+
+
                     ctx.SaveChanges();
-                    
+
                 }
                 else
                 {
