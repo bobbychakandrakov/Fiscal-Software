@@ -195,7 +195,7 @@ namespace Fiscal_Software.Forms
             {
                 ContractType.Items.Add(contracts[i].Name);
             }
-
+            
             DirtyChecker.Check(Controls, c_ControlChanged);
         }
 

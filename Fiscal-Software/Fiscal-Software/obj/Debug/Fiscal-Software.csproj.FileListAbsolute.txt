@@ -153,7 +153,6 @@ C:\Users\pc\Documents\Fiscal-Software9\Fiscal-Software\Fiscal-Software\obj\Debug
 C:\Users\pc\Documents\Fiscal-Software9\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.DemontajForm.resources
 C:\Users\pc\Documents\Fiscal-Software9\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.FiscalDevicesForm.resources
 C:\Users\pc\Documents\Fiscal-Software9\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.ObjectsForm.resources
-C:\Users\pc\Documents\Fiscal-Software9\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintSvidetelstvo.resources
 C:\Users\pc\Documents\Fiscal-Software9\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.RemontiForm.resources
 C:\Users\pc\Documents\Fiscal-Software9\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.ServizniFirmi.resources
 C:\Users\pc\Documents\Fiscal-Software9\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.SettingsForm.resources
@@ -177,3 +176,7 @@ C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintRemont.resources
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintUvedomleniecs.resources
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintDemontaj.resources
+C:\Users\pc\Documents\Fiscal-Software9\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintDemontaj.resources
+C:\Users\pc\Documents\Fiscal-Software9\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintDogovor.resources
+C:\Users\pc\Documents\Fiscal-Software9\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintRemont.resources
+C:\Users\pc\Documents\Fiscal-Software9\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintUvedomleniecs.resources

@@ -27,6 +27,7 @@ namespace Fiscal_Software
 
         public virtual DbSet<DemontajNaFiskalnoUstroistvo> DemontajNaFiskalnoUstroistvo { get; set; }
         public virtual DbSet<Remont> Remont { get; set; }
+        public virtual DbSet<Plashtaniq> Plashtaniq { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Client>()
@@ -342,7 +343,16 @@ namespace Fiscal_Software
             modelBuilder.Entity<Remont>()
 .Property(e => e.FiscalDeviceID);
 
-
+            modelBuilder.Entity<Plashtaniq>()
+    .Property(e => e.DataDo);
+            modelBuilder.Entity<Plashtaniq>()
+  .Property(e => e.DataNa);
+            modelBuilder.Entity<Plashtaniq>()
+  .Property(e => e.DogovorID);
+            modelBuilder.Entity<Plashtaniq>()
+  .Property(e => e.Notes);
+            modelBuilder.Entity<Plashtaniq>()
+  .Property(e => e.Suma);
 
 
         }
