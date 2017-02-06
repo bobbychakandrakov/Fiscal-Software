@@ -28,6 +28,9 @@ namespace Fiscal_Software
         public virtual DbSet<DemontajNaFiskalnoUstroistvo> DemontajNaFiskalnoUstroistvo { get; set; }
         public virtual DbSet<Remont> Remont { get; set; }
         public virtual DbSet<Plashtaniq> Plashtaniq { get; set; }
+
+        public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<OtherSetings> Othersetings{ get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Client>()
@@ -353,6 +356,35 @@ namespace Fiscal_Software
   .Property(e => e.Notes);
             modelBuilder.Entity<Plashtaniq>()
   .Property(e => e.Suma);
+
+            modelBuilder.Entity<Users>()
+                .Property(e => e.Username)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Users>()
+                .Property(e => e.Password)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Users>()
+                .Property(e => e.FirstName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Users>()
+                .Property(e => e.LastName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Users>()
+                .Property(e => e.Email)
+                .IsUnicode(false);
+            modelBuilder.Entity<OtherSetings>()
+              .Property(e => e.MRZ);
+            modelBuilder.Entity<OtherSetings>()
+            .Property(e => e.Path);
+              modelBuilder.Entity<OtherSetings>()
+              .Property(e => e.ProcentDDS);
+            modelBuilder.Entity<OtherSetings>()
+            .Property(e => e.AvtomatichnoNomerirane);
+
 
 
         }

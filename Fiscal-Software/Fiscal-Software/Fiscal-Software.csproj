@@ -202,6 +202,7 @@
     <Compile Include="Helpers\DocumentNumber.cs" />
     <Compile Include="NomeraDokumenti.cs" />
     <Compile Include="Objects.cs" />
+    <Compile Include="OtherSetings.cs" />
     <Compile Include="Plashtaniqcs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -210,6 +211,7 @@
     <Compile Include="sysdiagram.cs" />
     <Compile Include="Technician.cs" />
     <Compile Include="Controllers\TechnicianCtrl.cs" />
+    <Compile Include="Users.cs" />
     <Compile Include="_Fiscal_SoftwareDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
