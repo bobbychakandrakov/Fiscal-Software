@@ -1202,6 +1202,12 @@ namespace Fiscal_Software
             pu.Show();
         }
 
+        private void otherSettings_Click(object sender, EventArgs e)
+        {
+            OtherSettingsForm osf = new OtherSettingsForm();
+            osf.Show();
+        }
+
         private void редактиранеНаДемонтажToolStripMenuItem_Click(object sender, EventArgs e)
         {
             selectedDemontaj = int.Parse(demontajList.SelectedItems[0].Tag.ToString());

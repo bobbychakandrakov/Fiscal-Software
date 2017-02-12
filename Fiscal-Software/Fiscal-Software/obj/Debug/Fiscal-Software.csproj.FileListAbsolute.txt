@@ -253,3 +253,4 @@ C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-So
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\bin\Debug\Reports\SvidetelstvoReport.rdlc
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\bin\Debug\Reports\Uvedomlenie.rdlc
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.OtherSettingsForm.resources

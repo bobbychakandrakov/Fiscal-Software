@@ -83,6 +83,7 @@
     <Compile Include="Controllers\DemontajCtrl.cs" />
     <Compile Include="Controllers\NomeraDokumentiCtrl.cs" />
     <Compile Include="Controllers\ObjectCtrl.cs" />
+    <Compile Include="Controllers\OtherSettingsCtrl.cs" />
     <Compile Include="Controllers\PlashtaniqCtrl.cs" />
     <Compile Include="Controllers\RemontiCtrl.cs" />
     <Compile Include="Controllers\SvidetelsvaRegistraciqCtrl.cs" />
@@ -144,6 +145,12 @@
     </Compile>
     <Compile Include="Forms\ObjectsForm.Designer.cs">
       <DependentUpon>ObjectsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OtherSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OtherSettingsForm.Designer.cs">
+      <DependentUpon>OtherSettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PrintDemontaj.cs">
       <SubType>Form</SubType>
@@ -247,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ObjectsForm.resx">
       <DependentUpon>ObjectsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OtherSettingsForm.resx">
+      <DependentUpon>OtherSettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PrintDemontaj.resx">
       <DependentUpon>PrintDemontaj.cs</DependentUpon>
