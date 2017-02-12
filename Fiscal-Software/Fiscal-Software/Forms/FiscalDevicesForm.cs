@@ -183,12 +183,18 @@ namespace Fiscal_Software.Forms
                     FiscalTypeLoad();
                 }
                 ResetControlsValue();
-
+                fiscalDevicesList.Enabled = true;
+                this.ToggleControls(false);
+                addFiscalDeviceBtn.Enabled = true;
+                editFiscalDeviceBtn.Enabled = true;
+                deleteFiscalDeviceBtn.Enabled = true;
+                touched = false;
             }
             else
             {
                 MessageBox.Show("Моля, попълнете задължителните полета!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void editFiscalDeviceBtn_Click(object sender, EventArgs e)
@@ -230,6 +236,7 @@ namespace Fiscal_Software.Forms
             fiscalDevicePriceBox.Text = fiscalDevice.Price.ToString();
             fiscalDeviceWarrantyBox.Text = fiscalDevice.Warranty.ToString();
             fiscalDeviceManufacturerBulstatBox.Text = fiscalDevice.BulstatManufacturer;
+            touched = false;
         }
 
         private void ResetControlsValue()

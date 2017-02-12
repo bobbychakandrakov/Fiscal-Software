@@ -180,13 +180,19 @@ namespace Fiscal_Software.Forms
                     contractsListView.Enabled = true;
                 }
                 ResetControls();
+                ToggleControls(false);
+                addContractBtn.Enabled = true;
+                editContractBtn.Enabled = true;
+                deleteContractBtn.Enabled = true;
+                contractsListView.Enabled = true;
+                touched = false;
             }
             else
             {
                 MessageBox.Show("Моля, въведете име на договора!");
             }
             
-            
+
         }
 
         private void contractSumForMonth_CheckedChanged(object sender, EventArgs e)
@@ -297,7 +303,8 @@ namespace Fiscal_Software.Forms
             contractWorkBox.Checked = contract.Rabota != null ? bool.Parse(contract.Rabota.ToString()) : false; ;
             contractSparePartsBox.Checked = contract.SpareParts != null ? bool.Parse(contract.SpareParts.ToString()) : false; ;
             contractProtectBox.Checked = contract.Protect != null ? bool.Parse(contract.Protect.ToString()) : false; ;
-            contractSpareModulesBox.Checked = contract.SpareModuls != null ? bool.Parse(contract.SpareModuls.ToString()) : false; ;
+            contractSpareModulesBox.Checked = contract.SpareModuls != null ? bool.Parse(contract.SpareModuls.ToString()) : false;
+            touched = false;
         }
 
         private void ResetControls()

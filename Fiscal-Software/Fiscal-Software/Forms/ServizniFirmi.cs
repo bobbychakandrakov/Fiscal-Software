@@ -183,6 +183,12 @@ namespace Fiscal_Software.Forms
                             companyListView.Enabled = true;
                         }
                         ResetControlsValue();
+                        companyListView.Enabled = true;
+                        this.ToggleControls(false);
+                        addCompanyBtn.Enabled = true;
+                        editCompanyBtn.Enabled = true;
+                        deleteCompanyBtn.Enabled = true;
+                        touched = false;
                     }
                 }
                 catch (Exception ex)
@@ -273,6 +279,7 @@ namespace Fiscal_Software.Forms
             companyEmailBox.Text = company.Email;
             companyWebBox.Text = company.Web;
             companyMolBox.Text = company.Mol;
+            touched = false;
         }
 
         private void companyDanNumberBox_KeyPress(object sender, KeyPressEventArgs e)

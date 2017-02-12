@@ -130,6 +130,11 @@ namespace Fiscal_Software.Forms
                 }
                 LoadTechnicians();
                 ResetControls();
+                this.ToggleControls(false, true);
+                addTechnicianBtn.Enabled = true;
+                editTechnicianBtn.Enabled = true;
+                deleteTechnicianBtn.Enabled = true;
+                touched = false;
             }
             else
             {
@@ -184,6 +189,7 @@ namespace Fiscal_Software.Forms
             technicianNameBox.Text = tech.Name;
             technicianEGNBox.Text = tech.EGN;
             technicianTelephoneBox.Text = tech.Telephone;
+            touched = false;
         }
 
         private void techniciansList_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
