@@ -122,9 +122,9 @@
             // 
             // objectTDDBox
             // 
-            this.objectTDDBox.Location = new System.Drawing.Point(382, 302);
+            this.objectTDDBox.Location = new System.Drawing.Point(329, 302);
             this.objectTDDBox.Name = "objectTDDBox";
-            this.objectTDDBox.Size = new System.Drawing.Size(117, 20);
+            this.objectTDDBox.Size = new System.Drawing.Size(170, 20);
             this.objectTDDBox.TabIndex = 19;
             // 
             // objectTelefoneBox
@@ -223,7 +223,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(328, 306);
+            this.label7.Location = new System.Drawing.Point(291, 306);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 7;

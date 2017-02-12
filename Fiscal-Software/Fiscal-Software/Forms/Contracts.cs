@@ -35,7 +35,15 @@ namespace Fiscal_Software.Forms
             this.ToggleControls(false);
             contractsListView.Columns.Add("Име");
             contractsListView.Columns.Add("Срок ");
-            var contracts = ContractCtrl.GetAllContracts();
+            LoadContracts();
+            DirtyChecker.Check(Controls, c_ControlChanged);
+        }
+
+        private void LoadContracts()
+        {
+
+            contractsListView.Items.Clear();
+             var contracts = ContractCtrl.GetAllContracts();
             for (int i = 0; i < contracts.Length; i++)
             {
                 lvi = new ListViewItem(contracts[i].Name);
@@ -43,18 +51,17 @@ namespace Fiscal_Software.Forms
                 lvi.SubItems.Add(contracts[i].Duration.ToString());
                 contractsListView.Items.Add(lvi);
             }
-
             // ListView Design
             contractsListView.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.None);
             contractsListView.Columns[0].Width = 150;
-            contractsListView.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
-            contractsListView.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.None);
             contractsListView.Columns[1].Width = 150;
             contractsListView.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
             contractsListView.Columns[1].TextAlign = HorizontalAlignment.Right;
+            contractsListView.Columns[0].AutoResize(ColumnHeaderAutoResizeStyle.None);
+            contractsListView.Columns[0].Width = 150;
             contractsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             contractsListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-            DirtyChecker.Check(Controls, c_ControlChanged);
+
         }
 
         void c_ControlChanged(object sender, EventArgs e)
@@ -147,6 +154,7 @@ namespace Fiscal_Software.Forms
                     lvi.Tag = contract.ID;
                     lvi.SubItems.Add(contract.Duration.ToString());
                     contractsListView.Items.Add(lvi);
+                    LoadContracts();
                 }
                 else
                 {
@@ -164,8 +172,7 @@ namespace Fiscal_Software.Forms
                     contract.Protect = contractProtectBox.Checked;
                     contract.SpareModuls = contractSpareModulesBox.Checked;
                     ContractCtrl.UpdateContract(selectedContract,contract);
-                    contractsListView.SelectedItems[0].SubItems[0].Text = contract.Name;
-                    contractsListView.SelectedItems[0].SubItems[1].Text =contract.Duration.ToString();
+                    LoadContracts();
                     ToggleControls(false);
                     addContractBtn.Enabled = true;
                     editContractBtn.Enabled = true;

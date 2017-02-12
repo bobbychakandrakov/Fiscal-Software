@@ -20,7 +20,7 @@ namespace Fiscal_Software.Forms
             InitializeComponent();
         }
 
-        int objectID;
+        int objectID, sumaMnojitel = 0;
         decimal sum = 0;
         Form1 f1;
         bool isUpdate = false, touched = false;
@@ -74,9 +74,10 @@ namespace Fiscal_Software.Forms
                 DateFrom.Checked = false;
                 DateFrom.Value = DateTime.Now;
             }
-             
-             Sum.Text = cfd.Sum.ToString();
-            SumForMount.Text = cfd.SumMonth.ToString();
+            Sum.Text = string.Format("{0:#.00}", Convert.ToDecimal(cfd.Sum.ToString()));
+            //Sum.Text = cfd.Sum.ToString();
+            SumForMount.Text = string.Format("{0:#.00}", Convert.ToDecimal(cfd.SumMonth.ToString()));
+            //SumForMount.Text = cfd.SumMonth.ToString();
               Valid.Checked= cfd.Valid.Value;
               Notes.Text = cfd.Notes;
           
@@ -205,11 +206,26 @@ namespace Fiscal_Software.Forms
 
         private void ContractFiscalDevice_Load(object sender, EventArgs e)
         {
+            int? contractNumber = NomeraDokumentiCtrl.GetNomerDokument().ContractN.Value;
+            if (contractNumber.HasValue)
+            {
+                ContractN.Text = contractNumber.Value.ToString();
+            }
+            ContractType.DisplayMember = "Text";
+            ContractType.ValueMember = "Value";
+            List<ComboboxItem> list = new List<ComboboxItem>();
+            ComboboxItem item;
+            HashSet<string> techHash = new HashSet<string>();
             var contracts = ContractCtrl.GetAllContracts();
             for (int i = 0; i < contracts.Length; i++)
             {
-                ContractType.Items.Add(contracts[i].Name);
+                item = new ComboboxItem();
+                item.Text = contracts[i].Name;
+                item.Value = contracts[i].ID;
+                list.Add(item);
+                //ContractType.Items.Add(contracts[i].Name);
             }
+            ContractType.DataSource = list.ToList();
             LoadColums();
             LoadPayments();
             DirtyChecker.Check(Controls, c_ControlChanged);
@@ -268,25 +284,32 @@ namespace Fiscal_Software.Forms
 
         private void LoadPayments()
         {
-            var payments = PlashtaniqCtrl.GetAll(this.cfd.ID);
-            paymentsList.Items.Clear();
-            for (int i = 0; i < payments.Length; i++)
+            if (isUpdate)
             {
-                lvi = new ListViewItem(payments[i].DataNa.ToString());
-                lvi.SubItems.Add(payments[i].DataDo.ToString());
-                lvi.SubItems.Add(string.Format("{0:#.00}", Convert.ToDecimal(payments[i].Suma.ToString())));
-                lvi.SubItems.Add(payments[i].Notes);
-                lvi.Tag = payments[i].ID;
-                paymentsList.Items.Add(lvi);
-                if (payments[i].Suma.HasValue)
-                {
-                    sum += payments[i].Suma.Value;
+                var payments = PlashtaniqCtrl.GetAll(this.cfd.ID);
+                    paymentsList.Items.Clear();
+                sum = 0;
+                totalSum.Text = "0.00";
+                    for (int i = 0; i < payments.Length; i++)
+                    {
+                        lvi = new ListViewItem(payments[i].DataNa.ToString());
+                        lvi.SubItems.Add(payments[i].DataDo.ToString());
+                        lvi.SubItems.Add(string.Format("{0:#.00}", Convert.ToDecimal(payments[i].Suma.ToString())));
+                        lvi.SubItems.Add(payments[i].Notes);
+                        lvi.Tag = payments[i].ID;
+                        paymentsList.Items.Add(lvi);
+                        if (payments[i].Suma.HasValue)
+                        {
+                            sum += payments[i].Suma.Value;
+                        }
+
+                    totalSum.Text = string.Format("{0:#.00}", Convert.ToDecimal(sum.ToString()));
+                    paymentsList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                    paymentsList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
                 }
-                
             }
-            totalSum.Text = string.Format("{0:#.00}", Convert.ToDecimal(sum.ToString()));
-            paymentsList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            paymentsList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            
+            
         }
 
         private void deletePayments_Click(object sender, EventArgs e)
@@ -297,6 +320,47 @@ namespace Fiscal_Software.Forms
             }
             sum = 0;
             LoadPayments();
+        }
+
+        private void SumForMount_Leave(object sender, EventArgs e)
+        {
+            Sum.Text = sumaMnojitel * float.Parse(SumForMount.Text) + "";
+        }
+
+        private void SumForMount_TextChanged(object sender, EventArgs e)
+        {
+            //e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void SumForMount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ',')
+            {
+                e.Handled = false;
+                return;
+            }
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void AutomaticNumbering_CheckedChanged(object sender, EventArgs e)
+        {
+            if (AutomaticNumbering.Checked)
+            {
+                ContractN.Enabled = false;
+            }
+            else
+            {
+                ContractN.Enabled = true;
+            }
+        }
+
+        private void ContractType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int? symaZamesec = ContractCtrl.GetContractById(int.Parse(ContractType.SelectedValue.ToString())).Duration;
+            if (symaZamesec.HasValue)
+            {
+                sumaMnojitel = symaZamesec.Value;
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)

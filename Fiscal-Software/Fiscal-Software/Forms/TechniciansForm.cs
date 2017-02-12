@@ -57,7 +57,7 @@ namespace Fiscal_Software.Forms
             techniciansList.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.None);
             techniciansList.Columns[1].Width = 150;
             techniciansList.Columns[1].AutoResize(ColumnHeaderAutoResizeStyle.HeaderSize);
-           techniciansList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            techniciansList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             techniciansList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             LoadTechnicians();
             DirtyChecker.Check(Controls, c_ControlChanged);

@@ -15,6 +15,7 @@ using System.Reflection;
 using Fiscal_Software.Helpers;
 using System.IO;
 using Fiscal_Software.Controlles;
+using System.Globalization;
 //using Fiscal_Software.Forms;
 
 namespace Fiscal_Software
@@ -465,7 +466,7 @@ namespace Fiscal_Software
                 {
                     lvi2.SubItems.Add("");
                 }
-                lvi2.SubItems.Add(cfds1[i].Sum.ToString());
+                lvi2.SubItems.Add(String.Format(CultureInfo.InvariantCulture, "{0:#.##}", cfds1[i].Sum));
                 lvi2.SubItems.Add(cfds1[i].Notes);
                 lvi2.Tag = cfds1[i].ID;
                 cfdList.Items.Add(lvi2);

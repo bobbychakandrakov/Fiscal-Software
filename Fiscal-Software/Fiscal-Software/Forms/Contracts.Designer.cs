@@ -343,6 +343,11 @@
             // contractDurationBox
             // 
             this.contractDurationBox.Location = new System.Drawing.Point(206, 52);
+            this.contractDurationBox.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.contractDurationBox.Name = "contractDurationBox";
             this.contractDurationBox.Size = new System.Drawing.Size(177, 20);
             this.contractDurationBox.TabIndex = 3;
