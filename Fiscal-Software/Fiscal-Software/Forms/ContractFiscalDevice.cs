@@ -45,7 +45,7 @@ namespace Fiscal_Software.Forms
             this.f1 = form1;
             this.cfd = cfd;
             this.isUpdate = true;
-            //loadData(this.cfd);
+            
         
     }
        public void loadDataForUpdate(ContractFiscalDevices cfd)
@@ -80,7 +80,7 @@ namespace Fiscal_Software.Forms
             //SumForMount.Text = cfd.SumMonth.ToString();
               Valid.Checked= cfd.Valid.Value;
               Notes.Text = cfd.Notes;
-          
+           
 
         }
 
@@ -206,6 +206,7 @@ namespace Fiscal_Software.Forms
 
         private void ContractFiscalDevice_Load(object sender, EventArgs e)
         {
+            
             int? contractNumber = NomeraDokumentiCtrl.GetNomerDokument().ContractN.Value;
             if (contractNumber.HasValue)
             {
@@ -228,6 +229,10 @@ namespace Fiscal_Software.Forms
             ContractType.DataSource = list.ToList();
             LoadColums();
             LoadPayments();
+            if (this.cfd != null)
+            {
+                loadDataForUpdate(this.cfd);
+            }
             DirtyChecker.Check(Controls, c_ControlChanged);
         }
 

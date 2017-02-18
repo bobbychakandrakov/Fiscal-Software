@@ -449,6 +449,7 @@
             this.objectsListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.objectsListView.FullRowSelect = true;
             this.objectsListView.Location = new System.Drawing.Point(3, 3);
+            this.objectsListView.MultiSelect = false;
             this.objectsListView.Name = "objectsListView";
             this.objectsListView.Size = new System.Drawing.Size(667, 430);
             this.objectsListView.TabIndex = 0;
@@ -654,6 +655,7 @@
             this.cfdList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cfdList.FullRowSelect = true;
             this.cfdList.Location = new System.Drawing.Point(3, 3);
+            this.cfdList.MultiSelect = false;
             this.cfdList.Name = "cfdList";
             this.cfdList.Size = new System.Drawing.Size(647, 177);
             this.cfdList.TabIndex = 0;

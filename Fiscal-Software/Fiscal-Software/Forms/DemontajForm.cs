@@ -169,6 +169,8 @@ namespace Fiscal_Software.Forms
         private void DemontajForm_Load(object sender, EventArgs e)
         {
             LoadTech();
+            var fiscalDevice = DanniFiskalnoUstroistvoCtrl.GetDanniFiskalnoUstroistvoById(this.id);
+            fpNomer.Text = fiscalDevice.FPNomer;
             DirtyChecker.Check(Controls, c_ControlChanged);
         }
 

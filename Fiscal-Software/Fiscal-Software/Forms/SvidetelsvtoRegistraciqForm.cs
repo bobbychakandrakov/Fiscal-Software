@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Fiscal_Software.Controlles;
 
 namespace Fiscal_Software.Forms
 {
@@ -137,6 +138,10 @@ namespace Fiscal_Software.Forms
         {
             LoadTech();
             LoadContracts();
+            if (NomeraDokumentiCtrl.GetNomerDokument().Svidetelstvo.HasValue)
+            {
+                svidetelstvoN.Text = NomeraDokumentiCtrl.GetNomerDokument().Svidetelstvo.Value.ToString();
+            }
             DirtyChecker.Check(Controls, c_ControlChanged);
         }
         void c_ControlChanged(object sender, EventArgs e)
@@ -203,16 +208,35 @@ namespace Fiscal_Software.Forms
         {
             dogovorBox.DisplayMember = "Text";
             dogovorBox.ValueMember = "Value";
+            string text = string.Empty;
             List<ComboboxItem> list = new List<ComboboxItem>();
             ComboboxItem item;
             HashSet<string> contractHash = new HashSet<string>();
             var contracts = ContractCtrl.GetAllContracts();
-            for (int i = 0; i < contracts.Length; i++)
+            var dogovori = ContractFiscalDeviceCtrl.GetAllContractFiscalDevices(this.id);
+            for (int i = 0; i < dogovori.Length; i++)
             {
                 item = new ComboboxItem();
-                item.Text = contracts[i].Name;
-                item.Value = contracts[i].ID;
+                if (dogovori[i].ContractN.HasValue)
+                {
+                    text += dogovori[i].ContractN.Value.ToString() + " | ";
+                }
+                else
+                {
+                    text += " | ";
+                }
+                if (dogovori[i].DateFrom.HasValue)
+                {
+                    text += dogovori[i].DateFrom.Value.ToShortDateString();
+                }
+                else
+                {
+                    text += "";
+                }
+                item.Text = text;
+                item.Value = dogovori[i].ID;
                 list.Add(item);
+                text = string.Empty;
             }
             dogovorBox.DataSource = list.ToList();
         }

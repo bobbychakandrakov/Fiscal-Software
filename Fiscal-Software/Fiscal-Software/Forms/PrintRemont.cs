@@ -1,12 +1,5 @@
 ﻿using Microsoft.Reporting.WinForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Fiscal_Software.Forms
@@ -44,6 +37,9 @@ namespace Fiscal_Software.Forms
 
           }
           );
+            this.reportViewer1.ProcessingMode =
+    Microsoft.Reporting.WinForms.ProcessingMode.Local;
+            this.reportViewer1.LocalReport.ReportPath = "Reports/RemontProtokol.rdlc";
             reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
             this.reportViewer1.RefreshReport();
         }

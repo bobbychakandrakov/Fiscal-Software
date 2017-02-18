@@ -310,7 +310,19 @@ namespace Fiscal_Software
                 {
                     lvi2.SubItems.Add("");
                 }
-                lvi2.SubItems.Add(ContractCtrl.GetContractById(svidetelstva[i].Contract).Name);
+                var cfd = ContractFiscalDeviceCtrl.GetContractFiscalDevice(svidetelstva[i].Contract);
+                if (cfd != null)
+                {
+                    if (cfd.ContractN.HasValue)
+                    {
+                        lvi2.SubItems.Add(cfd.ContractN.Value.ToString());
+                    }
+                    
+                }
+                else
+                {
+                    lvi2.SubItems.Add("");
+                }
                 if (svidetelstva[i].RegDate.HasValue)
                 {
                     lvi2.SubItems.Add(svidetelstva[i].RegDate.Value.ToShortDateString());
@@ -855,7 +867,7 @@ namespace Fiscal_Software
                 selectedCfdID = int.Parse(cfdList.SelectedItems[0].Tag.ToString());
                 ContractFiscalDevices cfd = ContractFiscalDeviceCtrl.GetContractFiscalDevice(selectedCfdID);
                 ContractFiscalDevice cf = new ContractFiscalDevice(this, cfd);
-            cf.loadDataForUpdate(cfd);
+            //cf.loadDataForUpdate(cfd);
             //MessageBox.Show(selectedCfdID.ToString());
                 cf.Show();
             cf.Text = "Редактиране на договор за подръжка";
