@@ -23,7 +23,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.7112cm</Top>
-        <Left>6.26745cm</Left>
+        <Left>5.63245cm</Left>
         <Height>0.89104cm</Height>
         <Width>5.62208cm</Width>
         <Style>
@@ -58,7 +58,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>1.79599cm</Top>
-        <Left>5.63245cm</Left>
+        <Left>4.99745cm</Left>
         <Height>0.6cm</Height>
         <Width>7.05083cm</Width>
         <ZIndex>1</ZIndex>
@@ -80,31 +80,45 @@
             <TextRuns>
               <TextRun>
                 <Value>Днес, </Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value>=Parameters!TodayDate.Value</Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value> представителя на фирма </Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value>=Parameters!CompnayName.Value</Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value xml:space="preserve"> </Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value>=Parameters!MOL.Value</Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value> прие на ремонт ЕКАФП с инд NO и NО на ФП</Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -113,11 +127,15 @@
             <TextRuns>
               <TextRun>
                 <Value>Собственост на </Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value>=Parameters!SobstvenostNa.Value</Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -126,11 +144,15 @@
             <TextRuns>
               <TextRun>
                 <Value>Представлявана от </Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value>=Parameters!Name.Value</Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -138,9 +160,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
         <Top>2.82787cm</Top>
-        <Left>2.35162cm</Left>
-        <Height>2.00229cm</Height>
-        <Width>12.73938cm</Width>
+        <Left>1.08162cm</Left>
+        <Height>3.34256cm</Height>
+        <Width>14.67084cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -160,11 +182,15 @@
             <TextRuns>
               <TextRun>
                 <Value>Констатиране на повредата:</Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value>=Parameters!KonstatiranePovreda.Value</Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -173,11 +199,15 @@
             <TextRuns>
               <TextRun>
                 <Value>Подаване на заявка:</Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value>=Parameters!PodavaneZaqvka.Value</Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -186,11 +216,15 @@
             <TextRuns>
               <TextRun>
                 <Value>Върнат на:</Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value>=Parameters!VarnatNa.Value</Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -199,21 +233,25 @@
             <TextRuns>
               <TextRun>
                 <Value>Описание на повредата:</Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value>=Parameters!OpisaniePovreda.Value</Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>5.89703cm</Top>
-        <Left>2.35162cm</Left>
-        <Height>2.34625cm</Height>
-        <Width>12.73938cm</Width>
+        <Top>6.34682cm</Top>
+        <Left>1.08162cm</Left>
+        <Height>2.90188cm</Height>
+        <Width>14.67084cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -226,7 +264,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>3.45833in</Height>
+    <Height>4.16666in</Height>
     <Style />
   </Body>
   <Width>6.5in</Width>

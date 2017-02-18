@@ -1204,8 +1204,19 @@ namespace Fiscal_Software
 
         private void button3_Click(object sender, EventArgs e)
         {
-            PrintRemont pr = new PrintRemont();
-            pr.Show();
+            if (selectedFUDanni > 0)
+            {
+                if (remontiList.SelectedItems[0].Tag != null)
+                {
+                    int id = int.Parse(remontiList.SelectedItems[0].Tag.ToString());
+                    var remont = RemontCtrl.GetRemontById(id);
+                    var dfu = DanniFiskalnoUstroistvoCtrl.GetDanniFiskalnoUstroistvoById(selectedFUDanni);
+                    PrintRemont pr = new PrintRemont(remont , dfu);
+                    pr.Show();
+                }
+                
+            }
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
