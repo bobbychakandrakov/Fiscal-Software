@@ -19,12 +19,10 @@ namespace Fiscal_Software.Forms
             InitializeComponent();
             this.remont = remont;
             this.dfu = dfu;
-            MessageBox.Show("1Test");
         }
 
         private void PrintRemont_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Test");
             ReportParameter TodayDate = new ReportParameter("TodayDate", DateTime.Now.ToString());
             var serviz = CompanyCtrl.GetCompanyById(dfu.Serviz);
             ReportParameter CompnayName = new ReportParameter("CompnayName", serviz.Name);
@@ -36,7 +34,8 @@ namespace Fiscal_Software.Forms
             ReportParameter PodavaneZaqvka = new ReportParameter("PodavaneZaqvka", remont.PrietV.ToString());
             ReportParameter VarnatNa = new ReportParameter("VarnatNa", remont.VurnatNa.ToString());
             ReportParameter OpisaniePovreda = new ReportParameter("OpisaniePovreda", remont.OpisanieDefekt);
-
+            ReportParameter IdefNomer = new ReportParameter("indefNO", dfu.FYNomer);
+            ReportParameter fpNomer = new ReportParameter("fpNomer", dfu.FPNomer);
             reportViewer1.LocalReport.SetParameters(new ReportParameter[]
           {
                TodayDate,
@@ -47,8 +46,9 @@ namespace Fiscal_Software.Forms
                KonstatiranePovreda,
                PodavaneZaqvka,
                VarnatNa,
-               OpisaniePovreda
-
+               OpisaniePovreda,
+               IdefNomer,
+               fpNomer
           }
           );
 

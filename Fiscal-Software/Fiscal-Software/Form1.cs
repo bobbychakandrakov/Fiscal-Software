@@ -27,7 +27,13 @@ namespace Fiscal_Software
         ListViewItem lvi1;
         ListViewItem lvi2;
         ListViewItem lviCfd;
-        int selectedClientId = -1, selectedObjectID = -1, selectedCfdID=-1, selectedFUDanni = -1, selectedSvidetelstvo = -1, selectedDemontaj = -1;
+        int selectedClientId = -1, 
+            selectedObjectID = -1, 
+            selectedCfdID=-1, 
+            selectedFUDanni = -1, 
+            selectedSvidetelstvo = -1, 
+            selectedDemontaj = -1, 
+            selectedRemont = -1;
         Client client;
         ContractFiscalDevices cfd;
 
@@ -863,49 +869,15 @@ namespace Fiscal_Software
 
         private void редактиранеНаДоговорToolStripMenuItem_Click(object sender, EventArgs e)
         {
-         
+            if (cfdList.SelectedItems.Count > 0)
+            {
                 selectedCfdID = int.Parse(cfdList.SelectedItems[0].Tag.ToString());
                 ContractFiscalDevices cfd = ContractFiscalDeviceCtrl.GetContractFiscalDevice(selectedCfdID);
                 ContractFiscalDevice cf = new ContractFiscalDevice(this, cfd);
-            //cf.loadDataForUpdate(cfd);
-            //MessageBox.Show(selectedCfdID.ToString());
                 cf.Show();
-            cf.Text = "Редактиране на договор за подръжка";
-            
-            
-          
-              
-              /*  if (cfd != null)
-                {
-                   = "duhai";
-                }*/
-               /* var objects = ObjectCtrl.GetObjectsForClient(client.ID);
-                LoadObjects(objects);
+                cf.Text = "Редактиране на договор за подръжка";
             }
-
-
-
-        }
-
-        private void contextMenuStrip3_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void cfdList_SelectedIndexChanged(object sender, ListViewItemSelectionChangedEventArgs e)
-        {
-            /* if (e.IsSelected)
-             {
-                 selectedCfdID = int.Parse(cfdList.SelectedItems[0].Tag.ToString());
-                 cfd = ContractFiscalDeviceCtrl.GetContractFiscalDevice(selectedCfdID);
-                /* if (cfd != null)
-                 {
-                     molLabel1.Text = "МОЛ: " + cfd.va;
-                 }*/
-            /*  var contractFD= ContractFiscalDeviceCtrl.GetAllContractFiscalDevices(cfd.ID);
-              LoadCfds(contractFD);*/
-
-            //}
+            /*
             cfdList.Columns.Add("Валиден");
             cfdList.Columns.Add("Тип договор");
             cfdList.Columns.Add("Договор N");
@@ -913,7 +885,7 @@ namespace Fiscal_Software
             cfdList.Columns.Add("До Дата");
             cfdList.Columns.Add("Сума");
             cfdList.Columns.Add("Бележки");
-
+            */
 
         }
 
@@ -1124,9 +1096,13 @@ namespace Fiscal_Software
 
         private void редактиранеНаРемонтToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(remontiList.SelectedItems[0].Tag.ToString());
-            RemontiForm rf = new RemontiForm(selectedFUDanni, this, id);
-            rf.Show();
+            if (remontiList.SelectedItems.Count > 0)
+            {
+                int id = int.Parse(remontiList.SelectedItems[0].Tag.ToString());
+                RemontiForm rf = new RemontiForm(selectedFUDanni, this, id);
+                rf.Show();
+            }
+            
         }
 
         private void изтриванеНаРемонтToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1206,15 +1182,17 @@ namespace Fiscal_Software
         {
             if (selectedFUDanni > 0)
             {
-                if (remontiList.SelectedItems[0].Tag != null)
+                if (remontiList.SelectedItems.Count > 0)
                 {
-                    int id = int.Parse(remontiList.SelectedItems[0].Tag.ToString());
-                    var remont = RemontCtrl.GetRemontById(id);
-                    var dfu = DanniFiskalnoUstroistvoCtrl.GetDanniFiskalnoUstroistvoById(selectedFUDanni);
-                    PrintRemont pr = new PrintRemont(remont , dfu);
-                    pr.Show();
-                }
-                
+                    if (remontiList.SelectedItems[0].Tag != null)
+                    {
+                        int id = int.Parse(remontiList.SelectedItems[0].Tag.ToString());
+                        var remont = RemontCtrl.GetRemontById(id);
+                        var dfu = DanniFiskalnoUstroistvoCtrl.GetDanniFiskalnoUstroistvoById(selectedFUDanni);
+                        PrintRemont pr = new PrintRemont(remont, dfu);
+                        pr.Show();
+                    }
+                }                
             }
             
         }
@@ -1231,19 +1209,40 @@ namespace Fiscal_Software
             osf.Show();
         }
 
+        private void remontiList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (remontiList.SelectedItems.Count > 0)
+            {
+                selectedRemont = int.Parse(remontiList.SelectedItems[0].Tag.ToString());
+                button3.Enabled = true;
+            }
+            else
+            {
+                button3.Enabled = false;
+            }
+        }
+
         private void редактиранеНаДемонтажToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            selectedDemontaj = int.Parse(demontajList.SelectedItems[0].Tag.ToString());
-            DemontajForm df = new DemontajForm(selectedFUDanni, this, selectedDemontaj);
-            df.Show();
+            if (demontajList.SelectedItems.Count > 0)
+            {
+                selectedDemontaj = int.Parse(demontajList.SelectedItems[0].Tag.ToString());
+                DemontajForm df = new DemontajForm(selectedFUDanni, this, selectedDemontaj);
+                df.Show();
+            }
+            
         }
 
         private void редактиранеНаСвидетелствоToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            selectedSvidetelstvo = int.Parse(svidetelstvaList.SelectedItems[0].Tag.ToString());
-            var svideletstvo = SvidetelstvoRegistraciqCtrl.GetSvidetelstvoRegistraciqById(selectedSvidetelstvo);
-            SvidetelsvtoRegistraciqForm srf = new SvidetelsvtoRegistraciqForm(selectedFUDanni, svideletstvo, this);
-            srf.Show();
+            if (svidetelstvaList.SelectedItems.Count > 0)
+            {
+                selectedSvidetelstvo = int.Parse(svidetelstvaList.SelectedItems[0].Tag.ToString());
+                var svideletstvo = SvidetelstvoRegistraciqCtrl.GetSvidetelstvoRegistraciqById(selectedSvidetelstvo);
+                SvidetelsvtoRegistraciqForm srf = new SvidetelsvtoRegistraciqForm(selectedFUDanni, svideletstvo, this);
+                srf.Show();
+            }
+            
         }
 
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)

@@ -299,8 +299,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.445545F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94.55446F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.435644F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.56435F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1119, 606);
             this.tableLayoutPanel1.TabIndex = 1;
@@ -312,10 +312,10 @@
             this.clientsListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.clientsListView.FullRowSelect = true;
             this.clientsListView.HideSelection = false;
-            this.clientsListView.Location = new System.Drawing.Point(3, 36);
+            this.clientsListView.Location = new System.Drawing.Point(3, 42);
             this.clientsListView.MultiSelect = false;
             this.clientsListView.Name = "clientsListView";
-            this.clientsListView.Size = new System.Drawing.Size(420, 567);
+            this.clientsListView.Size = new System.Drawing.Size(420, 561);
             this.clientsListView.TabIndex = 0;
             this.clientsListView.UseCompatibleStateImageBehavior = false;
             this.clientsListView.View = System.Windows.Forms.View.Details;
@@ -361,15 +361,16 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(420, 27);
+            this.panel1.Size = new System.Drawing.Size(420, 33);
             this.panel1.TabIndex = 1;
             // 
             // deleteClientButton
             // 
+            this.deleteClientButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.deleteClientButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.deleteClientButton.Location = new System.Drawing.Point(283, 0);
             this.deleteClientButton.Name = "deleteClientButton";
-            this.deleteClientButton.Size = new System.Drawing.Size(137, 27);
+            this.deleteClientButton.Size = new System.Drawing.Size(137, 33);
             this.deleteClientButton.TabIndex = 2;
             this.deleteClientButton.Text = "Изтриване на клиент";
             this.deleteClientButton.UseVisualStyleBackColor = true;
@@ -377,10 +378,11 @@
             // 
             // editClientButton
             // 
+            this.editClientButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.editClientButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.editClientButton.Location = new System.Drawing.Point(144, 0);
             this.editClientButton.Name = "editClientButton";
-            this.editClientButton.Size = new System.Drawing.Size(139, 27);
+            this.editClientButton.Size = new System.Drawing.Size(139, 33);
             this.editClientButton.TabIndex = 1;
             this.editClientButton.Text = "Редактиране на клиент";
             this.editClientButton.UseVisualStyleBackColor = true;
@@ -388,10 +390,11 @@
             // 
             // addClientButton
             // 
+            this.addClientButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.addClientButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.addClientButton.Location = new System.Drawing.Point(0, 0);
             this.addClientButton.Name = "addClientButton";
-            this.addClientButton.Size = new System.Drawing.Size(144, 27);
+            this.addClientButton.Size = new System.Drawing.Size(144, 33);
             this.addClientButton.TabIndex = 0;
             this.addClientButton.Text = "Добавяне на клиент";
             this.addClientButton.UseVisualStyleBackColor = true;
@@ -404,21 +407,21 @@
             this.tableLayoutPanel2.Controls.Add(this.panel3, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(429, 36);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(429, 42);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.46032F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.53968F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(687, 567);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(687, 561);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.tabControl1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 102);
+            this.panel3.Location = new System.Drawing.Point(3, 100);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(681, 462);
+            this.panel3.Size = new System.Drawing.Size(681, 458);
             this.panel3.TabIndex = 1;
             // 
             // tabControl1
@@ -429,7 +432,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(681, 462);
+            this.tabControl1.Size = new System.Drawing.Size(681, 458);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -438,7 +441,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(673, 436);
+            this.tabPage1.Size = new System.Drawing.Size(673, 432);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Обекти";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -451,7 +454,7 @@
             this.objectsListView.Location = new System.Drawing.Point(3, 3);
             this.objectsListView.MultiSelect = false;
             this.objectsListView.Name = "objectsListView";
-            this.objectsListView.Size = new System.Drawing.Size(667, 430);
+            this.objectsListView.Size = new System.Drawing.Size(667, 426);
             this.objectsListView.TabIndex = 0;
             this.objectsListView.UseCompatibleStateImageBehavior = false;
             this.objectsListView.View = System.Windows.Forms.View.Details;
@@ -718,6 +721,7 @@
             this.remontiList.TabIndex = 0;
             this.remontiList.UseCompatibleStateImageBehavior = false;
             this.remontiList.View = System.Windows.Forms.View.Details;
+            this.remontiList.SelectedIndexChanged += new System.EventHandler(this.remontiList_SelectedIndexChanged);
             this.remontiList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.remontiList_MouseDoubleClick);
             // 
             // contextMenuStrip7
@@ -866,7 +870,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(681, 93);
+            this.panel2.Size = new System.Drawing.Size(681, 91);
             this.panel2.TabIndex = 2;
             // 
             // groupBox2
@@ -880,7 +884,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(681, 93);
+            this.groupBox2.Size = new System.Drawing.Size(681, 91);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Данни за клиента";
@@ -946,7 +950,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(429, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(687, 27);
+            this.panel5.Size = new System.Drawing.Size(687, 33);
             this.panel5.TabIndex = 3;
             // 
             // button4
@@ -961,6 +965,7 @@
             // 
             // button3
             // 
+            this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(201, 4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
@@ -1016,7 +1021,6 @@
             this.ClientSize = new System.Drawing.Size(1119, 630);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
