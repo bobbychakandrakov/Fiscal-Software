@@ -203,6 +203,12 @@
     <Compile Include="Forms\PrintUvedomleniecs.Designer.cs">
       <DependentUpon>PrintUvedomleniecs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PrintZaqvlenie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintZaqvlenie.Designer.cs">
+      <DependentUpon>PrintZaqvlenie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\RemontiForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -340,6 +346,9 @@
     <EmbeddedResource Include="Forms\PrintUvedomleniecs.resx">
       <DependentUpon>PrintUvedomleniecs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintZaqvlenie.resx">
+      <DependentUpon>PrintZaqvlenie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\RemontiForm.resx">
       <DependentUpon>RemontiForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -379,6 +388,7 @@
     <EmbeddedResource Include="Reports\Uvedomlenie.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Zaqvlenie.rdlc" />
     <EmbeddedResource Include="SpravkiForm\DogovoriSpravkaForm.resx">
       <DependentUpon>DogovoriSpravkaForm.cs</DependentUpon>
     </EmbeddedResource>
