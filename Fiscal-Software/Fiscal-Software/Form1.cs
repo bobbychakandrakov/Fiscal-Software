@@ -16,6 +16,7 @@ using Fiscal_Software.Helpers;
 using System.IO;
 using Fiscal_Software.Controlles;
 using System.Globalization;
+using Fiscal_Software.SpravkiForm;
 //using Fiscal_Software.Forms;
 
 namespace Fiscal_Software
@@ -830,7 +831,15 @@ namespace Fiscal_Software
 
         private void cfdList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (cfdList.SelectedItems.Count > 0)
+            {
+                selectedCfdID = int.Parse(cfdList.SelectedItems[0].Tag.ToString());
+                button1.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -1168,13 +1177,27 @@ namespace Fiscal_Software
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            PrintDogovor pd = new PrintDogovor();
-            pd.Show();
+            if (selectedFUDanni > 0)
+            {
+                if (cfdList.SelectedItems.Count > 0)
+                {
+                    if (cfdList.SelectedItems[0].Tag != null)
+                    {
+                        int id = int.Parse(cfdList.SelectedItems[0].Tag.ToString());
+                        var dfu = DanniFiskalnoUstroistvoCtrl.GetDanniFiskalnoUstroistvoById(selectedFUDanni);
+                        var cfd = ContractFiscalDeviceCtrl.GetContractFiscalDevice(id);
+                        PrintDogovor pd = new PrintDogovor(dfu, cfd);
+                        pd.Show();
+                    }
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            PrintDemontaj pd = new PrintDemontaj();
+            var danni = DanniFiskalnoUstroistvoCtrl.GetDanniFiskalnoUstroistvoById(selectedFUDanni);
+            var demontaj = DemontajFiskalnoUstroistvoCtrl.GetDemontajFiskalnoUstroistvoById(selectedDemontaj);
+            PrintDemontaj pd = new PrintDemontaj(danni, demontaj);
             pd.Show();
         }
 
@@ -1199,7 +1222,11 @@ namespace Fiscal_Software
 
         private void button4_Click(object sender, EventArgs e)
         {
-            PrintUvedomleniecs pu = new PrintUvedomleniecs();
+            var danni = DanniFiskalnoUstroistvoCtrl.GetDanniFiskalnoUstroistvoById(selectedFUDanni);
+            var obj = ObjectCtrl.GetObjectById(selectedObjectID);
+            var client = ClientCtrl.GetClient(selectedClientId);
+            var sr = SvidetelstvoRegistraciqCtrl.GetSvidetelstvoRegistraciqById(selectedSvidetelstvo);
+            PrintUvedomleniecs pu = new PrintUvedomleniecs(danni, obj, client, sr);
             pu.Show();
         }
 
@@ -1207,6 +1234,24 @@ namespace Fiscal_Software
         {
             OtherSettingsForm osf = new OtherSettingsForm();
             osf.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //IztichashtaSIMForm isim = new IztichashtaSIMForm();
+            //isim.Show();
+            //VuvedeniEksploataciqForm vef = new VuvedeniEksploataciqForm();
+            //vef.Show();
+            //FUModelForm fum = new FUModelForm();
+            //fum.Show();
+            //DogovoriZaPeriodForm dzp = new DogovoriZaPeriodForm();
+            //dzp.Show();
+            //IztichashtiDogovoriForm izf = new IztichashtiDogovoriForm();
+            //izf.Show();
+            //DogovoriSpravkaForm dsf = new DogovoriSpravkaForm();
+            //dsf.Show();
+            SprazkaZaFirmaForm sff = new SprazkaZaFirmaForm();
+            sff.Show();
         }
 
         private void remontiList_SelectedIndexChanged(object sender, EventArgs e)

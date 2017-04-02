@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using Fiscal_Software.Controllers;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,94 +14,56 @@ namespace Fiscal_Software.Forms
 {
     public partial class PrintDogovor : Form
     {
+        DanniFiskalnoUstroistvo dfu;
+        ContractFiscalDevices cfd;
         public PrintDogovor()
         {
             InitializeComponent();
         }
-
+        public PrintDogovor(DanniFiskalnoUstroistvo dfu , ContractFiscalDevices cfd)
+        {
+            InitializeComponent();
+            this.dfu = dfu;
+            this.cfd = cfd;
+        }
         private void PrintSvidetelstvo_Load(object sender, EventArgs e)
         {
-
-            /*Uvedomlenie Report
-            ReportParameter Ot = new ReportParameter("ot", " ");
-            ReportParameter Na = new ReportParameter("na", " ");
-            ReportParameter Bulstat = new ReportParameter("Bulstat", " ");
-            ReportParameter NaselenoMqsto = new ReportParameter("naselenoMqsto", " ");
-            ReportParameter AdresUpravlenie = new ReportParameter("AdresUpravlenie", " ");
-            ReportParameter DanAdres = new ReportParameter("DanAdres", " ");
-            ReportParameter Telefon1 = new ReportParameter("telefon1", " ");
-            ReportParameter Email = new ReportParameter("email", " ");
-            ReportParameter NapReg = new ReportParameter("napReg", " ");
-            ReportParameter Ofis= new ReportParameter("ofis", " ");
-            ReportParameter Telefon2 = new ReportParameter("telefon2", " ");
-            ReportParameter ModelFiskalno = new ReportParameter("ModelFiskalno", " ");
-            ReportParameter indNomerFiskalno = new ReportParameter("indNomerFiskalno", " ");
-            ReportParameter IndNomerFiskalPamet = new ReportParameter("IndNomerFiskPamet", " ");
-            ReportParameter VavedenaServzinaFirma = new ReportParameter("VavedenaServiznafirma", " ");
-            ReportParameter ServizenTehnik = new ReportParameter("servizenTehnik", " ");
-            ReportParameter ServzienDogovor = new ReportParameter("servizenDogovor", " ");
-            ReportParameter ValidenOt = new ReportParameter("validenOt", " ");
-            ReportParameter ValidenDo = new ReportParameter("validenDo", " ");
-
-
-            reportViewer1.LocalReport.SetParameters(new ReportParameter[]
-            {
-                Ot,
-                Na,
-                Bulstat,
-                NaselenoMqsto,
-                AdresUpravlenie,
-                DanAdres,
-                Telefon1,
-                Email,
-                NapReg,
-                Ofis,
-                Telefon2,
-                ModelFiskalno,
-                indNomerFiskalno,
-                IndNomerFiskalPamet,
-                VavedenaServzinaFirma,
-                ServizenTehnik,
-                ServzienDogovor,
-                ValidenOt,
-                ValidenDo
-
-            }
-            );
-            */
-
+            var company = CompanyCtrl.GetCompanyById(dfu.Serviz);
+            var obekt = ObjectCtrl.GetObjectById(dfu.Obekt);
+            var fd = FiscalDeviceCtrl.GetFiscalDevice(dfu.ModelFY);
+            var client = ClientCtrl.GetClient(obekt.ClientId.Value);
             // Report dogovor
-            ReportParameter RemontNomer = new ReportParameter("RemontNomer", " ");
-            ReportParameter todayDate = new ReportParameter("todayDate", " ");
-            ReportParameter vGrad = new ReportParameter("vGrad", " ");
-            ReportParameter serviznaOrganizaciq = new ReportParameter("serviznaOrganizaciq", " ");
-            ReportParameter predstavenaOt = new ReportParameter("predstavenaOt", " ");
-            ReportParameter organizaciqVazlojitel = new ReportParameter("organizaciqVazlojitel", " ");
-            ReportParameter identNomer = new ReportParameter("identNomer", " ");
-            ReportParameter addres1 = new ReportParameter("addres1", " ");
-            ReportParameter predstavenaOt2 = new ReportParameter("predstavenaOt2", " ");
-            ReportParameter vidTehnika = new ReportParameter("vidTehnika", " ");
-            ReportParameter identNomer2 = new ReportParameter("identNomer2", " ");
-            ReportParameter NomerFp = new ReportParameter("NomerFp", " ");
-            ReportParameter taksa = new ReportParameter("taksa", " ");
-            ReportParameter validenOt = new ReportParameter("validenOt", " ");
-            ReportParameter validenDo = new ReportParameter("validenDo", " ");
+            ReportParameter RemontNomer = new ReportParameter("RemontNomer", "0000000" + cfd.ContractN.Value.ToString() + " / " + DateTime.Now.ToShortDateString());
+            ReportParameter todayDate = new ReportParameter("todayDate", DateTime.Now.ToShortDateString());
+            ReportParameter vGrad = new ReportParameter("vGrad", obekt.Town);
+            ReportParameter serviznaOrganizaciq = new ReportParameter("serviznaOrganizaciq", company.Name + " ЕИК: " + company.Bulstat);
+            ReportParameter predstavenaOt = new ReportParameter("predstavenaOt", company.Mol);
+            ReportParameter organizaciqVazlojitel = new ReportParameter("organizaciqVazlojitel", obekt.Type);
+            ReportParameter identNomer = new ReportParameter("identNomer", obekt.Ekatte);
+            ReportParameter addres1 = new ReportParameter("addres1", obekt.Address);
+            ReportParameter predstavenaOt2 = new ReportParameter("predstavenaOt2", obekt.Mol);
+            ReportParameter vidTehnika = new ReportParameter("vidTehnika", fd.Model);
+            ReportParameter identNomer2 = new ReportParameter("identNomer2", dfu.FYNomer);
+            ReportParameter NomerFp = new ReportParameter("NomerFp", dfu.FPNomer);
+            ReportParameter taksa = new ReportParameter("taksa", cfd.Sum.Value.ToString());
+            ReportParameter validenOt = new ReportParameter("validenOt", cfd.DateFrom.Value.ToShortDateString());
+            ReportParameter validenDo = new ReportParameter("validenDo", cfd.DateTo.Value.ToShortDateString());
             ReportParameter BankovaSmetka = new ReportParameter("BankovaSmetka", " ");
-            ReportParameter data2 = new ReportParameter("data2", " ");
-            ReportParameter EikBulstad = new ReportParameter("EikBulstad", " ");
-            ReportParameter sobstvenostNa = new ReportParameter("sobstvenostNa", " ");
-            ReportParameter address2 = new ReportParameter("address2", " ");
-            ReportParameter predstavlqvanaOt = new ReportParameter("predstavlqvanaOt", " ");
-            ReportParameter TargovskiObekt= new ReportParameter("TargovskiObekt", " ");
-            ReportParameter Model = new ReportParameter("Model", " ");
+            ReportParameter data2 = new ReportParameter("data2", DateTime.Now.ToShortDateString());
+            ReportParameter EikBulstad = new ReportParameter("EikBulstad", client.Bulstat);
+            ReportParameter sobstvenostNa = new ReportParameter("sobstvenostNa", client.Name);
+            ReportParameter address2 = new ReportParameter("address2", client.MolTown + " " + client.MolAddress);
+            ReportParameter predstavlqvanaOt = new ReportParameter("predstavlqvanaOt", client.Mol);
+        ReportParameter TargovskiObekt= new ReportParameter("TargovskiObekt", obekt.Type);
+            ReportParameter Model = new ReportParameter("Model", fd.Model);
             ReportParameter BimNomer = new ReportParameter("BimNomer", " ");
-            ReportParameter indNomerNafiskalnotoUstroistvo = new ReportParameter("indNomerNafiskalnotoUstroistvo", " ");
-            ReportParameter FiskalnaPamet = new ReportParameter("FiskalnaPamet", " ");
-            ReportParameter ValidenOt2 = new ReportParameter("ValidenOt2", " ");
-            ReportParameter Eik = new ReportParameter("Eik", " ");
-            ReportParameter Adress3 = new ReportParameter("Adress3", " ");
-            ReportParameter ServzienTehnik = new ReportParameter("ServzienTehnik", " ");
-            ReportParameter Data = new ReportParameter("Data", " ");
+            ReportParameter indNomerNafiskalnotoUstroistvo = new ReportParameter("indNomerNafiskalnotoUstroistvo", dfu.FYNomer);
+            ReportParameter FiskalnaPamet = new ReportParameter("FiskalnaPamet", dfu.FPNomer);
+            ReportParameter ValidenOt2 = new ReportParameter("ValidenOt2", cfd.DateFrom.Value.ToShortDateString());
+            ReportParameter Eik = new ReportParameter("Eik", company.Bulstat);
+            ReportParameter Adress3 = new ReportParameter("Adress3", company.Address);
+            ReportParameter ServzienTehnik = new ReportParameter("ServzienTehnik", dfu.Technician);
+            ReportParameter Data = new ReportParameter("Data", DateTime.Now.ToShortDateString());
 
             reportViewer1.LocalReport.SetParameters(new ReportParameter[]
            {
@@ -134,8 +97,8 @@ namespace Fiscal_Software.Forms
                 Eik,
                 Adress3,
                 ServzienTehnik,
-                Data
-
+                Data,
+                predstavlqvanaOt
 
            }
            );

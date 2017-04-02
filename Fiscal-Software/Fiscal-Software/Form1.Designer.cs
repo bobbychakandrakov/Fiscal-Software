@@ -121,6 +121,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.molLabel = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -498,7 +499,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(673, 436);
+            this.tabPage2.Size = new System.Drawing.Size(673, 432);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Фискални у-ва";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -509,7 +510,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(667, 430);
+            this.panel4.Size = new System.Drawing.Size(667, 426);
             this.panel4.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -524,7 +525,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(667, 430);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(667, 426);
             this.tableLayoutPanel3.TabIndex = 0;
             this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
@@ -536,7 +537,7 @@
             this.fiscalDeviceListView.Location = new System.Drawing.Point(3, 3);
             this.fiscalDeviceListView.MultiSelect = false;
             this.fiscalDeviceListView.Name = "fiscalDeviceListView";
-            this.fiscalDeviceListView.Size = new System.Drawing.Size(661, 209);
+            this.fiscalDeviceListView.Size = new System.Drawing.Size(661, 207);
             this.fiscalDeviceListView.TabIndex = 1;
             this.fiscalDeviceListView.UseCompatibleStateImageBehavior = false;
             this.fiscalDeviceListView.View = System.Windows.Forms.View.Details;
@@ -635,10 +636,10 @@
             this.tabControl2.Controls.Add(this.tabPage5);
             this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.Location = new System.Drawing.Point(3, 218);
+            this.tabControl2.Location = new System.Drawing.Point(3, 216);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(661, 209);
+            this.tabControl2.Size = new System.Drawing.Size(661, 207);
             this.tabControl2.TabIndex = 1;
             // 
             // tabPage3
@@ -647,7 +648,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(653, 183);
+            this.tabPage3.Size = new System.Drawing.Size(653, 181);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Договор за поддръжка";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -660,7 +661,7 @@
             this.cfdList.Location = new System.Drawing.Point(3, 3);
             this.cfdList.MultiSelect = false;
             this.cfdList.Name = "cfdList";
-            this.cfdList.Size = new System.Drawing.Size(647, 177);
+            this.cfdList.Size = new System.Drawing.Size(647, 175);
             this.cfdList.TabIndex = 0;
             this.cfdList.UseCompatibleStateImageBehavior = false;
             this.cfdList.View = System.Windows.Forms.View.Details;
@@ -704,7 +705,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(653, 183);
+            this.tabPage4.Size = new System.Drawing.Size(653, 181);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Ремонти";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -717,7 +718,7 @@
             this.remontiList.Location = new System.Drawing.Point(3, 3);
             this.remontiList.MultiSelect = false;
             this.remontiList.Name = "remontiList";
-            this.remontiList.Size = new System.Drawing.Size(647, 177);
+            this.remontiList.Size = new System.Drawing.Size(647, 175);
             this.remontiList.TabIndex = 0;
             this.remontiList.UseCompatibleStateImageBehavior = false;
             this.remontiList.View = System.Windows.Forms.View.Details;
@@ -760,7 +761,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 4);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(653, 183);
+            this.tabPage5.Size = new System.Drawing.Size(653, 181);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Свидетелства за регистрация";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -773,7 +774,7 @@
             this.svidetelstvaList.Location = new System.Drawing.Point(3, 3);
             this.svidetelstvaList.MultiSelect = false;
             this.svidetelstvaList.Name = "svidetelstvaList";
-            this.svidetelstvaList.Size = new System.Drawing.Size(647, 177);
+            this.svidetelstvaList.Size = new System.Drawing.Size(647, 175);
             this.svidetelstvaList.TabIndex = 0;
             this.svidetelstvaList.UseCompatibleStateImageBehavior = false;
             this.svidetelstvaList.View = System.Windows.Forms.View.Details;
@@ -815,7 +816,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 4);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(653, 183);
+            this.tabPage6.Size = new System.Drawing.Size(653, 181);
             this.tabPage6.TabIndex = 3;
             this.tabPage6.Text = "Демонтаж на ФП";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -828,7 +829,7 @@
             this.demontajList.Location = new System.Drawing.Point(3, 3);
             this.demontajList.MultiSelect = false;
             this.demontajList.Name = "demontajList";
-            this.demontajList.Size = new System.Drawing.Size(647, 177);
+            this.demontajList.Size = new System.Drawing.Size(647, 175);
             this.demontajList.TabIndex = 0;
             this.demontajList.UseCompatibleStateImageBehavior = false;
             this.demontajList.View = System.Windows.Forms.View.Details;
@@ -943,6 +944,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.button5);
             this.panel5.Controls.Add(this.button4);
             this.panel5.Controls.Add(this.button3);
             this.panel5.Controls.Add(this.button2);
@@ -986,6 +988,7 @@
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(10, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -1013,6 +1016,16 @@
             this.molLabel.Size = new System.Drawing.Size(35, 13);
             this.molLabel.TabIndex = 0;
             this.molLabel.Text = "МОЛ:";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(402, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
@@ -1155,6 +1168,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button5;
     }
 }
 

@@ -1,1 +1,1 @@
-data source=.;initial catalog=FiscalSoftware;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework;Connection Timeout=10
+data source=.;initial catalog=FISCAL1;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework;Connection Timeout=10

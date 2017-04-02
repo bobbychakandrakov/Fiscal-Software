@@ -245,6 +245,48 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Remontcs.cs" />
+    <Compile Include="SpravkiForm\DogovoriSpravkaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpravkiForm\DogovoriSpravkaForm.Designer.cs">
+      <DependentUpon>DogovoriSpravkaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpravkiForm\DogovoriZaPeriodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpravkiForm\DogovoriZaPeriodForm.Designer.cs">
+      <DependentUpon>DogovoriZaPeriodForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpravkiForm\FUModelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpravkiForm\FUModelForm.Designer.cs">
+      <DependentUpon>FUModelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpravkiForm\IztichashtaSIMForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpravkiForm\IztichashtaSIMForm.Designer.cs">
+      <DependentUpon>IztichashtaSIMForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpravkiForm\IztichashtiDogovoriForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpravkiForm\IztichashtiDogovoriForm.Designer.cs">
+      <DependentUpon>IztichashtiDogovoriForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpravkiForm\SprazkaZaFirmaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpravkiForm\SprazkaZaFirmaForm.Designer.cs">
+      <DependentUpon>SprazkaZaFirmaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpravkiForm\VuvedeniEksploataciqForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpravkiForm\VuvedeniEksploataciqForm.Designer.cs">
+      <DependentUpon>VuvedeniEksploataciqForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="SvidetelstvoRegistraciq.cs" />
     <Compile Include="sysdiagram.cs" />
@@ -337,6 +379,34 @@
     <EmbeddedResource Include="Reports\Uvedomlenie.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="SpravkiForm\DogovoriSpravkaForm.resx">
+      <DependentUpon>DogovoriSpravkaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpravkiForm\DogovoriZaPeriodForm.resx">
+      <DependentUpon>DogovoriZaPeriodForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpravkiForm\FUModelForm.resx">
+      <DependentUpon>FUModelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpravkiForm\IztichashtaSIMForm.resx">
+      <DependentUpon>IztichashtaSIMForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpravkiForm\IztichashtiDogovoriForm.resx">
+      <DependentUpon>IztichashtiDogovoriForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpravkiForm\SprazkaZaFirmaForm.resx">
+      <DependentUpon>SprazkaZaFirmaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpravkiForm\VuvedeniEksploataciqForm.resx">
+      <DependentUpon>VuvedeniEksploataciqForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Spravki\DogovoriSpravka.rdlc" />
+    <EmbeddedResource Include="Spravki\DogovoriZaPeriod.rdlc" />
+    <EmbeddedResource Include="Spravki\FUModel.rdlc" />
+    <EmbeddedResource Include="Spravki\IztichashtaSIM.rdlc" />
+    <EmbeddedResource Include="Spravki\IztichashtiDogovori.rdlc" />
+    <EmbeddedResource Include="Spravki\SpravkaZaFirma.rdlc" />
+    <EmbeddedResource Include="Spravki\VuvedeniEksplataciq.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

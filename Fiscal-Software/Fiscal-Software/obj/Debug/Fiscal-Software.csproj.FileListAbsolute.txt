@@ -279,3 +279,10 @@ C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-So
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\bin\Debug\Microsoft.VisualStudio.OLE.Interop.xml
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.xml
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.xml
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.SpravkiForm.IztichashtaSIMForm.resources
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.SpravkiForm.VuvedeniEksploataciqForm.resources
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.SpravkiForm.FUModelForm.resources
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.SpravkiForm.DogovoriZaPeriodForm.resources
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.SpravkiForm.IztichashtiDogovoriForm.resources
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.SpravkiForm.DogovoriSpravkaForm.resources
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.SpravkiForm.SprazkaZaFirmaForm.resources
