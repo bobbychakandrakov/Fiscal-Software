@@ -1252,8 +1252,10 @@ namespace Fiscal_Software
             //dsf.Show();
             //SprazkaZaFirmaForm sff = new SprazkaZaFirmaForm();
             //sff.Show();
-            PrintZaqvlenie pz = new PrintZaqvlenie();
-            pz.Show();
+            //PrintZaqvlenie pz = new PrintZaqvlenie();
+            //pz.Show();
+            DogovorServizForm dsf = new DogovorServizForm();
+            dsf.Show();
         }
 
         private void remontiList_SelectedIndexChanged(object sender, EventArgs e)

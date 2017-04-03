@@ -116,6 +116,30 @@
     <Compile Include="Controllers\SvidetelsvaRegistraciqCtrl.cs" />
     <Compile Include="DanniFiskalnoUstroistvo.cs" />
     <Compile Include="DemontajNaFiscalnoUstroistvo.cs" />
+    <Compile Include="DialogWindows\DialogWindow1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogWindows\DialogWindow1.Designer.cs">
+      <DependentUpon>DialogWindow1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogWindows\DialogWindow2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogWindows\DialogWindow2.Designer.cs">
+      <DependentUpon>DialogWindow2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogWindows\DialogWindow3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogWindows\DialogWindow3.Designer.cs">
+      <DependentUpon>DialogWindow3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogWindows\DialogWindow4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogWindows\DialogWindow4.Designer.cs">
+      <DependentUpon>DialogWindow4.cs</DependentUpon>
+    </Compile>
     <Compile Include="FiscalDevice.cs" />
     <Compile Include="Controllers\FiscalDeviceCtrl.cs" />
     <Compile Include="FiscalSoftware.cs" />
@@ -160,6 +184,12 @@
     </Compile>
     <Compile Include="Forms\DemontajForm.Designer.cs">
       <DependentUpon>DemontajForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DogovorServizForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DogovorServizForm.Designer.cs">
+      <DependentUpon>DogovorServizForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FiscalDevicesForm.cs">
       <SubType>Form</SubType>
@@ -304,6 +334,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_Fiscal_SoftwareDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DialogWindows\DialogWindow1.resx">
+      <DependentUpon>DialogWindow1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogWindows\DialogWindow2.resx">
+      <DependentUpon>DialogWindow2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogWindows\DialogWindow3.resx">
+      <DependentUpon>DialogWindow3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogWindows\DialogWindow4.resx">
+      <DependentUpon>DialogWindow4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DemontajForm.resx">
       <DependentUpon>DemontajForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DogovorServizForm.resx">
+      <DependentUpon>DogovorServizForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FiscalDevicesForm.resx">
       <DependentUpon>FiscalDevicesForm.cs</DependentUpon>
@@ -376,6 +421,7 @@
     <EmbeddedResource Include="Reports\Dogovor.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DogovorServiz.rdlc" />
     <EmbeddedResource Include="Reports\ProtokolDemontaJ.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

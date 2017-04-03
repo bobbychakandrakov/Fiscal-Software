@@ -31,7 +31,13 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>в качеството си на………..……………. на фирма " ПИ КОМЕРСИАЛ - ПЕТЪР ПЕЙКОВ " </Value>
+                <Value>в качеството си на………..……………. на фирма </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!naFirma.Value</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -53,7 +59,54 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>1. Идентификационен номер по чл. 84 от ДОПК: ....115649020...., ЕГН/ЛНЧ/служебен номер от регистър на НАП: .....115649020..... 2. Собственост на " ПИ КОМЕРСИАЛ - ПЕТЪР ПЕЙКОВ " Пловдив жк.Прослав, ул."МИР" No: 30 ,</Value>
+                <Value>1. Идентификационен номер по чл. 84 от ДОПК: ....</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!DOPK.Value</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>...., ЕГН/ЛНЧ/служебен номер от регистър на НАП: .....</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!DOPK.Value</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>..... </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>2. Собственост на </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!sobstvenostNa.Value</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>,</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -79,7 +132,13 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>3. Търговски обект ЧАЙНА " ЕНДЖОЙ "  </Value>
+                <Value>3. Търговски обект </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!obekt.Value</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -105,7 +164,13 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>4. Вид дейност на обекта: БАР И ДИНЕР </Value>
+                <Value>4. Вид дейност на обекта: </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!vidDeinost.Value</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -146,7 +211,19 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>6. Фискално устройство модел: ДАТЕКС MP500Т,</Value>
+                <Value>6. Фискално устройство модел: </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!modelFY.Value</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>,</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -226,7 +303,31 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>7. Индивидуален номер на ФУDY397638; Индивидуален номер на ФП36532514; </Value>
+                <Value>7. Индивидуален номер на ФУ </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!NomerFY.Value</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>; Индивидуален номер на ФП </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!NomerFP.Value</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>; </Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -237,7 +338,19 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>8. Сервизна фирма: 200850634, " ТИ БИ ЕС СЕРВИЗ " ООД, Гоце Делчев жк,ЗАПАД , ул."СОЛУН" No: 4 тел 359899171749,     </Value>
+                <Value>8. Сервизна фирма: </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!ServiznaFirma.Value</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>,     </Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -257,7 +370,19 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>9. Сервизен договор № 497 от 04.01.2017  г.  подпис/печат</Value>
+                <Value>9. Сервизен договор  </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!ServizenDogovor.Value</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> подпис/печат</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -269,7 +394,19 @@
             <TextRuns>
               <TextRun>
                 <Value>
-Дата: 23.03.2017  Заявител: ………......                                         (подпис, печат)</Value>
+Дата: </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!TodayDate.Value</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>  Заявител: ………......                                         (подпис, печат)</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -304,7 +441,13 @@
             <TextRuns>
               <TextRun>
                 <Value>
-1 Илкян Максудов Максудов </Value>
+1. </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!ServizenTexnik.Value</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -367,7 +510,13 @@
             <TextRuns>
               <TextRun>
                 <Value>
-Дата 23.03.2017  </Value>
+Дата </Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!TodayDate.Value</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -450,6 +599,80 @@
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
+  <ReportParameters>
+    <ReportParameter Name="naFirma">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DOPK">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="sobstvenostNa">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="obekt">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="vidDeinost">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="modelFY">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NomerFY">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NomerFP">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ServiznaFirma">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ServizenDogovor">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TodayDate">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ServizenTexnik">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>93bded01-6a3d-43f2-874e-ef623c5f16b0</rd:ReportID>
 </Report>
