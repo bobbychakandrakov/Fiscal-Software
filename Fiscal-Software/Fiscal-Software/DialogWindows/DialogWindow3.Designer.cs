@@ -142,7 +142,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "DialogWindow3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DialogWindow3";
+            this.Load += new System.EventHandler(this.DialogWindow3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

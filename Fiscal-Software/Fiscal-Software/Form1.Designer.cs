@@ -115,13 +115,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.molLabel1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.molLabel = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.договориЗаПериодToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изтичащиДоговориToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаЗаФирмаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаЗаДанСлужбаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.неплатениДоговориToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.изтичащиСИМКартиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.устройствоПоМоделToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -210,6 +217,14 @@
             // 
             // справкиToolStripMenuItem
             // 
+            this.справкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.договориЗаПериодToolStripMenuItem,
+            this.изтичащиДоговориToolStripMenuItem,
+            this.справкаЗаФирмаToolStripMenuItem,
+            this.справкаЗаДанСлужбаToolStripMenuItem,
+            this.неплатениДоговориToolStripMenuItem,
+            this.изтичащиСИМКартиToolStripMenuItem,
+            this.устройствоПоМоделToolStripMenuItem});
             this.справкиToolStripMenuItem.Name = "справкиToolStripMenuItem";
             this.справкиToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.справкиToolStripMenuItem.Text = "Справки";
@@ -955,6 +970,16 @@
             this.panel5.Size = new System.Drawing.Size(687, 33);
             this.panel5.TabIndex = 3;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(402, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(300, 4);
@@ -1017,15 +1042,48 @@
             this.molLabel.TabIndex = 0;
             this.molLabel.Text = "МОЛ:";
             // 
-            // button5
+            // договориЗаПериодToolStripMenuItem
             // 
-            this.button5.Location = new System.Drawing.Point(402, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.договориЗаПериодToolStripMenuItem.Name = "договориЗаПериодToolStripMenuItem";
+            this.договориЗаПериодToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.договориЗаПериодToolStripMenuItem.Text = "Договори за период";
+            // 
+            // изтичащиДоговориToolStripMenuItem
+            // 
+            this.изтичащиДоговориToolStripMenuItem.Name = "изтичащиДоговориToolStripMenuItem";
+            this.изтичащиДоговориToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.изтичащиДоговориToolStripMenuItem.Text = "Изтичащи договори";
+            // 
+            // справкаЗаФирмаToolStripMenuItem
+            // 
+            this.справкаЗаФирмаToolStripMenuItem.Name = "справкаЗаФирмаToolStripMenuItem";
+            this.справкаЗаФирмаToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.справкаЗаФирмаToolStripMenuItem.Text = "Справка за фирма";
+            // 
+            // справкаЗаДанСлужбаToolStripMenuItem
+            // 
+            this.справкаЗаДанСлужбаToolStripMenuItem.Name = "справкаЗаДанСлужбаToolStripMenuItem";
+            this.справкаЗаДанСлужбаToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.справкаЗаДанСлужбаToolStripMenuItem.Text = "Справка за Дан. служба";
+            // 
+            // неплатениДоговориToolStripMenuItem
+            // 
+            this.неплатениДоговориToolStripMenuItem.Name = "неплатениДоговориToolStripMenuItem";
+            this.неплатениДоговориToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.неплатениДоговориToolStripMenuItem.Text = "Неплатени договори";
+            // 
+            // изтичащиСИМКартиToolStripMenuItem
+            // 
+            this.изтичащиСИМКартиToolStripMenuItem.Name = "изтичащиСИМКартиToolStripMenuItem";
+            this.изтичащиСИМКартиToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.изтичащиСИМКартиToolStripMenuItem.Text = "Изтичащи СИМ карти";
+            // 
+            // устройствоПоМоделToolStripMenuItem
+            // 
+            this.устройствоПоМоделToolStripMenuItem.Name = "устройствоПоМоделToolStripMenuItem";
+            this.устройствоПоМоделToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.устройствоПоМоделToolStripMenuItem.Text = "Устройство по модел";
+            this.устройствоПоМоделToolStripMenuItem.Click += new System.EventHandler(this.устройствоПоМоделToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -1169,6 +1227,13 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ToolStripMenuItem договориЗаПериодToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem изтичащиДоговориToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem справкаЗаФирмаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem справкаЗаДанСлужбаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem неплатениДоговориToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem изтичащиСИМКартиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem устройствоПоМоделToolStripMenuItem;
     }
 }
 

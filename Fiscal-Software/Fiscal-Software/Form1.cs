@@ -17,6 +17,7 @@ using System.IO;
 using Fiscal_Software.Controlles;
 using System.Globalization;
 using Fiscal_Software.SpravkiForm;
+using Fiscal_Software.DialogWindows;
 //using Fiscal_Software.Forms;
 
 namespace Fiscal_Software
@@ -1254,8 +1255,16 @@ namespace Fiscal_Software
             //sff.Show();
             //PrintZaqvlenie pz = new PrintZaqvlenie();
             //pz.Show();
-            DogovorServizForm dsf = new DogovorServizForm();
-            dsf.Show();
+            //DogovorServizForm dsf = new DogovorServizForm();
+            //dsf.Show();
+            DialogWindow2 dw2 = new DialogWindow2();
+            var result = dw2.ShowDialog();
+        }
+
+        private void устройствоПоМоделToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogWindow4 dw4 = new DialogWindow4();
+            var result = dw4.ShowDialog();
         }
 
         private void remontiList_SelectedIndexChanged(object sender, EventArgs e)

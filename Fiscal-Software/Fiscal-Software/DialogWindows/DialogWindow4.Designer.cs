@@ -81,6 +81,7 @@
             this.Controls.Add(this.modelFYBox);
             this.Controls.Add(this.label1);
             this.Name = "DialogWindow4";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Устройсто по модел";
             this.Load += new System.EventHandler(this.DialogWindow4_Load);
             this.ResumeLayout(false);

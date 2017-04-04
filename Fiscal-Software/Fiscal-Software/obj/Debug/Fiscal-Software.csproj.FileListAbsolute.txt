@@ -288,3 +288,7 @@ C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-So
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.SpravkiForm.SprazkaZaFirmaForm.resources
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintZaqvlenie.resources
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.DogovorServizForm.resources
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.DialogWindows.DialogWindow1.resources
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.DialogWindows.DialogWindow2.resources
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.DialogWindows.DialogWindow3.resources
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.DialogWindows.DialogWindow4.resources
