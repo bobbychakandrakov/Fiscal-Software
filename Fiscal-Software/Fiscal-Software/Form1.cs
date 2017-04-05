@@ -1265,6 +1265,100 @@ namespace Fiscal_Software
         {
             DialogWindow4 dw4 = new DialogWindow4();
             var result = dw4.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                int model = dw4.Model;
+            }
+        }
+
+        private void договориЗаПериодToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogWindow1 dw1 = new DialogWindow1();
+            var result = dw1.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                int firma = dw1.ServiznaFirma;
+
+                DateTime fromDate = dw1.FromDate;
+
+                DateTime toDate = dw1.ToDate;
+            }
+        }
+
+        private void изтичащиДоговориToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogWindow1 dw1 = new DialogWindow1(true);
+            var result = dw1.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                int firma = dw1.ServiznaFirma;
+
+                DateTime fromDate = dw1.FromDate;
+
+                DateTime toDate = dw1.ToDate;
+
+            }
+        }
+
+        private void неплатениДоговориToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogWindow1 dw1 = new DialogWindow1();
+            var result = dw1.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                int firma = dw1.ServiznaFirma;
+
+                DateTime fromDate = dw1.FromDate;
+
+                DateTime toDate = dw1.ToDate;
+            }
+        }
+
+        private void изтичащиСИМКартиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogWindow1 dw1 = new DialogWindow1();
+            var result = dw1.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                int firma = dw1.ServiznaFirma;
+
+                DateTime fromDate = dw1.FromDate;
+
+                DateTime toDate = dw1.ToDate;
+            }
+        }
+
+        private void справкаЗаФирмаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogWindow2 dw2 = new DialogWindow2();
+            var result = dw2.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                int firma = dw2.Firma;
+            }
+        }
+
+        private void справкаЗаДанСлужбаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogWindow3 dw3 = new DialogWindow3();
+            var result = dw3.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                int firma = dw3.ServiznaFirma;
+
+                string danuchnaSlyjba = dw3.DanuchnaSlyjba;
+
+                DateTime fromDate = dw3.FromDate;
+
+                DateTime toDate = dw3.ToDate;
+            }
         }
 
         private void remontiList_SelectedIndexChanged(object sender, EventArgs e)

@@ -14,6 +14,9 @@ namespace Fiscal_Software.DialogWindows
 {
     public partial class DialogWindow1 : Form
     {
+
+        private bool neplaten;
+        
         public int ServiznaFirma { get; set; }
         public DateTime FromDate { get; set; }
         public DateTime ToDate { get; set; }
@@ -22,6 +25,13 @@ namespace Fiscal_Software.DialogWindows
         {
             InitializeComponent();
         }
+
+        public DialogWindow1(bool neplaten)
+        {
+            InitializeComponent();
+            this.neplaten = neplaten;
+        }
+
 
         private void okBtn_Click(object sender, EventArgs e)
         {
@@ -43,6 +53,10 @@ namespace Fiscal_Software.DialogWindows
 
         private void DialogWindow1_Load(object sender, EventArgs e)
         {
+            if (neplaten)
+            {
+                label4.Text = "Период на сключване на договора";
+            }
             serviznaFirmaBox.DisplayMember = "Text";
             serviznaFirmaBox.ValueMember = "Value";
             List<ComboboxItem> list = new List<ComboboxItem>();

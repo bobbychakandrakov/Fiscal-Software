@@ -36,6 +36,7 @@
             this.serviznaFirmaBox = new System.Windows.Forms.ComboBox();
             this.fromDate = new System.Windows.Forms.DateTimePicker();
             this.toDate = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -50,7 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 79);
+            this.label2.Location = new System.Drawing.Point(42, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(20, 13);
             this.label2.TabIndex = 1;
@@ -59,7 +60,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(236, 79);
+            this.label3.Location = new System.Drawing.Point(236, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 13);
             this.label3.TabIndex = 2;
@@ -67,7 +68,7 @@
             // 
             // okBtn
             // 
-            this.okBtn.Location = new System.Drawing.Point(42, 117);
+            this.okBtn.Location = new System.Drawing.Point(42, 130);
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(75, 23);
             this.okBtn.TabIndex = 3;
@@ -77,7 +78,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(310, 117);
+            this.cancelBtn.Location = new System.Drawing.Point(310, 130);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 4;
@@ -95,23 +96,33 @@
             // 
             // fromDate
             // 
-            this.fromDate.Location = new System.Drawing.Point(68, 73);
+            this.fromDate.Location = new System.Drawing.Point(68, 86);
             this.fromDate.Name = "fromDate";
             this.fromDate.Size = new System.Drawing.Size(123, 20);
             this.fromDate.TabIndex = 6;
             // 
             // toDate
             // 
-            this.toDate.Location = new System.Drawing.Point(262, 73);
+            this.toDate.Location = new System.Drawing.Point(262, 86);
             this.toDate.Name = "toDate";
             this.toDate.Size = new System.Drawing.Size(123, 20);
             this.toDate.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(135, 57);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 13);
+            this.label4.TabIndex = 8;
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DialogWindow1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(440, 170);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.toDate);
             this.Controls.Add(this.fromDate);
             this.Controls.Add(this.serviznaFirmaBox);
@@ -122,7 +133,7 @@
             this.Controls.Add(this.label1);
             this.Name = "DialogWindow1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DialogWindow1";
+            this.Text = "Сключени договори за месеци";
             this.Load += new System.EventHandler(this.DialogWindow1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -139,5 +150,6 @@
         private System.Windows.Forms.ComboBox serviznaFirmaBox;
         private System.Windows.Forms.DateTimePicker fromDate;
         private System.Windows.Forms.DateTimePicker toDate;
+        private System.Windows.Forms.Label label4;
     }
 }
