@@ -60,7 +60,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value xml:space="preserve">                  </Value>
+                <Value xml:space="preserve">                   </Value>
                 <Style />
               </TextRun>
               <TextRun>
@@ -155,7 +155,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Сервизна организация: </Value>
+                  <Value>Сервизна организация : </Value>
                   <Style>
                     <FontWeight>Normal</FontWeight>
                   </Style>
@@ -163,7 +163,7 @@
                 <TextRun>
                   <Value>=Parameters!serviznaOrganizaciq.Value</Value>
                   <Style>
-                    <FontWeight>Normal</FontWeight>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
                 <TextRun>
@@ -249,7 +249,9 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Parameters!nap.Value</Value>
-                  <Style />
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
                 </TextRun>
                 <TextRun>
                   <Value xml:space="preserve">
@@ -263,7 +265,7 @@
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Left>0.15501in</Left>
           <Height>0.4375in</Height>
-          <Width>1in</Width>
+          <Width>2.40749in</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>

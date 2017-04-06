@@ -93,5 +93,37 @@ namespace Fiscal_Software.Controllers
 
         }
 
+        public static DanniFiskalnoUstroistvo[] GetIztichashtiSim(int firma, DateTime fromDate, DateTime toDate)
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var danni = ctx.DanniFiskalnoUstroistvo
+                    .Where(b => b.PayedSim.Value >= fromDate 
+                        && b.PayedSim.Value <= toDate 
+                        && b.Serviz == firma).ToArray();
+                return danni;
+            }
+        }
+
+        public static DanniFiskalnoUstroistvo[] GetByModel(int model)
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var danni = ctx.DanniFiskalnoUstroistvo
+                    .Where(b => b.ModelFY == model).ToArray();
+                return danni;
+            }
+        }
+
+        public static DanniFiskalnoUstroistvo[] GetByServiz(int serviz)
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var danni = ctx.DanniFiskalnoUstroistvo
+                    .Where(b => b.Serviz == serviz).ToArray();
+                return danni;
+            }
+        }
+
     }
 }

@@ -274,6 +274,8 @@
     <Compile Include="Helpers\DatabaseSettings.cs" />
     <Compile Include="Helpers\DirtyChecker.cs" />
     <Compile Include="Helpers\DocumentNumber.cs" />
+    <Compile Include="Helpers\DogovoriHelp.cs" />
+    <Compile Include="Helpers\IztichashtSIM.cs" />
     <Compile Include="NomeraDokumenti.cs" />
     <Compile Include="Objects.cs" />
     <Compile Include="OtherSetings.cs" />
@@ -464,6 +466,7 @@
     <EmbeddedResource Include="Spravki\SpravkaZaFirma.rdlc" />
     <EmbeddedResource Include="Spravki\VuvedeniEksplataciq.rdlc" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Fiscal_Software.Helpers.IztichashtSIM.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

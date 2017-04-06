@@ -92,5 +92,24 @@ namespace Fiscal_Software.Controllers
             }
         }
 
+        public static ContractFiscalDevices[] GetByDateAndDanni(int[] ids, DateTime fromDate, DateTime toDate)
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                List<ContractFiscalDevices> cfds = new List<ContractFiscalDevices>();
+                for (int i = 0; i < ids.Length; i++)
+                {
+                    int index = ids[i];
+                    var cfd = ctx.ContractFiscalDevices.Where(e => e.ObjectId == index && e.DateFrom >= fromDate && e.DateTo <= toDate).ToArray();
+                    for (int j = 0; j < cfd.Length; j++)
+                    {
+                        cfds.Add(cfd[j]);
+                    }
+                }
+                
+                return cfds.ToArray();
+            }
+        }
+
     }
 }

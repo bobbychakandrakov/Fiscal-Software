@@ -1269,6 +1269,9 @@ namespace Fiscal_Software
             if (result == DialogResult.OK)
             {
                 int model = dw4.Model;
+
+                FUModelForm fmf = new FUModelForm(model);
+                fmf.Show();
             }
         }
 
@@ -1284,6 +1287,9 @@ namespace Fiscal_Software
                 DateTime fromDate = dw1.FromDate;
 
                 DateTime toDate = dw1.ToDate;
+
+                DogovoriZaPeriodForm dpf = new DogovoriZaPeriodForm(firma, fromDate, toDate);
+                dpf.Show();
             }
         }
 
@@ -1330,7 +1336,11 @@ namespace Fiscal_Software
                 DateTime fromDate = dw1.FromDate;
 
                 DateTime toDate = dw1.ToDate;
+
+                IztichashtaSIMForm isf = new IztichashtaSIMForm(firma, fromDate, toDate);
+                isf.Show();
             }
+  
         }
 
         private void справкаЗаФирмаToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1358,6 +1368,9 @@ namespace Fiscal_Software
                 DateTime fromDate = dw3.FromDate;
 
                 DateTime toDate = dw3.ToDate;
+
+                VuvedeniEksploataciqForm vef = new VuvedeniEksploataciqForm(firma, danuchnaSlyjba, fromDate, toDate);
+                vef.Show();
             }
         }
 
