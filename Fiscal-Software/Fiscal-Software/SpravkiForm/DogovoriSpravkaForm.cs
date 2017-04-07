@@ -13,10 +13,20 @@ namespace Fiscal_Software.SpravkiForm
 {
     public partial class DogovoriSpravkaForm : Form
     {
+        int firma;
+        DateTime fromDate, toDate;
         public DogovoriSpravkaForm()
         {
             InitializeComponent();
         }
+        public DogovoriSpravkaForm(int firma, DateTime fromDate, DateTime toDate)
+        {
+            InitializeComponent();
+            this.firma = firma;
+            this.fromDate = fromDate;
+            this.toDate = toDate;
+        }
+
 
         private void DogovoriSpravkaForm_Load(object sender, EventArgs e)
         {

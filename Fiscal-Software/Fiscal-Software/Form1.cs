@@ -1306,6 +1306,8 @@ namespace Fiscal_Software
 
                 DateTime toDate = dw1.ToDate;
 
+                IztichashtiDogovoriForm idf = new IztichashtiDogovoriForm(firma, fromDate, toDate);
+                idf.Show();
             }
         }
 
@@ -1321,6 +1323,9 @@ namespace Fiscal_Software
                 DateTime fromDate = dw1.FromDate;
 
                 DateTime toDate = dw1.ToDate;
+
+                DogovoriSpravkaForm dsf = new DogovoriSpravkaForm(firma, fromDate, toDate);
+                dsf.Show();
             }
         }
 
@@ -1351,6 +1356,9 @@ namespace Fiscal_Software
             if (result == DialogResult.OK)
             {
                 int firma = dw2.Firma;
+
+                SprazkaZaFirmaForm szf = new SprazkaZaFirmaForm(firma);
+                szf.Show();
             }
         }
 

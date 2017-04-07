@@ -13,10 +13,22 @@ namespace Fiscal_Software.SpravkiForm
 {
     public partial class IztichashtiDogovoriForm : Form
     {
+        int firma;
+        DateTime fromDate, toDate;
+
         public IztichashtiDogovoriForm()
         {
             InitializeComponent();
         }
+
+        public IztichashtiDogovoriForm(int firma, DateTime fromDate, DateTime toDate)
+        {
+            InitializeComponent();
+            this.firma = firma;
+            this.fromDate = fromDate;
+            this.toDate = toDate;
+        }
+        
 
         private void IztichashtiDogovoriForm_Load(object sender, EventArgs e)
         {

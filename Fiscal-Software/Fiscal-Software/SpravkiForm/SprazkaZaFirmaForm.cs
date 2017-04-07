@@ -13,9 +13,16 @@ namespace Fiscal_Software.SpravkiForm
 {
     public partial class SprazkaZaFirmaForm : Form
     {
+        int firma;
         public SprazkaZaFirmaForm()
         {
             InitializeComponent();
+        }
+
+        public SprazkaZaFirmaForm(int firma)
+        {
+            InitializeComponent();
+            this.firma = firma;
         }
 
         private void SprazkaZaFirmaForm_Load(object sender, EventArgs e)

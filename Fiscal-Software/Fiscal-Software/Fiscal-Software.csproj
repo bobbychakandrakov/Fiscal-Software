@@ -466,6 +466,7 @@
     <EmbeddedResource Include="Spravki\SpravkaZaFirma.rdlc" />
     <EmbeddedResource Include="Spravki\VuvedeniEksplataciq.rdlc" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Fiscal_Software.Helpers.DogovoriHelp.datasource" />
     <None Include="Properties\DataSources\Fiscal_Software.Helpers.IztichashtSIM.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
