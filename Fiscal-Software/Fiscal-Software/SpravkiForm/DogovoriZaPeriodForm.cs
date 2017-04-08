@@ -48,7 +48,7 @@ namespace Fiscal_Software.SpravkiForm
 
             // Implement iteration and creating array for datasource
 
-            DogovoriHelp[] dogovori = new DogovoriHelp[dfu.Length];
+            DogovoriHelp[] dogovori = new DogovoriHelp[cfs.Length];
             for (int i = 0; i < cfs.Length; i++)
             {
                 DanniFiskalnoUstroistvo d = DanniFiskalnoUstroistvoCtrl.GetDanniFiskalnoUstroistvoById(cfs[i].ObjectId);
