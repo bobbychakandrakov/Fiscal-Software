@@ -842,6 +842,7 @@
             this.svidetelstvaList.TabIndex = 0;
             this.svidetelstvaList.UseCompatibleStateImageBehavior = false;
             this.svidetelstvaList.View = System.Windows.Forms.View.Details;
+            this.svidetelstvaList.SelectedIndexChanged += new System.EventHandler(this.svidetelstvaList_SelectedIndexChanged);
             this.svidetelstvaList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.svidetelstvaList_MouseDoubleClick);
             // 
             // contextMenuStrip5
@@ -897,6 +898,7 @@
             this.demontajList.TabIndex = 0;
             this.demontajList.UseCompatibleStateImageBehavior = false;
             this.demontajList.View = System.Windows.Forms.View.Details;
+            this.demontajList.SelectedIndexChanged += new System.EventHandler(this.demontajList_SelectedIndexChanged);
             this.demontajList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.demontajList_MouseDoubleClick);
             // 
             // contextMenuStrip6
@@ -1021,16 +1023,18 @@
             // 
             // button5
             // 
+            this.button5.Enabled = false;
             this.button5.Location = new System.Drawing.Point(402, 3);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
+            this.button5.Text = "Заявление";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
+            this.button4.Enabled = false;
             this.button4.Location = new System.Drawing.Point(300, 4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
@@ -1052,6 +1056,7 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(105, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);

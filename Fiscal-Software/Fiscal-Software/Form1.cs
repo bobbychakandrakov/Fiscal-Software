@@ -1196,10 +1196,21 @@ namespace Fiscal_Software
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var danni = DanniFiskalnoUstroistvoCtrl.GetDanniFiskalnoUstroistvoById(selectedFUDanni);
-            var demontaj = DemontajFiskalnoUstroistvoCtrl.GetDemontajFiskalnoUstroistvoById(selectedDemontaj);
-            PrintDemontaj pd = new PrintDemontaj(danni, demontaj);
-            pd.Show();
+            if (selectedFUDanni > 0)
+            {
+                if (demontajList.SelectedItems.Count > 0)
+                {
+                    if (demontajList.SelectedItems[0].Tag != null)
+                    {
+                        int id = int.Parse(demontajList.SelectedItems[0].Tag.ToString());
+                        var danni = DanniFiskalnoUstroistvoCtrl.GetDanniFiskalnoUstroistvoById(selectedFUDanni);
+                        var demontaj = DemontajFiskalnoUstroistvoCtrl.GetDemontajFiskalnoUstroistvoById(id);
+                        PrintDemontaj pd = new PrintDemontaj(danni, demontaj);
+                        pd.Show();
+                    }
+                }
+            }
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -1257,8 +1268,22 @@ namespace Fiscal_Software
             //pz.Show();
             //DogovorServizForm dsf = new DogovorServizForm();
             //dsf.Show();
-            DialogWindow2 dw2 = new DialogWindow2();
-            var result = dw2.ShowDialog();
+            //DialogWindow2 dw2 = new DialogWindow2();
+            //var result = dw2.ShowDialog();
+            if (selectedFUDanni > 0)
+            {
+                if (svidetelstvaList.SelectedItems.Count > 0)
+                {
+                    if (svidetelstvaList.SelectedItems[0].Tag != null)
+                    {
+                        int id = int.Parse(svidetelstvaList.SelectedItems[0].Tag.ToString());
+                        var dfu = DanniFiskalnoUstroistvoCtrl.GetDanniFiskalnoUstroistvoById(selectedFUDanni);
+                        var svidetelstvo = SvidetelstvoRegistraciqCtrl.GetSvidetelstvoRegistraciqById(id);
+                        PrintZaqvlenie pz = new PrintZaqvlenie(dfu, svidetelstvo);
+                        pz.Show();
+                    }
+                }
+            }
         }
 
         private void устройствоПоМоделToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1379,6 +1404,34 @@ namespace Fiscal_Software
 
                 VuvedeniEksploataciqForm vef = new VuvedeniEksploataciqForm(firma, danuchnaSlyjba, fromDate, toDate);
                 vef.Show();
+            }
+        }
+
+        private void demontajList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (demontajList.SelectedItems.Count > 0)
+            {
+                selectedDemontaj = int.Parse(demontajList.SelectedItems[0].Tag.ToString());
+                button2.Enabled = true;
+            }
+            else
+            {
+                button2.Enabled = false;
+            }
+        }
+
+        private void svidetelstvaList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (svidetelstvaList.SelectedItems.Count > 0)
+            {
+                selectedSvidetelstvo = int.Parse(svidetelstvaList.SelectedItems[0].Tag.ToString());
+                button4.Enabled = true;
+                button5.Enabled = true;
+            }
+            else
+            {
+                button4.Enabled = false;
+                button5.Enabled = false;
             }
         }
 
