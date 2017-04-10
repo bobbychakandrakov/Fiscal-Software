@@ -65,6 +65,16 @@ namespace Fiscal_Software.Controllers
                 return p;
             }
         }
+
+
+        public static Plashtaniq[] GetbyID(int id)
+        {
+            using (var ctx = new FiscalSoftware())
+            {
+                var p = ctx.Plashtaniq.Where(b => b.DogovorID == id).OrderByDescending(x => x.DataDo).ToArray();
+                return p;
+            }
+        }
         public static void DeletePlashtane(int id)
         {
             using (var ctx = new FiscalSoftware())

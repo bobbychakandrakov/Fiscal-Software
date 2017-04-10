@@ -1,4 +1,5 @@
 ﻿using Fiscal_Software.Controllers;
+using Fiscal_Software.Helpers;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,32 @@ namespace Fiscal_Software.SpravkiForm
 
         private void VuvedeniEksploataciqForm_Load(object sender, EventArgs e)
         {
-            Company company = CompanyCtrl.GetCompanyById(this.firma);
+            var company = CompanyCtrl.GetCompanyById(firma);
+            var dfu = DanniFiskalnoUstroistvoCtrl.GetIztichashtiSim(this.firma, this.fromDate, this.toDate);
+            IztichashtSIM[] isim = new IztichashtSIM[dfu.Length];
+            for (int i = 0; i < dfu.Length; i++)
+            {
+                Objects obekt = ObjectCtrl.GetObjectById(dfu[i].Obekt);
+                Client client = ClientCtrl.GetClient(dfu[i].Serviz);
+                isim[i] = new IztichashtSIM();
+                isim[i].Naimenovanie = obekt.Type;
+                isim[i].Address = obekt.Town + ", " + obekt.Address;
+                // Implement logic
+                if (dfu[i].FPAktivirana.HasValue)
+                {
+                    isim[i].DataIztichane = dfu[i].FPAktivirana.Value.ToShortDateString();
+                }
+                else
+                {
+                    isim[i].DataIztichane = string.Empty;
+                }
+                isim[i].ModelFY = FiscalDeviceCtrl.GetFiscalDevice(dfu[i].ModelFY).Model + " " + dfu[i].SimTelNomer;
+                isim[i].NomerFY = dfu[i].FYNomer + " " + dfu[i].SimID;
+                isim[i].NomerFP = dfu[i].FPNomer;
+                isim[i].FirmaIme = client.Name + ", \nТел:" + client.Telephone + "\nТелМол:" + client.MolTelephone;
+                isim[i].FirmaAdress = client.Town + ", " + client.Address;
+                isim[i].FirmaDan = client.Bulstat;
+            }
             ReportParameter nap = new ReportParameter("nap", this.danSlyjba);
             ReportParameter otData = new ReportParameter("otData", this.fromDate.ToShortDateString());
             ReportParameter doData = new ReportParameter("doData", this.toDate.ToShortDateString());
@@ -79,6 +105,10 @@ namespace Fiscal_Software.SpravkiForm
                Upravitel
           }
           );
+            ReportDataSource rds = new ReportDataSource("SpravkiSource", isim);
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(rds);
+            reportViewer1.LocalReport.Refresh();
             this.reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
             this.reportViewer1.RefreshReport();
         }

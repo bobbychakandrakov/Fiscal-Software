@@ -54,7 +54,17 @@ namespace Fiscal_Software.SpravkiForm
                 fsh[i].NomerDogovor = cfs[i].ContractN.Value;
                 fsh[i].Data = cfs[i].DateFrom.Value.ToShortDateString();
                 fsh[i].IztichaNa = cfs[i].DateTo.Value.ToShortDateString();
-                fsh[i].PlatenDo = "0";
+
+                var plashtaniq = PlashtaniqCtrl.GetbyID(cfs[i].ID);
+                if (plashtaniq.Length > 0)
+                {
+                    fsh[i].PlatenDo = plashtaniq[0].DataDo.Value.ToShortDateString();
+                }
+                else
+                {
+                    fsh[i].PlatenDo = "0";
+                }
+                
                 fsh[i].TipFY = FiscalDeviceCtrl.GetFiscalDevice(d.ModelFY).Model;
                 fsh[i].Firma = client.Name;
                 fsh[i].Obekt = obekt.Type;
