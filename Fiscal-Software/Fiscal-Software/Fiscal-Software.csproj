@@ -221,6 +221,12 @@
     <Compile Include="Forms\PrintDogovor.Designer.cs">
       <DependentUpon>PrintDogovor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PrintDogovorServizEKAFP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintDogovorServizEKAFP.Designer.cs">
+      <DependentUpon>PrintDogovorServizEKAFP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PrintRemont.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,7 @@
     <Compile Include="Helpers\DirtyChecker.cs" />
     <Compile Include="Helpers\DocumentNumber.cs" />
     <Compile Include="Helpers\DogovoriHelp.cs" />
+    <Compile Include="Helpers\DogovoriSvidetelstvoHelp.cs" />
     <Compile Include="Helpers\FirmaSpravkaHelp.cs" />
     <Compile Include="Helpers\IztichashtSIM.cs" />
     <Compile Include="NomeraDokumenti.cs" />
@@ -388,6 +395,9 @@
     <EmbeddedResource Include="Forms\PrintDogovor.resx">
       <DependentUpon>PrintDogovor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintDogovorServizEKAFP.resx">
+      <DependentUpon>PrintDogovorServizEKAFP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PrintRemont.resx">
       <DependentUpon>PrintRemont.cs</DependentUpon>
     </EmbeddedResource>
@@ -424,6 +434,7 @@
     <EmbeddedResource Include="Reports\Dogovor.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DogovorEKAFP.rdlc" />
     <EmbeddedResource Include="Reports\DogovorServiz.rdlc" />
     <EmbeddedResource Include="Reports\ProtokolDemontaJ.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

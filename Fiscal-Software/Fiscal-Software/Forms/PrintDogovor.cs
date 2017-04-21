@@ -1,4 +1,5 @@
 ﻿using Fiscal_Software.Controllers;
+using Fiscal_Software.Helpers;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,7 @@ namespace Fiscal_Software.Forms
             var obekt = ObjectCtrl.GetObjectById(dfu.Obekt);
             var fd = FiscalDeviceCtrl.GetFiscalDevice(dfu.ModelFY);
             var client = ClientCtrl.GetClient(obekt.ClientId.Value);
+
             // Report dogovor
             ReportParameter RemontNomer = new ReportParameter("RemontNomer", "0000000" + cfd.ContractN.Value.ToString() + " / " + DateTime.Now.ToShortDateString());
             ReportParameter todayDate = new ReportParameter("todayDate", DateTime.Now.ToShortDateString());
@@ -54,7 +56,7 @@ namespace Fiscal_Software.Forms
             ReportParameter sobstvenostNa = new ReportParameter("sobstvenostNa", client.Name);
             ReportParameter address2 = new ReportParameter("address2", client.MolTown + " " + client.MolAddress);
             ReportParameter predstavlqvanaOt = new ReportParameter("predstavlqvanaOt", client.Mol);
-        ReportParameter TargovskiObekt= new ReportParameter("TargovskiObekt", obekt.Type);
+            ReportParameter TargovskiObekt= new ReportParameter("TargovskiObekt", obekt.Type);
             ReportParameter Model = new ReportParameter("Model", fd.Model);
             ReportParameter BimNomer = new ReportParameter("BimNomer", " ");
             ReportParameter indNomerNafiskalnotoUstroistvo = new ReportParameter("indNomerNafiskalnotoUstroistvo", dfu.FYNomer);

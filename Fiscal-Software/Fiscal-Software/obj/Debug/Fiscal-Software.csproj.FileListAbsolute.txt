@@ -292,3 +292,4 @@ C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-So
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.DialogWindows.DialogWindow2.resources
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.DialogWindows.DialogWindow3.resources
 C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.DialogWindows.DialogWindow4.resources
+C:\Users\Boyan\Desktop\Fiscal-Software\Fiscal-Software\Fiscal-Software\Fiscal-Software\obj\Debug\Fiscal_Software.Forms.PrintDogovorServizEKAFP.resources

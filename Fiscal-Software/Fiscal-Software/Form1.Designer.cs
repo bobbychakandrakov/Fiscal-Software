@@ -122,6 +122,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.molLabel1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -1010,6 +1011,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.button6);
             this.panel5.Controls.Add(this.button5);
             this.panel5.Controls.Add(this.button4);
             this.panel5.Controls.Add(this.button3);
@@ -1020,6 +1022,17 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(687, 33);
             this.panel5.TabIndex = 3;
+            // 
+            // button6
+            // 
+            this.button6.Enabled = false;
+            this.button6.Location = new System.Drawing.Point(492, 4);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(104, 23);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Договор сервиз";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -1245,6 +1258,7 @@
         private System.Windows.Forms.ToolStripMenuItem неплатениДоговориToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem изтичащиСИМКартиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem устройствоПоМоделToolStripMenuItem;
+        private System.Windows.Forms.Button button6;
     }
 }
 

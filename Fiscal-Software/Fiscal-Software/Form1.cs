@@ -836,10 +836,12 @@ namespace Fiscal_Software
             {
                 selectedCfdID = int.Parse(cfdList.SelectedItems[0].Tag.ToString());
                 button1.Enabled = true;
+                button6.Enabled = true;
             }
             else
             {
                 button1.Enabled = false;
+                button6.Enabled = false;
             }
         }
 
@@ -1432,6 +1434,24 @@ namespace Fiscal_Software
             {
                 button4.Enabled = false;
                 button5.Enabled = false;
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (selectedFUDanni > 0)
+            {
+                if (cfdList.SelectedItems.Count > 0)
+                {
+                    if (cfdList.SelectedItems[0].Tag != null)
+                    {
+                        int id = int.Parse(cfdList.SelectedItems[0].Tag.ToString());
+                        var dfu = DanniFiskalnoUstroistvoCtrl.GetDanniFiskalnoUstroistvoById(selectedFUDanni);
+                        var cfd = ContractFiscalDeviceCtrl.GetContractFiscalDevice(id);
+                        PrintDogovorServizEKAFP pd = new PrintDogovorServizEKAFP(dfu, cfd);
+                        pd.Show();
+                    }
+                }
             }
         }
 
